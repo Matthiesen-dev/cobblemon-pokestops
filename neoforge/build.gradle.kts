@@ -43,6 +43,8 @@ dependencies {
     }
     shadowBundle(project(":common", configuration = "transformProductionNeoForge"))
 
+    modImplementation("software.bernie.geckolib:geckolib-neoforge-${property("minecraft_version")}:${property("geckolib_version")}")
+
     testImplementation("org.junit.jupiter:junit-jupiter-api:${property("junit_version")}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${property("junit_version")}")
 }

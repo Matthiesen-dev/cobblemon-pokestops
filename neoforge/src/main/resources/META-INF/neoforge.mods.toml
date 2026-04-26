@@ -6,10 +6,10 @@ license = "MIT License"
 [[mods]]
 modId = "${mod_id}"
 version = "${version}"
-displayName = "Cobblemon Multiplatform-NeoForge Template Sidemod"
-authors = "Me!"
+displayName = "Cobblemon Pokestops"
+authors = "Adam Matthiesen"
 description = '''
-A very cool multi-line description!
+Pokemon Go inspired Pokestops for Cobblemon.
 '''
 #logoFile = ""
 

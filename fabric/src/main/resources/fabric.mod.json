@@ -2,17 +2,20 @@
   "schemaVersion": 1,
   "id": "${mod_id}",
   "version": "${version}",
-  "name": "Cobblemon Multi-platform Fabric MDK",
-  "description": "A MDK useful for Fabric Development",
+  "name": "Cobblemon Pokestops",
+  "description": "Pokemon Go inspired Pokestops for Cobblemon.",
   "authors": [
-    "The Cobblemon Team"
+    "Adam Matthiesen"
   ],
   "license": "MIT License",
   "icon": "assets/example/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "dev.matthiesen.fabric.template_cobblemon_sidemod.FabricModExample"
+      "dev.matthiesen.fabric.cobblemon_pokestops.CobblemonPokestopsFabric"
+    ],
+    "client": [
+      "dev.matthiesen.fabric.cobblemon_pokestops.CobblemonPokestopsFabricClient"
     ]
   },
   "depends": {

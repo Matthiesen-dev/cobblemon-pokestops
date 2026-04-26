@@ -1,9 +1,9 @@
-package dev.matthiesen.common.template_cobblemon_sidemod.config;
+package dev.matthiesen.common.cobblemon_pokestops.config;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.annotations.SerializedName;
-import dev.matthiesen.common.template_cobblemon_sidemod.Constants;
+import dev.matthiesen.common.cobblemon_pokestops.Constants;
 
 public class ModConfig {
     @SerializedName("permissionlevels")

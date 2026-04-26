@@ -1,9 +1,9 @@
-package dev.matthiesen.common.template_cobblemon_sidemod.permissions;
+package dev.matthiesen.common.cobblemon_pokestops.permissions;
 
 import com.cobblemon.mod.common.Cobblemon;
 import com.cobblemon.mod.common.api.permission.PermissionLevel;
-import dev.matthiesen.common.template_cobblemon_sidemod.CommonModExample;
-import dev.matthiesen.common.template_cobblemon_sidemod.Constants;
+import dev.matthiesen.common.cobblemon_pokestops.CobblemonPokestops;
+import dev.matthiesen.common.cobblemon_pokestops.Constants;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.server.level.ServerPlayer;
 
@@ -14,11 +14,11 @@ public class ModPermissions {
     public ModPermissions() {
         this.EXAMPLE_PERMISSION = new ModPermission(
                 Constants.MOD_ID + ".command.example",
-                toPermLevel(CommonModExample.config.permissionLevels.COMMAND_EXAMPLE_PERMISSION_LEVEL)
+                toPermLevel(CobblemonPokestops.config.permissionLevels.COMMAND_EXAMPLE_PERMISSION_LEVEL)
         );
         this.EXAMPLE_COOL_PERMISSION = new ModPermission(
                 Constants.MOD_ID + ".command.example-cool",
-                toPermLevel(CommonModExample.config.permissionLevels.COMMAND_EXAMPLE_COOL_PERMISSION_LEVEL)
+                toPermLevel(CobblemonPokestops.config.permissionLevels.COMMAND_EXAMPLE_COOL_PERMISSION_LEVEL)
         );
     }
 

@@ -1,11 +1,11 @@
-package dev.matthiesen.common.template_cobblemon_sidemod;
+package dev.matthiesen.common.cobblemon_pokestops;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class Constants {
-    public static final String MOD_ID = "template_cobblemon_sidemod";
-    public static final String ModName = "Template Side-Mod";
+    public static final String MOD_ID = "cobblemon_pokestops";
+    public static final String ModName = "Cobblemon Pokestops";
 
     public enum PERMISSION_LEVELS {
         NONE(0),

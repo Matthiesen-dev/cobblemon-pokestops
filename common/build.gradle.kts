@@ -14,7 +14,10 @@ loom {
 dependencies {
     minecraft("com.mojang:minecraft:${property("minecraft_version")}")
     mappings(loom.officialMojangMappings())
+    compileOnly("org.spongepowered:mixin:0.8.5")
     modImplementation("com.cobblemon:mod:${property("cobblemon_version")}") { isTransitive = false }
+
+    implementation("software.bernie.geckolib:geckolib-common-${property("minecraft_version")}:${property("geckolib_version")}")
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:${property("junit_version")}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${property("junit_version")}")

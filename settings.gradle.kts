@@ -1,6 +1,4 @@
-// By default, this is how your built jars are called
-// TODO: you might want to change it
-rootProject.name = "template-cobblemon-sidemod"
+rootProject.name = "cobblemon-pokestops"
 
 pluginManagement {
     repositories {

@@ -1,7 +1,7 @@
-package dev.matthiesen.common.template_cobblemon_sidemod.commands;
+package dev.matthiesen.common.cobblemon_pokestops.commands;
 
 import com.mojang.brigadier.CommandDispatcher;
-import dev.matthiesen.common.template_cobblemon_sidemod.interfaces.ICommand;
+import dev.matthiesen.common.cobblemon_pokestops.interfaces.ICommand;
 import net.minecraft.commands.CommandBuildContext;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;

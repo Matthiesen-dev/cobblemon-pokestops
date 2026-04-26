@@ -1,4 +1,4 @@
-package dev.matthiesen.common.template_cobblemon_sidemod.interfaces;
+package dev.matthiesen.common.cobblemon_pokestops.interfaces;
 
 import com.mojang.brigadier.CommandDispatcher;
 import net.minecraft.commands.CommandBuildContext;

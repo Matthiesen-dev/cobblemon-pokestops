@@ -1,8 +1,8 @@
-package dev.matthiesen.common.template_cobblemon_sidemod.permissions;
+package dev.matthiesen.common.cobblemon_pokestops.permissions;
 
 import com.cobblemon.mod.common.api.permission.Permission;
 import com.cobblemon.mod.common.api.permission.PermissionLevel;
-import dev.matthiesen.common.template_cobblemon_sidemod.Constants;
+import dev.matthiesen.common.cobblemon_pokestops.Constants;
 import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
 

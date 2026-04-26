@@ -1,19 +1,31 @@
-package dev.matthiesen.common.template_cobblemon_sidemod;
+package dev.matthiesen.common.cobblemon_pokestops;
 
 import com.mojang.brigadier.CommandDispatcher;
-import dev.matthiesen.common.template_cobblemon_sidemod.commands.CommandRegistry;
-import dev.matthiesen.common.template_cobblemon_sidemod.config.ConfigManager;
-import dev.matthiesen.common.template_cobblemon_sidemod.config.ModConfig;
-import dev.matthiesen.common.template_cobblemon_sidemod.permissions.ModPermissions;
+import dev.matthiesen.common.cobblemon_pokestops.commands.CommandRegistry;
+import dev.matthiesen.common.cobblemon_pokestops.config.*;
+import dev.matthiesen.common.cobblemon_pokestops.permissions.ModPermissions;
+import dev.matthiesen.common.cobblemon_pokestops.platform.CobblemonPokestopsPlatform;
+import dev.matthiesen.common.cobblemon_pokestops.registry.*;
 import net.minecraft.commands.CommandBuildContext;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
 import net.minecraft.server.MinecraftServer;
 
-public class CommonModExample {
+import java.util.ServiceLoader;
+
+public class CobblemonPokestops {
     public static ModPermissions permissions;
     public static ModConfig config;
     public static MinecraftServer currentServer;
+    public static final CobblemonPokestopsPlatform COMMON_PLATFORM = ServiceLoader.load(CobblemonPokestopsPlatform.class).findFirst().orElseThrow();
+
+    public static void preinitialize() {
+        Constants.createInfoLog("Registering Resources");
+        SoundRegistry.init();
+        BlockRegistry.init();
+        BlockEntityRegistry.init();
+        ItemRegistry.init();
+    }
 
     public static void initialize() {
         Constants.createInfoLog("Initialized");

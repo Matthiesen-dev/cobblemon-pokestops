@@ -21,6 +21,8 @@ allprojects {
     repositories {
         mavenCentral()
         maven("https://artefacts.cobblemon.com/releases/")
+        maven("https://repo.spongepowered.org/repository/maven-public")
+        maven("https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/")
     }
 
     tasks {
