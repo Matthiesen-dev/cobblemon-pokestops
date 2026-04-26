@@ -15,7 +15,7 @@ public class ModPermission implements Permission {
     public ModPermission(String node, PermissionLevel level) {
         this.node = node;
         this.level = level;
-        this.identifier = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, this.node);
+        this.identifier = Constants.modResource(this.node);
         this.literal = Constants.MOD_ID + "." + this.node;
     }
 

@@ -9,6 +9,7 @@ architectury {
 
 loom {
     silentMojangMappingsLicense()
+    accessWidenerPath.set(project(":common").file("src/main/resources/cobblemon-pokestops-common.accesswidener"))
 }
 
 dependencies {
