@@ -5,6 +5,11 @@ to place them, but in the future, we may add a way for players to place (or find
 
 Pokestops can be used to get items, and they have a cooldown period after being used.
 
+## Requirements
+
+- [Cobblemon 1.7.3+1.21.1](https://modrinth.com/mod/cobblemon)
+- [Geckolib 4.8.4](https://modrinth.com/mod/geckolib)
+
 ## Available Pokestop Types
 
 ### Pokestop
