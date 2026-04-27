@@ -1,5 +1,6 @@
 package dev.matthiesen.common.cobblemon_pokestops.block;
 
+import dev.matthiesen.common.cobblemon_pokestops.registry.BlockRegistry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -29,6 +30,29 @@ public class PokestopDummyBlock extends Block {
             }
         }
         return InteractionResult.PASS;
+    }
+
+    @Override
+    public void onRemove(BlockState state, Level level, BlockPos pos, BlockState newState, boolean isMoving) {
+        // Only proceed if the block is actually being removed (not just state changed)
+        if (!state.is(newState.getBlock())) {
+            // Assume the main Pokestop is 1 block below the dummy
+            BlockPos parentPos = pos.below();
+            BlockPos parentPos2 = pos.below(2);
+            BlockState parentState = level.getBlockState(parentPos);
+            BlockState parentState2 = level.getBlockState(parentPos2);
+
+            // Check if the block below is actually one of your registered Pokestops
+            // You can check against your Map of suppliers
+            boolean isParentPokestop = BlockRegistry.POKESTOPS.values().stream()
+                    .anyMatch(supplier -> parentState.is(supplier.get()) || parentState2.is(supplier.get()));
+
+            if (isParentPokestop) {
+                // Remove the parent block (setting to air triggers its own cleanup)
+                level.removeBlock(parentPos, false);
+            }
+        }
+        super.onRemove(state, level, pos, newState, isMoving);
     }
 
     @Override

@@ -11,7 +11,13 @@ public class BlockEntityRegistry {
     public static void init() {}
 
     public static final Supplier<BlockEntityType<PokestopEntity>> POKESTOP_BE =
-            registerBlockEntity("pokestop", () -> BlockEntityType.Builder.of(PokestopEntity::new, BlockRegistry.POKESTOP.get()).build(null));
+            registerBlockEntity("pokestop", () -> BlockEntityType.Builder.of(
+                    PokestopEntity::new,
+                    BlockRegistry.POKESTOPS.values()
+                            .stream()
+                            .map(Supplier::get)
+                            .toArray(net.minecraft.world.level.block.Block[]::new)
+            ).build(null));
 
     @SuppressWarnings("SameParameterValue")
     private static <T extends BlockEntity> Supplier<BlockEntityType<T>> registerBlockEntity(String id, Supplier<BlockEntityType<T>> blockEntity) {

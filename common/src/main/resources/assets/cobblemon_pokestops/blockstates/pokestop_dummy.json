@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": { "model": "cobblemon_pokestops:block/pokestop_dummy" }
+  }
+}

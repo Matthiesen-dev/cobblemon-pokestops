@@ -1,6 +1,7 @@
 {
   "itemGroup.cobblemon_pokestops.cobblemon_pokestops_items": "Cobblemon Pokestops",
   "block.cobblemon_pokestops.pokestop": "Pokestop",
+  "block.cobblemon_pokestops.pokestop_gold": "Pokestop",
 
   "message.cobblemon_pokestops.spin": "You spun the Pokestop!",
   "message.cobblemon_pokestops.cooldown": "You can't spin the Pokestop for another %s!"

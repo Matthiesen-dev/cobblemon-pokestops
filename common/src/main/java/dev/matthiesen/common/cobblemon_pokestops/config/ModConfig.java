@@ -13,6 +13,9 @@ public class ModConfig {
     @SerializedName("localBroadcastRadius")
     public double localBroadcastRadius = 50.0;
 
+    @SerializedName("pokestopCooldownSeconds")
+    public int pokestopCooldownSeconds = 300; // 5 minute cooldown
+
     @SerializedName("extraRarities")
     public List<String> extraRarities = List.of(
             "cobblemon:master_ball",

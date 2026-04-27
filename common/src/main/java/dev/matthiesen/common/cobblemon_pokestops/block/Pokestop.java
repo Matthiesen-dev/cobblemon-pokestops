@@ -1,5 +1,6 @@
 package dev.matthiesen.common.cobblemon_pokestops.block;
 
+import com.cobblemon.mod.common.CobblemonSounds;
 import com.mojang.serialization.MapCodec;
 import dev.matthiesen.common.cobblemon_pokestops.CobblemonPokestops;
 import dev.matthiesen.common.cobblemon_pokestops.Constants;
@@ -8,6 +9,7 @@ import dev.matthiesen.common.cobblemon_pokestops.registry.*;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.DustColorTransitionOptions;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -67,15 +69,15 @@ public class Pokestop extends DirectionalBlock implements EntityBlock {
         if (level.isClientSide) return InteractionResult.SUCCESS;
 
         if (level.getBlockEntity(pos) instanceof PokestopEntity be) {
+            ServerLevel serverLevel = (ServerLevel) level;
             if (be.canPlayerSpin(player)) {
                 generatePokestopLoot(player);
-                be.setPlayerCooldown(player, 300); // 5 minute cooldown
+                be.setPlayerCooldown(player, CobblemonPokestops.config.pokestopCooldownSeconds);
                 level.sendBlockUpdated(pos, state, state, 3);
                 be.triggerAnim("cooldown-spinner", "spin_trigger");
                 be.triggerSpin();
                 player.displayClientMessage(Component.translatable("message.cobblemon_pokestops.spin")
                         .withStyle(ChatFormatting.GREEN), true);
-                ServerLevel serverLevel = (ServerLevel) level;
                 serverLevel.sendParticles(
                         getParticle(), // The particle type
                         pos.getX() + 0.5, pos.getY() + 2.5, pos.getZ() + 0.5, // Center of the model
@@ -88,6 +90,14 @@ public class Pokestop extends DirectionalBlock implements EntityBlock {
             } else {
                 player.displayClientMessage(Component.translatable("message.cobblemon_pokestops.cooldown", be.getPlayerCooldown(player))
                         .withStyle(ChatFormatting.RED), true);
+                serverLevel.sendParticles(
+                        ParticleTypes.ELECTRIC_SPARK, // The particle type
+                        pos.getX() + 0.5, pos.getY() + 2.5, pos.getZ() + 0.5, // Center of the model
+                        20,    // Number of particles
+                        0.2, 0.5, 0.2, // Spread (randomness in position)
+                        0.0 // Speed/Velocity
+                );
+                serverLevel.playSound(null, pos, CobblemonSounds.POKE_BALL_HIT, SoundSource.MASTER, 1.0f, 1.0f);
                 return InteractionResult.FAIL;
             }
         }
@@ -196,6 +206,7 @@ public class Pokestop extends DirectionalBlock implements EntityBlock {
             super.onRemove(state, level, pos, newState, moved);
         }
     }
+
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
@@ -208,7 +219,7 @@ public class Pokestop extends DirectionalBlock implements EntityBlock {
 
     @Override
     public @NotNull RenderShape getRenderShape(BlockState state) {
-        return RenderShape.MODEL;
+        return RenderShape.ENTITYBLOCK_ANIMATED;
     }
 
     @Override
