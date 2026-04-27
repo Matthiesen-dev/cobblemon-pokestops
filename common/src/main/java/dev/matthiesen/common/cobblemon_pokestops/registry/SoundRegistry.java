@@ -12,6 +12,7 @@ public class SoundRegistry {
     public static Supplier<SoundEvent> POKESTOP_SPIN = registerSound("pokestop_spin", () ->
             SoundEvent.createVariableRangeEvent(Constants.modResource("pokestop_spin")));
 
+    @SuppressWarnings("SameParameterValue")
     private static <T extends SoundEvent> Supplier<T> registerSound(String id, Supplier<T> sound) {
         return CobblemonPokestops.COMMON_PLATFORM.registerSound(id, sound);
     }

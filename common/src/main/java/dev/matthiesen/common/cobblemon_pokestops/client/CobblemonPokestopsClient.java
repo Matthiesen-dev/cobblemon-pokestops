@@ -16,10 +16,9 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import java.util.function.BiConsumer;
 
 public class CobblemonPokestopsClient {
-    @SuppressWarnings("rawtypes")
+    @SuppressWarnings({"rawtypes", "unused"})
     public static void registerRenderers(BiConsumer<EntityType<? extends Entity>, EntityRendererProvider> entityRenderers,
                                          BiConsumer<BlockEntityType<? extends BlockEntity>, BlockEntityRendererProvider> blockEntityRenderers) {
-
         blockEntityRenderers.accept(BlockEntityRegistry.POKESTOP_BE.get(), context -> new PokestopRenderer());
     }
 

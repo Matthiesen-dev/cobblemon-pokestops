@@ -17,15 +17,18 @@ public class ItemRegistry {
     public static final Supplier<BlockItem> POKESTOP =
             registerItem("pokestop", () -> new PokestopItem(BlockRegistry.POKESTOP.get(), new Item.Properties()));
 
+    @SuppressWarnings("SameParameterValue")
     private static <T extends Item> Supplier<T> registerItem(String id, Supplier<T> item) {
         return CobblemonPokestops.COMMON_PLATFORM.registerItem(id, item);
     }
 
-    public static final Supplier<CreativeModeTab> POKESTOPS_TAB = CobblemonPokestops.COMMON_PLATFORM.registerCreativeModeTab("cobblemon_pokestops_items", () -> CobblemonPokestops.COMMON_PLATFORM.newCreativeTabBuilder()
-            .title(Component.translatable("itemGroup." + Constants.MOD_ID + ".cobblemon_pokestops_items"))
-            .icon(() -> new ItemStack(ItemRegistry.POKESTOP.get()))
-            .displayItems((enabledFeatures, entries) -> {
-                entries.accept(ItemRegistry.POKESTOP.get());
-            })
-            .build());
+    @SuppressWarnings("unused")
+    public static final Supplier<CreativeModeTab> POKESTOPS_TAB = CobblemonPokestops.COMMON_PLATFORM
+            .registerCreativeModeTab("cobblemon_pokestops_items", () -> CobblemonPokestops.COMMON_PLATFORM
+                    .newCreativeTabBuilder()
+                    .title(Component.translatable("itemGroup." + Constants.MOD_ID + ".cobblemon_pokestops_items"))
+                    .icon(() -> new ItemStack(ItemRegistry.POKESTOP.get()))
+                    .displayItems((enabledFeatures, entries) -> entries.accept(ItemRegistry.POKESTOP.get()))
+                    .build()
+            );
 }

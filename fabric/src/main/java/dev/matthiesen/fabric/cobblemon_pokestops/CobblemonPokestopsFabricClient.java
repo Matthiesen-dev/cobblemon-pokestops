@@ -12,6 +12,8 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
+import java.util.Objects;
+
 public class CobblemonPokestopsFabricClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
@@ -31,7 +33,7 @@ public class CobblemonPokestopsFabricClient implements ClientModInitializer {
 
                     LevelRenderer.renderVoxelShape(
                             context.matrixStack(),
-                            context.consumers().getBuffer(RenderType.lines()),
+                            Objects.requireNonNull(context.consumers()).getBuffer(RenderType.lines()),
                             shape,
                             x, y, z,
                             0.0F, 0.0F, 0.0F, 0.4F, false

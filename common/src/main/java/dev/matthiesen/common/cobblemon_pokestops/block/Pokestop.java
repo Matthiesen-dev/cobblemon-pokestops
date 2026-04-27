@@ -4,10 +4,7 @@ import com.mojang.serialization.MapCodec;
 import dev.matthiesen.common.cobblemon_pokestops.CobblemonPokestops;
 import dev.matthiesen.common.cobblemon_pokestops.Constants;
 import dev.matthiesen.common.cobblemon_pokestops.block.entity.PokestopEntity;
-import dev.matthiesen.common.cobblemon_pokestops.registry.BlockEntityRegistry;
-import dev.matthiesen.common.cobblemon_pokestops.registry.BlockRegistry;
-import dev.matthiesen.common.cobblemon_pokestops.registry.ModLootTables;
-import dev.matthiesen.common.cobblemon_pokestops.registry.SoundRegistry;
+import dev.matthiesen.common.cobblemon_pokestops.registry.*;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.DustColorTransitionOptions;
@@ -76,19 +73,21 @@ public class Pokestop extends DirectionalBlock implements EntityBlock {
                 level.sendBlockUpdated(pos, state, state, 3);
                 be.triggerAnim("cooldown-spinner", "spin_trigger");
                 be.triggerSpin();
-                player.displayClientMessage(Component.literal("You spun the Pokestop!").withStyle(ChatFormatting.GREEN), true);// Inside your useWithoutItem or spin trigger logic
+                player.displayClientMessage(Component.translatable("message.cobblemon_pokestops.spin")
+                        .withStyle(ChatFormatting.GREEN), true);
                 ServerLevel serverLevel = (ServerLevel) level;
                 serverLevel.sendParticles(
                         getParticle(), // The particle type
                         pos.getX() + 0.5, pos.getY() + 2.5, pos.getZ() + 0.5, // Center of the model
-                        50,   // Number of particles
+                        100,   // Number of particles
                         0.75, 0.75, 0.75, // Spread (randomness in position)
                         0.0   // Speed/Velocity
                 );
                 serverLevel.playSound(null, pos, SoundRegistry.POKESTOP_SPIN.get(), SoundSource.MASTER, 1.0f, 1.0f);
                 return InteractionResult.SUCCESS;
             } else {
-                player.displayClientMessage(Component.literal("Pokestop is on cooldown! " + be.getPlayerCooldown(player)).withStyle(ChatFormatting.RED), true);
+                player.displayClientMessage(Component.translatable("message.cobblemon_pokestops.cooldown", be.getPlayerCooldown(player))
+                        .withStyle(ChatFormatting.RED), true);
                 return InteractionResult.FAIL;
             }
         }
@@ -139,6 +138,8 @@ public class Pokestop extends DirectionalBlock implements EntityBlock {
 
     private void broadcastRareFind(ServerPlayer player, ItemStack stack) {
         Component message = Component.empty()
+                .append(Component.literal("PokéStop").withStyle(ChatFormatting.BOLD, ChatFormatting.BLUE))
+                .append(Component.literal(": "))
                 .append(player.getName().copy().withStyle(ChatFormatting.GREEN))
                 .append(Component.literal(" just found "))
                 .append(stack.getDisplayName().copy().withStyle(stack.getRarity().color()))
@@ -156,8 +157,9 @@ public class Pokestop extends DirectionalBlock implements EntityBlock {
         }
     }
 
+    @SuppressWarnings("NullableProblems")
     @Override
-    public @NotNull MapCodec<? extends DirectionalBlock> codec() {
+    public @Nullable MapCodec<? extends DirectionalBlock> codec() {
         return null;
     }
 
@@ -199,7 +201,7 @@ public class Pokestop extends DirectionalBlock implements EntityBlock {
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
         if (level.isClientSide) return null;
         if (type == BlockEntityRegistry.POKESTOP_BE.get()) {
-            return (lvl, pos, st, be) -> PokestopEntity.tick(lvl, pos, st, (PokestopEntity) be);
+            return (lvl, pos, st, be) -> PokestopEntity.tick(lvl, (PokestopEntity) be);
         }
         return null;
     }

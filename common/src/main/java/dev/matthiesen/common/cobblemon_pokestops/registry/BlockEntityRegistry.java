@@ -13,6 +13,7 @@ public class BlockEntityRegistry {
     public static final Supplier<BlockEntityType<PokestopEntity>> POKESTOP_BE =
             registerBlockEntity("pokestop", () -> BlockEntityType.Builder.of(PokestopEntity::new, BlockRegistry.POKESTOP.get()).build(null));
 
+    @SuppressWarnings("SameParameterValue")
     private static <T extends BlockEntity> Supplier<BlockEntityType<T>> registerBlockEntity(String id, Supplier<BlockEntityType<T>> blockEntity) {
         return CobblemonPokestops.COMMON_PLATFORM.registerBlockEntity(id, blockEntity);
     }

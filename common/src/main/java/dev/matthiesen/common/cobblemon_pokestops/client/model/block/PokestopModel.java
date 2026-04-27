@@ -10,9 +10,8 @@ import software.bernie.geckolib.model.GeoModel;
 public class PokestopModel extends GeoModel<PokestopEntity> {
     private final ResourceLocation model = Constants.modResource("geo/block/pokestop.geo.json");
     private final ResourceLocation texture = Constants.modResource("textures/block/pokestop.png");
+    private final ResourceLocation texture_cooldown = Constants.modResource("textures/block/pokestop_cooldown.png");
     private final ResourceLocation animations = Constants.modResource("animations/block/pokestop.animation.json");
-
-    private final ResourceLocation redTexture = Constants.modResource("textures/block/pokestop_red.png");
 
     @Override
     public ResourceLocation getModelResource(PokestopEntity animatable) {
@@ -23,7 +22,7 @@ public class PokestopModel extends GeoModel<PokestopEntity> {
     public ResourceLocation getTextureResource(PokestopEntity animatable) {
         Player player = Minecraft.getInstance().player;
         if (player != null && !animatable.canPlayerSpin(player)) {
-            return this.redTexture;
+            return this.texture_cooldown;
         }
         return this.texture;
     }

@@ -21,6 +21,7 @@ import software.bernie.geckolib.animation.*;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 import java.util.UUID;
 
@@ -40,7 +41,7 @@ public class PokestopEntity extends BlockEntity implements GeoBlockEntity {
         super(BlockEntityRegistry.POKESTOP_BE.get(), pos, state);
     }
 
-    public static void tick(Level level, BlockPos pos, BlockState state, PokestopEntity be) {
+    public static void tick(Level level, PokestopEntity be) {
         if (level.isClientSide) return;
 
         // Run cleanup every 200 ticks (10 seconds)
@@ -71,7 +72,6 @@ public class PokestopEntity extends BlockEntity implements GeoBlockEntity {
     }
 
     public String getPlayerCooldown(Player player) {
-        // Get and return as a normal string for display (As mm:ss)
         long currentTime = player.level().getGameTime();
         long cooldownEnd = playerCooldowns.getOrDefault(player.getUUID(), 0L);
         if (currentTime >= cooldownEnd) {
@@ -80,7 +80,7 @@ public class PokestopEntity extends BlockEntity implements GeoBlockEntity {
         long remainingTicks = cooldownEnd - currentTime;
         long minutes = remainingTicks / 1200; // 20 ticks per second * 60 seconds
         long seconds = (remainingTicks / 20) % 60;
-        return String.format("%02d:%02d", minutes, seconds);
+        return String.format(Locale.ROOT, "%d:%02d", minutes, seconds);
     }
 
     // Call this from your Block class when the player interacts successfully

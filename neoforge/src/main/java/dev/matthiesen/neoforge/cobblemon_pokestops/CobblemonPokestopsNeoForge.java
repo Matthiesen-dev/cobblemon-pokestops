@@ -14,7 +14,6 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.common.NeoForge;
-import net.neoforged.neoforge.event.RegisterCommandsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import net.neoforged.neoforge.event.server.ServerStoppingEvent;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -43,11 +42,6 @@ public class CobblemonPokestopsNeoForge {
     public void onServerStarting(ServerStartingEvent event) {
         MinecraftServer server = event.getServer();
         CobblemonPokestops.onStartup(server);
-    }
-
-    @SubscribeEvent
-    public void onCommandRegistration(RegisterCommandsEvent event) {
-        CobblemonPokestops.registerCommands(event.getDispatcher(), event.getBuildContext(), event.getCommandSelection());
     }
 
     @SubscribeEvent(priority = EventPriority.HIGHEST)
