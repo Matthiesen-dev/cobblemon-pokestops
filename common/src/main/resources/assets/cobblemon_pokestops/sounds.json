@@ -1,0 +1,10 @@
+{
+  "pokestop_spin": {
+    "sounds": [
+      {
+        "name": "cobblemon_pokestops:pokestop_spin",
+        "stream": false
+      }
+    ]
+  }
+}
