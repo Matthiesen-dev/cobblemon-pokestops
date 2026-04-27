@@ -11,8 +11,11 @@ public class BlockRegistry {
     public static void init() {}
 
     public static final Supplier<Pokestop> POKESTOP = registerBlock("pokestop", Pokestop::new);
+
+    // Utility block
     public static final Supplier<PokestopDummyBlock> POKESTOP_DUMMY = registerBlock("pokestop_dummy", PokestopDummyBlock::new);
 
+    // Registration
     private static <T extends Block> Supplier<T> registerBlock(String id, Supplier<T> block) {
         return CobblemonPokestops.COMMON_PLATFORM.registerBlock(id, block);
     }
