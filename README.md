@@ -11,9 +11,9 @@ Pokestops can be used to get items, and they have a cooldown period after being 
 
 The standard Pokestop design, which can be found in various colors.
 
-- Cooldown: 5 minutes
-- Rewards: 1-2 random items (e.g., Pokeballs, Potions, Revives)
-- Color Variants:
+- **Cooldown:** 5 minutes
+- **Rewards:** 1-2 random items (e.g., Pokeballs, Potions, Revives)
+- **Color Variants:**
   - Blue
   - Gold
   - Black
@@ -29,7 +29,7 @@ cooldown period to expire before they can use it again.
 The cooldown time and rewards can be configured in the mod's configuration file. This allows server owners to customize the
 Pokestop experience to fit their server's needs. The configuration file can be found in the server's config directory after installing the mod.
 
-- Default config location: `<server_dir>/config/cobblemon_pokestops/config.json`
+- **Default config location:** `<server_dir>/config/cobblemon_pokestops/config.json`
 
 ### Default Configuration Example
 
@@ -60,7 +60,7 @@ Pokestop experience to fit their server's needs. The configuration file can be f
 The rewards given by Pokestops are determined by a loot table. The default loot table can be found in the mod's [resources directory](https://github.com/Matthiesen-dev/cobblemon-pokestops/tree/main/common/src/main/resources/data/cobblemon_pokestops/loot_table/gameplay), and server owners can create their own custom loot tables to further customize the rewards.
 
 **Datapack Loot Table Locations:**
-- PokeStop: `/data/cobblemon_pokestops/loot_table/gameplay/pokestop_loot.json`
+- **PokeStop:** `/data/cobblemon_pokestops/loot_table/gameplay/pokestop_loot.json`
 
 ## Future Plans
 
