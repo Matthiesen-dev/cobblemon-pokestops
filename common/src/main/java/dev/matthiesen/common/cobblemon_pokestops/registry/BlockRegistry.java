@@ -12,7 +12,7 @@ import java.util.function.Supplier;
 public class BlockRegistry {
     public static void init() {}
 
-    public static String[] POKESTOP_VARIANTS = {"gold", "black"};
+    public static String[] POKESTOP_VARIANTS = {"gold", "black", "green"};
 
     public static Map<String, Supplier<Pokestop>> POKESTOPS = new HashMap<>();
 

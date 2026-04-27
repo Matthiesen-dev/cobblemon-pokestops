@@ -16,6 +16,7 @@ The standard Pokestop design, which can be found in various colors.
 - **Color Variants:**
   - Blue
   - Gold
+  - Green
   - Black
 
 ## Usage

@@ -1,0 +1,25 @@
+{
+  "credit": "Made with Blockbench",
+  "textures": {
+    "particle": "cobblemon_pokestops:block/empty"
+  },
+  "parent": "builtin/entity",
+  "texture_size": [
+    128,
+    128
+  ],
+  "display": {
+    "gui": {
+      "translation": [
+        0,
+        -7.75,
+        0
+      ],
+      "scale": [
+        0.27,
+        0.27,
+        0.27
+      ]
+    }
+  }
+}
