@@ -12,14 +12,14 @@ import java.util.function.Supplier;
 public class BlockRegistry {
     public static void init() {}
 
-    public static String[] COLOR_VARIANTS = {"gold"};
+    public static String[] POKESTOP_VARIANTS = {"gold", "black"};
 
     public static Map<String, Supplier<Pokestop>> POKESTOPS = new HashMap<>();
 
     static {
         POKESTOPS.put("pokestop", registerBlock("pokestop", Pokestop::new));
 
-        for (String variant : COLOR_VARIANTS) {
+        for (String variant : POKESTOP_VARIANTS) {
             String name = "pokestop_" + variant;
             Supplier<Pokestop> blockSupplier = registerBlock(name, Pokestop::new);
             POKESTOPS.put(name, blockSupplier);
