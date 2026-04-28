@@ -16,13 +16,14 @@ public class BlockRegistry {
     public static void init() {}
 
     public static final String[] POKESTOP_VARIANTS = {"gold", "black", "green"};
+    public static final String[] WINGEDSTOP_VARIANTS = {"gold"};
 
     public static final Map<String, Supplier<Pokestop>> POKESTOPS = new HashMap<>();
     public static final Map<String, Supplier<Wingedstop>> WINGEDSTOPS = new HashMap<>();
 
     static {
         registerFamilyWithVariants(POKESTOPS, "pokestop", POKESTOP_VARIANTS, Pokestop::new);
-        registerFamilyWithVariants(WINGEDSTOPS, "wingedstop", new String[0], Wingedstop::new);
+        registerFamilyWithVariants(WINGEDSTOPS, "wingedstop", WINGEDSTOP_VARIANTS, Wingedstop::new);
     }
 
     private static <T extends Block> void registerFamilyWithVariants(

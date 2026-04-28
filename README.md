@@ -32,6 +32,7 @@ A Pokestop variant with wings, giving it a more unique appearance.
 - **Rewards:** 1-2 random items from the Wingedstop loot table
 - **Color Variants:**
   - Blue
+  - Gold
 
 ## Usage
 
