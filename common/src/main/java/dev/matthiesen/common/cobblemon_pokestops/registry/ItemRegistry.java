@@ -2,29 +2,58 @@ package dev.matthiesen.common.cobblemon_pokestops.registry;
 
 import dev.matthiesen.common.cobblemon_pokestops.CobblemonPokestops;
 import dev.matthiesen.common.cobblemon_pokestops.Constants;
-import dev.matthiesen.common.cobblemon_pokestops.block.Pokestop;
 import dev.matthiesen.common.cobblemon_pokestops.item.PokestopItem;
+import dev.matthiesen.common.cobblemon_pokestops.item.WingedstopItem;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.Block;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
 import java.util.function.Supplier;
 
 public class ItemRegistry {
     public static void init() {}
 
     public static Map<String, Supplier<BlockItem>> POKESTOP_ITEMS = new HashMap<>();
+    public static Map<String, Supplier<BlockItem>> WINGEDSTOP_ITEMS = new HashMap<>();
 
     static {
-        for (var entry : BlockRegistry.POKESTOPS.entrySet()) {
+        registerStopItems(
+                BlockRegistry.POKESTOPS,
+                POKESTOP_ITEMS,
+                block -> new PokestopItem(block, new Item.Properties())
+        );
+        registerStopItems(
+                BlockRegistry.WINGEDSTOPS,
+                WINGEDSTOP_ITEMS,
+                block -> new WingedstopItem(block, new Item.Properties())
+        );
+    }
+
+    private static <B extends Block> void registerStopItems(
+            Map<String, Supplier<B>> blocks,
+            Map<String, Supplier<BlockItem>> targetItems,
+            Function<B, BlockItem> itemFactory
+    ) {
+        for (var entry : blocks.entrySet()) {
             String name = entry.getKey();
-            Supplier<Pokestop> blockSupplier = entry.getValue();
-            Supplier<BlockItem> itemSupplier = registerItem(name, () -> new PokestopItem(blockSupplier.get(), new Item.Properties()));
-            POKESTOP_ITEMS.put(name, itemSupplier);
+            Supplier<B> blockSupplier = entry.getValue();
+            Supplier<BlockItem> itemSupplier = registerItem(name, () -> itemFactory.apply(blockSupplier.get()));
+            targetItems.put(name, itemSupplier);
+        }
+    }
+
+    private static void addAllItemsToCreativeTab(CreativeModeTab.Output entries, List<Map<String, Supplier<BlockItem>>> itemMaps) {
+        for (Map<String, Supplier<BlockItem>> itemMap : itemMaps) {
+            for (var entry : itemMap.entrySet()) {
+                entries.accept(entry.getValue().get());
+            }
         }
     }
 
@@ -38,11 +67,9 @@ public class ItemRegistry {
                     .newCreativeTabBuilder()
                     .title(Component.translatable("itemGroup." + Constants.MOD_ID + ".cobblemon_pokestops_items"))
                     .icon(() -> new ItemStack(ItemRegistry.POKESTOP_ITEMS.get("pokestop").get()))
-                    .displayItems((enabledFeatures, entries) -> {
-                        for (var entry : ItemRegistry.POKESTOP_ITEMS.entrySet()) {
-                            entries.accept(entry.getValue().get());
-                        }
-                    })
+                    .displayItems((enabledFeatures, entries) ->
+                            addAllItemsToCreativeTab(entries, List.of(ItemRegistry.POKESTOP_ITEMS, ItemRegistry.WINGEDSTOP_ITEMS))
+                    )
                     .build()
             );
 }

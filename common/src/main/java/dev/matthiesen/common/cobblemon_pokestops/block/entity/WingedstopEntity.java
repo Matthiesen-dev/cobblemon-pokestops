@@ -6,16 +6,16 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.state.BlockState;
 import software.bernie.geckolib.animation.RawAnimation;
 
-public class PokestopEntity extends StopEntityTemplate {
+public class WingedstopEntity extends StopEntityTemplate {
     private static final RawAnimation IDLE_ANIM = RawAnimation.begin()
-            .thenLoop("animation.pokestop.idle_closed");
+            .thenLoop("animation.wingedstop.idle_closed");
     private static final RawAnimation IDLE_COOLDOWN_ANIM = RawAnimation.begin()
-            .thenLoop("animation.pokestop.idle_open");
+            .thenLoop("animation.wingedstop.idle_open");
     private static final RawAnimation SPIN_ANIM = RawAnimation.begin()
-            .thenPlay("animation.pokestop.open");
+            .thenPlay("animation.wingedstop.open");
 
-    public PokestopEntity(BlockPos pos, BlockState state) {
-        super(pos, state, BlockEntityRegistry.POKESTOP_BE);
+    public WingedstopEntity(BlockPos pos, BlockState state) {
+        super(pos, state, BlockEntityRegistry.WINGEDSTOP_BE);
     }
 
     @Override

@@ -1,16 +1,16 @@
 package dev.matthiesen.common.cobblemon_pokestops.client.model.item;
 
-import dev.matthiesen.common.cobblemon_pokestops.item.PokestopItem;
+import dev.matthiesen.common.cobblemon_pokestops.item.WingedstopItem;
 import dev.matthiesen.common.cobblemon_pokestops.templates.block.StopItemModelTemplate;
 
-public class PokestopItemModel extends StopItemModelTemplate<PokestopItem> {
+public class WingedstopItemModel extends StopItemModelTemplate<WingedstopItem> {
     @Override
     protected String getModelName() {
-        return "pokestop";
+        return "wingedstop";
     }
 
     @Override
     protected String getAnimationName() {
-        return "pokestop";
+        return "wingedstop";
     }
 }

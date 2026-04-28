@@ -1,7 +1,5 @@
 {
   "variants": {
-    "": {
-      "model": "cobblemon_pokestops:block/pokestop_green"
-    }
+    "": { "model": "cobblemon_pokestops:block/pokestop_green" }
   }
 }

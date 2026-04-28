@@ -17,12 +17,21 @@ Pokestops can be used to get items, and they have a cooldown period after being 
 The standard Pokestop design, which can be found in various colors.
 
 - **Cooldown:** 5 minutes
-- **Rewards:** 1-2 random items (e.g., Pokeballs, Potions, Revives)
+- **Rewards:** 1-2 random items from the Pokestop loot table
 - **Color Variants:**
   - Blue
   - Gold
   - Green
   - Black
+
+### Wingedstop
+
+A Pokestop variant with wings, giving it a more unique appearance.
+
+- **Cooldown:** 5 minutes
+- **Rewards:** 1-2 random items from the Wingedstop loot table
+- **Color Variants:**
+  - Blue
 
 ## Usage
 
@@ -44,6 +53,7 @@ Pokestop experience to fit their server's needs. The configuration file can be f
   "enableGlobalBroadcast": false,
   "localBroadcastRadius": 50.0,
   "pokestopCooldownSeconds": 300,
+  "wingedstopCooldownSeconds": 300,
   "extraRarities": [
     "cobblemon:master_ball",
     "cobblemon:ability_capsule",
@@ -59,6 +69,7 @@ Pokestop experience to fit their server's needs. The configuration file can be f
 - `enableGlobalBroadcast`: If true, all players will receive a message when a Pokestop is used. If false, only players within the local broadcast radius will receive the message.
 - `localBroadcastRadius`: The radius (in blocks) within which players will receive a message when a Pokestop is used if global broadcast is disabled.
 - `pokestopCooldownSeconds`: The cooldown time (in seconds) for Pokestops after being used.
+- `wingedstopCooldownSeconds`: The cooldown time (in seconds) for Wingedstops after being used.
 - `extraRarities`: A list of additional items list that defines items as "Rare" for the purpose of the Pokestop rewards. These items are used for determining the rarity of rewards given by Pokestops for usage in the rarity broadcast message.
 
 ### LootTable Configuration
@@ -67,6 +78,7 @@ The rewards given by Pokestops are determined by a loot table. The default loot 
 
 **Datapack Loot Table Locations:**
 - **PokeStop:** `/data/cobblemon_pokestops/loot_table/gameplay/pokestop_loot.json`
+- **WingedStop:** `/data/cobblemon_pokestops/loot_table/gameplay/wingedstop_loot.json`
 
 ## Future Plans
 
