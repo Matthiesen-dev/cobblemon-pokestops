@@ -30,6 +30,8 @@ public class ModTags {
         }
     }
 
+    // --- Datagen ---
+
     public static final Map<TagKey<Block>, Block[]> ALL_TAGS = new HashMap<>();
     public static final List<TagKey<Block>> RELOCATION_NOT_SUPPORTED_TAGS = List.of(Blocks.POKESTOPS, Blocks.WINGEDSTOPS, Blocks.DUMMYBLOCKS);
 

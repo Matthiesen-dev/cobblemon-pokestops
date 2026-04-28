@@ -45,6 +45,8 @@ public class BlockRegistry {
         return CobblemonPokestops.COMMON_PLATFORM.registerBlock(id, block);
     }
 
+    // --- Datagen ---
+
     public static Collection<Supplier<? extends Block>> getAllTemplates() {
         List<Supplier<? extends Block>> templates = new ArrayList<>();
         POKESTOPS.forEach((id, block) -> templates.add(block));

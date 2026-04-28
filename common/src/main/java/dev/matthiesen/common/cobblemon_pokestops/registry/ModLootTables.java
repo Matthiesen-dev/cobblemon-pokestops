@@ -76,6 +76,8 @@ public class ModLootTables {
                             .add(createLootItem(CobblemonItems.ABILITY_CAPSULE, 5, 1.0f))
             );
 
+    // --- Datagen ---
+
     public static Map<ResourceKey<LootTable>, LootTable.Builder> LOOT_TABLES = new HashMap<>();
 
     static {
