@@ -21,7 +21,7 @@ public class ModBlockTagProviderClass extends FabricTagProvider.BlockTagProvider
 
         var builder = getOrCreateTagBuilder(ConventionalBlockTags.RELOCATION_NOT_SUPPORTED);
 
-        for (var entry : ModTags.ALL_TAG_KEYS) {
+        for (var entry : ModTags.RELOCATION_NOT_SUPPORTED_TAGS) {
             builder.addTag(entry);
         }
     }

@@ -31,7 +31,7 @@ public class ModTags {
     }
 
     public static final Map<TagKey<Block>, Block[]> ALL_TAGS = new HashMap<>();
-    public static final List<TagKey<Block>> ALL_TAG_KEYS = List.of(Blocks.POKESTOPS, Blocks.WINGEDSTOPS, Blocks.DUMMYBLOCKS);
+    public static final List<TagKey<Block>> RELOCATION_NOT_SUPPORTED_TAGS = List.of(Blocks.POKESTOPS, Blocks.WINGEDSTOPS, Blocks.DUMMYBLOCKS);
 
     static {
         ALL_TAGS.put(Blocks.POKESTOPS, supplierToBlock(BlockRegistry.POKESTOPS.values()));
