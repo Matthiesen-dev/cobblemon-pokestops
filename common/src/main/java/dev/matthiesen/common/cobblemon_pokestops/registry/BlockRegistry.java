@@ -5,6 +5,7 @@ import dev.matthiesen.common.cobblemon_pokestops.block.Pokestop;
 import dev.matthiesen.common.cobblemon_pokestops.block.PokestopDummyBlock;
 import dev.matthiesen.common.cobblemon_pokestops.block.Wingedstop;
 import dev.matthiesen.common.cobblemon_pokestops.block.WingedstopDummyBlock;
+import dev.matthiesen.common.cobblemon_pokestops.templates.block.LootStopTemplate;
 import net.minecraft.world.level.block.Block;
 
 import java.util.Arrays;
@@ -45,5 +46,12 @@ public class BlockRegistry {
     // Registration
     private static <T extends Block> Supplier<T> registerBlock(String id, Supplier<T> block) {
         return CobblemonPokestops.COMMON_PLATFORM.registerBlock(id, block);
+    }
+
+    public static Map<String, Supplier<? extends LootStopTemplate>> getAllTemplates() {
+        Map<String, Supplier<? extends LootStopTemplate>> templates = new HashMap<>();
+        POKESTOPS.forEach((id, block) -> templates.put(id, () -> (LootStopTemplate) block.get()));
+        WINGEDSTOPS.forEach((id, block) -> templates.put(id, () -> (LootStopTemplate) block.get()));
+        return templates;
     }
 }
