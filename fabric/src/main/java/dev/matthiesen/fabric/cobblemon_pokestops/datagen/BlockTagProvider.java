@@ -8,8 +8,8 @@ import net.minecraft.core.HolderLookup;
 
 import java.util.concurrent.CompletableFuture;
 
-public class ModBlockTagProviderClass extends FabricTagProvider.BlockTagProvider {
-    public ModBlockTagProviderClass(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
+public class BlockTagProvider extends FabricTagProvider.BlockTagProvider {
+    public BlockTagProvider(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
         super(output, registriesFuture);
     }
 

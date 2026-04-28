@@ -18,7 +18,7 @@
       "dev.matthiesen.fabric.cobblemon_pokestops.CobblemonPokestopsFabricClient"
     ],
     "fabric-datagen": [
-        "dev.matthiesen.fabric.cobblemon_pokestops.CobblemonPokestopsDataGenerator"
+      "dev.matthiesen.fabric.cobblemon_pokestops.datagen.DataGenerator"
     ]
   },
   "depends": {
