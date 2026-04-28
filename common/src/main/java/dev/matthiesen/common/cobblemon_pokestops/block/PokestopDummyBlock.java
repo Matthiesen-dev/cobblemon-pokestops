@@ -1,10 +1,10 @@
 package dev.matthiesen.common.cobblemon_pokestops.block;
 
+import dev.matthiesen.common.cobblemon_pokestops.registry.ModTags;
 import dev.matthiesen.common.cobblemon_pokestops.templates.block.DummyBlockTemplate;
-import dev.matthiesen.common.cobblemon_pokestops.registry.BlockRegistry;
 
 public class PokestopDummyBlock extends DummyBlockTemplate {
     public PokestopDummyBlock() {
-        super(matchesRegistered(BlockRegistry.POKESTOPS));
+        super(matchesRegistered(ModTags.Blocks.POKESTOPS));
     }
 }

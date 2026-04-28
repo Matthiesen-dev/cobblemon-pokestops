@@ -1,6 +1,7 @@
 package dev.matthiesen.common.cobblemon_pokestops.templates.block;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.BlockGetter;
@@ -13,9 +14,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Map;
 import java.util.function.Predicate;
-import java.util.function.Supplier;
 
 public class DummyBlockTemplate extends Block {
     private static final VoxelShape DEFAULT_MIDDLE_SHAPE = Block.box(4.0D, 0.0D, 4.0D, 12.0D, 16.0D, 12.0D);
@@ -56,8 +55,8 @@ public class DummyBlockTemplate extends Block {
         return Properties.of().noOcclusion().strength(-1.0f, -1.0f);
     }
 
-    protected static Predicate<BlockState> matchesRegistered(Map<String, ? extends Supplier<? extends Block>> registeredBlocks) {
-        return state -> registeredBlocks.values().stream().anyMatch(supplier -> state.is(supplier.get()));
+    protected static Predicate<BlockState> matchesRegistered(TagKey<Block> registeredBlocks) {
+        return state -> state.is(registeredBlocks);
     }
 
     @Override
