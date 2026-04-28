@@ -75,7 +75,7 @@ Pokestop experience to fit their server's needs. The configuration file can be f
 
 ### LootTable Configuration
 
-The rewards given by Pokestops are determined by a loot table. The default loot table can be found in the mod's [resources directory](https://github.com/Matthiesen-dev/cobblemon-pokestops/tree/main/common/src/main/resources/data/cobblemon_pokestops/loot_table/gameplay), and server owners can create their own custom loot tables to further customize the rewards.
+The rewards given by Pokestops are determined by a loot table. The default loot table can be found in the mod's [resources directory](https://github.com/Matthiesen-dev/cobblemon-pokestops/tree/main/common/src/generated/data/cobblemon_pokestops/loot_table/gameplay), and server owners can create their own custom loot tables to further customize the rewards.
 
 **Datapack Loot Table Locations:**
 - **PokeStop:** `/data/cobblemon_pokestops/loot_table/gameplay/pokestop_loot.json`
