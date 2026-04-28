@@ -10,6 +10,7 @@ public class ModTags {
     public static class Blocks {
         public static final TagKey<Block> POKESTOPS = createTag("pokestops");
         public static final TagKey<Block> WINGEDSTOPS = createTag("wingedstops");
+        public static final TagKey<Block> DUMMYBLOCKS = createTag("dummyblocks");
 
         private static TagKey<Block> createTag(String name) {
             return TagKey.create(Registries.BLOCK, Constants.modResource(name));

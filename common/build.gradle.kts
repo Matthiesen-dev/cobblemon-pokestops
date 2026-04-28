@@ -7,6 +7,14 @@ architectury {
     common("neoforge", "fabric")
 }
 
+val generatedResources = file("src/generated")
+
+sourceSets {
+    main {
+        resources.srcDir(generatedResources)
+    }
+}
+
 loom {
     silentMojangMappingsLicense()
     accessWidenerPath.set(project(":common").file("src/main/resources/cobblemon-pokestops-common.accesswidener"))
@@ -27,6 +35,9 @@ dependencies {
 tasks {
     test {
         useJUnitPlatform()
+    }
+    processResources {
+        duplicatesStrategy = DuplicatesStrategy.INCLUDE
     }
 
     remapSourcesJar {
