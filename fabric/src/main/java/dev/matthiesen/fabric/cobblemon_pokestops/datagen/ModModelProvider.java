@@ -13,9 +13,7 @@ public class ModModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockModelGenerators blockStateModelGenerator) {
-        blockStateModelGenerator.createNonTemplateModelBlock(BlockRegistry.POKESTOP_DUMMY.get());
-        blockStateModelGenerator.createNonTemplateModelBlock(BlockRegistry.WINGEDSTOP_DUMMY.get());
-        for (var entry : BlockRegistry.getAllTemplates().values()) {
+        for (var entry : BlockRegistry.getAllTemplates()) {
             blockStateModelGenerator.createNonTemplateModelBlock(entry.get());
         }
     }
