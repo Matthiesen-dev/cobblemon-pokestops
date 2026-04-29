@@ -14,7 +14,7 @@ public class BlockRegistry {
     public static void init() {}
 
     public static final String[] POKESTOP_VARIANTS = {"gold", "black", "green"};
-    public static final String[] WINGEDSTOP_VARIANTS = {"gold"};
+    public static final String[] WINGEDSTOP_VARIANTS = {"gold", "green"};
 
     public static final Map<String, Supplier<Pokestop>> POKESTOPS = new HashMap<>();
     public static final Map<String, Supplier<Wingedstop>> WINGEDSTOPS = new HashMap<>();

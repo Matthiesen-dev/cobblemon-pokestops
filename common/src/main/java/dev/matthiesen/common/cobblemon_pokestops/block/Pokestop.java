@@ -34,12 +34,12 @@ public class Pokestop extends LootStopTemplate {
 
     @Override
     protected String getSpinMessageKey() {
-        return "message.cobblemon_pokestops.spin";
+        return "message.cobblemon_pokestops.pokestop_spin";
     }
 
     @Override
     protected String getCooldownMessageKey() {
-        return "message.cobblemon_pokestops.cooldown";
+        return "message.cobblemon_pokestops.pokestop_cooldown";
     }
 
     @Override

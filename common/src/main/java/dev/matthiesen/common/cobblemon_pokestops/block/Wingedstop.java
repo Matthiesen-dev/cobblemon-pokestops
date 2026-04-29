@@ -34,17 +34,17 @@ public class Wingedstop extends LootStopTemplate {
 
     @Override
     protected String getSpinMessageKey() {
-        return "message.cobblemon_pokestops.winged_spin";
+        return "message.cobblemon_pokestops.wingedstop_spin";
     }
 
     @Override
     protected String getCooldownMessageKey() {
-        return "message.cobblemon_pokestops.winged_cooldown";
+        return "message.cobblemon_pokestops.wingedstop_cooldown";
     }
 
     @Override
     protected String getBroadcastPrefix() {
-        return "WingedStop";
+        return "Winged PokéStop";
     }
 
     @Override

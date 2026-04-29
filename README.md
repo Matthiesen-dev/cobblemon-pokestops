@@ -33,6 +33,7 @@ A Pokestop variant with wings, giving it a more unique appearance.
 - **Color Variants:**
   - Blue
   - Gold
+  - Green
 
 ## Usage
 
