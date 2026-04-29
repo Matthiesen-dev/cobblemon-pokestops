@@ -33,13 +33,13 @@ public class CobblemonPokestopsNeoForge {
 
     public CobblemonPokestopsNeoForge(IEventBus modBus) {
         Constants.createInfoLog("Loading for NeoForge Mod Loader");
+        STATS.register(modBus);
         SOUND_EVENTS.register(modBus);
         BLOCKS.register(modBus);
         BLOCK_ENTITIES.register(modBus);
         CREATIVE_TABS.register(modBus);
         ITEMS.register(modBus);
         ADVANCEMENT_TRIGGERS.register(modBus);
-        STATS.register(modBus);
         CobblemonPokestops.preinitialize();
         NeoForgeFeatures.init();
         CobblemonPokestops.initialize();

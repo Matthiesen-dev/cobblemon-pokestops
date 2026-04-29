@@ -15,11 +15,11 @@ public class CobblemonPokestops {
     public static void preinitialize() {
         Constants.createInfoLog("Registering Resources");
         SoundRegistry.init();
+        StatsRegistry.init();
         BlockRegistry.init();
         BlockEntityRegistry.init();
         ItemRegistry.init();
         CriterionTriggerRegistry.init();
-        StatsRegistry.init();
     }
 
     public static void initialize() {

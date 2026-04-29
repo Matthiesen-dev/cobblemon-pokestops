@@ -15,21 +15,23 @@ public class StatsRegistry {
     public static Stat<ResourceLocation> POKESTOP_TIMES_SPUN_STAT;
     public static Stat<ResourceLocation> WINGEDSTOP_TIMES_SPUN_STAT;
 
-    public static void init() {
+    public static void init() {}
+
+    public static void load() {
         POKESTOP_TIMES_SPUN_STAT = Stats.CUSTOM.get(POKESTOP_TIMES_SPUN.get());
         WINGEDSTOP_TIMES_SPUN_STAT = Stats.CUSTOM.get(WINGEDSTOP_TIMES_SPUN.get());
     }
 
     public static Stat<ResourceLocation> getPokestopTimesSpunStat() {
         if (POKESTOP_TIMES_SPUN_STAT == null) {
-            init();
+            load();
         }
         return POKESTOP_TIMES_SPUN_STAT;
     }
 
     public static Stat<ResourceLocation> getWingedstopTimesSpunStat() {
         if (WINGEDSTOP_TIMES_SPUN_STAT == null) {
-            init();
+            load();
         }
         return WINGEDSTOP_TIMES_SPUN_STAT;
     }
