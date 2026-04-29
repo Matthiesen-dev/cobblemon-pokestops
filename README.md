@@ -1,9 +1,7 @@
 # Cobblemon Pokestops
 
-This mod adds Pokémon GO inspired Pokestops to Cobblemon. Currently, Pokestops require someone with admin/creative permissions 
-to place them, but in the future, we plan to add Pokestop world generation as well. 
-
-Pokestops can be used to get items, and they have a cooldown period after being used.
+This mod adds Pokémon GO inspired Pokestops to Cobblemon. Pokestops can be used to get items, and they have a cooldown period after being used.
+**Currently, Pokestops require someone with admin/creative permissions to place them**, but in the future, we plan to add Pokestop world generation as well.
 
 ### Trophies
 
