@@ -5,6 +5,15 @@ to place them, but in the future, we may add a way for players to place (or find
 
 Pokestops can be used to get items, and they have a cooldown period after being used.
 
+### Trophies
+
+In addition to the standard Pokestop blocks, there are also Trophies that can be obtained by using Pokestops. These trophies are purely 
+cosmetic and serve as a way to show off your dedication to the Pokestop system. They can be displayed in item frames or used as decorative items in your builds.
+
+Finish the Advancement Chain in-game to obtain the Trophies, which include:
+- **Pokestop Trophy:** Awarded for using a Pokestop 500 times. (Not yet implemented)
+- **Wingedstop Trophy:** Awarded for using a Winged Pokestop 500 times.
+
 ## Requirements
 
 - [Cobblemon 1.7.3+1.21.1](https://modrinth.com/mod/cobblemon)

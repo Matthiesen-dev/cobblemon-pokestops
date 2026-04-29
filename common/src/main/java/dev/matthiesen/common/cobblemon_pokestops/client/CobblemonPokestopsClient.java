@@ -28,6 +28,7 @@ public class CobblemonPokestopsClient {
     private static final List<BlockEntityRendererMapping> BLOCK_ENTITY_RENDERER_MAPPINGS = List.of(
             new BlockEntityRendererMapping(BlockEntityRegistry.POKESTOP_BE, context -> new PokestopRenderer()),
             new BlockEntityRendererMapping(BlockEntityRegistry.WINGEDSTOP_BE, context -> new WingedstopRenderer()),
+            // TODO Add Pokestop Trophy BE when ready
             new BlockEntityRendererMapping(BlockEntityRegistry.WINGEDSTOP_TROPHY_BE, context -> new WingedstopTrophyRenderer())
     );
     private static final List<StopMapping> BASE_POS_MAPPINGS = List.of(
