@@ -90,8 +90,3 @@ The rewards given by Pokestops are determined by a loot table. The default loot 
 **Datapack Loot Table Locations:**
 - **PokeStop:** `/data/cobblemon_pokestops/loot_table/gameplay/pokestop_loot.json`
 - **WingedStop:** `/data/cobblemon_pokestops/loot_table/gameplay/wingedstop_loot.json`
-
-## Future Plans
-
-- Adding more Pokestop types with different rewards and cooldowns.
-- Implementing a way for players to find the different Pokestop types in the world.
