@@ -26,6 +26,8 @@ public class EnglishTranslationsRegistry {
 
     static {
         TRANSLATIONS.put("itemGroup.cobblemon_pokestops.cobblemon_pokestops_items", "Cobblemon Pokéstops");
+        TRANSLATIONS.put("stat.cobblemon_pokestops.pokestop_times_spun", "Times Spun Pokéstops");
+        TRANSLATIONS.put("stat.cobblemon_pokestops.wingedstop_times_spun", "Times Spun Winged Pokéstops");
 
         for (var key : SPINNER_MESSAGE_VARIANTS.entrySet()) {
             TRANSLATIONS.put("message.cobblemon_pokestops." + key.getKey() + "_spin", "You spun the " + key.getValue() + "!");
@@ -36,6 +38,8 @@ public class EnglishTranslationsRegistry {
             var translations = key.getTranslations();
             TRANSLATIONS.putAll(translations);
         }
+
+        TRANSLATIONS.putAll(AdvancementRegistry.ENGLISH_TRANSLATIONS);
     }
 
     private static class VariantBlocks {

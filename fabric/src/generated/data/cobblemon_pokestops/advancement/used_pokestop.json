@@ -1,0 +1,27 @@
+{
+  "parent": "cobblemon_pokestops:root",
+  "criteria": {
+    "used_pokestop": {
+      "trigger": "cobblemon_pokestops:used_pokestop"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.cobblemon_pokestops.used_pokestop.description"
+    },
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "cobblemon_pokestops:pokestop"
+    },
+    "title": {
+      "translate": "advancements.cobblemon_pokestops.used_pokestop.title"
+    }
+  },
+  "requirements": [
+    [
+      "used_pokestop"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

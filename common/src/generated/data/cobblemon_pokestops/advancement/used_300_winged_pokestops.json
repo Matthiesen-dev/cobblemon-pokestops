@@ -1,0 +1,29 @@
+{
+  "parent": "cobblemon_pokestops:used_200_winged_pokestops",
+  "criteria": {
+    "used_300_winged_pokestops": {
+      "conditions": {
+        "score": 300
+      },
+      "trigger": "cobblemon_pokestops:score"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.cobblemon_pokestops.used_300_winged_pokestops.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "cobblemon_pokestops:wingedstop_green"
+    },
+    "title": {
+      "translate": "advancements.cobblemon_pokestops.used_300_winged_pokestops.title"
+    }
+  },
+  "requirements": [
+    [
+      "used_300_winged_pokestops"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
