@@ -70,7 +70,7 @@ Pokestop experience to fit their server's needs. The configuration file can be f
     "cobblemon:max_revive",
     "cobblemon:hyper_potion",
     "cobblemon:ultra_ball",
-    "cobblemon:master_mod"
+    "cobblemon:master_rod"
   ]
 }
 ```

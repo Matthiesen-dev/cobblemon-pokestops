@@ -27,7 +27,7 @@ public class ModConfig {
             "cobblemon:max_revive",
             "cobblemon:hyper_potion",
             "cobblemon:ultra_ball",
-            "cobblemon:master_mod"
+            "cobblemon:master_rod"
     );
 
     public static final Gson GSON = new GsonBuilder()
