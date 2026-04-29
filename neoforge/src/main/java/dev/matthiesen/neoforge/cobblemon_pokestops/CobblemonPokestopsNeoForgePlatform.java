@@ -1,6 +1,7 @@
 package dev.matthiesen.neoforge.cobblemon_pokestops;
 
 import dev.matthiesen.common.cobblemon_pokestops.platform.CobblemonPokestopsPlatform;
+import net.minecraft.advancements.CriterionTrigger;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -34,6 +35,11 @@ public class CobblemonPokestopsNeoForgePlatform implements CobblemonPokestopsPla
     @Override
     public <T extends CreativeModeTab> Supplier<T> registerCreativeModeTab(String id, Supplier<T> tab) {
         return CobblemonPokestopsNeoForge.CREATIVE_TABS.register(id, tab);
+    }
+
+    @Override
+    public <T extends CriterionTrigger<?>> Supplier<T> registerCriteriaTriggers(String id, Supplier<T> criterionTrigger) {
+        return CobblemonPokestopsNeoForge.ADVANCEMENT_TRIGGERS.register(id, criterionTrigger);
     }
 
     @Override

@@ -18,6 +18,7 @@ public class CobblemonPokestops {
         BlockRegistry.init();
         BlockEntityRegistry.init();
         ItemRegistry.init();
+        CriterionTriggerRegistry.init();
     }
 
     public static void initialize() {
