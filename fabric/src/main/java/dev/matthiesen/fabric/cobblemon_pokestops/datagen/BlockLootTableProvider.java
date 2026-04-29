@@ -17,5 +17,8 @@ public class BlockLootTableProvider extends FabricBlockLootTableProvider {
         for (var entry : BlockRegistry.WINGEDSTOP_TROPHIES.entrySet()) {
             dropSelf(entry.getValue().get());
         }
+        for (var entry : BlockRegistry.POKESTOP_TROPHIES.entrySet()) {
+            dropSelf(entry.getValue().get());
+        }
     }
 }

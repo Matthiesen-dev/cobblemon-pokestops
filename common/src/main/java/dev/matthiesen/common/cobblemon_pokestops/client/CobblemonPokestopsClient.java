@@ -1,8 +1,6 @@
 package dev.matthiesen.common.cobblemon_pokestops.client;
 
-import dev.matthiesen.common.cobblemon_pokestops.client.renderer.block.PokestopRenderer;
-import dev.matthiesen.common.cobblemon_pokestops.client.renderer.block.WingedstopRenderer;
-import dev.matthiesen.common.cobblemon_pokestops.client.renderer.block.WingedstopTrophyRenderer;
+import dev.matthiesen.common.cobblemon_pokestops.client.renderer.block.*;
 import dev.matthiesen.common.cobblemon_pokestops.registry.BlockEntityRegistry;
 import dev.matthiesen.common.cobblemon_pokestops.registry.BlockRegistry;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
@@ -28,7 +26,7 @@ public class CobblemonPokestopsClient {
     private static final List<BlockEntityRendererMapping> BLOCK_ENTITY_RENDERER_MAPPINGS = List.of(
             new BlockEntityRendererMapping(BlockEntityRegistry.POKESTOP_BE, context -> new PokestopRenderer()),
             new BlockEntityRendererMapping(BlockEntityRegistry.WINGEDSTOP_BE, context -> new WingedstopRenderer()),
-            // TODO Add Pokestop Trophy BE when ready
+            new BlockEntityRendererMapping(BlockEntityRegistry.POKESTOP_TROPHY_BE, context -> new PokestopTrophyRenderer()),
             new BlockEntityRendererMapping(BlockEntityRegistry.WINGEDSTOP_TROPHY_BE, context -> new WingedstopTrophyRenderer())
     );
     private static final List<StopMapping> BASE_POS_MAPPINGS = List.of(

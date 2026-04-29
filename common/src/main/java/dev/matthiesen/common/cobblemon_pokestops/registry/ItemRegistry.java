@@ -3,6 +3,7 @@ package dev.matthiesen.common.cobblemon_pokestops.registry;
 import dev.matthiesen.common.cobblemon_pokestops.CobblemonPokestops;
 import dev.matthiesen.common.cobblemon_pokestops.Constants;
 import dev.matthiesen.common.cobblemon_pokestops.item.PokestopItem;
+import dev.matthiesen.common.cobblemon_pokestops.item.PokestopTrophyItem;
 import dev.matthiesen.common.cobblemon_pokestops.item.WingedstopItem;
 import dev.matthiesen.common.cobblemon_pokestops.item.WingedstopTrophyItem;
 import net.minecraft.network.chat.Component;
@@ -39,7 +40,11 @@ public class ItemRegistry {
                 WINGEDSTOP_TROPHY_ITEMS,
                 block -> new WingedstopTrophyItem(block, new Item.Properties().rarity(Rarity.EPIC))
         );
-        // TODO Add Pokestop Trophy items when ready
+        registerStopItems(
+                BlockRegistry.POKESTOP_TROPHIES,
+                POKESTOP_TROPHY_ITEMS,
+                block -> new PokestopTrophyItem(block, new Item.Properties().rarity(Rarity.EPIC))
+        );
     }
 
     private static <B extends Block> void registerStopItems(

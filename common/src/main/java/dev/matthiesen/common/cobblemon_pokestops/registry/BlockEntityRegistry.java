@@ -2,6 +2,7 @@ package dev.matthiesen.common.cobblemon_pokestops.registry;
 
 import dev.matthiesen.common.cobblemon_pokestops.CobblemonPokestops;
 import dev.matthiesen.common.cobblemon_pokestops.block.entity.PokestopEntity;
+import dev.matthiesen.common.cobblemon_pokestops.block.entity.PokestopTrophyEntity;
 import dev.matthiesen.common.cobblemon_pokestops.block.entity.WingedstopEntity;
 import dev.matthiesen.common.cobblemon_pokestops.block.entity.WingedstopTrophyEntity;
 import net.minecraft.world.level.block.Block;
@@ -21,7 +22,8 @@ public class BlockEntityRegistry {
     public static final Supplier<BlockEntityType<WingedstopEntity>> WINGEDSTOP_BE =
             registerBlockEntity("wingedstop", () -> buildType(WingedstopEntity::new, BlockRegistry.WINGEDSTOPS));
 
-    // TODO Add Pokestop Trophy Block Entity when ready
+    public static final Supplier<BlockEntityType<PokestopTrophyEntity>> POKESTOP_TROPHY_BE =
+            registerBlockEntity("pokestop_trophy", () -> buildType(PokestopTrophyEntity::new, BlockRegistry.POKESTOP_TROPHIES));
 
     public static final Supplier<BlockEntityType<WingedstopTrophyEntity>> WINGEDSTOP_TROPHY_BE =
             registerBlockEntity("wingedstop_trophy", () -> buildType(WingedstopTrophyEntity::new, BlockRegistry.WINGEDSTOP_TROPHIES));

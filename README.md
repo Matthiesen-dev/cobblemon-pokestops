@@ -11,7 +11,7 @@ In addition to the standard Pokestop blocks, there are also Trophies that can be
 cosmetic and serve as a way to show off your dedication to the Pokestop system. They can be displayed in item frames or used as decorative items in your builds.
 
 Finish the Advancement Chain in-game to obtain the Trophies, which include:
-- **Pokestop Trophy:** Awarded for using a Pokestop 500 times. (Not yet implemented)
+- **Pokestop Trophy:** Awarded for using a Pokestop 500 times.
 - **Wingedstop Trophy:** Awarded for using a Winged Pokestop 500 times.
 
 ## Requirements

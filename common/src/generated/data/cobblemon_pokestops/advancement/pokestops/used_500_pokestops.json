@@ -26,5 +26,10 @@
       "used_500_pokestops"
     ]
   ],
+  "rewards": {
+    "loot": [
+      "cobblemon_pokestops:gameplay/pokestop_trophy"
+    ]
+  },
   "sends_telemetry_event": true
 }

@@ -30,8 +30,7 @@ public class EnglishTranslationsRegistry {
     );
 
     private static final List<TrophyBlocks> TROPHY_BLOCKS_LIST = List.of(
-            // TODO Add Pokestop Trophy when ready
-//            new TrophyBlocks("pokestop_trophy"),
+            new TrophyBlocks("pokestop_trophy"),
             new TrophyBlocks("wingedstop_trophy")
     );
 

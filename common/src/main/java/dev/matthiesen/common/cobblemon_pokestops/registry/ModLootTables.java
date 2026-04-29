@@ -86,7 +86,12 @@ public class ModLootTables {
                             .add(createLootItem(CobblemonItems.ABILITY_CAPSULE, 5, 1.0f))
             );
 
-    // TODO Build table for Pokestop Trophy once added
+    public static final LootTable.Builder POKESTOP_TROPHY_LOOT_POOL =
+            LootTable.lootTable().withPool(
+                    LootPool.lootPool()
+                            .setRolls(ConstantValue.exactly(1f))
+                            .add(createLootItem(ItemRegistry.POKESTOP_TROPHY_ITEMS.get("pokestop_trophy").get(), 100, 1.0f))
+            );
 
     public static final LootTable.Builder WINGEDSTOP_TROPHY_LOOT_POOL =
             LootTable.lootTable().withPool(
@@ -102,7 +107,7 @@ public class ModLootTables {
     static {
         LOOT_TABLES.put(POKESTOP_LOOT, POKESTOP_LOOT_POOL);
         LOOT_TABLES.put(WINGEDSTOP_LOOT, WINGEDSTOP_LOOT_POOL);
-
+        LOOT_TABLES.put(POKESTOP_TROPHY_LOOT, POKESTOP_TROPHY_LOOT_POOL);
         LOOT_TABLES.put(WINGED_TROPHY_LOOT, WINGEDSTOP_TROPHY_LOOT_POOL);
     }
 

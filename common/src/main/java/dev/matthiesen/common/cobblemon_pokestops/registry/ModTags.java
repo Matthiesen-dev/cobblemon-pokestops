@@ -46,8 +46,7 @@ public class ModTags {
                 BlockRegistry.WINGEDSTOP_DUMMY.get()
         });
         ALL_TAGS.put(Blocks.WINGEDSTOP_TROPHY_BLOCKS, supplierToBlock(BlockRegistry.WINGEDSTOP_TROPHIES.values()));
-        // TODO Add Pokestop Trophy blocks to tag when ready
-        ALL_TAGS.put(Blocks.POKESTOP_TROPHY_BLOCKS, new Block[]{});
+        ALL_TAGS.put(Blocks.POKESTOP_TROPHY_BLOCKS, supplierToBlock(BlockRegistry.POKESTOP_TROPHIES.values()));
     }
 
     private static Block[] supplierToBlock(Collection<? extends Supplier<? extends Block>> items) {

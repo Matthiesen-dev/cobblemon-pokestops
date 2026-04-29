@@ -15,13 +15,13 @@ public class BlockRegistry {
 
     public static final Map<String, Supplier<Pokestop>> POKESTOPS = new HashMap<>();
     public static final Map<String, Supplier<Wingedstop>> WINGEDSTOPS = new HashMap<>();
-    // TODO Add Pokestop Trophy map when ready
     public static final Map<String, Supplier<Block>> POKESTOP_TROPHIES = new HashMap<>();
     public static final Map<String, Supplier<WingedstopTrophy>> WINGEDSTOP_TROPHIES = new HashMap<>();
 
     static {
         registerFamilyWithVariants(POKESTOPS, "pokestop", POKESTOP_VARIANTS, Pokestop::new);
         registerFamilyWithVariants(WINGEDSTOPS, "wingedstop", WINGEDSTOP_VARIANTS, Wingedstop::new);
+        POKESTOP_TROPHIES.put("pokestop_trophy", registerBlock("pokestop_trophy", PokestopTrophy::new));
         WINGEDSTOP_TROPHIES.put("wingedstop_trophy", registerBlock("wingedstop_trophy", WingedstopTrophy::new));
     }
 
@@ -52,6 +52,7 @@ public class BlockRegistry {
         List<Supplier<? extends Block>> templates = new ArrayList<>();
         POKESTOPS.forEach((id, block) -> templates.add(block));
         WINGEDSTOPS.forEach((id, block) -> templates.add(block));
+        POKESTOP_TROPHIES.forEach((id, block) -> templates.add(block));
         WINGEDSTOP_TROPHIES.forEach((id, block) -> templates.add(block));
         templates.add(POKESTOP_DUMMY);
         templates.add(WINGEDSTOP_DUMMY);
