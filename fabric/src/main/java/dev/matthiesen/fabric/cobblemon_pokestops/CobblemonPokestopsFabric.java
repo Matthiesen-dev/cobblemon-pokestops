@@ -14,10 +14,7 @@ public class CobblemonPokestopsFabric implements ModInitializer {
         CobblemonPokestops.preinitialize();
         FabricFeatures.init();
         CobblemonPokestops.initialize();
-        ServerLifecycleEvents.SERVER_STARTING.register(server -> {
-            MinecraftServer runningServer = server.createCommandSourceStack().getServer();
-            CobblemonPokestops.onStartup(runningServer);
-        });
+        ServerLifecycleEvents.SERVER_STARTING.register(server -> CobblemonPokestops.onStartup());
         ServerLifecycleEvents.SERVER_STOPPING.register(server -> CobblemonPokestops.onShutdown());
     }
 

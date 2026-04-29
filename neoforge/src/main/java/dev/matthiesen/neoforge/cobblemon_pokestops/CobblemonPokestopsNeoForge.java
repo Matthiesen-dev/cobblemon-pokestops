@@ -48,8 +48,7 @@ public class CobblemonPokestopsNeoForge {
 
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
-        MinecraftServer server = event.getServer();
-        CobblemonPokestops.onStartup(server);
+        CobblemonPokestops.onStartup();
     }
 
     @SubscribeEvent(priority = EventPriority.HIGHEST)
