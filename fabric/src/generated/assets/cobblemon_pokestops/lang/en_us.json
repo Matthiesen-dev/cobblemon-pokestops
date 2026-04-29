@@ -40,6 +40,7 @@
   "block.cobblemon_pokestops.wingedstop": "Blue Winged Pokestop",
   "block.cobblemon_pokestops.wingedstop_gold": "Gold Winged Pokestop",
   "block.cobblemon_pokestops.wingedstop_green": "Green Winged Pokestop",
+  "block.cobblemon_pokestops.wingedstop_trophy": "§bWinged Pokestop Trophy",
   "itemGroup.cobblemon_pokestops.cobblemon_pokestops_items": "Cobblemon Pokéstops",
   "message.cobblemon_pokestops.pokestop_cooldown": "You can't spin the Pokestop for another %s!",
   "message.cobblemon_pokestops.pokestop_spin": "You spun the Pokestop!",

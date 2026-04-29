@@ -17,6 +17,8 @@ public class ModTags {
         public static final TagKey<Block> POKESTOPS = createTag("pokestops");
         public static final TagKey<Block> WINGEDSTOPS = createTag("wingedstops");
         public static final TagKey<Block> DUMMYBLOCKS = createTag("dummyblocks");
+        public static final TagKey<Block> POKESTOP_TROPHY_BLOCKS = createTag("pokestop_trophy_blocks");
+        public static final TagKey<Block> WINGEDSTOP_TROPHY_BLOCKS = createTag("winged_pokestop_trophy_blocks");
 
         private static TagKey<Block> createTag(String name) {
             return TagKey.create(Registries.BLOCK, Constants.modResource(name));
@@ -42,6 +44,8 @@ public class ModTags {
                 BlockRegistry.POKESTOP_DUMMY.get(),
                 BlockRegistry.WINGEDSTOP_DUMMY.get()
         });
+        ALL_TAGS.put(Blocks.WINGEDSTOP_TROPHY_BLOCKS, supplierToBlock(BlockRegistry.WINGEDSTOP_TROPHIES.values()));
+        ALL_TAGS.put(Blocks.POKESTOP_TROPHY_BLOCKS, new Block[]{});
     }
 
     private static Block[] supplierToBlock(Collection<? extends Supplier<? extends Block>> items) {

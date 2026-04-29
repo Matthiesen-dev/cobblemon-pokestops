@@ -5,7 +5,7 @@
       "conditions": {
         "score": 300
       },
-      "trigger": "cobblemon_pokestops:score"
+      "trigger": "cobblemon_pokestops:winged_pokestop_score"
     }
   },
   "display": {

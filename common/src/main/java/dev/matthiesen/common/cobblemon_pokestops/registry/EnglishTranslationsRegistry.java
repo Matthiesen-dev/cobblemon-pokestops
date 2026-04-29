@@ -12,6 +12,11 @@ public class EnglishTranslationsRegistry {
             "wingedstop", "Winged Pokestop"
     );
 
+    private static final Map<String, String> TROPHY_MESSAGE_VARIANTS = Map.of(
+            "pokestop_trophy", "§bPokestop Trophy",
+            "wingedstop_trophy", "§bWinged Pokestop Trophy"
+    );
+
     private static final Map<String, String> COLORMAP = Map.of(
             "blue", "Blue",
             "gold", "Gold",
@@ -22,6 +27,11 @@ public class EnglishTranslationsRegistry {
     private static final List<VariantBlocks> BLOCKS_LIST = List.of(
             new VariantBlocks("pokestop", BlockRegistry.POKESTOP_VARIANTS),
             new VariantBlocks("wingedstop", BlockRegistry.WINGEDSTOP_VARIANTS)
+    );
+
+    private static final List<TrophyBlocks> TROPHY_BLOCKS_LIST = List.of(
+//            new TrophyBlocks("pokestop_trophy"),
+            new TrophyBlocks("wingedstop_trophy")
     );
 
     static {
@@ -35,6 +45,11 @@ public class EnglishTranslationsRegistry {
         }
 
         for (var key : BLOCKS_LIST) {
+            var translations = key.getTranslations();
+            TRANSLATIONS.putAll(translations);
+        }
+
+        for (var key : TROPHY_BLOCKS_LIST) {
             var translations = key.getTranslations();
             TRANSLATIONS.putAll(translations);
         }
@@ -61,6 +76,22 @@ public class EnglishTranslationsRegistry {
                 String value = COLORMAP.getOrDefault(variant, variant) + " " + SPINNER_MESSAGE_VARIANTS.getOrDefault(baseId, baseId);
                 translations.put(key, value);
             }
+            return translations;
+        }
+    }
+
+    private static class TrophyBlocks {
+        public String baseId;
+
+        public TrophyBlocks(String baseId) {
+            this.baseId = baseId;
+        }
+
+        public Map<String, String> getTranslations() {
+            Map<String, String> translations = new HashMap<>();
+
+            translations.put("block.cobblemon_pokestops." + baseId, TROPHY_MESSAGE_VARIANTS.getOrDefault(baseId, baseId));
+
             return translations;
         }
     }

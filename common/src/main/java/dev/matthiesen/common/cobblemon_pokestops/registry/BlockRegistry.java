@@ -1,10 +1,7 @@
 package dev.matthiesen.common.cobblemon_pokestops.registry;
 
 import dev.matthiesen.common.cobblemon_pokestops.CobblemonPokestops;
-import dev.matthiesen.common.cobblemon_pokestops.block.Pokestop;
-import dev.matthiesen.common.cobblemon_pokestops.block.PokestopDummyBlock;
-import dev.matthiesen.common.cobblemon_pokestops.block.Wingedstop;
-import dev.matthiesen.common.cobblemon_pokestops.block.WingedstopDummyBlock;
+import dev.matthiesen.common.cobblemon_pokestops.block.*;
 import net.minecraft.world.level.block.Block;
 
 import java.util.*;
@@ -18,10 +15,12 @@ public class BlockRegistry {
 
     public static final Map<String, Supplier<Pokestop>> POKESTOPS = new HashMap<>();
     public static final Map<String, Supplier<Wingedstop>> WINGEDSTOPS = new HashMap<>();
+    public static final Map<String, Supplier<Block>> WINGEDSTOP_TROPHIES = new HashMap<>();
 
     static {
         registerFamilyWithVariants(POKESTOPS, "pokestop", POKESTOP_VARIANTS, Pokestop::new);
         registerFamilyWithVariants(WINGEDSTOPS, "wingedstop", WINGEDSTOP_VARIANTS, Wingedstop::new);
+        WINGEDSTOP_TROPHIES.put("wingedstop_trophy", registerBlock("wingedstop_trophy", WingedstopTrophy::new));
     }
 
     private static <T extends Block> void registerFamilyWithVariants(
@@ -51,6 +50,7 @@ public class BlockRegistry {
         List<Supplier<? extends Block>> templates = new ArrayList<>();
         POKESTOPS.forEach((id, block) -> templates.add(block));
         WINGEDSTOPS.forEach((id, block) -> templates.add(block));
+        WINGEDSTOP_TROPHIES.forEach((id, block) -> templates.add(block));
         templates.add(POKESTOP_DUMMY);
         templates.add(WINGEDSTOP_DUMMY);
         return templates;

@@ -17,6 +17,7 @@ public class DataGenerator implements DataGeneratorEntrypoint {
         pack.addProvider(RegistryDataGenerator::new);
         pack.addProvider(EnglishLanguageProvider::new);
         pack.addProvider(AdvancementProvider::new);
+        pack.addProvider(BlockLootTableProvider::new);
     }
 
     @Override

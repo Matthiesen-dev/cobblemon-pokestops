@@ -3,6 +3,7 @@ package dev.matthiesen.common.cobblemon_pokestops.registry;
 import dev.matthiesen.common.cobblemon_pokestops.CobblemonPokestops;
 import dev.matthiesen.common.cobblemon_pokestops.block.entity.PokestopEntity;
 import dev.matthiesen.common.cobblemon_pokestops.block.entity.WingedstopEntity;
+import dev.matthiesen.common.cobblemon_pokestops.block.entity.WingedstopTrophyEntity;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -19,6 +20,9 @@ public class BlockEntityRegistry {
 
     public static final Supplier<BlockEntityType<WingedstopEntity>> WINGEDSTOP_BE =
             registerBlockEntity("wingedstop", () -> buildType(WingedstopEntity::new, BlockRegistry.WINGEDSTOPS));
+
+    public static final Supplier<BlockEntityType<WingedstopTrophyEntity>> WINGEDSTOP_TROPHY_BE =
+            registerBlockEntity("wingedstop_trophy", () -> buildType(WingedstopTrophyEntity::new, BlockRegistry.WINGEDSTOP_TROPHIES));
 
     private static Block[] resolveBlocks(Map<String, ? extends Supplier<? extends Block>> registeredBlocks) {
         return registeredBlocks.values()

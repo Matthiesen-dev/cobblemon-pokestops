@@ -4,11 +4,9 @@ import dev.matthiesen.common.cobblemon_pokestops.CobblemonPokestops;
 import dev.matthiesen.common.cobblemon_pokestops.Constants;
 import dev.matthiesen.common.cobblemon_pokestops.item.PokestopItem;
 import dev.matthiesen.common.cobblemon_pokestops.item.WingedstopItem;
+import dev.matthiesen.common.cobblemon_pokestops.item.WingedstopTrophyItem;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Block;
 
 import java.util.HashMap;
@@ -22,6 +20,7 @@ public class ItemRegistry {
 
     public static Map<String, Supplier<BlockItem>> POKESTOP_ITEMS = new HashMap<>();
     public static Map<String, Supplier<BlockItem>> WINGEDSTOP_ITEMS = new HashMap<>();
+    public static Map<String, Supplier<BlockItem>> WINGEDSTOP_TROPHY_ITEMS = new HashMap<>();
 
     static {
         registerStopItems(
@@ -33,6 +32,11 @@ public class ItemRegistry {
                 BlockRegistry.WINGEDSTOPS,
                 WINGEDSTOP_ITEMS,
                 block -> new WingedstopItem(block, new Item.Properties())
+        );
+        registerStopItems(
+                BlockRegistry.WINGEDSTOP_TROPHIES,
+                WINGEDSTOP_TROPHY_ITEMS,
+                block -> new WingedstopTrophyItem(block, new Item.Properties().rarity(Rarity.EPIC))
         );
     }
 
@@ -68,7 +72,11 @@ public class ItemRegistry {
                     .title(Component.translatable("itemGroup." + Constants.MOD_ID + ".cobblemon_pokestops_items"))
                     .icon(() -> new ItemStack(ItemRegistry.POKESTOP_ITEMS.get("pokestop").get()))
                     .displayItems((enabledFeatures, entries) ->
-                            addAllItemsToCreativeTab(entries, List.of(ItemRegistry.POKESTOP_ITEMS, ItemRegistry.WINGEDSTOP_ITEMS))
+                            addAllItemsToCreativeTab(entries, List.of(
+                                    ItemRegistry.POKESTOP_ITEMS,
+                                    ItemRegistry.WINGEDSTOP_ITEMS,
+                                    ItemRegistry.WINGEDSTOP_TROPHY_ITEMS
+                            ))
                     )
                     .build()
             );

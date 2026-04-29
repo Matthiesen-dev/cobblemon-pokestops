@@ -5,7 +5,7 @@
       "conditions": {
         "score": 400
       },
-      "trigger": "cobblemon_pokestops:score"
+      "trigger": "cobblemon_pokestops:pokestop_score"
     }
   },
   "display": {
