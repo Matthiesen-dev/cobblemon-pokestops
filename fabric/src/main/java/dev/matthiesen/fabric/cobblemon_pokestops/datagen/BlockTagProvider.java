@@ -28,22 +28,21 @@ public class BlockTagProvider extends FabricTagProvider.BlockTagProvider {
             builder.addTag(entry);
         }
 
-        getOrCreateTagBuilder(
+        var mineable = getOrCreateTagBuilder(
                 TagKey.create(
                         Registries.BLOCK,
                         ResourceLocation.withDefaultNamespace("mineable/pickaxe")
-                ))
-                .addTag(ModTags.Blocks.WINGEDSTOP_TROPHY_BLOCKS)
-                .addTag(ModTags.Blocks.POKESTOP_TROPHY_BLOCKS)
-                .setReplace(false);
-
-        getOrCreateTagBuilder(
+                )
+        );
+        var needsIronTool = getOrCreateTagBuilder(
                 TagKey.create(
                         Registries.BLOCK,
                         ResourceLocation.withDefaultNamespace("needs_iron_tool")
-                ))
-                .addTag(ModTags.Blocks.WINGEDSTOP_TROPHY_BLOCKS)
-                .addTag(ModTags.Blocks.POKESTOP_TROPHY_BLOCKS)
-                .setReplace(false);
+                )
+        );
+        for (var entry : ModTags.IRON_TOOL_MINEABLE_BLOCKS) {
+            mineable.addTag(entry);
+            needsIronTool.addTag(entry);
+        }
     }
 }

@@ -338,6 +338,8 @@ public class AdvancementRegistry {
                         false // Hide it in the advancement tab until it's achieved
                 )
                 .parent(used400Pokestops)
+                // TODO Uncomment once the Trophy is added
+//                .rewards(AdvancementRewards.Builder.loot(ModLootTables.POKESTOP_TROPHY_LOOT))
                 .addCriterion("used_500_pokestops", PokestopScoreTracker.Conditions.used(500))
                 .save(consumer, Constants.modResourceFile("pokestops/used_500_pokestops"));
 
@@ -355,6 +357,7 @@ public class AdvancementRegistry {
                 )
                 .parent(used400WingedPokestops)
                 .addCriterion("used_500_winged_pokestops", WingedPokestopScoreTracker.Conditions.used(500))
+                .rewards(AdvancementRewards.Builder.loot(ModLootTables.WINGED_TROPHY_LOOT))
                 .save(consumer, Constants.modResourceFile("wingedstops/used_500_winged_pokestops"));
 
     }

@@ -26,5 +26,10 @@
       "used_500_winged_pokestops"
     ]
   ],
+  "rewards": {
+    "loot": [
+      "cobblemon_pokestops:gameplay/wingedstop_trophy"
+    ]
+  },
   "sends_telemetry_event": true
 }

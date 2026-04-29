@@ -22,9 +22,19 @@ public class ModLootTables {
             Constants.modResource("gameplay/pokestop_loot")
     );
 
+    public static final ResourceKey<LootTable> POKESTOP_TROPHY_LOOT = ResourceKey.create(
+            Registries.LOOT_TABLE,
+            Constants.modResource("gameplay/pokestop_trophy")
+    );
+
     public static final ResourceKey<LootTable> WINGEDSTOP_LOOT = ResourceKey.create(
             Registries.LOOT_TABLE,
             Constants.modResource("gameplay/wingedstop_loot")
+    );
+
+    public static final ResourceKey<LootTable> WINGED_TROPHY_LOOT = ResourceKey.create(
+            Registries.LOOT_TABLE,
+            Constants.modResource("gameplay/wingedstop_trophy")
     );
 
     public static final LootTable.Builder POKESTOP_LOOT_POOL =
@@ -76,6 +86,15 @@ public class ModLootTables {
                             .add(createLootItem(CobblemonItems.ABILITY_CAPSULE, 5, 1.0f))
             );
 
+    // TODO Build table for Pokestop Trophy once added
+
+    public static final LootTable.Builder WINGEDSTOP_TROPHY_LOOT_POOL =
+            LootTable.lootTable().withPool(
+                    LootPool.lootPool()
+                            .setRolls(ConstantValue.exactly(1f))
+                            .add(createLootItem(ItemRegistry.WINGEDSTOP_TROPHY_ITEMS.get("wingedstop_trophy").get(), 100, 1.0f))
+            );
+
     // --- Datagen ---
 
     public static Map<ResourceKey<LootTable>, LootTable.Builder> LOOT_TABLES = new HashMap<>();
@@ -83,6 +102,8 @@ public class ModLootTables {
     static {
         LOOT_TABLES.put(POKESTOP_LOOT, POKESTOP_LOOT_POOL);
         LOOT_TABLES.put(WINGEDSTOP_LOOT, WINGEDSTOP_LOOT_POOL);
+
+        LOOT_TABLES.put(WINGED_TROPHY_LOOT, WINGEDSTOP_TROPHY_LOOT_POOL);
     }
 
     @SuppressWarnings("SameParameterValue")
