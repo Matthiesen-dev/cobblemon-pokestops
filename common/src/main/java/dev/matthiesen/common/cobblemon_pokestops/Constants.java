@@ -12,6 +12,10 @@ public class Constants {
         return ResourceLocation.fromNamespaceAndPath(MOD_ID, path);
     }
 
+    public static String modResourceFile(String path) {
+        return Constants.MOD_ID + ":" + path;
+    }
+
     public static Logger LOGGER = LogManager.getLogger(ModName);
 
     public static void createInfoLog(String message) {

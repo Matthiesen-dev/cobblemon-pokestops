@@ -1,0 +1,29 @@
+{
+  "parent": "cobblemon_pokestops:pokestops/used_300_pokestops",
+  "criteria": {
+    "used_400_pokestops": {
+      "conditions": {
+        "score": 400
+      },
+      "trigger": "cobblemon_pokestops:score"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.cobblemon_pokestops.used_400_pokestops.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "cobblemon_pokestops:pokestop_green"
+    },
+    "title": {
+      "translate": "advancements.cobblemon_pokestops.used_400_pokestops.title"
+    }
+  },
+  "requirements": [
+    [
+      "used_400_pokestops"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

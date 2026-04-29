@@ -97,7 +97,7 @@ public class AdvancementRegistry {
                         false // Hide it in the advancement tab until it's achieved
                         )
                 .addCriterion("tick", CriteriaTriggers.TICK.createCriterion(new PlayerTrigger.TriggerInstance(Optional.empty())))
-                .save(consumer, Constants.MOD_ID + ":root");
+                .save(consumer, Constants.modResourceFile("root"));
 
         // Used 1 (GOAL)
 
@@ -113,8 +113,8 @@ public class AdvancementRegistry {
                         false // Hide it in the advancement tab until it's achieved
                 )
                 .parent(root)
-                .addCriterion("used_pokestop", UsedPokestopCriterion.Conditions.usePokestop())
-                .save(consumer, Constants.MOD_ID + ":used_pokestop");
+                .addCriterion("used_1_pokestop", UsedPokestopCriterion.Conditions.usePokestop())
+                .save(consumer, Constants.modResourceFile("pokestops/used_1_pokestop"));
 
         AdvancementHolder usedOnceWingedPokestop = Advancement.Builder.advancement()
                 .display(
@@ -128,8 +128,8 @@ public class AdvancementRegistry {
                         false // Hide it in the advancement tab until it's achieved
                 )
                 .parent(root)
-                .addCriterion("used_winged_pokestop", UsedWingedPokestopCriterion.Conditions.useWingedPokestop())
-                .save(consumer, Constants.MOD_ID + ":used_winged_pokestop");
+                .addCriterion("used_1_winged_pokestop", UsedWingedPokestopCriterion.Conditions.useWingedPokestop())
+                .save(consumer, Constants.modResourceFile("wingedstops/used_1_winged_pokestop"));
 
         // Used 25 (TASK)
 
@@ -146,7 +146,7 @@ public class AdvancementRegistry {
                 )
                 .parent(usedOncePokestop)
                 .addCriterion("used_25_pokestops", PokestopScoreTracker.Conditions.used(25))
-                .save(consumer, Constants.MOD_ID + ":used_25_pokestops");
+                .save(consumer, Constants.modResourceFile("pokestops/used_25_pokestops"));
 
         AdvancementHolder used25WingedPokestops = Advancement.Builder.advancement()
                 .display(
@@ -161,7 +161,7 @@ public class AdvancementRegistry {
                 )
                 .parent(usedOnceWingedPokestop)
                 .addCriterion("used_25_winged_pokestops", WingedPokestopScoreTracker.Conditions.used(25))
-                .save(consumer, Constants.MOD_ID + ":used_25_winged_pokestops");
+                .save(consumer, Constants.modResourceFile("wingedstops/used_25_winged_pokestops"));
 
         // Used 50 (TASK)
 
@@ -178,7 +178,7 @@ public class AdvancementRegistry {
                 )
                 .parent(used25Pokestops)
                 .addCriterion("used_50_pokestops", PokestopScoreTracker.Conditions.used(50))
-                .save(consumer, Constants.MOD_ID + ":used_50_pokestops");
+                .save(consumer, Constants.modResourceFile("pokestops/used_50_pokestops"));
 
         AdvancementHolder used50WingedPokestops = Advancement.Builder.advancement()
                 .display(
@@ -193,7 +193,7 @@ public class AdvancementRegistry {
                 )
                 .parent(used25WingedPokestops)
                 .addCriterion("used_50_winged_pokestops", WingedPokestopScoreTracker.Conditions.used(50))
-                .save(consumer, Constants.MOD_ID + ":used_50_winged_pokestops");
+                .save(consumer, Constants.modResourceFile("wingedstops/used_50_winged_pokestops"));
 
         // Used 100 (GOAL)
 
@@ -210,7 +210,7 @@ public class AdvancementRegistry {
                 )
                 .parent(used50Pokestops)
                 .addCriterion("used_100_pokestops", PokestopScoreTracker.Conditions.used(100))
-                .save(consumer, Constants.MOD_ID + ":used_100_pokestops");
+                .save(consumer, Constants.modResourceFile("pokestops/used_100_pokestops"));
 
         AdvancementHolder used100WingedPokestops = Advancement.Builder.advancement()
                 .display(
@@ -225,7 +225,7 @@ public class AdvancementRegistry {
                 )
                 .parent(used50WingedPokestops)
                 .addCriterion("used_100_winged_pokestops", WingedPokestopScoreTracker.Conditions.used(100))
-                .save(consumer, Constants.MOD_ID + ":used_100_winged_pokestops");
+                .save(consumer, Constants.modResourceFile("wingedstops/used_100_winged_pokestops"));
 
         // Used 200 (TASK)
 
@@ -242,7 +242,7 @@ public class AdvancementRegistry {
                 )
                 .parent(used100Pokestops)
                 .addCriterion("used_200_pokestops", PokestopScoreTracker.Conditions.used(200))
-                .save(consumer, Constants.MOD_ID + ":used_200_pokestops");
+                .save(consumer, Constants.modResourceFile("pokestops/used_200_pokestops"));
 
         AdvancementHolder used200WingedPokestops = Advancement.Builder.advancement()
                 .display(
@@ -257,7 +257,7 @@ public class AdvancementRegistry {
                 )
                 .parent(used100WingedPokestops)
                 .addCriterion("used_200_winged_pokestops", WingedPokestopScoreTracker.Conditions.used(200))
-                .save(consumer, Constants.MOD_ID + ":used_200_winged_pokestops");
+                .save(consumer, Constants.modResourceFile("wingedstops/used_200_winged_pokestops"));
 
         // Used 300 (TASK)
 
@@ -274,7 +274,7 @@ public class AdvancementRegistry {
                 )
                 .parent(used200Pokestops)
                 .addCriterion("used_300_pokestops", PokestopScoreTracker.Conditions.used(300))
-                .save(consumer, Constants.MOD_ID + ":used_300_pokestops");
+                .save(consumer, Constants.modResourceFile("pokestops/used_300_pokestops"));
 
         AdvancementHolder used300WingedPokestops = Advancement.Builder.advancement()
                 .display(
@@ -289,7 +289,7 @@ public class AdvancementRegistry {
                 )
                 .parent(used200WingedPokestops)
                 .addCriterion("used_300_winged_pokestops", WingedPokestopScoreTracker.Conditions.used(300))
-                .save(consumer, Constants.MOD_ID + ":used_300_winged_pokestops");
+                .save(consumer, Constants.modResourceFile("wingedstops/used_300_winged_pokestops"));
 
         // Used 400 (TASK)
 
@@ -306,7 +306,7 @@ public class AdvancementRegistry {
                 )
                 .parent(used300Pokestops)
                 .addCriterion("used_400_pokestops", PokestopScoreTracker.Conditions.used(400))
-                .save(consumer, Constants.MOD_ID + ":used_400_pokestops");
+                .save(consumer, Constants.modResourceFile("pokestops/used_400_pokestops"));
 
         AdvancementHolder used400WingedPokestops = Advancement.Builder.advancement()
                 .display(
@@ -321,7 +321,7 @@ public class AdvancementRegistry {
                 )
                 .parent(used300WingedPokestops)
                 .addCriterion("used_400_winged_pokestops", WingedPokestopScoreTracker.Conditions.used(400))
-                .save(consumer, Constants.MOD_ID + ":used_400_winged_pokestops");
+                .save(consumer, Constants.modResourceFile("wingedstops/used_400_winged_pokestops"));
 
         // Used 500 (CHALLENGE)
 
@@ -339,7 +339,7 @@ public class AdvancementRegistry {
                 )
                 .parent(used400Pokestops)
                 .addCriterion("used_500_pokestops", PokestopScoreTracker.Conditions.used(500))
-                .save(consumer, Constants.MOD_ID + ":used_500_pokestops");
+                .save(consumer, Constants.modResourceFile("pokestops/used_500_pokestops"));
 
         @SuppressWarnings("unused")
         AdvancementHolder used500WingedPokestops = Advancement.Builder.advancement()
@@ -355,7 +355,7 @@ public class AdvancementRegistry {
                 )
                 .parent(used400WingedPokestops)
                 .addCriterion("used_500_winged_pokestops", WingedPokestopScoreTracker.Conditions.used(500))
-                .save(consumer, Constants.MOD_ID + ":used_500_winged_pokestops");
+                .save(consumer, Constants.modResourceFile("wingedstops/used_500_winged_pokestops"));
 
     }
 }

@@ -1,0 +1,29 @@
+{
+  "parent": "cobblemon_pokestops:wingedstops/used_1_winged_pokestop",
+  "criteria": {
+    "used_25_winged_pokestops": {
+      "conditions": {
+        "score": 25
+      },
+      "trigger": "cobblemon_pokestops:score"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.cobblemon_pokestops.used_25_winged_pokestops.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "cobblemon_pokestops:wingedstop"
+    },
+    "title": {
+      "translate": "advancements.cobblemon_pokestops.used_25_winged_pokestops.title"
+    }
+  },
+  "requirements": [
+    [
+      "used_25_winged_pokestops"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
