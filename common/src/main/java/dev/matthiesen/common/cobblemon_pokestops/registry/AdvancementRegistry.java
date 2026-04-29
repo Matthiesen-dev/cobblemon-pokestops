@@ -338,9 +338,9 @@ public class AdvancementRegistry {
                         false // Hide it in the advancement tab until it's achieved
                 )
                 .parent(used400Pokestops)
+                .addCriterion("used_500_pokestops", PokestopScoreTracker.Conditions.used(500))
                 // TODO Uncomment once the Trophy is added
 //                .rewards(AdvancementRewards.Builder.loot(ModLootTables.POKESTOP_TROPHY_LOOT))
-                .addCriterion("used_500_pokestops", PokestopScoreTracker.Conditions.used(500))
                 .save(consumer, Constants.modResourceFile("pokestops/used_500_pokestops"));
 
         @SuppressWarnings("unused")

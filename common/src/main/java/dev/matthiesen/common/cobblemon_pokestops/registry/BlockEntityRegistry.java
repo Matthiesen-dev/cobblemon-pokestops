@@ -21,6 +21,8 @@ public class BlockEntityRegistry {
     public static final Supplier<BlockEntityType<WingedstopEntity>> WINGEDSTOP_BE =
             registerBlockEntity("wingedstop", () -> buildType(WingedstopEntity::new, BlockRegistry.WINGEDSTOPS));
 
+    // TODO Add Pokestop Trophy Block Entity when ready
+
     public static final Supplier<BlockEntityType<WingedstopTrophyEntity>> WINGEDSTOP_TROPHY_BE =
             registerBlockEntity("wingedstop_trophy", () -> buildType(WingedstopTrophyEntity::new, BlockRegistry.WINGEDSTOP_TROPHIES));
 

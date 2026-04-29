@@ -20,6 +20,7 @@ public class ItemRegistry {
 
     public static Map<String, Supplier<BlockItem>> POKESTOP_ITEMS = new HashMap<>();
     public static Map<String, Supplier<BlockItem>> WINGEDSTOP_ITEMS = new HashMap<>();
+    public static Map<String, Supplier<BlockItem>> POKESTOP_TROPHY_ITEMS = new HashMap<>();
     public static Map<String, Supplier<BlockItem>> WINGEDSTOP_TROPHY_ITEMS = new HashMap<>();
 
     static {
@@ -38,6 +39,7 @@ public class ItemRegistry {
                 WINGEDSTOP_TROPHY_ITEMS,
                 block -> new WingedstopTrophyItem(block, new Item.Properties().rarity(Rarity.EPIC))
         );
+        // TODO Add Pokestop Trophy items when ready
     }
 
     private static <B extends Block> void registerStopItems(
@@ -75,7 +77,8 @@ public class ItemRegistry {
                             addAllItemsToCreativeTab(entries, List.of(
                                     ItemRegistry.POKESTOP_ITEMS,
                                     ItemRegistry.WINGEDSTOP_ITEMS,
-                                    ItemRegistry.WINGEDSTOP_TROPHY_ITEMS
+                                    ItemRegistry.WINGEDSTOP_TROPHY_ITEMS,
+                                    ItemRegistry.POKESTOP_TROPHY_ITEMS
                             ))
                     )
                     .build()
