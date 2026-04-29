@@ -38,6 +38,10 @@ tasks {
     }
     processResources {
         duplicatesStrategy = DuplicatesStrategy.INCLUDE
+        inputs.property("mod_name", project.property("mod_name").toString())
+        filesMatching("pack.mcmeta") {
+            expand(project.properties)
+        }
     }
 
     remapSourcesJar {

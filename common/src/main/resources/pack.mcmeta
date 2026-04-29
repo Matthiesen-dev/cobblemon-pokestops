@@ -1,6 +1,6 @@
 {
   "pack": {
-    "description": "Cobblemon Pokestops resources",
+    "description": "${mod_name} resources",
     "pack_format": 7
   }
 }
