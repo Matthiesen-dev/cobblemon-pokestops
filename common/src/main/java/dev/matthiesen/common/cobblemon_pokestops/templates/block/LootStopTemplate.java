@@ -19,6 +19,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.stats.Stat;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -102,6 +103,10 @@ public abstract class LootStopTemplate extends HorizontalDirectionalBlock implem
      */
     protected abstract VoxelShape createShape();
 
+    protected abstract Stat<ResourceLocation> getStats();
+
+    protected abstract void criterionTrigger(ServerPlayer player);
+
     private void initializeShapes() {
         shapes.put(Direction.NORTH, baseShape);
         shapes.put(Direction.SOUTH, calculateRotation(Direction.SOUTH, baseShape));
@@ -137,6 +142,8 @@ public abstract class LootStopTemplate extends HorizontalDirectionalBlock implem
                         100, 0.75, 0.75, 0.75, 0.0
                 );
                 serverLevel.playSound(null, pos, SoundRegistry.POKESTOP_SPIN.get(), SoundSource.MASTER, 1.0f, 1.0f);
+                player.awardStat(getStats());
+                criterionTrigger((ServerPlayer) player);
                 return InteractionResult.SUCCESS;
             } else {
                 player.displayClientMessage(Component.translatable(getCooldownMessageKey(), be.getPlayerCooldown(player))

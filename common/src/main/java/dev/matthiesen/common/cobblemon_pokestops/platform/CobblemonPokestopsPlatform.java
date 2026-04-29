@@ -1,6 +1,7 @@
 package dev.matthiesen.common.cobblemon_pokestops.platform;
 
 import net.minecraft.advancements.CriterionTrigger;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -17,6 +18,7 @@ public interface CobblemonPokestopsPlatform {
     <T extends SoundEvent> Supplier<T> registerSound(String id, Supplier<T> sound);
     <T extends CreativeModeTab> Supplier<T> registerCreativeModeTab(String id, Supplier<T> tab);
     <T extends CriterionTrigger<?>> Supplier<T> registerCriteriaTriggers(String id, Supplier<T> criterionTrigger);
+    <T extends ResourceLocation> Supplier<T> registerStats(String id, Supplier<T> stats);
 
     CreativeModeTab.Builder newCreativeTabBuilder();
 }

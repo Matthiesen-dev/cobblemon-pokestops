@@ -5,6 +5,7 @@ import dev.matthiesen.common.cobblemon_pokestops.Constants;
 import dev.matthiesen.neoforge.cobblemon_pokestops.worldgen.NeoForgeFeatures;
 import net.minecraft.advancements.CriterionTrigger;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.item.CreativeModeTab;
@@ -28,6 +29,7 @@ public class CobblemonPokestopsNeoForge {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Constants.MOD_ID);
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(Registries.ITEM, Constants.MOD_ID);
     public static final DeferredRegister<CriterionTrigger<?>> ADVANCEMENT_TRIGGERS = DeferredRegister.create(Registries.TRIGGER_TYPE, Constants.MOD_ID);
+    public static final DeferredRegister<ResourceLocation> STATS = DeferredRegister.create(Registries.CUSTOM_STAT, Constants.MOD_ID);
 
     public CobblemonPokestopsNeoForge(IEventBus modBus) {
         Constants.createInfoLog("Loading for NeoForge Mod Loader");
@@ -37,6 +39,7 @@ public class CobblemonPokestopsNeoForge {
         CREATIVE_TABS.register(modBus);
         ITEMS.register(modBus);
         ADVANCEMENT_TRIGGERS.register(modBus);
+        STATS.register(modBus);
         CobblemonPokestops.preinitialize();
         NeoForgeFeatures.init();
         CobblemonPokestops.initialize();

@@ -1,11 +1,12 @@
 package dev.matthiesen.common.cobblemon_pokestops.block;
 
 import dev.matthiesen.common.cobblemon_pokestops.CobblemonPokestops;
+import dev.matthiesen.common.cobblemon_pokestops.registry.*;
 import dev.matthiesen.common.cobblemon_pokestops.templates.block.LootStopTemplate;
-import dev.matthiesen.common.cobblemon_pokestops.registry.BlockEntityRegistry;
-import dev.matthiesen.common.cobblemon_pokestops.registry.BlockRegistry;
-import dev.matthiesen.common.cobblemon_pokestops.registry.ModLootTables;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.stats.Stat;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.phys.shapes.BooleanOp;
@@ -45,6 +46,17 @@ public class Wingedstop extends LootStopTemplate {
     @Override
     protected String getBroadcastPrefix() {
         return "Winged PokéStop";
+    }
+
+    @Override
+    protected Stat<ResourceLocation> getStats() {
+        return StatsRegistry.getWingedstopTimesSpunStat();
+    }
+
+    @Override
+    protected void criterionTrigger(ServerPlayer player) {
+        CriterionTriggerRegistry.WINGED_POKESTOP_SCORE.get().trigger(player);
+        CriterionTriggerRegistry.USE_WINGED_POKESTOP.get().trigger(player);
     }
 
     @Override

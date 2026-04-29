@@ -4,8 +4,6 @@ import dev.matthiesen.common.cobblemon_pokestops.Constants;
 import dev.matthiesen.common.cobblemon_pokestops.platform.CobblemonPokestopsPlatform;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.advancements.CriterionTrigger;
-import net.minecraft.advancements.CriterionTriggerInstance;
-import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
@@ -47,6 +45,11 @@ public class CobblemonPokestopsFabricPlatform implements CobblemonPokestopsPlatf
     @Override
     public <T extends CriterionTrigger<?>> Supplier<T> registerCriteriaTriggers(String id, Supplier<T> criterionTrigger) {
         return registerSupplier(BuiltInRegistries.TRIGGER_TYPES, id, criterionTrigger);
+    }
+
+    @Override
+    public <T extends ResourceLocation> Supplier<T> registerStats(String id, Supplier<T> stats) {
+        return registerSupplier(BuiltInRegistries.CUSTOM_STAT, id, stats);
     }
 
     @Override

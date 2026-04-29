@@ -1,11 +1,12 @@
 package dev.matthiesen.common.cobblemon_pokestops.block;
 
 import dev.matthiesen.common.cobblemon_pokestops.CobblemonPokestops;
+import dev.matthiesen.common.cobblemon_pokestops.registry.*;
 import dev.matthiesen.common.cobblemon_pokestops.templates.block.LootStopTemplate;
-import dev.matthiesen.common.cobblemon_pokestops.registry.BlockEntityRegistry;
-import dev.matthiesen.common.cobblemon_pokestops.registry.BlockRegistry;
-import dev.matthiesen.common.cobblemon_pokestops.registry.ModLootTables;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.stats.Stat;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.phys.shapes.BooleanOp;
@@ -40,6 +41,17 @@ public class Pokestop extends LootStopTemplate {
     @Override
     protected String getCooldownMessageKey() {
         return "message.cobblemon_pokestops.pokestop_cooldown";
+    }
+
+    @Override
+    protected Stat<ResourceLocation> getStats() {
+        return StatsRegistry.getPokestopTimesSpunStat();
+    }
+
+    @Override
+    protected void criterionTrigger(ServerPlayer player) {
+        CriterionTriggerRegistry.POKESTOP_SCORE.get().trigger(player);
+        CriterionTriggerRegistry.USE_POKESTOP.get().trigger(player);
     }
 
     @Override
