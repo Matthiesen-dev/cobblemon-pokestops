@@ -2,13 +2,20 @@
   "schemaVersion": 1,
   "id": "${mod_id}",
   "version": "${version}",
-  "name": "Cobblemon Pokestops",
-  "description": "Pokemon Go inspired Pokestops for Cobblemon.",
+  "name": "${mod_name}",
+  "description": "${mod_description}",
   "authors": [
-    "Adam Matthiesen"
+    "${mod_author}"
   ],
-  "license": "MIT License",
-  "icon": "assets/example/icon.png",
+  "license": "${mod_license}",
+  "icon": "icon.png",
+  "custom": {
+    "modmenu": {
+      "links": {
+        "modmenu.github_releases": "${github_url}"
+      }
+    }
+  },
   "environment": "*",
   "entrypoints": {
     "main": [
@@ -23,6 +30,7 @@
   },
   "depends": {
     "minecraft": "1.21.1",
-    "cobblemon": ">=1.7.3 <1.8.0"
+    "cobblemon": ">=1.7.3 <1.8.0",
+    "geckolib": ">=4.8.3 <5.0.0"
   }
 }

@@ -1,17 +1,17 @@
 modLoader = "javafml"
 loaderVersion = "[1,)"
-#issueTrackerURL = "A valid URL to your issue tracker where people can open bug tickets"
-license = "MIT License"
+issueTrackerURL = "${github_url}/issues"
+license = "${mod_license}"
 
 [[mods]]
 modId = "${mod_id}"
 version = "${version}"
-displayName = "Cobblemon Pokestops"
-authors = "Adam Matthiesen"
+displayName = "${mod_name}"
+authors = "${mod_author}"
 description = '''
-Pokemon Go inspired Pokestops for Cobblemon.
+${mod_description}
 '''
-#logoFile = ""
+logoFile = "icon.png"
 
 [[dependencies.${mod_id}]]
 modId = "minecraft"
@@ -31,5 +31,12 @@ side = "BOTH"
 modId = "cobblemon"
 mandatory = true
 versionRange = "[1.7.3,)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.${mod_id}]]
+modId = "geckolib"
+mandatory = true
+versionRange = "[4.8.3,)"
 ordering = "AFTER"
 side = "BOTH"
