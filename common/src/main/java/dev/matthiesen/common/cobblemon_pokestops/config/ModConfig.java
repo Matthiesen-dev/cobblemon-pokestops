@@ -22,10 +22,12 @@ public class ModConfig {
     @SerializedName("extraRarities")
     public List<String> extraRarities = List.of(
             "cobblemon:master_ball",
+            "cobblemon:acient_origin_ball",
             "cobblemon:ability_capsule",
             "cobblemon:max_revive",
             "cobblemon:hyper_potion",
-            "cobblemon:ultra_ball"
+            "cobblemon:ultra_ball",
+            "cobblemon:master_mod"
     );
 
     public static final Gson GSON = new GsonBuilder()
