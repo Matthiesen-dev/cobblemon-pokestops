@@ -1,5 +1,5 @@
 {
-  "parent": "cobblemon_pokestops:wingedstops/used_wingedstop",
+  "parent": "cobblemon_pokestops:wingedstops/used_1_winged_pokestop",
   "criteria": {
     "used_25_winged_pokestops": {
       "conditions": {

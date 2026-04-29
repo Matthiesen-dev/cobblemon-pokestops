@@ -1,5 +1,5 @@
 {
-  "parent": "cobblemon_pokestops:pokestops/used_pokestop",
+  "parent": "cobblemon_pokestops:pokestops/used_1_pokestop",
   "criteria": {
     "used_25_pokestops": {
       "conditions": {

@@ -1,7 +1,7 @@
 {
   "parent": "cobblemon_pokestops:root",
   "criteria": {
-    "used_winged_pokestop": {
+    "used_1_winged_pokestop": {
       "trigger": "cobblemon_pokestops:used_winged_pokestop"
     }
   },
@@ -20,7 +20,7 @@
   },
   "requirements": [
     [
-      "used_winged_pokestop"
+      "used_1_winged_pokestop"
     ]
   ],
   "sends_telemetry_event": true

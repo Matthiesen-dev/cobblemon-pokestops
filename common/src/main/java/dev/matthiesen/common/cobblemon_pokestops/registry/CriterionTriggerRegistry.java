@@ -15,8 +15,8 @@ public class CriterionTriggerRegistry {
     public static final Supplier<UsedPokestopCriterion> USE_POKESTOP = register("used_pokestop", UsedPokestopCriterion::new);
     public static final Supplier<UsedWingedPokestopCriterion> USE_WINGED_POKESTOP = register("used_winged_pokestop", UsedWingedPokestopCriterion::new);
 
-    public static final Supplier<PokestopScoreTracker> POKESTOP_SCORE = register("score", PokestopScoreTracker::new);
-    public static final Supplier<WingedPokestopScoreTracker> WINGED_POKESTOP_SCORE = register("score", WingedPokestopScoreTracker::new);
+    public static final Supplier<PokestopScoreTracker> POKESTOP_SCORE = register("pokestop_score", PokestopScoreTracker::new);
+    public static final Supplier<WingedPokestopScoreTracker> WINGED_POKESTOP_SCORE = register("winged_pokestop_score", WingedPokestopScoreTracker::new);
 
     private static <T extends CriterionTrigger<?>>Supplier<T> register(String id, Supplier<T> criterionTrigger) {
         return CobblemonPokestops.COMMON_PLATFORM.registerCriteriaTriggers(id, criterionTrigger);
