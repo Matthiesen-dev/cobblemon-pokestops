@@ -19,44 +19,43 @@ import java.util.function.Supplier;
 public class ItemRegistry {
     public static void init() {}
 
-    public static Map<String, Supplier<BlockItem>> POKESTOP_ITEMS = new HashMap<>();
-    public static Map<String, Supplier<BlockItem>> WINGEDSTOP_ITEMS = new HashMap<>();
-    public static Map<String, Supplier<BlockItem>> POKESTOP_TROPHY_ITEMS = new HashMap<>();
-    public static Map<String, Supplier<BlockItem>> WINGEDSTOP_TROPHY_ITEMS = new HashMap<>();
+    // Collections for Creative Menu
+    public static Map<String, Supplier<BlockItem>> ALL_POKESTOPS = new HashMap<>();
+    public static Map<String, Supplier<BlockItem>> ALL_TROPHIES = new HashMap<>();
 
     static {
         registerStopItems(
                 BlockRegistry.POKESTOPS,
-                POKESTOP_ITEMS,
+                ALL_POKESTOPS,
                 block -> new PokestopItem(block, new Item.Properties())
         );
         registerStopItems(
                 BlockRegistry.WINGEDSTOPS,
-                WINGEDSTOP_ITEMS,
+                ALL_POKESTOPS,
                 block -> new WingedstopItem(block, new Item.Properties())
         );
         registerStopItems(
                 BlockRegistry.WINGEDSTOP_TROPHIES,
-                WINGEDSTOP_TROPHY_ITEMS,
+                ALL_TROPHIES,
                 block -> new WingedstopTrophyItem(block, new Item.Properties().rarity(Rarity.EPIC))
         );
         registerStopItems(
                 BlockRegistry.POKESTOP_TROPHIES,
-                POKESTOP_TROPHY_ITEMS,
+                ALL_TROPHIES,
                 block -> new PokestopTrophyItem(block, new Item.Properties().rarity(Rarity.EPIC))
         );
     }
 
     private static <B extends Block> void registerStopItems(
             Map<String, Supplier<B>> blocks,
-            Map<String, Supplier<BlockItem>> targetItems,
+            Map<String, Supplier<BlockItem>> targetCollection,
             Function<B, BlockItem> itemFactory
     ) {
         for (var entry : blocks.entrySet()) {
             String name = entry.getKey();
             Supplier<B> blockSupplier = entry.getValue();
             Supplier<BlockItem> itemSupplier = registerItem(name, () -> itemFactory.apply(blockSupplier.get()));
-            targetItems.put(name, itemSupplier);
+            targetCollection.put(name, itemSupplier);
         }
     }
 
@@ -74,17 +73,24 @@ public class ItemRegistry {
 
     @SuppressWarnings("unused")
     public static final Supplier<CreativeModeTab> POKESTOPS_TAB = CobblemonPokestops.COMMON_PLATFORM
-            .registerCreativeModeTab("cobblemon_pokestops_items", () -> CobblemonPokestops.COMMON_PLATFORM
+            .registerCreativeModeTab("cobblemon_pokestops_pokestops", () -> CobblemonPokestops.COMMON_PLATFORM
                     .newCreativeTabBuilder()
-                    .title(Component.translatable("itemGroup." + Constants.MOD_ID + ".cobblemon_pokestops_items"))
-                    .icon(() -> new ItemStack(ItemRegistry.POKESTOP_ITEMS.get("pokestop").get()))
+                    .title(Component.translatable("itemGroup." + Constants.MOD_ID + ".cobblemon_pokestops_pokestops"))
+                    .icon(() -> new ItemStack(ItemRegistry.ALL_POKESTOPS.get("pokestop").get()))
                     .displayItems((enabledFeatures, entries) ->
-                            addAllItemsToCreativeTab(entries, List.of(
-                                    ItemRegistry.POKESTOP_ITEMS,
-                                    ItemRegistry.WINGEDSTOP_ITEMS,
-                                    ItemRegistry.WINGEDSTOP_TROPHY_ITEMS,
-                                    ItemRegistry.POKESTOP_TROPHY_ITEMS
-                            ))
+                            addAllItemsToCreativeTab(entries, List.of(ItemRegistry.ALL_POKESTOPS))
+                    )
+                    .build()
+            );
+
+    @SuppressWarnings("unused")
+    public static final Supplier<CreativeModeTab> POKESTOPS_TROPHIES_TAB = CobblemonPokestops.COMMON_PLATFORM
+            .registerCreativeModeTab("cobblemon_pokestops_trophies", () -> CobblemonPokestops.COMMON_PLATFORM
+                    .newCreativeTabBuilder()
+                    .title(Component.translatable("itemGroup." + Constants.MOD_ID + ".cobblemon_pokestops_trophies"))
+                    .icon(() -> new ItemStack(ItemRegistry.ALL_TROPHIES.get("wingedstop_trophy").get()))
+                    .displayItems((enabledFeatures, entries) ->
+                            addAllItemsToCreativeTab(entries, List.of(ItemRegistry.ALL_TROPHIES))
                     )
                     .build()
             );

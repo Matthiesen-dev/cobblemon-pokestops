@@ -45,7 +45,7 @@ public class Wingedstop extends LootStopTemplate {
 
     @Override
     protected String getBroadcastPrefix() {
-        return "Winged PokéStop";
+        return "Winged PokeStop";
     }
 
     @Override

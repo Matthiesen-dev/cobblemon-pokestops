@@ -21,57 +21,57 @@ public class AdvancementRegistry {
     public static Map<String, String> ENGLISH_TRANSLATIONS = new HashMap<>();
 
     static {
-        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.root.title", "PokéStops");
+        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.root.title", "PokeStops");
         ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.root.description",
-                "Discover the world of PokéStops and their unique features!");
+                "Discover the world of PokeStops and their unique features!");
         ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_pokestop.title", "First Spin");
         ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_pokestop.description",
-                "Spin a PokéStop for the first time to receive items and experience the thrill of discovery!");
+                "Spin a PokeStop for the first time to receive items and experience the thrill of discovery!");
         ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_wingedstop.title", "Winged Wonders");
         ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_wingedstop.description",
-                "Spin a Winged PokéStop for the first time to uncover its unique rewards and experience the thrill of discovery!");
-        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_25_pokestops.title", "PokéStop Enthusiast");
+                "Spin a Winged PokeStop for the first time to uncover its unique rewards and experience the thrill of discovery!");
+        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_25_pokestops.title", "PokeStop Enthusiast");
         ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_25_pokestops.description",
-                "Spin 25 PokéStops to show your dedication to exploring the world of Cobblemon and uncovering its secrets!");
-        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_25_winged_pokestops.title", "Winged PokéStop Enthusiast");
+                "Spin 25 PokeStops to show your dedication to exploring the world of Cobblemon and uncovering its secrets!");
+        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_25_winged_pokestops.title", "Winged PokeStop Enthusiast");
         ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_25_winged_pokestops.description",
-                "Spin 25 Winged PokéStops to show your dedication to exploring the world of Cobblemon and uncovering its secrets!");
-        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_50_pokestops.title", "PokéStop Explorer");
+                "Spin 25 Winged PokeStops to show your dedication to exploring the world of Cobblemon and uncovering its secrets!");
+        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_50_pokestops.title", "PokeStop Explorer");
         ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_50_pokestops.description",
-                "Spin 50 PokéStops to become a true explorer of the world of Cobblemon and uncover its hidden treasures!");
-        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_50_winged_pokestops.title", "Winged PokéStop Explorer");
+                "Spin 50 PokeStops to become a true explorer of the world of Cobblemon and uncover its hidden treasures!");
+        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_50_winged_pokestops.title", "Winged PokeStop Explorer");
         ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_50_winged_pokestops.description",
-                "Spin 50 Winged PokéStops to become a true explorer of the world of Cobblemon and uncover its hidden treasures!");
-        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_100_pokestops.title", "PokéStop Master");
+                "Spin 50 Winged PokeStops to become a true explorer of the world of Cobblemon and uncover its hidden treasures!");
+        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_100_pokestops.title", "PokeStop Master");
         ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_100_pokestops.description",
-                "Spin 100 PokéStops to achieve mastery in the world of Cobblemon and unlock exclusive rewards!");
-        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_100_winged_pokestops.title", "Winged PokéStop Master");
+                "Spin 100 PokeStops to achieve mastery in the world of Cobblemon and unlock exclusive rewards!");
+        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_100_winged_pokestops.title", "Winged PokeStop Master");
         ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_100_winged_pokestops.description",
-                "Spin 100 Winged PokéStops to achieve mastery in the world of Cobblemon and unlock exclusive rewards!");
-        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_200_pokestops.title", "PokéStop Legend");
+                "Spin 100 Winged PokeStops to achieve mastery in the world of Cobblemon and unlock exclusive rewards!");
+        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_200_pokestops.title", "PokeStop Legend");
         ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_200_pokestops.description",
-                "Spin 200 PokéStops to become a legend in the world of Cobblemon and unlock legendary rewards!");
-        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_200_winged_pokestops.title", "Winged PokéStop Legend");
+                "Spin 200 PokeStops to become a legend in the world of Cobblemon and unlock legendary rewards!");
+        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_200_winged_pokestops.title", "Winged PokeStop Legend");
         ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_200_winged_pokestops.description",
-                "Spin 200 Winged PokéStops to become a legend in the world of Cobblemon and unlock legendary rewards!");
-        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_300_pokestops.title", "PokéStop Mythic");
+                "Spin 200 Winged PokeStops to become a legend in the world of Cobblemon and unlock legendary rewards!");
+        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_300_pokestops.title", "PokeStop Mythic");
         ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_300_pokestops.description",
-                "Spin 300 PokéStops to achieve mythic status in the world of Cobblemon and unlock mythic rewards!");
-        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_300_winged_pokestops.title", "Winged PokéStop Mythic");
+                "Spin 300 PokeStops to achieve mythic status in the world of Cobblemon and unlock mythic rewards!");
+        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_300_winged_pokestops.title", "Winged PokeStop Mythic");
         ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_300_winged_pokestops.description",
-                "Spin 300 Winged PokéStops to achieve mythic status in the world of Cobblemon and unlock mythic rewards!");
-        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_400_pokestops.title", "PokéStop Immortal");
+                "Spin 300 Winged PokeStops to achieve mythic status in the world of Cobblemon and unlock mythic rewards!");
+        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_400_pokestops.title", "PokeStop Immortal");
         ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_400_pokestops.description",
-                "Spin 400 PokéStops to achieve immortal status in the world of Cobblemon and unlock immortal rewards!");
-        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_400_winged_pokestops.title", "Winged PokéStop Immortal");
+                "Spin 400 PokeStops to achieve immortal status in the world of Cobblemon and unlock immortal rewards!");
+        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_400_winged_pokestops.title", "Winged PokeStop Immortal");
         ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_400_winged_pokestops.description",
-                "Spin 400 Winged PokéStops to achieve immortal status in the world of Cobblemon and unlock immortal rewards!");
-        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_500_pokestops.title", "PokéStop Eternal");
+                "Spin 400 Winged PokeStops to achieve immortal status in the world of Cobblemon and unlock immortal rewards!");
+        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_500_pokestops.title", "PokeStop Eternal");
         ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_500_pokestops.description",
-                "Spin 500 PokéStops to achieve eternal status in the world of Cobblemon and unlock eternal rewards!");
-        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_500_winged_pokestops.title", "Winged PokéStop Eternal");
+                "Spin 500 PokeStops to achieve eternal status in the world of Cobblemon and unlock eternal rewards!");
+        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_500_winged_pokestops.title", "Winged PokeStop Eternal");
         ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_500_winged_pokestops.description",
-                "Spin 500 Winged PokéStops to achieve eternal status in the world of Cobblemon and unlock eternal rewards!");
+                "Spin 500 Winged PokeStops to achieve eternal status in the world of Cobblemon and unlock eternal rewards!");
     }
 
     @SuppressWarnings("unused")

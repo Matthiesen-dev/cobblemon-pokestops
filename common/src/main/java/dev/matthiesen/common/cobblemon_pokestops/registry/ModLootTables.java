@@ -89,14 +89,14 @@ public class ModLootTables {
             LootTable.lootTable().withPool(
                     LootPool.lootPool()
                             .setRolls(ConstantValue.exactly(1f))
-                            .add(createLootItem(ItemRegistry.POKESTOP_TROPHY_ITEMS.get("pokestop_trophy").get(), 100, 1.0f))
+                            .add(createLootItem(ItemRegistry.ALL_TROPHIES.get("pokestop_trophy").get(), 100, 1.0f))
             );
 
     public static final LootTable.Builder WINGEDSTOP_TROPHY_LOOT_POOL =
             LootTable.lootTable().withPool(
                     LootPool.lootPool()
                             .setRolls(ConstantValue.exactly(1f))
-                            .add(createLootItem(ItemRegistry.WINGEDSTOP_TROPHY_ITEMS.get("wingedstop_trophy").get(), 100, 1.0f))
+                            .add(createLootItem(ItemRegistry.ALL_TROPHIES.get("wingedstop_trophy").get(), 100, 1.0f))
             );
 
     // --- Datagen ---

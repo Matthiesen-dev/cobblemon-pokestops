@@ -73,7 +73,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "cobblemon:poke_ball",
+          "name": "cobblemon:ancient_poke_ball",
           "weight": 50
         },
         {
@@ -85,7 +85,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "cobblemon:potion",
+          "name": "cobblemon:fossilized_bird",
           "weight": 50
         },
         {
@@ -97,7 +97,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "cobblemon:antidote",
+          "name": "cobblemon:fossilized_dino",
           "weight": 50
         },
         {
@@ -145,7 +145,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "cobblemon:ultra_ball",
+          "name": "cobblemon:ancient_ultra_ball",
           "weight": 15
         },
         {
@@ -157,7 +157,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "cobblemon:hyper_potion",
+          "name": "cobblemon:old_amber_fossil",
           "weight": 15
         },
         {
@@ -181,7 +181,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "cobblemon:master_ball",
+          "name": "cobblemon:ancient_origin_ball",
           "weight": 5
         },
         {
@@ -193,7 +193,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "cobblemon:max_revive",
+          "name": "cobblemon:sail_fossil",
           "weight": 5
         },
         {
@@ -205,7 +205,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "cobblemon:ability_capsule",
+          "name": "cobblemon:master_rod",
           "weight": 5
         }
       ],

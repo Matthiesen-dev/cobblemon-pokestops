@@ -35,9 +35,11 @@ public class EnglishTranslationsRegistry {
     );
 
     static {
-        TRANSLATIONS.put("itemGroup.cobblemon_pokestops.cobblemon_pokestops_items", "Cobblemon Pokéstops");
-        TRANSLATIONS.put("stat.cobblemon_pokestops.pokestop_times_spun", "Times Spun Pokéstops");
-        TRANSLATIONS.put("stat.cobblemon_pokestops.wingedstop_times_spun", "Times Spun Winged Pokéstops");
+        TRANSLATIONS.put("itemGroup.cobblemon_pokestops.cobblemon_pokestops_pokestops", "Pokestops");
+        TRANSLATIONS.put("itemGroup.cobblemon_pokestops.cobblemon_pokestops_trophies", "Pokestop Trophies");
+        TRANSLATIONS.put("stat.cobblemon_pokestops.pokestop_times_spun", "Times Spun Pokestops");
+        TRANSLATIONS.put("stat.cobblemon_pokestops.wingedstop_times_spun", "Times Spun Winged Pokestops");
+        TRANSLATIONS.put("sound.cobblemon_pokestops.pokestop_spin", "Pokestop Spin");
 
         for (var key : SPINNER_MESSAGE_VARIANTS.entrySet()) {
             TRANSLATIONS.put("message.cobblemon_pokestops." + key.getKey() + "_spin", "You spun the " + key.getValue() + "!");

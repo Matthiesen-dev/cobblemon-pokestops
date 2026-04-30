@@ -1,5 +1,6 @@
 {
   "pokestop_spin": {
+    "subtitle": "sound.cobblemon_pokestops.pokestop_spin",
     "sounds": [
       {
         "name": "cobblemon_pokestops:pokestop_spin",

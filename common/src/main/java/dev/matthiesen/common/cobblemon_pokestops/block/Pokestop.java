@@ -56,7 +56,7 @@ public class Pokestop extends LootStopTemplate {
 
     @Override
     protected String getBroadcastPrefix() {
-        return "PokéStop";
+        return "PokeStop";
     }
 
     @Override
