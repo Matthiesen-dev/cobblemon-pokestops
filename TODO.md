@@ -19,6 +19,18 @@
     - [ ] Healing Pokestop Configuration
       - Description: Add configuration options for the Healing Pokestop, allowing server owners to customize the amount of healing provided and the cooldown time.
 
+## Possible Mod-Integrations
+
+- [ ] Integration with Map Mods 
+  - Description: Integrate the Pokestop system with popular map mods, such as JourneyMap or Xaero's Minimap, to allow players to see the locations of nearby Pokestops on their maps.
+  - Functionality: Players would be able to see Pokestops marked on their maps, making it easier to find and interact with them while exploring the world.
+- [ ] Integration with Cobblemon Mega Showdown
+  - Description: Cobblemon Mega Showdown is a fairly popular mod that adds extra features to the battle system in Cobblemon. Maybe we could integrate the Pokestop system with this mod to provide rewards for players who use Pokestops before battles.
+  - Functionality: Players could receive MSD-specific rewards when they use Pokestops, such as temporary buffs for their Pokemon or exclusive items that can be used in battles. 
+- [ ] Integration with Cobbreeding
+  - Description: Cobbreeding is a mod that adds breeding mechanics to Cobblemon, allowing players to breed their Pokemon for better stats and abilities. Integrating the Pokestop system with Cobbreeding could provide rewards for players who use Pokestops.
+  - Functionality: Players could receive breeding-related rewards when they use Pokestops, such as breeding-specific held items or Eggs.
+
 ## Long-term Goals
 
 > Note: These features are planned for future updates and may require significant development time. They are not guaranteed to be implemented, but they represent potential directions for expanding the Pokestop system in the future.
