@@ -1,6 +1,7 @@
 package dev.matthiesen.neoforge.cobblemon_pokestops;
 
 import com.mojang.blaze3d.vertex.PoseStack;
+import dev.matthiesen.common.cobblemon_pokestops.CobblemonPokestops;
 import dev.matthiesen.common.cobblemon_pokestops.Constants;
 import dev.matthiesen.common.cobblemon_pokestops.client.CobblemonPokestopsClient;
 import net.minecraft.client.Camera;
@@ -21,6 +22,7 @@ public class CobblemonPokestopsNeoForgeClient {
     @SubscribeEvent
     public static void registerRenderers(final EntityRenderersEvent.RegisterRenderers event) {
         CobblemonPokestopsClient.registerRenderers(event::registerEntityRenderer, event::registerBlockEntityRenderer);
+        CobblemonPokestops.clientPreinitialize();
     }
     @SubscribeEvent
     public static void onHighlight(RenderHighlightEvent.Block event) {

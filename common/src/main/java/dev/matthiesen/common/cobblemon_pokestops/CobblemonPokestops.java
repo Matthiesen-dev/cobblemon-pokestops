@@ -11,13 +11,18 @@ public class CobblemonPokestops {
     public static final CobblemonPokestopsPlatform COMMON_PLATFORM = ServiceLoader.load(CobblemonPokestopsPlatform.class).findFirst().orElseThrow();
 
     public static void preinitialize() {
-        Constants.createInfoLog("Registering Resources");
+        Constants.createInfoLog("Registering Server/Client Resources");
         SoundRegistry.init();
         StatsRegistry.init();
         BlockRegistry.init();
         BlockEntityRegistry.init();
         ItemRegistry.init();
         CriterionTriggerRegistry.init();
+    }
+
+    public static void clientPreinitialize() {
+        Constants.createInfoLog("Registering Client Resources");
+        ItemGeoRendererClientRegistry.initClient();
     }
 
     public static void initialize() {

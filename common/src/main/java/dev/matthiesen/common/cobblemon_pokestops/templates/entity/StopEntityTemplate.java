@@ -1,6 +1,5 @@
 package dev.matthiesen.common.cobblemon_pokestops.templates.entity;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
@@ -18,6 +17,7 @@ import org.jetbrains.annotations.NotNull;
 import software.bernie.geckolib.animatable.GeoBlockEntity;
 import software.bernie.geckolib.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.animation.*;
+import software.bernie.geckolib.util.ClientUtil;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
 import java.util.HashMap;
@@ -107,7 +107,8 @@ public abstract class StopEntityTemplate extends BlockEntity implements GeoBlock
     }
 
     private PlayState predicate(AnimationState<? extends StopEntityTemplate> event) {
-        if (Minecraft.getInstance().player != null && !this.canPlayerSpin(Minecraft.getInstance().player)) {
+        Player player = ClientUtil.getClientPlayer();
+        if (player != null && !this.canPlayerSpin(player)) {
             event.getController().setAnimation(getIdleCooldownAnimation());
         } else {
             event.getController().setAnimation(getIdleAnimation());

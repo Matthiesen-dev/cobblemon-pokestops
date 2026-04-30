@@ -1,9 +1,8 @@
 package dev.matthiesen.common.cobblemon_pokestops.templates.item;
 
-import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.block.Block;
-import org.jetbrains.annotations.NotNull;
+import org.apache.commons.lang3.mutable.MutableObject;
 import software.bernie.geckolib.animatable.GeoItem;
 import software.bernie.geckolib.animatable.SingletonGeoAnimatable;
 import software.bernie.geckolib.animatable.client.GeoRenderProvider;
@@ -18,6 +17,11 @@ import java.util.function.Consumer;
 public abstract class StopItemTemplate extends BlockItem implements GeoItem {
     private final AnimatableInstanceCache cache = new SingletonAnimatableInstanceCache(this);
 
+    /**
+     * Holds the GeoRenderProvider that is provided via Client side initialization.
+     */
+    public final MutableObject<GeoRenderProvider> renderProviderHolder = new MutableObject<>();
+
     public StopItemTemplate(Block block, Properties properties) {
         super(block, properties);
         SingletonGeoAnimatable.registerSyncedAnimatable(this);
@@ -28,25 +32,10 @@ public abstract class StopItemTemplate extends BlockItem implements GeoItem {
      */
     protected abstract RawAnimation getIdleAnimation();
 
-    /**
-     * Subclasses must provide the renderer for this stop item.
-     */
-    @NotNull
-    protected abstract BlockEntityWithoutLevelRenderer getRenderer();
-
     @Override
     public void createGeoRenderer(Consumer<GeoRenderProvider> consumer) {
-        consumer.accept(new GeoRenderProvider() {
-            private BlockEntityWithoutLevelRenderer renderer;
-
-            @Override
-            public @NotNull BlockEntityWithoutLevelRenderer getGeoItemRenderer() {
-                if (this.renderer == null) {
-                    this.renderer = StopItemTemplate.this.getRenderer();
-                }
-                return this.renderer;
-            }
-        });
+        // Return the cached RenderProvider
+        consumer.accept(this.renderProviderHolder.getValue());
     }
 
     @Override
