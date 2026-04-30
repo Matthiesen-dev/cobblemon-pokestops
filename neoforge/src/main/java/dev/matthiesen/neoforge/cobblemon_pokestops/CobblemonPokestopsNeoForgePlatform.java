@@ -9,6 +9,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.neoforged.fml.ModList;
+import net.neoforged.fml.loading.FMLEnvironment;
 
 import java.util.function.Supplier;
 
@@ -46,6 +48,16 @@ public class CobblemonPokestopsNeoForgePlatform implements CobblemonPokestopsPla
     @Override
     public <T extends ResourceLocation> Supplier<T> registerStats(String id, Supplier<T> stats) {
         return CobblemonPokestopsNeoForge.STATS.register(id, stats);
+    }
+
+    @Override
+    public boolean isModLoaded(String modId) {
+        return ModList.get().isLoaded(modId);
+    }
+
+    @Override
+    public boolean isDevelopmentEnvironment() {
+        return !FMLEnvironment.production;
     }
 
     @Override

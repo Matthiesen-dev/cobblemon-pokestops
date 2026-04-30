@@ -9,15 +9,76 @@
   - Advancement Chain: Earn Advancements and a Trophy for using the Healing Pokestop 500 times.
   - **Requirements:**
     - [ ] Healing Pokestop Model 
-      - Description: A new model for the healing Pokestop, featuring a medical cross symbol and a more vibrant color scheme to differentiate it from standard Pokestops.
     - [ ] Healing Pokestop Trophy Model
-      - Description: A trophy model that represents the achievement of using the Healing Pokestop 500 times, featuring a design that incorporates elements of healing and care.
     - [ ] Healing Pokestop Advancement Chain
-      - Description: A series of advancements that players can earn by using the Healing Pokestop, culminating in a trophy for reaching 500 uses.
     - [ ] Healing Pokestop Functionality
-      - Description: Implement the functionality for the Healing Pokestop, allowing it to heal players' Pokemon when interacted with, and ensuring that it has a cooldown period of 10 minutes between uses.
     - [ ] Healing Pokestop Configuration
-      - Description: Add configuration options for the Healing Pokestop, allowing server owners to customize the amount of healing provided and the cooldown time.
+- [ ] Egg Pokestop (Planned after Cobblemon 1.8)
+  - Description: Provides players with items or eggs when interacted with.
+  - Design: TBD. Thinking of possibly doing a design similar to a Cobblemon Egg once those release.
+  - Functionality: When a player interacts with this Pokestop, it will have a chance to give them an egg that can be hatched or an Item. It can be used once every 15 minutes.
+  - Advancement Chain: Earn Advancements and a Trophy for using the Egg Pokestop 500 times.
+  - **Requirements:**
+    - [ ] Egg Pokestop Model 
+    - [ ] Egg Pokestop Trophy Model
+    - [ ] Egg Pokestop Advancement Chain
+    - [ ] Egg Pokestop Functionality
+    - [ ] Egg Pokestop Configuration
+
+## Planned Alternative Pokestop Loot designs
+
+- [ ] Poke Ball Stop
+  - Description: A variant of the standard Pokestop, themed around the Poke Ball. This Pokestop would have a unique design and provide different rewards compared to the standard Pokestop.
+  - Design: A Pokestop designed to look like a giant Poke Ball, with the iconic red and white color scheme and the button in the center.
+    - Variants:
+      - "GS" Ball Stop: A variant of the Poke Ball Stop that is designed to look like a GS Ball from the Pokemon Series.
+      - "Master" Ball Stop: A variant of the Poke Ball Stop that is designed to look like a Master Ball from the Pokemon Series.
+      - "Premier" Ball Stop: A variant of the Poke Ball Stop that is designed to look like a Premier Ball from the Pokemon Series.
+      - "Ultra" Ball Stop: A variant of the Poke Ball Stop that is designed to look like an Ultra Ball from the Pokemon Series.
+  - Functionality: When a player interacts with the Poke Ball Stop, it would provide them with unique rewards that are different from those offered by standard Pokestops. These rewards could include rare items, special Pokeballs, etc.
+  - Advancement Chain: Earn Advancements and a Trophy for using the Poke Ball Stop 500 times.
+  - **Requirements:**
+    - [ ] Poke Ball Stop Model
+    - [ ] Poke Ball Stop Trophy Model
+    - [ ] Poke Ball Stop Advancement Chain
+    - [ ] Poke Ball Stop Functionality
+    - [ ] Poke Ball Stop Configuration
+- [ ] Berry Stop
+  - Description: A variant of the standard Pokestop, themed around Berries. This Pokestop would have a unique design and provide different rewards compared to the standard Pokestop.
+  - Design: A Pokestop designed to look like a giant Berry, with vibrant colors and a leaf on top.
+    - Variants: TBD. Possibly different types of berries could be represented, such as a Razz Berry Stop, a Pinap Berry Stop, etc.
+  - Functionality: When a player interacts with the Berry Stop, it would provide them with unique rewards that are different from those offered by standard Pokestops. These rewards could include rare berries, special items, etc.
+  - Advancement Chain: Earn Advancements and a Trophy for using the Berry Stop 500 times.
+  - **Requirements:**
+    - [ ] Berry Stop Model
+    - [ ] Berry Stop Trophy Model
+    - [ ] Berry Stop Advancement Chain
+    - [ ] Berry Stop Functionality
+    - [ ] Berry Stop Configuration
+- [ ] Candy Stop
+  - Description: A variant of the standard Pokestop, themed around Candy. This Pokestop would have a unique design and provide different rewards compared to the standard Pokestop.
+  - Design: A Pokestop designed to look like a giant piece of candy, with bright colors and a wrapper.
+    - Variants: TBD. Possibly different types of candy could be represented, such as a Lollipop Stop, a Chocolate Stop, etc.
+  - Functionality: When a player interacts with the Candy Stop, it would provide them with unique rewards that are different from those offered by standard Pokestops. These rewards could include rare candies, special items, etc.
+  - Advancement Chain: Earn Advancements and a Trophy for using the Candy Stop 500 times.
+  - **Requirements:**
+    - [ ] Candy Stop Model
+    - [ ] Candy Stop Trophy Model
+    - [ ] Candy Stop Advancement Chain
+    - [ ] Candy Stop Functionality
+    - [ ] Candy Stop Configuration
+- [ ] Evolution Stop
+  - Description: A variant of the standard Pokestop, themed around Evolution. This Pokestop would have a unique design and provide different rewards compared to the standard Pokestop.
+  - Design: A Pokestop designed to look like a giant Evolution Stone, with a sleek and futuristic design.
+    - Variants: TBD. Possibly different types of Evolution Stones could be represented, such as a Fire Stone Stop, a Water Stone Stop, etc.
+  - Functionality: When a player interacts with the Evolution Stop, it would provide them with unique rewards that are different from those offered by standard Pokestops. These rewards could include rare evolution items, special items, etc.
+  - Advancement Chain: Earn Advancements and a Trophy for using the Evolution Stop 500 times.
+  - **Requirements:**
+    - [ ] Evolution Stop Model
+    - [ ] Evolution Stop Trophy Model
+    - [ ] Evolution Stop Advancement Chain
+    - [ ] Evolution Stop Functionality
+    - [ ] Evolution Stop Configuration
 
 ## Possible Mod-Integrations
 
@@ -26,10 +87,7 @@
   - Functionality: Players would be able to see Pokestops marked on their maps, making it easier to find and interact with them while exploring the world.
 - [ ] Integration with Cobblemon Mega Showdown
   - Description: Cobblemon Mega Showdown is a fairly popular mod that adds extra features to the battle system in Cobblemon. Maybe we could integrate the Pokestop system with this mod to provide rewards for players who use Pokestops before battles.
-  - Functionality: Players could receive MSD-specific rewards when they use Pokestops, such as temporary buffs for their Pokemon or exclusive items that can be used in battles. 
-- [ ] Integration with Cobbreeding
-  - Description: Cobbreeding is a mod that adds breeding mechanics to Cobblemon, allowing players to breed their Pokemon for better stats and abilities. Integrating the Pokestop system with Cobbreeding could provide rewards for players who use Pokestops.
-  - Functionality: Players could receive breeding-related rewards when they use Pokestops, such as breeding-specific held items or Eggs.
+  - Functionality: Players could receive MSD-specific rewards when they use Pokestops, such as temporary buffs for their Pokemon or exclusive items that can be used in battles.
 
 ## Long-term Goals
 

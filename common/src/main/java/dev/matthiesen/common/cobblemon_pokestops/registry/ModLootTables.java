@@ -4,6 +4,7 @@ import com.cobblemon.mod.common.CobblemonItems;
 import dev.matthiesen.common.cobblemon_pokestops.Constants;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.server.commands.LootCommand;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.storage.loot.LootPool;
