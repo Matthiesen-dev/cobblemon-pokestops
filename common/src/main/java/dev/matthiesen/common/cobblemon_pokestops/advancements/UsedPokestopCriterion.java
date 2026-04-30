@@ -3,7 +3,6 @@ package dev.matthiesen.common.cobblemon_pokestops.advancements;
 import com.mojang.serialization.Codec;
 import dev.matthiesen.common.cobblemon_pokestops.registry.CriterionTriggerRegistry;
 import net.minecraft.advancements.Criterion;
-import net.minecraft.advancements.CriterionTriggerInstance;
 import net.minecraft.advancements.critereon.ContextAwarePredicate;
 import net.minecraft.advancements.critereon.SimpleCriterionTrigger;
 import net.minecraft.server.level.ServerPlayer;
