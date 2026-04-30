@@ -2,6 +2,7 @@ package dev.matthiesen.common.cobblemon_pokestops.registry;
 
 import dev.matthiesen.common.cobblemon_pokestops.CobblemonPokestops;
 import dev.matthiesen.common.cobblemon_pokestops.block.*;
+import dev.matthiesen.common.cobblemon_pokestops.templates.block.TrophyTemplate;
 import net.minecraft.world.level.block.Block;
 
 import java.util.*;
@@ -15,14 +16,20 @@ public class BlockRegistry {
 
     public static final Map<String, Supplier<Pokestop>> POKESTOPS = new HashMap<>();
     public static final Map<String, Supplier<Wingedstop>> WINGEDSTOPS = new HashMap<>();
-    public static final Map<String, Supplier<Block>> POKESTOP_TROPHIES = new HashMap<>();
+
+    public static final Map<String, Supplier<PokestopTrophy>> POKESTOP_TROPHIES = new HashMap<>();
     public static final Map<String, Supplier<WingedstopTrophy>> WINGEDSTOP_TROPHIES = new HashMap<>();
+    public static final Map<String, Supplier<? extends TrophyTemplate>> ALL_TROPHIES = new HashMap<>();
 
     static {
         registerFamilyWithVariants(POKESTOPS, "pokestop", POKESTOP_VARIANTS, Pokestop::new);
         registerFamilyWithVariants(WINGEDSTOPS, "wingedstop", WINGEDSTOP_VARIANTS, Wingedstop::new);
         POKESTOP_TROPHIES.put("pokestop_trophy", registerBlock("pokestop_trophy", PokestopTrophy::new));
         WINGEDSTOP_TROPHIES.put("wingedstop_trophy", registerBlock("wingedstop_trophy", WingedstopTrophy::new));
+
+        // Store Trophy collection data for datagen
+        ALL_TROPHIES.putAll(POKESTOP_TROPHIES);
+        ALL_TROPHIES.putAll(WINGEDSTOP_TROPHIES);
     }
 
     private static <T extends Block> void registerFamilyWithVariants(

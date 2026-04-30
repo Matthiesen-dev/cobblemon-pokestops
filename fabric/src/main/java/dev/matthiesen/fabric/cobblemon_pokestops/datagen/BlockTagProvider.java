@@ -22,10 +22,9 @@ public class BlockTagProvider extends FabricTagProvider.BlockTagProvider {
             getOrCreateTagBuilder(entry.getKey()).add(entry.getValue());
         }
 
-        var builder = getOrCreateTagBuilder(ConventionalBlockTags.RELOCATION_NOT_SUPPORTED);
-
+        var relocationNotSupported = getOrCreateTagBuilder(ConventionalBlockTags.RELOCATION_NOT_SUPPORTED);
         for (var entry : ModTags.RELOCATION_NOT_SUPPORTED_TAGS) {
-            builder.addTag(entry);
+            relocationNotSupported.addTag(entry);
         }
 
         var mineable = getOrCreateTagBuilder(
