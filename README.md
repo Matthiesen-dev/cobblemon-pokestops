@@ -15,7 +15,7 @@ Finish the Advancement Chain in-game to obtain the Trophies, which include:
 ## Requirements
 
 - [Cobblemon 1.7.3+1.21.1](https://modrinth.com/mod/cobblemon)
-- [Geckolib 4.8.4](https://modrinth.com/mod/geckolib)
+- [Geckolib 4.8.3+](https://modrinth.com/mod/geckolib)
 
 ## Available Pokestop Types
 
