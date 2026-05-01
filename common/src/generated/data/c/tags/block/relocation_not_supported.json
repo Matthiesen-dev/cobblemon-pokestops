@@ -2,6 +2,7 @@
   "values": [
     "#cobblemon_pokestops:pokestops",
     "#cobblemon_pokestops:wingedstops",
+    "#cobblemon_pokestops:pokeballstops",
     "#cobblemon_pokestops:dummyblocks"
   ]
 }

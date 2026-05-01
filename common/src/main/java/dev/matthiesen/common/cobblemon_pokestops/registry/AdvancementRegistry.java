@@ -1,10 +1,7 @@
 package dev.matthiesen.common.cobblemon_pokestops.registry;
 
 import dev.matthiesen.common.cobblemon_pokestops.Constants;
-import dev.matthiesen.common.cobblemon_pokestops.advancements.PokestopScoreTracker;
-import dev.matthiesen.common.cobblemon_pokestops.advancements.UsedPokestopCriterion;
-import dev.matthiesen.common.cobblemon_pokestops.advancements.UsedWingedPokestopCriterion;
-import dev.matthiesen.common.cobblemon_pokestops.advancements.WingedPokestopScoreTracker;
+import dev.matthiesen.common.cobblemon_pokestops.advancements.*;
 import net.minecraft.advancements.*;
 import net.minecraft.advancements.critereon.PlayerTrigger;
 import net.minecraft.core.HolderLookup;
@@ -24,66 +21,96 @@ public class AdvancementRegistry {
         ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.root.title", "PokeStops");
         ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.root.description",
                 "Discover the world of PokeStops and their unique features!");
+
         ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_pokestop.title", "First Spin");
         ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_pokestop.description",
                 "Spin a PokeStop for the first time to receive items and experience the thrill of discovery!");
-        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_wingedstop.title", "Winged Wonders");
-        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_wingedstop.description",
-                "Spin a Winged PokeStop for the first time to uncover its unique rewards and experience the thrill of discovery!");
         ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_25_pokestops.title", "PokeStop Enthusiast");
         ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_25_pokestops.description",
                 "Spin 25 PokeStops to show your dedication to exploring the world of Cobblemon and uncovering its secrets!");
-        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_25_winged_pokestops.title", "Winged PokeStop Enthusiast");
-        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_25_winged_pokestops.description",
-                "Spin 25 Winged PokeStops to show your dedication to exploring the world of Cobblemon and uncovering its secrets!");
         ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_50_pokestops.title", "PokeStop Explorer");
         ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_50_pokestops.description",
                 "Spin 50 PokeStops to become a true explorer of the world of Cobblemon and uncover its hidden treasures!");
-        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_50_winged_pokestops.title", "Winged PokeStop Explorer");
-        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_50_winged_pokestops.description",
-                "Spin 50 Winged PokeStops to become a true explorer of the world of Cobblemon and uncover its hidden treasures!");
         ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_100_pokestops.title", "PokeStop Master");
         ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_100_pokestops.description",
                 "Spin 100 PokeStops to achieve mastery in the world of Cobblemon and unlock exclusive rewards!");
-        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_100_winged_pokestops.title", "Winged PokeStop Master");
-        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_100_winged_pokestops.description",
-                "Spin 100 Winged PokeStops to achieve mastery in the world of Cobblemon and unlock exclusive rewards!");
         ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_200_pokestops.title", "PokeStop Legend");
         ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_200_pokestops.description",
                 "Spin 200 PokeStops to become a legend in the world of Cobblemon and unlock legendary rewards!");
-        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_200_winged_pokestops.title", "Winged PokeStop Legend");
-        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_200_winged_pokestops.description",
-                "Spin 200 Winged PokeStops to become a legend in the world of Cobblemon and unlock legendary rewards!");
         ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_300_pokestops.title", "PokeStop Mythic");
         ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_300_pokestops.description",
                 "Spin 300 PokeStops to achieve mythic status in the world of Cobblemon and unlock mythic rewards!");
-        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_300_winged_pokestops.title", "Winged PokeStop Mythic");
-        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_300_winged_pokestops.description",
-                "Spin 300 Winged PokeStops to achieve mythic status in the world of Cobblemon and unlock mythic rewards!");
         ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_400_pokestops.title", "PokeStop Immortal");
         ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_400_pokestops.description",
                 "Spin 400 PokeStops to achieve immortal status in the world of Cobblemon and unlock immortal rewards!");
-        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_400_winged_pokestops.title", "Winged PokeStop Immortal");
-        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_400_winged_pokestops.description",
-                "Spin 400 Winged PokeStops to achieve immortal status in the world of Cobblemon and unlock immortal rewards!");
         ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_500_pokestops.title", "PokeStop Eternal");
         ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_500_pokestops.description",
                 "Spin 500 PokeStops to achieve eternal status in the world of Cobblemon and unlock eternal rewards!");
+
+        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_wingedstop.title", "Winged Wonders");
+        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_wingedstop.description",
+                "Spin a Winged PokeStop for the first time to uncover its unique rewards and experience the thrill of discovery!");
+        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_25_winged_pokestops.title", "Winged PokeStop Enthusiast");
+        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_25_winged_pokestops.description",
+                "Spin 25 Winged PokeStops to show your dedication to exploring the world of Cobblemon and uncovering its secrets!");
+        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_50_winged_pokestops.title", "Winged PokeStop Explorer");
+        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_50_winged_pokestops.description",
+                "Spin 50 Winged PokeStops to become a true explorer of the world of Cobblemon and uncover its hidden treasures!");
+        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_100_winged_pokestops.title", "Winged PokeStop Master");
+        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_100_winged_pokestops.description",
+                "Spin 100 Winged PokeStops to achieve mastery in the world of Cobblemon and unlock exclusive rewards!");
+        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_200_winged_pokestops.title", "Winged PokeStop Legend");
+        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_200_winged_pokestops.description",
+                "Spin 200 Winged PokeStops to become a legend in the world of Cobblemon and unlock legendary rewards!");
+        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_300_winged_pokestops.title", "Winged PokeStop Mythic");
+        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_300_winged_pokestops.description",
+                "Spin 300 Winged PokeStops to achieve mythic status in the world of Cobblemon and unlock mythic rewards!");
+        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_400_winged_pokestops.title", "Winged PokeStop Immortal");
+        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_400_winged_pokestops.description",
+                "Spin 400 Winged PokeStops to achieve immortal status in the world of Cobblemon and unlock immortal rewards!");
         ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_500_winged_pokestops.title", "Winged PokeStop Eternal");
         ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_500_winged_pokestops.description",
                 "Spin 500 Winged PokeStops to achieve eternal status in the world of Cobblemon and unlock eternal rewards!");
+
+        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_pokeballstop.title", "Pokeballstop Power");
+        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_pokeballstop.description",
+                "Spin a Pokeballstop for the first time to uncover its unique rewards and experience the thrill of discovery!");
+        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_25_pokeballstops.title", "Pokeballstop Enthusiast");
+        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_25_pokeballstops.description",
+                "Spin 25 Pokeballstops to show your dedication to exploring the world of Cobblemon and uncovering its secrets!");
+        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_50_pokeballstops.title", "Pokeballstop Explorer");
+        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_50_pokeballstops.description",
+                "Spin 50 Pokeballstops to become a true explorer of the world of Cobblemon and uncover its hidden treasures!");
+        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_100_pokeballstops.title", "Pokeballstop Master");
+        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_100_pokeballstops.description",
+                "Spin 100 Pokeballstops to achieve mastery in the world of Cobblemon and unlock exclusive rewards!");
+        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_200_pokeballstops.title", "Pokeballstop Legend");
+        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_200_pokeballstops.description",
+                "Spin 200 Pokeballstops to become a legend in the world of Cobblemon and unlock legendary rewards!");
+        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_300_pokeballstops.title", "Pokeballstop Mythic");
+        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_300_pokeballstops.description",
+                "Spin 300 Pokeballstops to achieve mythic status in the world of Cobblemon and unlock mythic rewards!");
+        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_400_pokeballstops.title", "Pokeballstop Immortal");
+        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_400_pokeballstops.description",
+                "Spin 400 Pokeballstops to achieve immortal status in the world of Cobblemon and unlock immortal rewards!");
+        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_500_pokeballstops.title", "Pokeballstop Eternal");
+        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_500_pokeballstops.description",
+                "Spin 500 Pokeballstops to achieve eternal status in the world of Cobblemon and unlock eternal rewards!");
     }
 
     @SuppressWarnings("unused")
     public static void generateAdvancement(HolderLookup.Provider registryLookup, Consumer<AdvancementHolder> consumer) {
         ItemStack pokestopDisplay = new ItemStack(BlockRegistry.POKESTOPS.get("pokestop").get());
         ItemStack wingedPokestopDisplay = new ItemStack(BlockRegistry.WINGEDSTOPS.get("wingedstop").get());
+        ItemStack pokeballstopDisplay = new ItemStack(BlockRegistry.POKEBALLSTOPS.get("pokeballstop_parkball").get());
 
         ItemStack oneHundredPlusPokestopDisplay = new ItemStack(BlockRegistry.POKESTOPS.get("pokestop_green").get());
         ItemStack oneHundredPlusWingedPokestopDisplay = new ItemStack(BlockRegistry.WINGEDSTOPS.get("wingedstop_green").get());
+        ItemStack oneHundredPlusPokeballstopDisplay = new ItemStack(BlockRegistry.POKEBALLSTOPS.get("pokeballstop_ultraball").get());
 
         ItemStack challengePokestopDisplay = new ItemStack(BlockRegistry.POKESTOPS.get("pokestop_gold").get());
         ItemStack challengeWingedPokestopDisplay = new ItemStack(BlockRegistry.WINGEDSTOPS.get("wingedstop_gold").get());
+        ItemStack challengePokeballstopDisplay = new ItemStack(BlockRegistry.POKEBALLSTOPS.get("pokeballstop_masterball").get());
 
         AdvancementHolder root = Advancement.Builder.advancement()
                 .display(
@@ -131,6 +158,21 @@ public class AdvancementRegistry {
                 .addCriterion("used_1_winged_pokestop", UsedWingedPokestopCriterion.Conditions.useWingedPokestop())
                 .save(consumer, Constants.modResourceFile("wingedstops/used_1_winged_pokestop"));
 
+        AdvancementHolder usedOncePokeballStop = Advancement.Builder.advancement()
+                .display(
+                        pokeballstopDisplay,
+                        Component.translatable("advancements.cobblemon_pokestops.used_pokeballstop.title"),
+                        Component.translatable("advancements.cobblemon_pokestops.used_pokeballstop.description"),
+                        null,
+                        AdvancementType.GOAL,
+                        true, // Show the toast when completing it
+                        true, // Announce it to chat
+                        false // Hide it in the advancement tab until it's achieved
+                )
+                .parent(root)
+                .addCriterion("used_1_pokeballstop", UsedPokeballstopCriterion.Conditions.usePokeballstop())
+                .save(consumer, Constants.modResourceFile("pokeballstops/used_1_pokeballstop"));
+
         // Used 25 (TASK)
 
         AdvancementHolder used25Pokestops = Advancement.Builder.advancement()
@@ -162,6 +204,21 @@ public class AdvancementRegistry {
                 .parent(usedOnceWingedPokestop)
                 .addCriterion("used_25_winged_pokestops", WingedPokestopScoreTracker.Conditions.used(25))
                 .save(consumer, Constants.modResourceFile("wingedstops/used_25_winged_pokestops"));
+
+        AdvancementHolder used25Pokeballstops = Advancement.Builder.advancement()
+                .display(
+                        pokeballstopDisplay,
+                        Component.translatable("advancements.cobblemon_pokestops.used_25_pokeballstops.title"),
+                        Component.translatable("advancements.cobblemon_pokestops.used_25_pokeballstops.description"),
+                        null,
+                        AdvancementType.TASK,
+                        true, // Show the toast when completing it
+                        true, // Announce it to chat
+                        false // Hide it in the advancement tab until it's achieved
+                )
+                .parent(usedOncePokeballStop)
+                .addCriterion("used_25_pokeballstops", PokeballstopScoreTracker.Conditions.used(25))
+                .save(consumer, Constants.modResourceFile("pokeballstops/used_25_pokeballstops"));
 
         // Used 50 (TASK)
 
@@ -195,6 +252,21 @@ public class AdvancementRegistry {
                 .addCriterion("used_50_winged_pokestops", WingedPokestopScoreTracker.Conditions.used(50))
                 .save(consumer, Constants.modResourceFile("wingedstops/used_50_winged_pokestops"));
 
+        AdvancementHolder used50Pokeballstops = Advancement.Builder.advancement()
+                .display(
+                        pokeballstopDisplay,
+                        Component.translatable("advancements.cobblemon_pokestops.used_50_pokeballstops.title"),
+                        Component.translatable("advancements.cobblemon_pokestops.used_50_pokeballstops.description"),
+                        null,
+                        AdvancementType.TASK,
+                        true, // Show the toast when completing it
+                        true, // Announce it to chat
+                        false // Hide it in the advancement tab until it's achieved
+                )
+                .parent(used25Pokeballstops)
+                .addCriterion("used_50_pokeballstops", PokeballstopScoreTracker.Conditions.used(50))
+                .save(consumer, Constants.modResourceFile("pokeballstops/used_50_pokeballstops"));
+
         // Used 100 (GOAL)
 
         AdvancementHolder used100Pokestops = Advancement.Builder.advancement()
@@ -226,6 +298,21 @@ public class AdvancementRegistry {
                 .parent(used50WingedPokestops)
                 .addCriterion("used_100_winged_pokestops", WingedPokestopScoreTracker.Conditions.used(100))
                 .save(consumer, Constants.modResourceFile("wingedstops/used_100_winged_pokestops"));
+
+        AdvancementHolder used100Pokeballstops = Advancement.Builder.advancement()
+                .display(
+                        oneHundredPlusPokeballstopDisplay,
+                        Component.translatable("advancements.cobblemon_pokestops.used_100_pokeballstops.title"),
+                        Component.translatable("advancements.cobblemon_pokestops.used_100_pokeballstops.description"),
+                        null,
+                        AdvancementType.GOAL,
+                        true, // Show the toast when completing it
+                        true, // Announce it to chat
+                        false // Hide it in the advancement tab until it's achieved
+                )
+                .parent(used50Pokeballstops)
+                .addCriterion("used_100_pokeballstops", PokeballstopScoreTracker.Conditions.used(100))
+                .save(consumer, Constants.modResourceFile("pokeballstops/used_100_pokeballstops"));
 
         // Used 200 (TASK)
 
@@ -259,6 +346,21 @@ public class AdvancementRegistry {
                 .addCriterion("used_200_winged_pokestops", WingedPokestopScoreTracker.Conditions.used(200))
                 .save(consumer, Constants.modResourceFile("wingedstops/used_200_winged_pokestops"));
 
+        AdvancementHolder used200Pokeballstops = Advancement.Builder.advancement()
+                .display(
+                        oneHundredPlusPokeballstopDisplay,
+                        Component.translatable("advancements.cobblemon_pokestops.used_200_pokeballstops.title"),
+                        Component.translatable("advancements.cobblemon_pokestops.used_200_pokeballstops.description"),
+                        null,
+                        AdvancementType.TASK,
+                        true, // Show the toast when completing it
+                        true, // Announce it to chat
+                        false // Hide it in the advancement tab until it's achieved
+                )
+                .parent(used100Pokeballstops)
+                .addCriterion("used_200_pokeballstops", PokeballstopScoreTracker.Conditions.used(200))
+                .save(consumer, Constants.modResourceFile("pokeballstops/used_200_pokeballstops"));
+
         // Used 300 (TASK)
 
         AdvancementHolder used300Pokestops = Advancement.Builder.advancement()
@@ -291,6 +393,21 @@ public class AdvancementRegistry {
                 .addCriterion("used_300_winged_pokestops", WingedPokestopScoreTracker.Conditions.used(300))
                 .save(consumer, Constants.modResourceFile("wingedstops/used_300_winged_pokestops"));
 
+        AdvancementHolder used300Pokeballstops = Advancement.Builder.advancement()
+                .display(
+                        oneHundredPlusPokeballstopDisplay,
+                        Component.translatable("advancements.cobblemon_pokestops.used_300_pokeballstops.title"),
+                        Component.translatable("advancements.cobblemon_pokestops.used_300_pokeballstops.description"),
+                        null,
+                        AdvancementType.TASK,
+                        true, // Show the toast when completing it
+                        true, // Announce it to chat
+                        false // Hide it in the advancement tab until it's achieved
+                )
+                .parent(used200Pokeballstops)
+                .addCriterion("used_300_pokeballstops", PokeballstopScoreTracker.Conditions.used(300))
+                .save(consumer, Constants.modResourceFile("pokeballstops/used_300_pokeballstops"));
+
         // Used 400 (TASK)
 
         AdvancementHolder used400Pokestops = Advancement.Builder.advancement()
@@ -322,6 +439,21 @@ public class AdvancementRegistry {
                 .parent(used300WingedPokestops)
                 .addCriterion("used_400_winged_pokestops", WingedPokestopScoreTracker.Conditions.used(400))
                 .save(consumer, Constants.modResourceFile("wingedstops/used_400_winged_pokestops"));
+
+        AdvancementHolder used400Pokeballstops = Advancement.Builder.advancement()
+                .display(
+                        oneHundredPlusPokeballstopDisplay,
+                        Component.translatable("advancements.cobblemon_pokestops.used_400_pokeballstops.title"),
+                        Component.translatable("advancements.cobblemon_pokestops.used_400_pokeballstops.description"),
+                        null,
+                        AdvancementType.TASK,
+                        true, // Show the toast when completing it
+                        true, // Announce it to chat
+                        false // Hide it in the advancement tab until it's achieved
+                )
+                .parent(used300Pokeballstops)
+                .addCriterion("used_400_pokeballstops", PokeballstopScoreTracker.Conditions.used(400))
+                .save(consumer, Constants.modResourceFile("pokeballstops/used_400_pokeballstops"));
 
         // Used 500 (CHALLENGE)
 
@@ -358,6 +490,22 @@ public class AdvancementRegistry {
                 .addCriterion("used_500_winged_pokestops", WingedPokestopScoreTracker.Conditions.used(500))
                 .rewards(AdvancementRewards.Builder.loot(ModLootTables.WINGED_TROPHY_LOOT))
                 .save(consumer, Constants.modResourceFile("wingedstops/used_500_winged_pokestops"));
+
+        AdvancementHolder used500Pokeballstops = Advancement.Builder.advancement()
+                .display(
+                        challengePokeballstopDisplay,
+                        Component.translatable("advancements.cobblemon_pokestops.used_500_pokeballstops.title"),
+                        Component.translatable("advancements.cobblemon_pokestops.used_500_pokeballstops.description"),
+                        null,
+                        AdvancementType.CHALLENGE,
+                        true, // Show the toast when completing it
+                        true, // Announce it to chat
+                        false // Hide it in the advancement tab until it's achieved
+                )
+                .parent(used400Pokeballstops)
+                .addCriterion("used_500_pokeballstops", PokeballstopScoreTracker.Conditions.used(500))
+                .rewards(AdvancementRewards.Builder.loot(ModLootTables.POKEBALL_TROPHY_LOOT))
+                .save(consumer, Constants.modResourceFile("pokeballstops/used_500_pokeballstops"));
 
     }
 }

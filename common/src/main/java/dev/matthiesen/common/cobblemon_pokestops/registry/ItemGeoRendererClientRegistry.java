@@ -17,6 +17,10 @@ public class ItemGeoRendererClientRegistry {
                 item.get().renderProviderHolder.setValue(makeRendererProvider(new WingedstopItemRenderer())));
         ItemRegistry.WINGEDSTOP_TROPHY_ITEMS.forEach((key, item) ->
                 item.get().renderProviderHolder.setValue(makeRendererProvider(new WingedstopTrophyItemRenderer())));
+        ItemRegistry.POKEBALLSTOP_ITEMS.forEach((key, item) ->
+                item.get().renderProviderHolder.setValue(makeRendererProvider(new PokeballstopItemRenderer())));
+        ItemRegistry.POKEBALLSTOP_TROPHY_ITEMS.forEach((key, item) ->
+                item.get().renderProviderHolder.setValue(makeRendererProvider(new PokeballstopTrophyItemRenderer())));
     }
 
     private static <T extends StopItemTemplate> GeoRenderProvider makeRendererProvider(GeoItemRenderer<T> renderer) {

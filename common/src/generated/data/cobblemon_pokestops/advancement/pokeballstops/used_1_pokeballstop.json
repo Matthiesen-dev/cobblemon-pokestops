@@ -1,0 +1,27 @@
+{
+  "parent": "cobblemon_pokestops:root",
+  "criteria": {
+    "used_1_pokeballstop": {
+      "trigger": "cobblemon_pokestops:used_pokeballstop"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.cobblemon_pokestops.used_pokeballstop.description"
+    },
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "cobblemon_pokestops:pokeballstop_parkball"
+    },
+    "title": {
+      "translate": "advancements.cobblemon_pokestops.used_pokeballstop.title"
+    }
+  },
+  "requirements": [
+    [
+      "used_1_pokeballstop"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -26,8 +26,10 @@ public class CobblemonPokestopsClient {
     private static final List<BlockEntityRendererMapping> BLOCK_ENTITY_RENDERER_MAPPINGS = List.of(
             new BlockEntityRendererMapping(BlockEntityRegistry.POKESTOP_BE, context -> new PokestopRenderer()),
             new BlockEntityRendererMapping(BlockEntityRegistry.WINGEDSTOP_BE, context -> new WingedstopRenderer()),
+            new BlockEntityRendererMapping(BlockEntityRegistry.POKEBALLSTOP_BE, context -> new PokeballstopRenderer()),
             new BlockEntityRendererMapping(BlockEntityRegistry.POKESTOP_TROPHY_BE, context -> new PokestopTrophyRenderer()),
-            new BlockEntityRendererMapping(BlockEntityRegistry.WINGEDSTOP_TROPHY_BE, context -> new WingedstopTrophyRenderer())
+            new BlockEntityRendererMapping(BlockEntityRegistry.WINGEDSTOP_TROPHY_BE, context -> new WingedstopTrophyRenderer()),
+            new BlockEntityRendererMapping(BlockEntityRegistry.POKEBALLSTOP_TROPHY_BE, context -> new PokeballstopTrophyRenderer())
     );
     private static final List<StopMapping> BASE_POS_MAPPINGS = List.of(
             new StopMapping(
@@ -37,6 +39,10 @@ public class CobblemonPokestopsClient {
             new StopMapping(
                     state -> state.is(BlockRegistry.WINGEDSTOP_DUMMY.get()),
                     matchesRegistered(BlockRegistry.WINGEDSTOPS)
+            ),
+            new StopMapping(
+                    state -> state.is(BlockRegistry.POKEBALLSTOP_DUMMY.get()),
+                    matchesRegistered(BlockRegistry.POKEBALLSTOPS)
             )
     );
 

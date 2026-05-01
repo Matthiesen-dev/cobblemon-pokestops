@@ -1,0 +1,35 @@
+{
+  "parent": "cobblemon_pokestops:pokeballstops/used_400_pokeballstops",
+  "criteria": {
+    "used_500_pokeballstops": {
+      "conditions": {
+        "score": 500
+      },
+      "trigger": "cobblemon_pokestops:pokeballstop_score"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.cobblemon_pokestops.used_500_pokeballstops.description"
+    },
+    "frame": "challenge",
+    "icon": {
+      "count": 1,
+      "id": "cobblemon_pokestops:pokeballstop_masterball"
+    },
+    "title": {
+      "translate": "advancements.cobblemon_pokestops.used_500_pokeballstops.title"
+    }
+  },
+  "requirements": [
+    [
+      "used_500_pokeballstops"
+    ]
+  ],
+  "rewards": {
+    "loot": [
+      "cobblemon_pokestops:gameplay/pokeballstop_trophy"
+    ]
+  },
+  "sends_telemetry_event": true
+}

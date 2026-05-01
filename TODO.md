@@ -1,5 +1,11 @@
 # Cobblemon Pokestops TODO List
 
+## Loot Tables
+
+- [ ] Poke Ball Stop Loot Table
+  - Description: A loot table for the Poke Ball Stop, which provides players with various types of Poke Balls when they interact with it.
+  - Functionality: When a player interacts with the Poke Ball Stop, they will receive a random selection of Poke Balls based on the loot table. The loot table can be configured to include different types of Poke Balls, such as standard Poke Balls, Great Balls, Ultra Balls, etc., with varying probabilities for each type.
+
 ## Planned Pokestop Types
 
 - [ ] Healing Pokestop 
@@ -27,22 +33,7 @@
 
 ## Planned Alternative Pokestop Loot designs
 
-- [ ] Poke Ball Stop
-  - Description: A variant of the standard Pokestop, themed around the Poke Ball. This Pokestop would have a unique design and provide different rewards compared to the standard Pokestop.
-  - Design: A Pokestop designed to look like a giant Poke Ball, with the iconic red and white color scheme and the button in the center.
-    - Variants:
-      - "Park" Ball Stop: A variant of the Poke Ball Stop that is designed to look like a Park Ball from the Pokemon Series.
-      - "Master" Ball Stop: A variant of the Poke Ball Stop that is designed to look like a Master Ball from the Pokemon Series.
-      - "Premier" Ball Stop: A variant of the Poke Ball Stop that is designed to look like a Premier Ball from the Pokemon Series.
-      - "Ultra" Ball Stop: A variant of the Poke Ball Stop that is designed to look like an Ultra Ball from the Pokemon Series.
-  - Functionality: When a player interacts with the Poke Ball Stop, it would provide them with unique rewards that are different from those offered by standard Pokestops. These rewards could include rare items, special Pokeballs, etc.
-  - Advancement Chain: Earn Advancements and a Trophy for using the Poke Ball Stop 500 times.
-  - **Requirements:**
-    - [ ] Poke Ball Stop Model
-    - [ ] Poke Ball Stop Trophy Model
-    - [ ] Poke Ball Stop Advancement Chain
-    - [ ] Poke Ball Stop Functionality
-    - [ ] Poke Ball Stop Configuration
+- [x] Poke Ball Stop
 - [ ] Berry Stop
   - Description: A variant of the standard Pokestop, themed around Berries. This Pokestop would have a unique design and provide different rewards compared to the standard Pokestop.
   - Design: A Pokestop designed to look like a giant Berry, with vibrant colors and a leaf on top.

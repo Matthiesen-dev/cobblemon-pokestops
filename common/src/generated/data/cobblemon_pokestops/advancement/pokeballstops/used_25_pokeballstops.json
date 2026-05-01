@@ -1,0 +1,29 @@
+{
+  "parent": "cobblemon_pokestops:pokeballstops/used_1_pokeballstop",
+  "criteria": {
+    "used_25_pokeballstops": {
+      "conditions": {
+        "score": 25
+      },
+      "trigger": "cobblemon_pokestops:pokeballstop_score"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.cobblemon_pokestops.used_25_pokeballstops.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "cobblemon_pokestops:pokeballstop_parkball"
+    },
+    "title": {
+      "translate": "advancements.cobblemon_pokestops.used_25_pokeballstops.title"
+    }
+  },
+  "requirements": [
+    [
+      "used_25_pokeballstops"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

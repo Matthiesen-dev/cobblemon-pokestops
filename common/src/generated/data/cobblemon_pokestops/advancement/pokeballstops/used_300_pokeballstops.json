@@ -1,0 +1,29 @@
+{
+  "parent": "cobblemon_pokestops:pokeballstops/used_200_pokeballstops",
+  "criteria": {
+    "used_300_pokeballstops": {
+      "conditions": {
+        "score": 300
+      },
+      "trigger": "cobblemon_pokestops:pokeballstop_score"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.cobblemon_pokestops.used_300_pokeballstops.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "cobblemon_pokestops:pokeballstop_ultraball"
+    },
+    "title": {
+      "translate": "advancements.cobblemon_pokestops.used_300_pokeballstops.title"
+    }
+  },
+  "requirements": [
+    [
+      "used_300_pokeballstops"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
