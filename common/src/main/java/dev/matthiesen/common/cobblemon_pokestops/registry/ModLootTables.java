@@ -91,7 +91,6 @@ public class ModLootTables {
                             .add(createLootItem(CobblemonItems.MASTER_ROD, 5, 1.0f))
             );
 
-    // TODO: Tweak this
     public static final LootTable.Builder POKEBALLSTOP_LOOT_POOL =
             LootTable.lootTable().withPool(
                     LootPool.lootPool()
@@ -103,17 +102,27 @@ public class ModLootTables {
                             .add(createLootItem(Items.LAPIS_LAZULI, 30, 1.0f))
                             .add(createLootItem(Items.DIAMOND, 15, 1.0f))
                             .add(createLootItem(CobblemonItems.POKE_BALL, 50, 1.0f))
-                            .add(createLootItem(CobblemonItems.POTION, 50, 1.0f))
-                            .add(createLootItem(CobblemonItems.ANTIDOTE, 50, 1.0f))
-                            .add(createLootItem(CobblemonItems.RELIC_COIN, 50, 1.0f))
-                            .add(createLootItem(CobblemonItems.SUPER_POTION, 30, 1.0f))
-                            .add(createLootItem(CobblemonItems.REVIVE, 30, 1.0f))
+                            .add(createLootItem(CobblemonItems.AZURE_BALL, 50, 1.0f))
+                            .add(createLootItem(CobblemonItems.CITRINE_BALL, 50, 1.0f))
+                            .add(createLootItem(CobblemonItems.ROSEATE_BALL, 50, 1.0f))
+                            .add(createLootItem(CobblemonItems.VERDANT_BALL, 50, 1.0f))
+                            .add(createLootItem(CobblemonItems.FRIEND_BALL, 30, 1.0f))
+                            .add(createLootItem(CobblemonItems.DIVE_BALL, 30, 1.0f))
+                            .add(createLootItem(CobblemonItems.LURE_BALL, 30, 1.0f))
+                            .add(createLootItem(CobblemonItems.NEST_BALL, 30, 1.0f))
+                            .add(createLootItem(CobblemonItems.HEAVY_BALL, 15, 1.0f))
+                            .add(createLootItem(CobblemonItems.QUICK_BALL, 15, 1.0f))
+                            .add(createLootItem(CobblemonItems.DUSK_BALL, 15, 1.0f))
+                            .add(createLootItem(CobblemonItems.PREMIER_BALL, 15, 1.0f))
                             .add(createLootItem(CobblemonItems.ULTRA_BALL, 15, 1.0f))
-                            .add(createLootItem(CobblemonItems.HYPER_POTION, 15, 1.0f))
-                            .add(createLootItem(CobblemonItems.RARE_CANDY, 15, 1.0f))
+                            .add(createLootItem(CobblemonItems.TIMER_BALL, 15, 1.0f))
+                            .add(createLootItem(CobblemonItems.LUXURY_BALL, 15, 1.0f))
+                            .add(createLootItem(CobblemonItems.LEVEL_BALL, 15, 1.0f))
+                            .add(createLootItem(CobblemonItems.SPORT_BALL, 15, 1.0f))
+                            .add(createLootItem(CobblemonItems.FAST_BALL, 15, 1.0f))
+                            .add(createLootItem(CobblemonItems.PARK_BALL, 15, 1.0f))
                             .add(createLootItem(CobblemonItems.MASTER_BALL, 5, 1.0f))
-                            .add(createLootItem(CobblemonItems.MAX_REVIVE, 5, 1.0f))
-                            .add(createLootItem(CobblemonItems.ABILITY_CAPSULE, 5, 1.0f))
+                            .add(createLootItem(CobblemonItems.BEAST_BALL, 5, 1.0f))
             );
 
     public static final LootTable.Builder POKESTOP_TROPHY_LOOT_POOL =

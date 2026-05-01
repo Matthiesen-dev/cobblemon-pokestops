@@ -85,7 +85,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "cobblemon:potion",
+          "name": "cobblemon:azure_ball",
           "weight": 50
         },
         {
@@ -97,7 +97,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "cobblemon:antidote",
+          "name": "cobblemon:citrine_ball",
           "weight": 50
         },
         {
@@ -109,7 +109,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "cobblemon:relic_coin",
+          "name": "cobblemon:roseate_ball",
           "weight": 50
         },
         {
@@ -121,7 +121,19 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "cobblemon:super_potion",
+          "name": "cobblemon:verdant_ball",
+          "weight": 50
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "cobblemon:friend_ball",
           "weight": 30
         },
         {
@@ -133,8 +145,80 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "cobblemon:revive",
+          "name": "cobblemon:dive_ball",
           "weight": 30
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "cobblemon:lure_ball",
+          "weight": 30
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "cobblemon:nest_ball",
+          "weight": 30
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "cobblemon:heavy_ball",
+          "weight": 15
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "cobblemon:quick_ball",
+          "weight": 15
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "cobblemon:dusk_ball",
+          "weight": 15
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "cobblemon:premier_ball",
+          "weight": 15
         },
         {
           "type": "minecraft:item",
@@ -157,7 +241,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "cobblemon:hyper_potion",
+          "name": "cobblemon:timer_ball",
           "weight": 15
         },
         {
@@ -169,7 +253,55 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "cobblemon:rare_candy",
+          "name": "cobblemon:luxury_ball",
+          "weight": 15
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "cobblemon:level_ball",
+          "weight": 15
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "cobblemon:sport_ball",
+          "weight": 15
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "cobblemon:fast_ball",
+          "weight": 15
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": 1.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "cobblemon:park_ball",
           "weight": 15
         },
         {
@@ -193,19 +325,7 @@
               "function": "minecraft:set_count"
             }
           ],
-          "name": "cobblemon:max_revive",
-          "weight": 5
-        },
-        {
-          "type": "minecraft:item",
-          "functions": [
-            {
-              "add": false,
-              "count": 1.0,
-              "function": "minecraft:set_count"
-            }
-          ],
-          "name": "cobblemon:ability_capsule",
+          "name": "cobblemon:beast_ball",
           "weight": 5
         }
       ],

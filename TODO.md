@@ -1,11 +1,5 @@
 # Cobblemon Pokestops TODO List
 
-## Loot Tables
-
-- [ ] Poke Ball Stop Loot Table
-  - Description: A loot table for the Poke Ball Stop, which provides players with various types of Poke Balls when they interact with it.
-  - Functionality: When a player interacts with the Poke Ball Stop, they will receive a random selection of Poke Balls based on the loot table. The loot table can be configured to include different types of Poke Balls, such as standard Poke Balls, Great Balls, Ultra Balls, etc., with varying probabilities for each type.
-
 ## Planned Pokestop Types
 
 - [ ] Healing Pokestop 
