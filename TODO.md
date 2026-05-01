@@ -31,7 +31,7 @@
   - Description: A variant of the standard Pokestop, themed around the Poke Ball. This Pokestop would have a unique design and provide different rewards compared to the standard Pokestop.
   - Design: A Pokestop designed to look like a giant Poke Ball, with the iconic red and white color scheme and the button in the center.
     - Variants:
-      - "GS" Ball Stop: A variant of the Poke Ball Stop that is designed to look like a GS Ball from the Pokemon Series.
+      - "Park" Ball Stop: A variant of the Poke Ball Stop that is designed to look like a Park Ball from the Pokemon Series.
       - "Master" Ball Stop: A variant of the Poke Ball Stop that is designed to look like a Master Ball from the Pokemon Series.
       - "Premier" Ball Stop: A variant of the Poke Ball Stop that is designed to look like a Premier Ball from the Pokemon Series.
       - "Ultra" Ball Stop: A variant of the Poke Ball Stop that is designed to look like an Ultra Ball from the Pokemon Series.
