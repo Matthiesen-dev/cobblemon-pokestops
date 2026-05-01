@@ -3,6 +3,7 @@ package dev.matthiesen.neoforge.cobblemon_pokestops;
 import dev.matthiesen.common.cobblemon_pokestops.platform.CobblemonPokestopsPlatform;
 import net.minecraft.advancements.CriterionTrigger;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -48,6 +49,11 @@ public class CobblemonPokestopsNeoForgePlatform implements CobblemonPokestopsPla
     @Override
     public <T extends ResourceLocation> Supplier<T> registerStats(String id, Supplier<T> stats) {
         return CobblemonPokestopsNeoForge.STATS.register(id, stats);
+    }
+
+    @Override
+    public MinecraftServer server() {
+        return CobblemonPokestopsNeoForge.MC_SERVER;
     }
 
     @Override

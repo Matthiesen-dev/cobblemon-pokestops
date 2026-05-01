@@ -8,14 +8,22 @@ import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.minecraft.server.MinecraftServer;
 
 public class CobblemonPokestopsFabric implements ModInitializer {
+    public static MinecraftServer MC_SERVER;
+
     @Override
     public void onInitialize() {
         Constants.createInfoLog("Loading for Fabric Mod Loader");
         CobblemonPokestops.preinitialize();
         FabricFeatures.init();
         CobblemonPokestops.initialize();
-        ServerLifecycleEvents.SERVER_STARTING.register(server -> CobblemonPokestops.onStartup());
-        ServerLifecycleEvents.SERVER_STOPPING.register(server -> CobblemonPokestops.onShutdown());
+        ServerLifecycleEvents.SERVER_STARTING.register(server -> {
+            CobblemonPokestops.onStartup();
+            MC_SERVER = server;
+        });
+        ServerLifecycleEvents.SERVER_STOPPING.register(server -> {
+            CobblemonPokestops.onShutdown();
+            MC_SERVER = null;
+        });
     }
 
 }

@@ -8,6 +8,7 @@ import net.minecraft.advancements.CriterionTrigger;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -51,6 +52,11 @@ public class CobblemonPokestopsFabricPlatform implements CobblemonPokestopsPlatf
     @Override
     public <T extends ResourceLocation> Supplier<T> registerStats(String id, Supplier<T> stats) {
         return registerSupplier(BuiltInRegistries.CUSTOM_STAT, id, stats);
+    }
+
+    @Override
+    public MinecraftServer server() {
+        return CobblemonPokestopsFabric.MC_SERVER;
     }
 
     @Override

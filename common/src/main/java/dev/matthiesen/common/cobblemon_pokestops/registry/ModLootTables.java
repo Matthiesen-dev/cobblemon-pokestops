@@ -21,27 +21,23 @@ public class ModLootTables {
             Registries.LOOT_TABLE,
             Constants.modResource("gameplay/pokestop_loot")
     );
-
-    public static final ResourceKey<LootTable> POKESTOP_TROPHY_LOOT = ResourceKey.create(
-            Registries.LOOT_TABLE,
-            Constants.modResource("gameplay/pokestop_trophy")
-    );
-
     public static final ResourceKey<LootTable> WINGEDSTOP_LOOT = ResourceKey.create(
             Registries.LOOT_TABLE,
             Constants.modResource("gameplay/wingedstop_loot")
     );
-
-    public static final ResourceKey<LootTable> WINGED_TROPHY_LOOT = ResourceKey.create(
-            Registries.LOOT_TABLE,
-            Constants.modResource("gameplay/wingedstop_trophy")
-    );
-
     public static final ResourceKey<LootTable> POKEBALLSTOP_LOOT = ResourceKey.create(
             Registries.LOOT_TABLE,
             Constants.modResource("gameplay/pokeballstop_loot")
     );
 
+    public static final ResourceKey<LootTable> POKESTOP_TROPHY_LOOT = ResourceKey.create(
+            Registries.LOOT_TABLE,
+            Constants.modResource("gameplay/pokestop_trophy")
+    );
+    public static final ResourceKey<LootTable> WINGED_TROPHY_LOOT = ResourceKey.create(
+            Registries.LOOT_TABLE,
+            Constants.modResource("gameplay/wingedstop_trophy")
+    );
     public static final ResourceKey<LootTable> POKEBALL_TROPHY_LOOT = ResourceKey.create(
             Registries.LOOT_TABLE,
             Constants.modResource("gameplay/pokeballstop_trophy")

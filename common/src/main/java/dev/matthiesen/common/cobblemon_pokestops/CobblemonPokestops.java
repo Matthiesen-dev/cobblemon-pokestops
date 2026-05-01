@@ -3,6 +3,7 @@ package dev.matthiesen.common.cobblemon_pokestops;
 import dev.matthiesen.common.cobblemon_pokestops.config.*;
 import dev.matthiesen.common.cobblemon_pokestops.platform.CobblemonPokestopsPlatform;
 import dev.matthiesen.common.cobblemon_pokestops.registry.*;
+import net.minecraft.server.MinecraftServer;
 
 import java.util.ServiceLoader;
 
