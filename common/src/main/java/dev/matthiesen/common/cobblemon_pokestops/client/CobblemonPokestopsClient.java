@@ -1,8 +1,13 @@
 package dev.matthiesen.common.cobblemon_pokestops.client;
 
+import dev.matthiesen.common.cobblemon_pokestops.Constants;
 import dev.matthiesen.common.cobblemon_pokestops.client.renderer.block.*;
+import dev.matthiesen.common.cobblemon_pokestops.client.renderer.item.*;
 import dev.matthiesen.common.cobblemon_pokestops.registry.BlockEntityRegistry;
 import dev.matthiesen.common.cobblemon_pokestops.registry.BlockRegistry;
+import dev.matthiesen.common.cobblemon_pokestops.registry.ItemRegistry;
+import dev.matthiesen.common.cobblemon_pokestops.templates.item.StopItemTemplate;
+import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.core.BlockPos;
@@ -13,7 +18,10 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import software.bernie.geckolib.animatable.client.GeoRenderProvider;
+import software.bernie.geckolib.renderer.GeoItemRenderer;
 
 import java.util.List;
 import java.util.Map;
@@ -47,8 +55,30 @@ public class CobblemonPokestopsClient {
     );
 
     @SuppressWarnings({"rawtypes", "unused"})
-    public static void registerRenderers(BiConsumer<EntityType<? extends Entity>, EntityRendererProvider> entityRenderers,
-                                         BiConsumer<BlockEntityType<? extends BlockEntity>, BlockEntityRendererProvider> blockEntityRenderers) {
+    public static void initialize(BiConsumer<EntityType<? extends Entity>, EntityRendererProvider> entityRenderers,
+                                  BiConsumer<BlockEntityType<? extends BlockEntity>, BlockEntityRendererProvider> blockEntityRenderers) {
+        Constants.createInfoLog("Registering Client Resources");
+
+        // Register GeckoLib Renderers
+        ItemRegistry.POKESTOP_ITEMS.forEach((key, item) ->
+                item.get().renderProviderHolder.setValue(makeRendererProvider(new PokestopItemRenderer())));
+        ItemRegistry.POKESTOP_TROPHY_ITEMS.forEach((key, item) ->
+                item.get().renderProviderHolder.setValue(makeRendererProvider(new PokestopTrophyItemRenderer())));
+        ItemRegistry.WINGEDSTOP_ITEMS.forEach((key, item) ->
+                item.get().renderProviderHolder.setValue(makeRendererProvider(new WingedstopItemRenderer())));
+        ItemRegistry.WINGEDSTOP_TROPHY_ITEMS.forEach((key, item) ->
+                item.get().renderProviderHolder.setValue(makeRendererProvider(new WingedstopTrophyItemRenderer())));
+        ItemRegistry.POKEBALLSTOP_ITEMS.forEach((key, item) ->
+                item.get().renderProviderHolder.setValue(makeRendererProvider(new PokeballstopItemRenderer())));
+        ItemRegistry.POKEBALLSTOP_TROPHY_ITEMS.forEach((key, item) ->
+                item.get().renderProviderHolder.setValue(makeRendererProvider(new PokeballstopTrophyItemRenderer())));
+
+        registerBlockEntityRenderers(entityRenderers, blockEntityRenderers);
+    }
+
+    @SuppressWarnings({"rawtypes", "unused"})
+    public static void registerBlockEntityRenderers(BiConsumer<EntityType<? extends Entity>, EntityRendererProvider> entityRenderers,
+                                                    BiConsumer<BlockEntityType<? extends BlockEntity>, BlockEntityRendererProvider> blockEntityRenderers) {
         for (BlockEntityRendererMapping mapping : BLOCK_ENTITY_RENDERER_MAPPINGS) {
             blockEntityRenderers.accept(mapping.blockEntityType().get(), mapping.rendererProvider());
         }
@@ -89,5 +119,19 @@ public class CobblemonPokestopsClient {
             Supplier<? extends BlockEntityType<? extends BlockEntity>> blockEntityType,
             BlockEntityRendererProvider rendererProvider
     ) {
+    }
+
+    private static <T extends StopItemTemplate> GeoRenderProvider makeRendererProvider(GeoItemRenderer<T> renderer) {
+        return new GeoRenderProvider() {
+            private BlockEntityWithoutLevelRenderer itemRenderer;
+
+            @Override
+            public @NotNull BlockEntityWithoutLevelRenderer getGeoItemRenderer() {
+                if (this.itemRenderer == null) {
+                    this.itemRenderer = renderer;
+                }
+                return this.itemRenderer;
+            }
+        };
     }
 }

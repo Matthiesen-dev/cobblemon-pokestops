@@ -2,7 +2,7 @@ package dev.matthiesen.neoforge.cobblemon_pokestops;
 
 import dev.matthiesen.common.cobblemon_pokestops.CobblemonPokestops;
 import dev.matthiesen.common.cobblemon_pokestops.Constants;
-import dev.matthiesen.neoforge.cobblemon_pokestops.worldgen.NeoForgeFeatures;
+import dev.matthiesen.neoforge.cobblemon_pokestops.worldgen.CobblemonPokestopsNeoForgeFeatures;
 import net.minecraft.advancements.CriterionTrigger;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
@@ -41,9 +41,8 @@ public class CobblemonPokestopsNeoForge {
         CREATIVE_TABS.register(modBus);
         ITEMS.register(modBus);
         ADVANCEMENT_TRIGGERS.register(modBus);
-        CobblemonPokestops.preinitialize();
-        NeoForgeFeatures.init();
         CobblemonPokestops.initialize();
+        CobblemonPokestopsNeoForgeFeatures.init();
         NeoForge.EVENT_BUS.register(this);
     }
 
