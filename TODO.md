@@ -73,6 +73,9 @@
 - [ ] Integration with Cobblemon Mega Showdown
   - Description: Cobblemon Mega Showdown is a fairly popular mod that adds extra features to the battle system in Cobblemon. Maybe we could integrate the Pokestop system with this mod to provide rewards for players who use Pokestops before battles.
   - Functionality: Players could receive MSD-specific rewards when they use Pokestops, such as temporary buffs for their Pokemon or exclusive items that can be used in battles.
+- [ ] JEI / EMI Integration
+  - Description: Integrate the Pokestop system with popular recipe viewing mods like JEI (Just Enough Items) or EMI (Enhanced Mod Integration) to allow players to see the loot tables for items that can be obtained from Pokestops.
+  - Functionality: Players would be able to view the loot tables for items that can be obtained from Pokestops directly in JEI or EMI, making it easier for them to plan their interactions with Pokestops and know what rewards they can expect.
 
 ## Long-term Goals
 
