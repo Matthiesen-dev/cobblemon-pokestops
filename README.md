@@ -11,6 +11,7 @@ cosmetic and serve as a way to show off your dedication to the Pokestop system. 
 Finish the Advancement Chain in-game to obtain the Trophies, which include:
 - **Pokestop Trophy:** Awarded for using a Pokestop 500 times.
 - **Wingedstop Trophy:** Awarded for using a Winged Pokestop 500 times.
+- **Pokeball Stop Trophy:** Awarded for using a Pokeball Stop 500 times.
 
 ## Requirements
 
@@ -42,6 +43,18 @@ A Pokestop variant with wings, giving it a more unique appearance.
   - Gold
   - Green
 
+### Pokeball Stop
+
+A Pokestop variant designed to look like a giant Pokeball.
+
+- **Cooldown:** 5 minutes
+- **Rewards:** 1-2 random items from the Pokeball Stop loot table
+- **Variants:**
+  - Park Ball
+  - Premier Ball
+  - Ultra Ball
+  - Master Ball
+
 ## Usage
 
 Pokestops can be placed by players with admin or creative permissions by getting the desired Pokestop item and placing it 
@@ -63,6 +76,7 @@ Pokestop experience to fit their server's needs. The configuration file can be f
   "localBroadcastRadius": 50.0,
   "pokestopCooldownSeconds": 300,
   "wingedstopCooldownSeconds": 300,
+  "pokeballStopCooldownSeconds": 300,
   "extraRarities": [
     "cobblemon:master_ball",
     "cobblemon:acient_origin_ball",
@@ -90,3 +104,4 @@ The rewards given by Pokestops are determined by a loot table. The default loot 
 **Datapack Loot Table Locations:**
 - **PokeStop:** `/data/cobblemon_pokestops/loot_table/gameplay/pokestop_loot.json`
 - **WingedStop:** `/data/cobblemon_pokestops/loot_table/gameplay/wingedstop_loot.json`
+- **Pokeball Stop:** `/data/cobblemon_pokestops/loot_table/gameplay/pokeballstop_loot.json`
