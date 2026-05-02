@@ -2,6 +2,7 @@
   "values": [
     "#cobblemon_pokestops:pokestop_trophy_blocks",
     "#cobblemon_pokestops:winged_pokestop_trophy_blocks",
-    "#cobblemon_pokestops:pokeballstop_trophy_blocks"
+    "#cobblemon_pokestops:pokeballstop_trophy_blocks",
+    "#cobblemon_pokestops:healingstop_trophy_blocks"
   ]
 }

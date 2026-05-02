@@ -22,6 +22,9 @@ public class BlockEntityRegistry {
     public static final Supplier<BlockEntityType<PokeballstopEntity>> POKEBALLSTOP_BE =
             registerBlockEntity("pokeballstop", () -> buildType(PokeballstopEntity::new, BlockRegistry.POKEBALLSTOPS));
 
+    public static final Supplier<BlockEntityType<HealingstopEntity>> HEALINGSTOP_BE =
+            registerBlockEntity("healingstop", () -> buildType(HealingstopEntity::new, BlockRegistry.HEALINGSTOPS));
+
     public static final Supplier<BlockEntityType<PokestopTrophyEntity>> POKESTOP_TROPHY_BE =
             registerBlockEntity("pokestop_trophy", () -> buildType(PokestopTrophyEntity::new, BlockRegistry.POKESTOP_TROPHIES));
 
@@ -30,6 +33,9 @@ public class BlockEntityRegistry {
 
     public static final Supplier<BlockEntityType<PokeballstopTrophyEntity>> POKEBALLSTOP_TROPHY_BE =
             registerBlockEntity("pokeballstop_trophy", () -> buildType(PokeballstopTrophyEntity::new, BlockRegistry.POKEBALLSTOP_TROPHIES));
+
+    public static final Supplier<BlockEntityType<HealingstopTrophyEntity>> HEALINGSTOP_TROPHY_BE =
+            registerBlockEntity("healingstop_trophy", () -> buildType(HealingstopTrophyEntity::new, BlockRegistry.HEALINGSTOP_TROPHIES));
 
     private static Block[] resolveBlocks(Map<String, ? extends Supplier<? extends Block>> registeredBlocks) {
         return registeredBlocks.values()

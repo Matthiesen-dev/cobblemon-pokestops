@@ -35,9 +35,12 @@ public class CobblemonPokestopsClient {
             new BlockEntityRendererMapping(BlockEntityRegistry.POKESTOP_BE, context -> new PokestopRenderer()),
             new BlockEntityRendererMapping(BlockEntityRegistry.WINGEDSTOP_BE, context -> new WingedstopRenderer()),
             new BlockEntityRendererMapping(BlockEntityRegistry.POKEBALLSTOP_BE, context -> new PokeballstopRenderer()),
+            new BlockEntityRendererMapping(BlockEntityRegistry.HEALINGSTOP_BE, context -> new HealingstopRenderer()),
+
             new BlockEntityRendererMapping(BlockEntityRegistry.POKESTOP_TROPHY_BE, context -> new PokestopTrophyRenderer()),
             new BlockEntityRendererMapping(BlockEntityRegistry.WINGEDSTOP_TROPHY_BE, context -> new WingedstopTrophyRenderer()),
-            new BlockEntityRendererMapping(BlockEntityRegistry.POKEBALLSTOP_TROPHY_BE, context -> new PokeballstopTrophyRenderer())
+            new BlockEntityRendererMapping(BlockEntityRegistry.POKEBALLSTOP_TROPHY_BE, context -> new PokeballstopTrophyRenderer()),
+            new BlockEntityRendererMapping(BlockEntityRegistry.HEALINGSTOP_TROPHY_BE, context -> new HealingstopTrophyRenderer())
     );
     private static final List<StopMapping> BASE_POS_MAPPINGS = List.of(
             new StopMapping(
@@ -51,6 +54,10 @@ public class CobblemonPokestopsClient {
             new StopMapping(
                     state -> state.is(BlockRegistry.POKEBALLSTOP_DUMMY.get()),
                     matchesRegistered(BlockRegistry.POKEBALLSTOPS)
+            ),
+            new StopMapping(
+                    state -> state.is(BlockRegistry.HEALINGSTOP_DUMMY.get()),
+                    matchesRegistered(BlockRegistry.HEALINGSTOPS)
             )
     );
 
@@ -72,6 +79,10 @@ public class CobblemonPokestopsClient {
                 item.get().renderProviderHolder.setValue(makeRendererProvider(new PokeballstopItemRenderer())));
         ItemRegistry.POKEBALLSTOP_TROPHY_ITEMS.forEach((key, item) ->
                 item.get().renderProviderHolder.setValue(makeRendererProvider(new PokeballstopTrophyItemRenderer())));
+        ItemRegistry.HEALINGSTOP_ITEMS.forEach((key, item) ->
+                item.get().renderProviderHolder.setValue(makeRendererProvider(new HealingstopItemRenderer())));
+        ItemRegistry.HEALINGSTOP_TROPHY_ITEMS.forEach((key, item) ->
+                item.get().renderProviderHolder.setValue(makeRendererProvider(new HealingstopTrophyItemRenderer())));
 
         registerBlockEntityRenderers(entityRenderers, blockEntityRenderers);
     }

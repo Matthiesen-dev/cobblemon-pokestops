@@ -25,9 +25,12 @@ public class ItemRegistry {
     public static Map<String, Supplier<? extends StopItemTemplate>> POKESTOP_ITEMS = new HashMap<>();
     public static Map<String, Supplier<? extends StopItemTemplate>> WINGEDSTOP_ITEMS = new HashMap<>();
     public static Map<String, Supplier<? extends StopItemTemplate>> POKEBALLSTOP_ITEMS = new HashMap<>();
+    public static Map<String, Supplier<? extends StopItemTemplate>> HEALINGSTOP_ITEMS = new HashMap<>();
+
     public static Map<String, Supplier<? extends StopItemTemplate>> POKESTOP_TROPHY_ITEMS = new HashMap<>();
     public static Map<String, Supplier<? extends StopItemTemplate>> WINGEDSTOP_TROPHY_ITEMS = new HashMap<>();
     public static Map<String, Supplier<? extends StopItemTemplate>> POKEBALLSTOP_TROPHY_ITEMS = new HashMap<>();
+    public static Map<String, Supplier<? extends StopItemTemplate>> HEALINGSTOP_TROPHY_ITEMS = new HashMap<>();
 
     static {
         registerStopItems(
@@ -49,6 +52,13 @@ public class ItemRegistry {
                 block -> new PokeballstopItem(block, new Item.Properties())
         );
         registerStopItems(
+                BlockRegistry.HEALINGSTOPS,
+                HEALINGSTOP_ITEMS,
+                ALL_POKESTOPS,
+                block -> new HealingstopItem(block, new Item.Properties())
+        );
+
+        registerStopItems(
                 BlockRegistry.WINGEDSTOP_TROPHIES,
                 WINGEDSTOP_TROPHY_ITEMS,
                 ALL_TROPHIES,
@@ -65,6 +75,12 @@ public class ItemRegistry {
                 POKEBALLSTOP_TROPHY_ITEMS,
                 ALL_TROPHIES,
                 block -> new PokeballstopTrophyItem(block, new Item.Properties().rarity(Rarity.EPIC))
+        );
+        registerStopItems(
+                BlockRegistry.HEALINGSTOP_TROPHIES,
+                HEALINGSTOP_TROPHY_ITEMS,
+                ALL_TROPHIES,
+                block -> new HealingstopTrophyItem(block, new Item.Properties().rarity(Rarity.EPIC))
         );
     }
 

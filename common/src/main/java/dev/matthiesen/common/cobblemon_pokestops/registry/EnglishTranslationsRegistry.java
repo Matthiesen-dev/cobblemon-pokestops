@@ -10,13 +10,15 @@ public class EnglishTranslationsRegistry {
     private static final Map<String, String> SPINNER_MESSAGE_VARIANTS = Map.of(
             "pokestop", "Pokestop",
             "wingedstop", "Winged Pokestop",
-            "pokeballstop", "Pokeball Stop"
+            "pokeballstop", "Pokeball Stop",
+            "healingstop", "Healing Stop"
     );
 
     private static final Map<String, String> TROPHY_MESSAGE_VARIANTS = Map.of(
             "pokestop_trophy", "§bPokestop Trophy",
             "wingedstop_trophy", "§bWinged Pokestop Trophy",
-            "pokeballstop_trophy", "§bPokeball Stop Trophy"
+            "pokeballstop_trophy", "§bPokeball Stop Trophy",
+            "healingstop_trophy", "§bHealing Stop Trophy"
     );
 
     private static final Map<String, String> COLORMAP = Map.of(
@@ -36,13 +38,15 @@ public class EnglishTranslationsRegistry {
     private static final List<Map<String, String>> BLOCKS_LIST = List.of(
             new VariantBlocks("pokestop", BlockRegistry.POKESTOP_VARIANTS).getTranslations(),
             new VariantBlocks("wingedstop", BlockRegistry.WINGEDSTOP_VARIANTS).getTranslations(),
-            new VariantOnlyBlocks("pokeballstop", BlockRegistry.POKEBALLSTOP_VARIANTS, POKEBALL_VARIANTS).getTranslations()
+            new VariantOnlyBlocks("pokeballstop", BlockRegistry.POKEBALLSTOP_VARIANTS, POKEBALL_VARIANTS).getTranslations(),
+            Map.of("block.cobblemon_pokestops.healingstop", "Healing Stop")
     );
 
     private static final List<TrophyBlocks> TROPHY_BLOCKS_LIST = List.of(
             new TrophyBlocks("pokestop_trophy"),
             new TrophyBlocks("wingedstop_trophy"),
-            new TrophyBlocks("pokeballstop_trophy")
+            new TrophyBlocks("pokeballstop_trophy"),
+            new TrophyBlocks("healingstop_trophy")
     );
 
     static {
@@ -51,6 +55,7 @@ public class EnglishTranslationsRegistry {
         TRANSLATIONS.put("stat.cobblemon_pokestops.pokestop_times_spun", "Times Spun Pokestops");
         TRANSLATIONS.put("stat.cobblemon_pokestops.wingedstop_times_spun", "Times Spun Winged Pokestops");
         TRANSLATIONS.put("stat.cobblemon_pokestops.pokeballstop_times_spun", "Times Spun Pokeball Stops");
+        TRANSLATIONS.put("stat.cobblemon_pokestops.healingstop_times_spun", "Times Spun Healing Stops");
         TRANSLATIONS.put("sound.cobblemon_pokestops.pokestop_spin", "Pokestop Spin");
 
         for (var key : SPINNER_MESSAGE_VARIANTS.entrySet()) {

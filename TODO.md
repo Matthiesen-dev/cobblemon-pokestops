@@ -2,17 +2,7 @@
 
 ## Planned Pokestop Types
 
-- [ ] Healing Pokestop 
-  - Description: Heals players pokemon when interacted with
-  - Design: A Pokestop with a medical cross symbol, indicating its healing properties.
-  - Functionality: When a player interacts with this Pokestop, it will heal their Pokemon like a healing machine, depending on the configuration. It can be used once every 10 minutes.
-  - Advancement Chain: Earn Advancements and a Trophy for using the Healing Pokestop 500 times.
-  - **Requirements:**
-    - [ ] Healing Pokestop Model 
-    - [ ] Healing Pokestop Trophy Model
-    - [ ] Healing Pokestop Advancement Chain
-    - [ ] Healing Pokestop Functionality
-    - [ ] Healing Pokestop Configuration
+- [x] Healing Pokestop 
 - [ ] Egg Pokestop (Planned after Cobblemon 1.8)
   - Description: Provides players with items or eggs when interacted with.
   - Design: TBD. Thinking of possibly doing a design similar to a Cobblemon Egg once those release.
