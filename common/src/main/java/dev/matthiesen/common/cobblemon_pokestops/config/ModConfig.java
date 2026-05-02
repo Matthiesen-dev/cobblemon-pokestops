@@ -23,7 +23,7 @@ public class ModConfig {
     public int pokeballstopCooldownSeconds = 300;
 
     @SerializedName("healingstopCooldownSeconds")
-    public int healingstopCooldownSeconds = 900;
+    public int healingstopCooldownSeconds = 600;
 
     @SerializedName("extraRarities")
     public List<String> extraRarities = List.of(

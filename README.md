@@ -12,6 +12,7 @@ Finish the Advancement Chain in-game to obtain the Trophies, which include:
 - **Pokestop Trophy:** Awarded for using a Pokestop 500 times.
 - **Wingedstop Trophy:** Awarded for using a Winged Pokestop 500 times.
 - **Pokeball Stop Trophy:** Awarded for using a Pokeball Stop 500 times.
+- **Healing Stop Trophy:** Awarded for using a Healing Stop 500 times.
 
 ## Requirements
 
@@ -55,6 +56,14 @@ A Pokestop variant designed to look like a giant Pokeball.
   - Ultra Ball
   - Master Ball
 
+### Healing Stop
+
+A Pokestop variant designed to look like a healing station, providing players with healing items.
+
+- **Cooldown:** 10 minutes
+- **Rewards:** Heals the player's Pokemon when used
+- **Variants:** N/A (Currently only one design, but more may be added in the future)
+
 ## Usage
 
 Pokestops can be placed by players with admin or creative permissions by getting the desired Pokestop item and placing it 
@@ -77,6 +86,7 @@ Pokestop experience to fit their server's needs. The configuration file can be f
   "pokestopCooldownSeconds": 300,
   "wingedstopCooldownSeconds": 300,
   "pokeballStopCooldownSeconds": 300,
+  "healingStopCooldownSeconds": 600,
   "extraRarities": [
     "cobblemon:master_ball",
     "cobblemon:acient_origin_ball",
@@ -96,6 +106,7 @@ Pokestop experience to fit their server's needs. The configuration file can be f
 - `pokestopCooldownSeconds`: The cooldown time (in seconds) for Pokestops after being used.
 - `wingedstopCooldownSeconds`: The cooldown time (in seconds) for Wingedstops after being used.
 - `pokeballStopCooldownSeconds`: The cooldown time (in seconds) for Pokeball Stops after being used.
+- `healingStopCooldownSeconds`: The cooldown time (in seconds) for Healing Stops after being used.
 - `extraRarities`: A list of additional items list that defines items as "Rare" for the purpose of the Pokestop rewards. These items are used for determining the rarity of rewards given by Pokestops for usage in the rarity broadcast message.
 
 ### LootTable Configuration
