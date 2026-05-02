@@ -95,6 +95,7 @@ Pokestop experience to fit their server's needs. The configuration file can be f
 - `localBroadcastRadius`: The radius (in blocks) within which players will receive a message when a Pokestop is used if global broadcast is disabled.
 - `pokestopCooldownSeconds`: The cooldown time (in seconds) for Pokestops after being used.
 - `wingedstopCooldownSeconds`: The cooldown time (in seconds) for Wingedstops after being used.
+- `pokeballStopCooldownSeconds`: The cooldown time (in seconds) for Pokeball Stops after being used.
 - `extraRarities`: A list of additional items list that defines items as "Rare" for the purpose of the Pokestop rewards. These items are used for determining the rarity of rewards given by Pokestops for usage in the rarity broadcast message.
 
 ### LootTable Configuration
