@@ -21,20 +21,26 @@ public class ModLootTables {
             Registries.LOOT_TABLE,
             Constants.modResource("gameplay/pokestop_loot")
     );
+    public static final ResourceKey<LootTable> WINGEDSTOP_LOOT = ResourceKey.create(
+            Registries.LOOT_TABLE,
+            Constants.modResource("gameplay/wingedstop_loot")
+    );
+    public static final ResourceKey<LootTable> POKEBALLSTOP_LOOT = ResourceKey.create(
+            Registries.LOOT_TABLE,
+            Constants.modResource("gameplay/pokeballstop_loot")
+    );
 
     public static final ResourceKey<LootTable> POKESTOP_TROPHY_LOOT = ResourceKey.create(
             Registries.LOOT_TABLE,
             Constants.modResource("gameplay/pokestop_trophy")
     );
-
-    public static final ResourceKey<LootTable> WINGEDSTOP_LOOT = ResourceKey.create(
-            Registries.LOOT_TABLE,
-            Constants.modResource("gameplay/wingedstop_loot")
-    );
-
     public static final ResourceKey<LootTable> WINGED_TROPHY_LOOT = ResourceKey.create(
             Registries.LOOT_TABLE,
             Constants.modResource("gameplay/wingedstop_trophy")
+    );
+    public static final ResourceKey<LootTable> POKEBALL_TROPHY_LOOT = ResourceKey.create(
+            Registries.LOOT_TABLE,
+            Constants.modResource("gameplay/pokeballstop_trophy")
     );
 
     public static final LootTable.Builder POKESTOP_LOOT_POOL =
@@ -85,6 +91,40 @@ public class ModLootTables {
                             .add(createLootItem(CobblemonItems.MASTER_ROD, 5, 1.0f))
             );
 
+    public static final LootTable.Builder POKEBALLSTOP_LOOT_POOL =
+            LootTable.lootTable().withPool(
+                    LootPool.lootPool()
+                            .setRolls(ConstantValue.exactly(1f))
+                            .setBonusRolls(ConstantValue.exactly(0.6f))
+                            .add(createLootItem(Items.IRON_INGOT, 50, 1.0f))
+                            .add(createLootItem(Items.COAL, 50, 1.0f))
+                            .add(createLootItem(Items.GOLD_INGOT, 30, 1.0f))
+                            .add(createLootItem(Items.LAPIS_LAZULI, 30, 1.0f))
+                            .add(createLootItem(Items.DIAMOND, 15, 1.0f))
+                            .add(createLootItem(CobblemonItems.POKE_BALL, 50, 1.0f))
+                            .add(createLootItem(CobblemonItems.AZURE_BALL, 50, 1.0f))
+                            .add(createLootItem(CobblemonItems.CITRINE_BALL, 50, 1.0f))
+                            .add(createLootItem(CobblemonItems.ROSEATE_BALL, 50, 1.0f))
+                            .add(createLootItem(CobblemonItems.VERDANT_BALL, 50, 1.0f))
+                            .add(createLootItem(CobblemonItems.FRIEND_BALL, 30, 1.0f))
+                            .add(createLootItem(CobblemonItems.DIVE_BALL, 30, 1.0f))
+                            .add(createLootItem(CobblemonItems.LURE_BALL, 30, 1.0f))
+                            .add(createLootItem(CobblemonItems.NEST_BALL, 30, 1.0f))
+                            .add(createLootItem(CobblemonItems.HEAVY_BALL, 15, 1.0f))
+                            .add(createLootItem(CobblemonItems.QUICK_BALL, 15, 1.0f))
+                            .add(createLootItem(CobblemonItems.DUSK_BALL, 15, 1.0f))
+                            .add(createLootItem(CobblemonItems.PREMIER_BALL, 15, 1.0f))
+                            .add(createLootItem(CobblemonItems.ULTRA_BALL, 15, 1.0f))
+                            .add(createLootItem(CobblemonItems.TIMER_BALL, 15, 1.0f))
+                            .add(createLootItem(CobblemonItems.LUXURY_BALL, 15, 1.0f))
+                            .add(createLootItem(CobblemonItems.LEVEL_BALL, 15, 1.0f))
+                            .add(createLootItem(CobblemonItems.SPORT_BALL, 15, 1.0f))
+                            .add(createLootItem(CobblemonItems.FAST_BALL, 15, 1.0f))
+                            .add(createLootItem(CobblemonItems.PARK_BALL, 15, 1.0f))
+                            .add(createLootItem(CobblemonItems.MASTER_BALL, 5, 1.0f))
+                            .add(createLootItem(CobblemonItems.BEAST_BALL, 5, 1.0f))
+            );
+
     public static final LootTable.Builder POKESTOP_TROPHY_LOOT_POOL =
             LootTable.lootTable().withPool(
                     LootPool.lootPool()
@@ -99,6 +139,13 @@ public class ModLootTables {
                             .add(createLootItem(ItemRegistry.ALL_TROPHIES.get("wingedstop_trophy").get(), 100, 1.0f))
             );
 
+    public static final LootTable.Builder POKEBALLSTOP_TROPHY_LOOT_POOL =
+            LootTable.lootTable().withPool(
+                    LootPool.lootPool()
+                            .setRolls(ConstantValue.exactly(1f))
+                            .add(createLootItem(ItemRegistry.ALL_TROPHIES.get("pokeballstop_trophy").get(), 100, 1.0f))
+            );
+
     // --- Datagen ---
 
     public static Map<ResourceKey<LootTable>, LootTable.Builder> LOOT_TABLES = new HashMap<>();
@@ -106,8 +153,10 @@ public class ModLootTables {
     static {
         LOOT_TABLES.put(POKESTOP_LOOT, POKESTOP_LOOT_POOL);
         LOOT_TABLES.put(WINGEDSTOP_LOOT, WINGEDSTOP_LOOT_POOL);
+        LOOT_TABLES.put(POKEBALLSTOP_LOOT, POKEBALLSTOP_LOOT_POOL);
         LOOT_TABLES.put(POKESTOP_TROPHY_LOOT, POKESTOP_TROPHY_LOOT_POOL);
         LOOT_TABLES.put(WINGED_TROPHY_LOOT, WINGEDSTOP_TROPHY_LOOT_POOL);
+        LOOT_TABLES.put(POKEBALL_TROPHY_LOOT, POKEBALLSTOP_TROPHY_LOOT_POOL);
     }
 
     @SuppressWarnings("SameParameterValue")

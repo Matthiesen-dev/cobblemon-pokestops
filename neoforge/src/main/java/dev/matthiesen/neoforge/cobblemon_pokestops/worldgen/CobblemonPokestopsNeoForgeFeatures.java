@@ -8,7 +8,8 @@ import net.neoforged.neoforge.common.world.BiomeModifier;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
-public class NeoForgeFeatures {
+@SuppressWarnings("unused")
+public class CobblemonPokestopsNeoForgeFeatures {
     public static final DeferredRegister<Feature<?>> FEATURES = DeferredRegister.create(Registries.FEATURE, Constants.MOD_ID);
 
     public static void init() {}

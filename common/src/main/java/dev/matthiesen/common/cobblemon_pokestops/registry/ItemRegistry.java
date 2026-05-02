@@ -2,10 +2,7 @@ package dev.matthiesen.common.cobblemon_pokestops.registry;
 
 import dev.matthiesen.common.cobblemon_pokestops.CobblemonPokestops;
 import dev.matthiesen.common.cobblemon_pokestops.Constants;
-import dev.matthiesen.common.cobblemon_pokestops.item.PokestopItem;
-import dev.matthiesen.common.cobblemon_pokestops.item.PokestopTrophyItem;
-import dev.matthiesen.common.cobblemon_pokestops.item.WingedstopItem;
-import dev.matthiesen.common.cobblemon_pokestops.item.WingedstopTrophyItem;
+import dev.matthiesen.common.cobblemon_pokestops.item.*;
 import dev.matthiesen.common.cobblemon_pokestops.templates.item.StopItemTemplate;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.*;
@@ -27,8 +24,10 @@ public class ItemRegistry {
     // Primary Item Collections
     public static Map<String, Supplier<? extends StopItemTemplate>> POKESTOP_ITEMS = new HashMap<>();
     public static Map<String, Supplier<? extends StopItemTemplate>> WINGEDSTOP_ITEMS = new HashMap<>();
+    public static Map<String, Supplier<? extends StopItemTemplate>> POKEBALLSTOP_ITEMS = new HashMap<>();
     public static Map<String, Supplier<? extends StopItemTemplate>> POKESTOP_TROPHY_ITEMS = new HashMap<>();
     public static Map<String, Supplier<? extends StopItemTemplate>> WINGEDSTOP_TROPHY_ITEMS = new HashMap<>();
+    public static Map<String, Supplier<? extends StopItemTemplate>> POKEBALLSTOP_TROPHY_ITEMS = new HashMap<>();
 
     static {
         registerStopItems(
@@ -44,6 +43,12 @@ public class ItemRegistry {
                 block -> new WingedstopItem(block, new Item.Properties())
         );
         registerStopItems(
+                BlockRegistry.POKEBALLSTOPS,
+                POKEBALLSTOP_ITEMS,
+                ALL_POKESTOPS,
+                block -> new PokeballstopItem(block, new Item.Properties())
+        );
+        registerStopItems(
                 BlockRegistry.WINGEDSTOP_TROPHIES,
                 WINGEDSTOP_TROPHY_ITEMS,
                 ALL_TROPHIES,
@@ -54,6 +59,12 @@ public class ItemRegistry {
                 POKESTOP_TROPHY_ITEMS,
                 ALL_TROPHIES,
                 block -> new PokestopTrophyItem(block, new Item.Properties().rarity(Rarity.EPIC))
+        );
+        registerStopItems(
+                BlockRegistry.POKEBALLSTOP_TROPHIES,
+                POKEBALLSTOP_TROPHY_ITEMS,
+                ALL_TROPHIES,
+                block -> new PokeballstopTrophyItem(block, new Item.Properties().rarity(Rarity.EPIC))
         );
     }
 

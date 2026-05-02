@@ -1,0 +1,174 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.pokeballstop_trophy.idle_open": {
+			"loop": true,
+			"animation_length": 1,
+			"bones": {
+				"poke_ball": {
+					"position": {
+						"0.0": {
+							"vector": [0, -1, 0]
+						},
+						"1.0": {
+							"vector": [0, -1, 0]
+						}
+					},
+					"scale": {
+						"0.0": {
+							"vector": [0.9, 0.9, 0.9]
+						},
+						"1.0": {
+							"vector": [0.9, 0.9, 0.9]
+						}
+					}
+				}
+			}
+		},
+		"animation.pokeballstop_trophy.idle_closed": {
+			"loop": true,
+			"animation_length": 10,
+			"bones": {
+				"poke_ball": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"10.0": {
+							"vector": [0, 360, 0]
+						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"2.0": {
+							"vector": [0, 1, 0],
+							"easing": "easeInOutSine"
+						},
+						"4.0": {
+							"vector": [0, -1, 0],
+							"easing": "easeInOutSine"
+						},
+						"6.0": {
+							"vector": [0, 1, 0],
+							"easing": "easeInOutSine"
+						},
+						"8.0": {
+							"vector": [0, -1, 0],
+							"easing": "easeInOutSine"
+						},
+						"10.0": {
+							"vector": [0, 0, 0]
+						}
+					}
+				},
+				"ball": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"4.0": {
+							"vector": [0, 0, 10],
+							"easing": "easeInOutSine"
+						},
+						"8.0": {
+							"vector": [0, 0, -10],
+							"easing": "easeInOutSine"
+						},
+						"10.0": {
+							"vector": [0, 0, 0]
+						}
+					}
+				}
+			}
+		},
+		"animation.pokeballstop_trophy.open": {
+			"animation_length": 6,
+			"bones": {
+				"poke_ball": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.5": {
+							"vector": [0, 15, 0],
+							"easing": "easeInBack"
+						},
+						"1.0": {
+							"vector": [0, -15, 0],
+							"easing": "easeInBack"
+						},
+						"1.5": {
+							"vector": [0, 15, 0],
+							"easing": "easeInBack"
+						},
+						"2.0": {
+							"vector": [0, -15, 0],
+							"easing": "easeInBack"
+						},
+						"2.5": {
+							"vector": [0, 15, 0],
+							"easing": "easeInBack"
+						},
+						"3.0": {
+							"vector": [0, 0, 0],
+							"easing": "easeInBack"
+						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"4.0": {
+							"vector": [0, 0, 0]
+						},
+						"4.5": {
+							"vector": [0, -3, 0]
+						},
+						"5.0": {
+							"vector": [0, -3, 0]
+						},
+						"6.0": {
+							"vector": [0, -3, 0]
+						}
+					},
+					"scale": {
+						"0.0": {
+							"vector": [1, 1, 1]
+						},
+						"4.0": {
+							"vector": [1, 1, 1]
+						},
+						"4.5": {
+							"vector": [0.9, 0.9, 0.9]
+						},
+						"5.0": {
+							"vector": [0.9, 0.9, 0.9]
+						},
+						"6.0": {
+							"vector": [0.9, 0.9, 0.9]
+						}
+					}
+				},
+				"lid": {
+					"rotation": {
+						"2.75": {
+							"vector": [0, 0, 0]
+						},
+						"3.75": {
+							"vector": [-50, 0, 0]
+						},
+						"4.0": {
+							"vector": [-50, 0, 0],
+							"easing": "easeInCubic"
+						},
+						"4.5": {
+							"vector": [0, 0, 0]
+						}
+					}
+				}
+			}
+		}
+	}
+}

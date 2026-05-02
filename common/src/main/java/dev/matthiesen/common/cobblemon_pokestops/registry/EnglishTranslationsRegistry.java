@@ -9,12 +9,14 @@ public class EnglishTranslationsRegistry {
 
     private static final Map<String, String> SPINNER_MESSAGE_VARIANTS = Map.of(
             "pokestop", "Pokestop",
-            "wingedstop", "Winged Pokestop"
+            "wingedstop", "Winged Pokestop",
+            "pokeballstop", "Pokeball Stop"
     );
 
     private static final Map<String, String> TROPHY_MESSAGE_VARIANTS = Map.of(
             "pokestop_trophy", "§bPokestop Trophy",
-            "wingedstop_trophy", "§bWinged Pokestop Trophy"
+            "wingedstop_trophy", "§bWinged Pokestop Trophy",
+            "pokeballstop_trophy", "§bPokeball Stop Trophy"
     );
 
     private static final Map<String, String> COLORMAP = Map.of(
@@ -24,14 +26,23 @@ public class EnglishTranslationsRegistry {
             "green", "Green"
     );
 
-    private static final List<VariantBlocks> BLOCKS_LIST = List.of(
-            new VariantBlocks("pokestop", BlockRegistry.POKESTOP_VARIANTS),
-            new VariantBlocks("wingedstop", BlockRegistry.WINGEDSTOP_VARIANTS)
+    private static final Map<String, String> POKEBALL_VARIANTS = Map.of(
+            "masterball", "Master",
+            "premierball", "Premier",
+            "ultraball",  "Ultra",
+            "parkball", "Park"
+    );
+
+    private static final List<Map<String, String>> BLOCKS_LIST = List.of(
+            new VariantBlocks("pokestop", BlockRegistry.POKESTOP_VARIANTS).getTranslations(),
+            new VariantBlocks("wingedstop", BlockRegistry.WINGEDSTOP_VARIANTS).getTranslations(),
+            new VariantOnlyBlocks("pokeballstop", BlockRegistry.POKEBALLSTOP_VARIANTS, POKEBALL_VARIANTS).getTranslations()
     );
 
     private static final List<TrophyBlocks> TROPHY_BLOCKS_LIST = List.of(
             new TrophyBlocks("pokestop_trophy"),
-            new TrophyBlocks("wingedstop_trophy")
+            new TrophyBlocks("wingedstop_trophy"),
+            new TrophyBlocks("pokeballstop_trophy")
     );
 
     static {
@@ -39,6 +50,7 @@ public class EnglishTranslationsRegistry {
         TRANSLATIONS.put("itemGroup.cobblemon_pokestops.cobblemon_pokestops_trophies", "Pokestop Trophies");
         TRANSLATIONS.put("stat.cobblemon_pokestops.pokestop_times_spun", "Times Spun Pokestops");
         TRANSLATIONS.put("stat.cobblemon_pokestops.wingedstop_times_spun", "Times Spun Winged Pokestops");
+        TRANSLATIONS.put("stat.cobblemon_pokestops.pokeballstop_times_spun", "Times Spun Pokeball Stops");
         TRANSLATIONS.put("sound.cobblemon_pokestops.pokestop_spin", "Pokestop Spin");
 
         for (var key : SPINNER_MESSAGE_VARIANTS.entrySet()) {
@@ -47,8 +59,7 @@ public class EnglishTranslationsRegistry {
         }
 
         for (var key : BLOCKS_LIST) {
-            var translations = key.getTranslations();
-            TRANSLATIONS.putAll(translations);
+            TRANSLATIONS.putAll(key);
         }
 
         for (var key : TROPHY_BLOCKS_LIST) {
@@ -76,6 +87,28 @@ public class EnglishTranslationsRegistry {
             for (String variant : variants) {
                 String key = "block.cobblemon_pokestops." + baseId + "_" + variant;
                 String value = COLORMAP.getOrDefault(variant, variant) + " " + SPINNER_MESSAGE_VARIANTS.getOrDefault(baseId, baseId);
+                translations.put(key, value);
+            }
+            return translations;
+        }
+    }
+
+    private static class VariantOnlyBlocks {
+        public String baseId;
+        public String[] variants;
+        public Map<String, String> variantMap;
+        public VariantOnlyBlocks(String baseId, String[] variants, Map<String, String> variantMap) {
+            this.baseId = baseId;
+            this.variants = variants;
+            this.variantMap = variantMap;
+        }
+
+        public Map<String, String> getTranslations() {
+            Map<String, String> translations = new HashMap<>();
+
+            for (String variant : variants) {
+                String key = "block.cobblemon_pokestops." + baseId + "_" + variant;
+                String value = variantMap.getOrDefault(variant, variant) + " " + SPINNER_MESSAGE_VARIANTS.getOrDefault(baseId, baseId);
                 translations.put(key, value);
             }
             return translations;

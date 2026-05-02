@@ -2,10 +2,11 @@ package dev.matthiesen.neoforge.cobblemon_pokestops;
 
 import dev.matthiesen.common.cobblemon_pokestops.CobblemonPokestops;
 import dev.matthiesen.common.cobblemon_pokestops.Constants;
-import dev.matthiesen.neoforge.cobblemon_pokestops.worldgen.NeoForgeFeatures;
+import dev.matthiesen.neoforge.cobblemon_pokestops.worldgen.CobblemonPokestopsNeoForgeFeatures;
 import net.minecraft.advancements.CriterionTrigger;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -29,6 +30,7 @@ public class CobblemonPokestopsNeoForge {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(Registries.ITEM, Constants.MOD_ID);
     public static final DeferredRegister<CriterionTrigger<?>> ADVANCEMENT_TRIGGERS = DeferredRegister.create(Registries.TRIGGER_TYPE, Constants.MOD_ID);
     public static final DeferredRegister<ResourceLocation> STATS = DeferredRegister.create(Registries.CUSTOM_STAT, Constants.MOD_ID);
+    public static MinecraftServer MC_SERVER;
 
     public CobblemonPokestopsNeoForge(IEventBus modBus) {
         Constants.createInfoLog("Loading for NeoForge Mod Loader");
@@ -39,19 +41,20 @@ public class CobblemonPokestopsNeoForge {
         CREATIVE_TABS.register(modBus);
         ITEMS.register(modBus);
         ADVANCEMENT_TRIGGERS.register(modBus);
-        CobblemonPokestops.preinitialize();
-        NeoForgeFeatures.init();
         CobblemonPokestops.initialize();
+        CobblemonPokestopsNeoForgeFeatures.init();
         NeoForge.EVENT_BUS.register(this);
     }
 
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
         CobblemonPokestops.onStartup();
+        MC_SERVER = event.getServer();
     }
 
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public void onServerStopping(ServerStoppingEvent event) {
         CobblemonPokestops.onShutdown();
+        MC_SERVER = null;
     }
 }

@@ -1,10 +1,7 @@
 package dev.matthiesen.common.cobblemon_pokestops.registry;
 
 import dev.matthiesen.common.cobblemon_pokestops.CobblemonPokestops;
-import dev.matthiesen.common.cobblemon_pokestops.block.entity.PokestopEntity;
-import dev.matthiesen.common.cobblemon_pokestops.block.entity.PokestopTrophyEntity;
-import dev.matthiesen.common.cobblemon_pokestops.block.entity.WingedstopEntity;
-import dev.matthiesen.common.cobblemon_pokestops.block.entity.WingedstopTrophyEntity;
+import dev.matthiesen.common.cobblemon_pokestops.block.entity.*;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -22,11 +19,17 @@ public class BlockEntityRegistry {
     public static final Supplier<BlockEntityType<WingedstopEntity>> WINGEDSTOP_BE =
             registerBlockEntity("wingedstop", () -> buildType(WingedstopEntity::new, BlockRegistry.WINGEDSTOPS));
 
+    public static final Supplier<BlockEntityType<PokeballstopEntity>> POKEBALLSTOP_BE =
+            registerBlockEntity("pokeballstop", () -> buildType(PokeballstopEntity::new, BlockRegistry.POKEBALLSTOPS));
+
     public static final Supplier<BlockEntityType<PokestopTrophyEntity>> POKESTOP_TROPHY_BE =
             registerBlockEntity("pokestop_trophy", () -> buildType(PokestopTrophyEntity::new, BlockRegistry.POKESTOP_TROPHIES));
 
     public static final Supplier<BlockEntityType<WingedstopTrophyEntity>> WINGEDSTOP_TROPHY_BE =
             registerBlockEntity("wingedstop_trophy", () -> buildType(WingedstopTrophyEntity::new, BlockRegistry.WINGEDSTOP_TROPHIES));
+
+    public static final Supplier<BlockEntityType<PokeballstopTrophyEntity>> POKEBALLSTOP_TROPHY_BE =
+            registerBlockEntity("pokeballstop_trophy", () -> buildType(PokeballstopTrophyEntity::new, BlockRegistry.POKEBALLSTOP_TROPHIES));
 
     private static Block[] resolveBlocks(Map<String, ? extends Supplier<? extends Block>> registeredBlocks) {
         return registeredBlocks.values()

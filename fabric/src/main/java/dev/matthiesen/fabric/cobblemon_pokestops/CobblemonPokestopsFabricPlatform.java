@@ -3,10 +3,12 @@ package dev.matthiesen.fabric.cobblemon_pokestops;
 import dev.matthiesen.common.cobblemon_pokestops.Constants;
 import dev.matthiesen.common.cobblemon_pokestops.platform.CobblemonPokestopsPlatform;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.advancements.CriterionTrigger;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -53,8 +55,23 @@ public class CobblemonPokestopsFabricPlatform implements CobblemonPokestopsPlatf
     }
 
     @Override
+    public MinecraftServer server() {
+        return CobblemonPokestopsFabric.MC_SERVER;
+    }
+
+    @Override
     public CreativeModeTab.Builder newCreativeTabBuilder() {
         return FabricItemGroup.builder();
+    }
+
+    @Override
+    public boolean isModLoaded(String modId) {
+        return FabricLoader.getInstance().isModLoaded(modId);
+    }
+
+    @Override
+    public boolean isDevelopmentEnvironment() {
+        return FabricLoader.getInstance().isDevelopmentEnvironment();
     }
 
     @SuppressWarnings("unchecked")
