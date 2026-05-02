@@ -12,7 +12,7 @@ import java.util.function.Supplier;
 public class HealingstopTrophy extends TrophyTemplate {
     @Override
     protected Supplier<? extends net.minecraft.world.level.block.entity.BlockEntityType<?>> getEntityType() {
-        return BlockEntityRegistry.POKEBALLSTOP_TROPHY_BE;
+        return BlockEntityRegistry.HEALINGSTOP_TROPHY_BE;
     }
 
     @Override

@@ -8,7 +8,7 @@ import software.bernie.geckolib.animation.RawAnimation;
 
 public class HealingstopTrophyEntity extends TrophyEntityTemplate {
     private static final RawAnimation IDLE_ANIM = RawAnimation.begin()
-            .thenLoop("animation.pokeballstop_trophy.idle_closed");
+            .thenLoop("animation.healingstop_trophy.idle_closed");
 
     public HealingstopTrophyEntity(BlockPos pos, BlockState state) {
         super(pos, state, BlockEntityRegistry.HEALINGSTOP_TROPHY_BE);

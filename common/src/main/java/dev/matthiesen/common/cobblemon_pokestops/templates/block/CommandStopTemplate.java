@@ -117,8 +117,7 @@ public abstract class CommandStopTemplate extends HorizontalDirectionalBlock imp
         if (blockEntity instanceof StopEntityTemplate be) {
             ServerLevel serverLevel = (ServerLevel) level;
             if (be.canPlayerSpin(player)) {
-                String command = getRewardCommand();
-                command = command.replace("%player%", player.getStringUUID());
+                String command = getRewardCommand().replace("%player%", player.getName().getString());
                 Commander.runServerCommand(command);
                 be.setPlayerCooldown(player, getCooldownSeconds());
                 level.sendBlockUpdated(pos, state, state, 3);
