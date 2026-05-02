@@ -1,8 +1,10 @@
 package dev.matthiesen.common.cobblemon_pokestops.block;
 
+import com.cobblemon.mod.common.api.dialogue.Dialogue;
 import dev.matthiesen.common.cobblemon_pokestops.CobblemonPokestops;
 import dev.matthiesen.common.cobblemon_pokestops.registry.*;
 import dev.matthiesen.common.cobblemon_pokestops.templates.block.LootStopTemplate;
+import dev.matthiesen.common.cobblemon_pokestops.utils.DialogueBuilder;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
@@ -52,6 +54,15 @@ public class Pokestop extends LootStopTemplate {
     protected void criterionTrigger(ServerPlayer player) {
         CriterionTriggerRegistry.POKESTOP_SCORE.get().trigger(player);
         CriterionTriggerRegistry.USE_POKESTOP.get().trigger(player);
+
+        Dialogue dialogue = DialogueBuilder.create()
+                .page(p -> p
+                        .id("test")
+                        .line("Good luck out there!")
+                )
+                .build();
+
+        DialogueBuilder.sendDialogue(player, dialogue);
     }
 
     @Override
