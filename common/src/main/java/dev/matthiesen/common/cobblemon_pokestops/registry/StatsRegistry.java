@@ -12,10 +12,12 @@ public class StatsRegistry {
     public static final Supplier<ResourceLocation> POKESTOP_TIMES_SPUN = registerStats("pokestop_times_spun", () -> Constants.modResource("pokestop_times_spun"));
     public static final Supplier<ResourceLocation> WINGEDSTOP_TIMES_SPUN = registerStats("wingedstop_times_spun", () -> Constants.modResource("wingedstop_times_spun"));
     public static final Supplier<ResourceLocation> POKEBALLSTOP_TIMES_SPUN = registerStats("pokeballstop_times_spun", () -> Constants.modResource("pokeballstop_times_spun"));
+    public static final Supplier<ResourceLocation> HEALINGSTOP_TIMES_SPUN = registerStats("healingstop_times_spun", () -> Constants.modResource("healingstop_times_spun"));
 
     public static Stat<ResourceLocation> POKESTOP_TIMES_SPUN_STAT;
     public static Stat<ResourceLocation> WINGEDSTOP_TIMES_SPUN_STAT;
     public static Stat<ResourceLocation> POKEBALLSTOP_TIMES_SPUN_STAT;
+    public static Stat<ResourceLocation> HEALINGSTOP_TIMES_SPUN_STAT;
 
     public static void init() {}
 
@@ -23,6 +25,7 @@ public class StatsRegistry {
         POKESTOP_TIMES_SPUN_STAT = Stats.CUSTOM.get(POKESTOP_TIMES_SPUN.get());
         WINGEDSTOP_TIMES_SPUN_STAT = Stats.CUSTOM.get(WINGEDSTOP_TIMES_SPUN.get());
         POKEBALLSTOP_TIMES_SPUN_STAT = Stats.CUSTOM.get(POKEBALLSTOP_TIMES_SPUN.get());
+        HEALINGSTOP_TIMES_SPUN_STAT = Stats.CUSTOM.get(HEALINGSTOP_TIMES_SPUN.get());
     }
 
     public static Stat<ResourceLocation> getPokestopTimesSpunStat() {
@@ -44,6 +47,13 @@ public class StatsRegistry {
             load();
         }
         return POKEBALLSTOP_TIMES_SPUN_STAT;
+    }
+
+    public static  Stat<ResourceLocation> getHealingstopTimesSpunStat() {
+        if (HEALINGSTOP_TIMES_SPUN_STAT == null) {
+            load();
+        }
+        return HEALINGSTOP_TIMES_SPUN_STAT;
     }
 
     private static <T extends ResourceLocation> Supplier<T> registerStats(String id, Supplier<T> stats) {

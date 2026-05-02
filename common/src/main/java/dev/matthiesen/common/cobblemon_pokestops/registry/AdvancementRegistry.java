@@ -96,6 +96,31 @@ public class AdvancementRegistry {
         ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_500_pokeballstops.title", "Pokeballstop Eternal");
         ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_500_pokeballstops.description",
                 "Spin 500 Pokeballstops to achieve eternal status in the world of Cobblemon and unlock eternal rewards!");
+
+        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_healingstop.title", "Healingstop Harmony");
+        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_healingstop.description",
+                "Spin a Healingstop for the first time to uncover its unique rewards and experience the thrill of discovery!");
+        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_25_healingstops.title", "Healingstop Enthusiast");
+        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_25_healingstops.description",
+                "Spin 25 Healingstops to show your dedication to exploring the world of Cobblemon and uncovering its secrets!");
+        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_50_healingstops.title", "Healingstop Explorer");
+        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_50_healingstops.description",
+                "Spin 50 Healingstops to become a true explorer of the world of Cobblemon and uncover its hidden treasures!");
+        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_100_healingstops.title", "Healingstop Master");
+        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_100_healingstops.description",
+                "Spin 100 Healingstops to achieve mastery in the world of Cobblemon and unlock exclusive rewards!");
+        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_200_healingstops.title", "Healingstop Legend");
+        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_200_healingstops.description",
+                "Spin 200 Healingstops to become a legend in the world of Cobblemon and unlock legendary rewards!");
+        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_300_healingstops.title", "Healingstop Mythic");
+        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_300_healingstops.description",
+                "Spin 300 Healingstops to achieve mythic status in the world of Cobblemon and unlock mythic rewards!");
+        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_400_healingstops.title", "Healingstop Immortal");
+        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_400_healingstops.description",
+                "Spin 400 Healingstops to achieve immortal status in the world of Cobblemon and unlock immortal rewards!");
+        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_500_healingstops.title", "Healingstop Eternal");
+        ENGLISH_TRANSLATIONS.put("advancements.cobblemon_pokestops.used_500_healingstops.description",
+                "Spin 500 Healingstops to achieve eternal status in the world of Cobblemon and unlock eternal rewards!");
     }
 
     @SuppressWarnings("unused")
@@ -158,6 +183,17 @@ public class AdvancementRegistry {
                 "pokeballstops/used_1_pokeballstop"
         );
 
+        AdvancementHolder usedOnceHealingStop = createChildAdvancement(
+                challengePokeballstopDisplay,
+                "advancements.cobblemon_pokestops.used_healingstop.title",
+                "advancements.cobblemon_pokestops.used_healingstop.description",
+                AdvancementType.GOAL,
+                root,
+                "used_1_healingstop", UsedHealingstopCriterion.Conditions.useHealingstop(),
+                consumer,
+                "healingstops/used_1_healingstop"
+        );
+
         // Used 25 (TASK)
 
         AdvancementHolder used25Pokestops = createChildAdvancement(
@@ -191,6 +227,17 @@ public class AdvancementRegistry {
                 "used_25_pokeballstops", PokeballstopScoreTracker.Conditions.used(25),
                 consumer,
                 "pokeballstops/used_25_pokeballstops"
+        );
+
+        AdvancementHolder used25Healingstops = createChildAdvancement(
+                challengePokeballstopDisplay,
+                "advancements.cobblemon_pokestops.used_25_healingstops.title",
+                "advancements.cobblemon_pokestops.used_25_healingstops.description",
+                AdvancementType.TASK,
+                usedOnceHealingStop,
+                "used_25_healingstops", HealingstopScoreTracker.Conditions.used(25),
+                consumer,
+                "healingstops/used_25_healingstops"
         );
 
         // Used 50 (TASK)
@@ -228,6 +275,17 @@ public class AdvancementRegistry {
                 "pokeballstops/used_50_pokeballstops"
         );
 
+        AdvancementHolder used50Healingstops = createChildAdvancement(
+                challengePokeballstopDisplay,
+                "advancements.cobblemon_pokestops.used_50_healingstops.title",
+                "advancements.cobblemon_pokestops.used_50_healingstops.description",
+                AdvancementType.TASK,
+                used25Healingstops,
+                "used_50_healingstops", HealingstopScoreTracker.Conditions.used(50),
+                consumer,
+                "healingstops/used_50_healingstops"
+        );
+
         // Used 100 (GOAL)
 
         AdvancementHolder used100Pokestops = createChildAdvancement(
@@ -261,6 +319,17 @@ public class AdvancementRegistry {
                 "used_100_pokeballstops", PokeballstopScoreTracker.Conditions.used(100),
                 consumer,
                 "pokeballstops/used_100_pokeballstops"
+        );
+
+        AdvancementHolder used100Healingstops = createChildAdvancement(
+                challengePokeballstopDisplay,
+                "advancements.cobblemon_pokestops.used_100_healingstops.title",
+                "advancements.cobblemon_pokestops.used_100_healingstops.description",
+                AdvancementType.GOAL,
+                used50Healingstops,
+                "used_100_healingstops", HealingstopScoreTracker.Conditions.used(100),
+                consumer,
+                "healingstops/used_100_healingstops"
         );
 
         // Used 200 (TASK)
@@ -298,6 +367,17 @@ public class AdvancementRegistry {
                 "pokeballstops/used_200_pokeballstops"
         );
 
+        AdvancementHolder used200Healingstops = createChildAdvancement(
+                challengePokeballstopDisplay,
+                "advancements.cobblemon_pokestops.used_200_healingstops.title",
+                "advancements.cobblemon_pokestops.used_200_healingstops.description",
+                AdvancementType.TASK,
+                used100Healingstops,
+                "used_200_healingstops", HealingstopScoreTracker.Conditions.used(200),
+                consumer,
+                "healingstops/used_200_healingstops"
+        );
+
         // Used 300 (TASK)
 
         AdvancementHolder used300Pokestops = createChildAdvancement(
@@ -333,6 +413,17 @@ public class AdvancementRegistry {
                 "pokeballstops/used_300_pokeballstops"
         );
 
+        AdvancementHolder used300Healingstops = createChildAdvancement(
+                challengePokeballstopDisplay,
+                "advancements.cobblemon_pokestops.used_300_healingstops.title",
+                "advancements.cobblemon_pokestops.used_300_healingstops.description",
+                AdvancementType.TASK,
+                used200Healingstops,
+                "used_300_healingstops", HealingstopScoreTracker.Conditions.used(300),
+                consumer,
+                "healingstops/used_300_healingstops"
+        );
+
         // Used 400 (TASK)
 
         AdvancementHolder used400Pokestops = createChildAdvancement(
@@ -366,6 +457,17 @@ public class AdvancementRegistry {
                 "used_400_pokeballstops", PokeballstopScoreTracker.Conditions.used(400),
                 consumer,
                 "pokeballstops/used_400_pokeballstops"
+        );
+
+        AdvancementHolder used400Healingstops = createChildAdvancement(
+                challengePokeballstopDisplay,
+                "advancements.cobblemon_pokestops.used_400_healingstops.title",
+                "advancements.cobblemon_pokestops.used_400_healingstops.description",
+                AdvancementType.TASK,
+                used300Healingstops,
+                "used_400_healingstops", HealingstopScoreTracker.Conditions.used(400),
+                consumer,
+                "healingstops/used_400_healingstops"
         );
 
         // Used 500 (CHALLENGE)
@@ -405,6 +507,19 @@ public class AdvancementRegistry {
                 AdvancementRewards.Builder.loot(ModLootTables.POKEBALL_TROPHY_LOOT),
                 consumer,
                 "pokeballstops/used_500_pokeballstops"
+        );
+
+        AdvancementHolder used500Healingstops =  createChildAdvancementWithRewards(
+                challengePokeballstopDisplay,
+                "advancements.cobblemon_pokestops.used_500_healingstops.title",
+                "advancements.cobblemon_pokestops.used_500_healingstops.description",
+                AdvancementType.CHALLENGE,
+                used400Healingstops,
+                "used_500_healingstops",
+                HealingstopScoreTracker.Conditions.used(500),
+                AdvancementRewards.Builder.loot(ModLootTables.HEALINGSTOP_TROPHY_LOOT),
+                consumer,
+                "healingstops/used_500_healingstops"
         );
 
     }

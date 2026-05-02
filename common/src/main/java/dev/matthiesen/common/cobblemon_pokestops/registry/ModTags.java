@@ -17,10 +17,14 @@ public class ModTags {
         public static final TagKey<Block> POKESTOPS = createTag("pokestops");
         public static final TagKey<Block> WINGEDSTOPS = createTag("wingedstops");
         public static final TagKey<Block> POKEBALLSTOPS = createTag("pokeballstops");
+        public static final TagKey<Block> HEALINGSTOPS = createTag("healingstops");
+
         public static final TagKey<Block> DUMMYBLOCKS = createTag("dummyblocks");
+
         public static final TagKey<Block> POKESTOP_TROPHY_BLOCKS = createTag("pokestop_trophy_blocks");
         public static final TagKey<Block> WINGEDSTOP_TROPHY_BLOCKS = createTag("winged_pokestop_trophy_blocks");
         public static final TagKey<Block> POKEBALLSTOP_TROPHY_BLOCKS = createTag("pokeballstop_trophy_blocks");
+        public static final TagKey<Block> HEALINGSTOP_TROPHY_BLOCKS = createTag("healingstop_trophy_blocks");
 
         private static TagKey<Block> createTag(String name) {
             return TagKey.create(Registries.BLOCK, Constants.modResource(name));
@@ -41,26 +45,33 @@ public class ModTags {
             Blocks.POKESTOPS,
             Blocks.WINGEDSTOPS,
             Blocks.POKEBALLSTOPS,
+            Blocks.HEALINGSTOPS,
             Blocks.DUMMYBLOCKS
     );
     public static final List<TagKey<Block>> IRON_TOOL_MINEABLE_BLOCKS = List.of(
             Blocks.POKESTOP_TROPHY_BLOCKS,
             Blocks.WINGEDSTOP_TROPHY_BLOCKS,
-            Blocks.POKEBALLSTOP_TROPHY_BLOCKS
+            Blocks.POKEBALLSTOP_TROPHY_BLOCKS,
+            Blocks.HEALINGSTOP_TROPHY_BLOCKS
     );
 
     static {
         ALL_TAGS.put(Blocks.POKESTOPS, supplierToBlock(BlockRegistry.POKESTOPS.values()));
         ALL_TAGS.put(Blocks.WINGEDSTOPS, supplierToBlock(BlockRegistry.WINGEDSTOPS.values()));
         ALL_TAGS.put(Blocks.POKEBALLSTOPS, supplierToBlock(BlockRegistry.POKEBALLSTOPS.values()));
+        ALL_TAGS.put(Blocks.HEALINGSTOPS, supplierToBlock(BlockRegistry.HEALINGSTOPS.values()));
+
         ALL_TAGS.put(Blocks.DUMMYBLOCKS, new Block[]{
                 BlockRegistry.POKESTOP_DUMMY.get(),
                 BlockRegistry.WINGEDSTOP_DUMMY.get(),
-                BlockRegistry.POKEBALLSTOP_DUMMY.get()
+                BlockRegistry.POKEBALLSTOP_DUMMY.get(),
+                BlockRegistry.HEALINGSTOP_DUMMY.get()
         });
+
         ALL_TAGS.put(Blocks.POKESTOP_TROPHY_BLOCKS, supplierToBlock(BlockRegistry.POKESTOP_TROPHIES.values()));
         ALL_TAGS.put(Blocks.WINGEDSTOP_TROPHY_BLOCKS, supplierToBlock(BlockRegistry.WINGEDSTOP_TROPHIES.values()));
         ALL_TAGS.put(Blocks.POKEBALLSTOP_TROPHY_BLOCKS, supplierToBlock(BlockRegistry.POKEBALLSTOP_TROPHIES.values()));
+        ALL_TAGS.put(Blocks.HEALINGSTOP_TROPHY_BLOCKS, supplierToBlock(BlockRegistry.HEALINGSTOP_TROPHIES.values()));
     }
 
     private static Block[] supplierToBlock(Collection<? extends Supplier<? extends Block>> items) {

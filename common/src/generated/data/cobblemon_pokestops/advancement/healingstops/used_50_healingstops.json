@@ -1,0 +1,29 @@
+{
+  "parent": "cobblemon_pokestops:healingstops/used_25_healingstops",
+  "criteria": {
+    "used_50_healingstops": {
+      "conditions": {
+        "score": 50
+      },
+      "trigger": "cobblemon_pokestops:healingstop_score"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.cobblemon_pokestops.used_50_healingstops.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "cobblemon_pokestops:pokeballstop_masterball"
+    },
+    "title": {
+      "translate": "advancements.cobblemon_pokestops.used_50_healingstops.title"
+    }
+  },
+  "requirements": [
+    [
+      "used_50_healingstops"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

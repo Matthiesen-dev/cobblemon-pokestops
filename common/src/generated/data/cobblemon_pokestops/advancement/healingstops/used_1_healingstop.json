@@ -1,0 +1,27 @@
+{
+  "parent": "cobblemon_pokestops:root",
+  "criteria": {
+    "used_1_healingstop": {
+      "trigger": "cobblemon_pokestops:used_healingstop"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.cobblemon_pokestops.used_healingstop.description"
+    },
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "cobblemon_pokestops:pokeballstop_masterball"
+    },
+    "title": {
+      "translate": "advancements.cobblemon_pokestops.used_healingstop.title"
+    }
+  },
+  "requirements": [
+    [
+      "used_1_healingstop"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

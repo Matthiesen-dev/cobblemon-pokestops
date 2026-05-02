@@ -22,6 +22,9 @@ public class ModConfig {
     @SerializedName("pokeballstopCooldownSeconds")
     public int pokeballstopCooldownSeconds = 300;
 
+    @SerializedName("healingstopCooldownSeconds")
+    public int healingstopCooldownSeconds = 300;
+
     @SerializedName("extraRarities")
     public List<String> extraRarities = List.of(
             "cobblemon:master_ball",

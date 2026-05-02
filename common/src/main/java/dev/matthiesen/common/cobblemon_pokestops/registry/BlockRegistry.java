@@ -18,10 +18,12 @@ public class BlockRegistry {
     public static final Map<String, Supplier<Pokestop>> POKESTOPS = new HashMap<>();
     public static final Map<String, Supplier<Wingedstop>> WINGEDSTOPS = new HashMap<>();
     public static final Map<String, Supplier<Pokeballstop>> POKEBALLSTOPS = new HashMap<>();
+    public static final Map<String, Supplier<Healingstop>> HEALINGSTOPS = new HashMap<>();
 
     public static final Map<String, Supplier<PokestopTrophy>> POKESTOP_TROPHIES = new HashMap<>();
     public static final Map<String, Supplier<WingedstopTrophy>> WINGEDSTOP_TROPHIES = new HashMap<>();
     public static final Map<String, Supplier<TrophyTemplate>> POKEBALLSTOP_TROPHIES = new HashMap<>();
+    public static final Map<String, Supplier<HealingstopTrophy>> HEALINGSTOP_TROPHIES = new HashMap<>();
 
     public static final Map<String, Supplier<? extends TrophyTemplate>> ALL_TROPHIES = new HashMap<>();
 
@@ -30,16 +32,19 @@ public class BlockRegistry {
         registerFamilyWithVariants(POKESTOPS, "pokestop", POKESTOP_VARIANTS, Pokestop::new);
         registerFamilyWithVariants(WINGEDSTOPS, "wingedstop", WINGEDSTOP_VARIANTS, Wingedstop::new);
         registerVariantBlock(POKEBALLSTOPS, "pokeballstop", POKEBALLSTOP_VARIANTS, Pokeballstop::new);
+        HEALINGSTOPS.put("healingstop", registerBlock("healingstop", Healingstop::new));
 
         // Register Trophies
         POKESTOP_TROPHIES.put("pokestop_trophy", registerBlock("pokestop_trophy", PokestopTrophy::new));
         WINGEDSTOP_TROPHIES.put("wingedstop_trophy", registerBlock("wingedstop_trophy", WingedstopTrophy::new));
         POKEBALLSTOP_TROPHIES.put("pokeballstop_trophy", registerBlock("pokeballstop_trophy", PokeballstopTrophy::new));
+        HEALINGSTOP_TROPHIES.put("healingstop_trophy", registerBlock("healingstop_trophy", HealingstopTrophy::new));
 
         // Store Trophy collection data for datagen
         ALL_TROPHIES.putAll(POKESTOP_TROPHIES);
         ALL_TROPHIES.putAll(WINGEDSTOP_TROPHIES);
         ALL_TROPHIES.putAll(POKEBALLSTOP_TROPHIES);
+        ALL_TROPHIES.putAll(HEALINGSTOP_TROPHIES);
     }
 
     /**
@@ -78,6 +83,7 @@ public class BlockRegistry {
     public static final Supplier<PokestopDummyBlock> POKESTOP_DUMMY = registerBlock("pokestop_dummy", PokestopDummyBlock::new);
     public static final Supplier<WingedstopDummyBlock> WINGEDSTOP_DUMMY = registerBlock("wingedstop_dummy", WingedstopDummyBlock::new);
     public static final Supplier<PokeballstopDummyBlock> POKEBALLSTOP_DUMMY = registerBlock("pokeballstop_dummy", PokeballstopDummyBlock::new);
+    public static final Supplier<HealingstopDummyBlock> HEALINGSTOP_DUMMY = registerBlock("healingstop_dummy", HealingstopDummyBlock::new);
 
     // Registration
     private static <T extends Block> Supplier<T> registerBlock(String id, Supplier<T> block) {
@@ -91,10 +97,12 @@ public class BlockRegistry {
         POKESTOPS.forEach((id, block) -> templates.add(block));
         WINGEDSTOPS.forEach((id, block) -> templates.add(block));
         POKEBALLSTOPS.forEach((id, block) -> templates.add(block));
+        HEALINGSTOPS.forEach((id, block) -> templates.add(block));
         ALL_TROPHIES.forEach((id, block) -> templates.add(block));
         templates.add(POKESTOP_DUMMY);
         templates.add(WINGEDSTOP_DUMMY);
         templates.add(POKEBALLSTOP_DUMMY);
+        templates.add(HEALINGSTOP_DUMMY);
         return templates;
     }
 }

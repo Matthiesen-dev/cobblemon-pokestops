@@ -42,6 +42,10 @@ public class ModLootTables {
             Registries.LOOT_TABLE,
             Constants.modResource("gameplay/pokeballstop_trophy")
     );
+    public static final ResourceKey<LootTable> HEALINGSTOP_TROPHY_LOOT = ResourceKey.create(
+            Registries.LOOT_TABLE,
+            Constants.modResource("gameplay/healingstop_trophy")
+    );
 
     public static final LootTable.Builder POKESTOP_LOOT_POOL =
             LootTable.lootTable().withPool(
@@ -146,6 +150,13 @@ public class ModLootTables {
                             .add(createLootItem(ItemRegistry.ALL_TROPHIES.get("pokeballstop_trophy").get(), 100, 1.0f))
             );
 
+    public static final LootTable.Builder HEALINGSTOP_TROPHY_LOOT_POOL =
+            LootTable.lootTable().withPool(
+                    LootPool.lootPool()
+                            .setRolls(ConstantValue.exactly(1f))
+                            .add(createLootItem(ItemRegistry.ALL_TROPHIES.get("healingstop_trophy").get(), 100, 1.0f))
+            );
+
     // --- Datagen ---
 
     public static Map<ResourceKey<LootTable>, LootTable.Builder> LOOT_TABLES = new HashMap<>();
@@ -157,6 +168,7 @@ public class ModLootTables {
         LOOT_TABLES.put(POKESTOP_TROPHY_LOOT, POKESTOP_TROPHY_LOOT_POOL);
         LOOT_TABLES.put(WINGED_TROPHY_LOOT, WINGEDSTOP_TROPHY_LOOT_POOL);
         LOOT_TABLES.put(POKEBALL_TROPHY_LOOT, POKEBALLSTOP_TROPHY_LOOT_POOL);
+        LOOT_TABLES.put(HEALINGSTOP_TROPHY_LOOT, HEALINGSTOP_TROPHY_LOOT_POOL);
     }
 
     @SuppressWarnings("SameParameterValue")
