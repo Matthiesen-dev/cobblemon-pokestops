@@ -1,5 +1,6 @@
 package dev.matthiesen.common.cobblemon_pokestops.templates.block;
 
+import dev.matthiesen.common.cobblemon_pokestops.registry.BlockEntityRegistry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.InteractionResult;
@@ -7,16 +8,19 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.RenderShape;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.function.Predicate;
 
-public class DummyBlockTemplate extends Block {
+public class DummyBlockTemplate extends Block implements EntityBlock {
     private static final VoxelShape DEFAULT_MIDDLE_SHAPE = Block.box(4.0D, 0.0D, 4.0D, 12.0D, 16.0D, 12.0D);
     private static final VoxelShape DEFAULT_TOP_SHAPE = Block.box(2.0D, 0.0D, 2.0D, 14.0D, 16.0D, 14.0D);
 
@@ -51,12 +55,37 @@ public class DummyBlockTemplate extends Block {
         this.topShape = topShape;
     }
 
+    @Override
+    public @Nullable BlockEntity newBlockEntity(BlockPos blockPos, BlockState blockState) {
+        return BlockEntityRegistry.DUMMY_BE.get().create(blockPos, blockState);
+    }
+
     public static Properties defaultProperties() {
         return Properties.of().noOcclusion().strength(-1.0f, -1.0f);
     }
 
     protected static Predicate<BlockState> matchesRegistered(TagKey<Block> registeredBlocks) {
         return state -> state.is(registeredBlocks);
+    }
+
+    public Block getParentBlock(Level level, BlockPos pos) {
+        for (int i = 1; i <= parentSearchDepth; i++) {
+            BlockState checkState = level.getBlockState(pos.below(i));
+            if (parentMatcher.test(checkState)) {
+                return checkState.getBlock();
+            }
+        }
+        return null;
+    }
+
+    public BlockState getParentBlockState(Level level, BlockPos pos) {
+        for (int i = 1; i <= parentSearchDepth; i++) {
+            BlockState checkState = level.getBlockState(pos.below(i));
+            if (parentMatcher.test(checkState)) {
+                return checkState;
+            }
+        }
+        return null;
     }
 
     @Override

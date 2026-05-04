@@ -40,3 +40,10 @@ mandatory = true
 versionRange = "[4.8.3,)"
 ordering = "AFTER"
 side = "BOTH"
+
+[[dependencies.${mod_id}]]
+modId = "jade"
+mandatory = false
+versionRange = "[15.10.5,)"
+ordering = "AFTER"
+side = "BOTH"

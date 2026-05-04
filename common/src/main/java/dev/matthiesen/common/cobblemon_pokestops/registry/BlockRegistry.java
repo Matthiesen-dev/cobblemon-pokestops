@@ -2,6 +2,7 @@ package dev.matthiesen.common.cobblemon_pokestops.registry;
 
 import dev.matthiesen.common.cobblemon_pokestops.CobblemonPokestops;
 import dev.matthiesen.common.cobblemon_pokestops.block.*;
+import dev.matthiesen.common.cobblemon_pokestops.templates.block.DummyBlockTemplate;
 import dev.matthiesen.common.cobblemon_pokestops.templates.block.TrophyTemplate;
 import net.minecraft.world.level.block.Block;
 
@@ -84,6 +85,13 @@ public class BlockRegistry {
     public static final Supplier<WingedstopDummyBlock> WINGEDSTOP_DUMMY = registerBlock("wingedstop_dummy", WingedstopDummyBlock::new);
     public static final Supplier<PokeballstopDummyBlock> POKEBALLSTOP_DUMMY = registerBlock("pokeballstop_dummy", PokeballstopDummyBlock::new);
     public static final Supplier<HealingstopDummyBlock> HEALINGSTOP_DUMMY = registerBlock("healingstop_dummy", HealingstopDummyBlock::new);
+
+    public static final Map<String, Supplier<? extends DummyBlockTemplate>> DUMMY_BLOCKS = Map.of(
+            "pokestops", POKESTOP_DUMMY,
+            "wingedstops", WINGEDSTOP_DUMMY,
+            "pokeballstops", POKEBALLSTOP_DUMMY,
+            "healingstops", HEALINGSTOP_DUMMY
+    );
 
     // Registration
     private static <T extends Block> Supplier<T> registerBlock(String id, Supplier<T> block) {

@@ -26,6 +26,9 @@
     ],
     "fabric-datagen": [
       "dev.matthiesen.fabric.cobblemon_pokestops.datagen.DataGenerator"
+    ],
+    "jade": [
+      "dev.matthiesen.fabric.cobblemon_pokestops.compat.CobblemonPokestopsJadePlugin"
     ]
   },
   "depends": {

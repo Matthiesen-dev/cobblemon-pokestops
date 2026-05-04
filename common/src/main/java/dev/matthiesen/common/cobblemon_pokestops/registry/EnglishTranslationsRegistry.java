@@ -57,6 +57,9 @@ public class EnglishTranslationsRegistry {
         TRANSLATIONS.put("stat.cobblemon_pokestops.pokeballstop_times_spun", "Times Spun Pokeball Stops");
         TRANSLATIONS.put("stat.cobblemon_pokestops.healingstop_times_spun", "Times Spun Healing Stops");
         TRANSLATIONS.put("sound.cobblemon_pokestops.pokestop_spin", "Pokestop Spin");
+        TRANSLATIONS.put("tooltip.cobblemon_pokestops.cooldown", "Cooldown: %s");
+        TRANSLATIONS.put("config.jade.cobblemon_pokestops.cooldown", "Cooldown");
+        TRANSLATIONS.put("config.jade.cobblemon_pokestops.cooldown_dummy", "Cooldown");
 
         for (var key : SPINNER_MESSAGE_VARIANTS.entrySet()) {
             TRANSLATIONS.put("message.cobblemon_pokestops." + key.getKey() + "_spin", "You spun the " + key.getValue() + "!");
