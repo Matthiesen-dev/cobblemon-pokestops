@@ -82,6 +82,7 @@
   "block.cobblemon_pokestops.wingedstop_green": "Green Winged Pokestop",
   "block.cobblemon_pokestops.wingedstop_trophy": "§bWinged Pokestop Trophy",
   "config.jade.cobblemon_pokestops.cooldown": "Cooldown",
+  "config.jade.cobblemon_pokestops.cooldown_dummy": "Cooldown",
   "itemGroup.cobblemon_pokestops.cobblemon_pokestops_pokestops": "Pokestops",
   "itemGroup.cobblemon_pokestops.cobblemon_pokestops_trophies": "Pokestop Trophies",
   "message.cobblemon_pokestops.healingstop_cooldown": "You can't spin the Healing Stop for another %s!",

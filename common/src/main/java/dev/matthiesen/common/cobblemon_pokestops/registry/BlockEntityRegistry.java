@@ -37,6 +37,9 @@ public class BlockEntityRegistry {
     public static final Supplier<BlockEntityType<HealingstopTrophyEntity>> HEALINGSTOP_TROPHY_BE =
             registerBlockEntity("healingstop_trophy", () -> buildType(HealingstopTrophyEntity::new, BlockRegistry.HEALINGSTOP_TROPHIES));
 
+    public static final Supplier<BlockEntityType<DummyBlockEntity>> DUMMY_BE =
+            registerBlockEntity("dummy_bucks", () -> buildType(DummyBlockEntity::new, BlockRegistry.DUMMY_BLOCKS));
+
     private static Block[] resolveBlocks(Map<String, ? extends Supplier<? extends Block>> registeredBlocks) {
         return registeredBlocks.values()
                 .stream()
