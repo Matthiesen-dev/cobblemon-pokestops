@@ -46,6 +46,9 @@ dependencies {
 
     modImplementation("software.bernie.geckolib:geckolib-fabric-${property("minecraft_version")}:${property("geckolib_version")}")
 
+    modCompileOnly("maven.modrinth:jade:${property("jade_version")}+fabric")
+    modRuntimeOnly("maven.modrinth:jade:${property("jade_version")}+fabric")
+
     testImplementation("org.junit.jupiter:junit-jupiter-api:${property("junit_version")}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${property("junit_version")}")
 }

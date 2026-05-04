@@ -45,6 +45,9 @@ dependencies {
 
     modImplementation("software.bernie.geckolib:geckolib-neoforge-${property("minecraft_version")}:${property("geckolib_version")}")
 
+    modCompileOnly("maven.modrinth:jade:${property("jade_version")}+neoforge")
+    modRuntimeOnly("maven.modrinth:jade:${property("jade_version")}+neoforge")
+
     testImplementation("org.junit.jupiter:junit-jupiter-api:${property("junit_version")}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${property("junit_version")}")
 }
