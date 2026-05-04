@@ -1,6 +1,7 @@
-package dev.matthiesen.fabric.cobblemon_pokestops.compat;
+package dev.matthiesen.fabric.cobblemon_pokestops.compat.jade;
 
 import dev.matthiesen.common.cobblemon_pokestops.templates.entity.StopEntityTemplate;
+import dev.matthiesen.fabric.cobblemon_pokestops.compat.CobblemonPokestopsJadePlugin;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
