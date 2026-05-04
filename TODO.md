@@ -55,6 +55,14 @@
     - [ ] Evolution Stop Functionality
     - [ ] Evolution Stop Configuration
 
+## Mod Integrations
+
+- [ ] Jade integration
+  - [x] Pokestops display cooldown information
+  - [ ] Pokestop Dummy blocks display correct information
+    - [x] Shows correct "brain" block
+    - [ ] Shows correct cooldown information
+
 ## Possible Mod-Integrations
 
 - [ ] Integration with Map Mods 
