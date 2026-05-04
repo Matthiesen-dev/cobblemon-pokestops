@@ -81,6 +81,7 @@
   "block.cobblemon_pokestops.wingedstop_gold": "Gold Winged Pokestop",
   "block.cobblemon_pokestops.wingedstop_green": "Green Winged Pokestop",
   "block.cobblemon_pokestops.wingedstop_trophy": "§bWinged Pokestop Trophy",
+  "config.jade.cobblemon_pokestops.cooldown": "Cooldown",
   "itemGroup.cobblemon_pokestops.cobblemon_pokestops_pokestops": "Pokestops",
   "itemGroup.cobblemon_pokestops.cobblemon_pokestops_trophies": "Pokestop Trophies",
   "message.cobblemon_pokestops.healingstop_cooldown": "You can't spin the Healing Stop for another %s!",
@@ -95,5 +96,6 @@
   "stat.cobblemon_pokestops.healingstop_times_spun": "Times Spun Healing Stops",
   "stat.cobblemon_pokestops.pokeballstop_times_spun": "Times Spun Pokeball Stops",
   "stat.cobblemon_pokestops.pokestop_times_spun": "Times Spun Pokestops",
-  "stat.cobblemon_pokestops.wingedstop_times_spun": "Times Spun Winged Pokestops"
+  "stat.cobblemon_pokestops.wingedstop_times_spun": "Times Spun Winged Pokestops",
+  "tooltip.cobblemon_pokestops.cooldown": "Cooldown: %s"
 }

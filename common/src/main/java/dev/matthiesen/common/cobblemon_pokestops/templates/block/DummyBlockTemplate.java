@@ -59,7 +59,7 @@ public class DummyBlockTemplate extends Block {
         return state -> state.is(registeredBlocks);
     }
 
-    public BlockState getParentBlock(Level level, BlockPos pos) {
+    public BlockState getParentBlockState(Level level, BlockPos pos) {
         for (int i = 1; i <= parentSearchDepth; i++) {
             BlockState checkState = level.getBlockState(pos.below(i));
             if (parentMatcher.test(checkState)) {
