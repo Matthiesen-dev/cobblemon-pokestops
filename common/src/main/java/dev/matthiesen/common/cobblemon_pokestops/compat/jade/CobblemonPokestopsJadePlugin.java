@@ -1,12 +1,10 @@
-package dev.matthiesen.fabric.cobblemon_pokestops.compat;
+package dev.matthiesen.common.cobblemon_pokestops.compat.jade;
 
 import dev.matthiesen.common.cobblemon_pokestops.Constants;
 import dev.matthiesen.common.cobblemon_pokestops.block.entity.DummyBlockEntity;
 import dev.matthiesen.common.cobblemon_pokestops.templates.block.BaseStopTemplate;
 import dev.matthiesen.common.cobblemon_pokestops.templates.block.DummyBlockTemplate;
 import dev.matthiesen.common.cobblemon_pokestops.templates.entity.StopEntityTemplate;
-import dev.matthiesen.fabric.cobblemon_pokestops.compat.jade.CooldownDummyJadeProvider;
-import dev.matthiesen.fabric.cobblemon_pokestops.compat.jade.CooldownStopsJadeProvider;
 import net.minecraft.resources.ResourceLocation;
 import snownee.jade.api.*;
 
