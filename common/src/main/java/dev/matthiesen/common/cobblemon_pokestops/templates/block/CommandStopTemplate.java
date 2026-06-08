@@ -1,6 +1,6 @@
 package dev.matthiesen.common.cobblemon_pokestops.templates.block;
 
-import dev.matthiesen.common.cobblemon_pokestops.utils.Commander;
+import dev.matthiesen.common.matthiesen_lib.utility.RunSlashCommand;
 import net.minecraft.server.level.ServerPlayer;
 import org.jetbrains.annotations.NotNull;
 
@@ -21,6 +21,6 @@ public abstract class CommandStopTemplate extends BaseStopTemplate {
     @Override
     protected void grantReward(ServerPlayer player) {
         String command = getRewardCommand().replace("%player%", player.getName().getString());
-        Commander.runServerCommand(command);
+        RunSlashCommand.asServer(command);
     }
 }
