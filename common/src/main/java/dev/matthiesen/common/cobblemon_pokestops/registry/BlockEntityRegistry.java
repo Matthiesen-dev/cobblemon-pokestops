@@ -2,6 +2,8 @@ package dev.matthiesen.common.cobblemon_pokestops.registry;
 
 import dev.matthiesen.common.cobblemon_pokestops.Constants;
 import dev.matthiesen.common.cobblemon_pokestops.block.entity.*;
+import dev.matthiesen.common.cobblemon_pokestops.block.entity.stops.*;
+import dev.matthiesen.common.cobblemon_pokestops.block.entity.trophies.*;
 import dev.matthiesen.common.matthiesen_lib.registry.AbstractBlockEntityRegistry;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;

@@ -1,7 +1,8 @@
 package dev.matthiesen.common.cobblemon_pokestops.registry;
 
 import dev.matthiesen.common.cobblemon_pokestops.Constants;
-import dev.matthiesen.common.cobblemon_pokestops.advancements.*;
+import dev.matthiesen.common.cobblemon_pokestops.advancements.score.*;
+import dev.matthiesen.common.cobblemon_pokestops.advancements.use.*;
 import dev.matthiesen.common.matthiesen_lib.registry.AbstractCriteriaTriggerRegistry;
 
 import java.util.function.Supplier;

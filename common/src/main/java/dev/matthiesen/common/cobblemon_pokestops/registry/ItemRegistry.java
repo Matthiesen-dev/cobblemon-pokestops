@@ -1,7 +1,8 @@
 package dev.matthiesen.common.cobblemon_pokestops.registry;
 
 import dev.matthiesen.common.cobblemon_pokestops.Constants;
-import dev.matthiesen.common.cobblemon_pokestops.item.*;
+import dev.matthiesen.common.cobblemon_pokestops.item.stops.*;
+import dev.matthiesen.common.cobblemon_pokestops.item.trophies.*;
 import dev.matthiesen.common.cobblemon_pokestops.templates.item.StopItemTemplate;
 import dev.matthiesen.common.matthiesen_lib.registry.AbstractItemRegistry;
 import net.minecraft.world.item.*;
