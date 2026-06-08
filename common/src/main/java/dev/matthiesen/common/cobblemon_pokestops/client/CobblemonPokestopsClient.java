@@ -88,8 +88,7 @@ public class CobblemonPokestopsClient {
         // Register Block Outline Listener
         MatthiesenLibClient.registerBlockOutlineListener(context -> {
             ClientLevel level = context.level();
-            BlockPos pos = context.blockHitResult().getBlockPos();
-            BlockPos basePos = getBasePos(level, pos);
+            BlockPos basePos = getBasePos(level, context.blockHitResult().getBlockPos());
 
             if (basePos == null) return true;
 
@@ -98,9 +97,9 @@ public class CobblemonPokestopsClient {
             Camera camera = context.camera();
             VoxelShape shape = level.getBlockState(basePos).getShape(level, basePos);
 
-            double x = pos.getX() - camera.getPosition().x();
-            double y = pos.getY() - camera.getPosition().y();
-            double z = pos.getZ() - camera.getPosition().z();
+            double x = basePos.getX() - camera.getPosition().x();
+            double y = basePos.getY() - camera.getPosition().y();
+            double z = basePos.getZ() - camera.getPosition().z();
 
             LevelRenderer.renderVoxelShape(
                     poseStack,
