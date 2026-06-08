@@ -1,32 +1,36 @@
 package dev.matthiesen.common.cobblemon_pokestops;
 
 import dev.matthiesen.common.cobblemon_pokestops.config.*;
-import dev.matthiesen.common.cobblemon_pokestops.platform.CobblemonPokestopsPlatform;
 import dev.matthiesen.common.cobblemon_pokestops.registry.*;
-
-import java.util.ServiceLoader;
+import dev.matthiesen.common.cobblemon_pokestops.translations.GlobalTranslations;
+import dev.matthiesen.common.cobblemon_pokestops.utils.MetricManager;
+import dev.matthiesen.common.matthiesen_lib.MatthiesenLib;
 
 public class CobblemonPokestops {
-    public static ModConfig config;
-    public static final CobblemonPokestopsPlatform COMMON_PLATFORM = ServiceLoader.load(CobblemonPokestopsPlatform.class).findFirst().orElseThrow();
+    private static final PokestopsConfigManager<PokestopsConfig> CONFIG_MANAGER
+            = new PokestopsConfigManager<>(PokestopsConfig.class, "config");
+
+    public static PokestopsConfig getConfig() {
+        return CONFIG_MANAGER.getConfig();
+    }
 
     public static void initialize() {
         Constants.createInfoLog("Registering Server/Client Resources");
-        config = new ConfigManager().loadConfig();
+        reload();
+        GlobalTranslations.init();
+        MetricManager.init();
         SoundRegistry.init();
         StatsRegistry.init();
         BlockRegistry.init();
         BlockEntityRegistry.init();
         ItemRegistry.init();
+        CreativeModeTabRegistry.init();
         CriterionTriggerRegistry.init();
+        MatthiesenLib.registerReloadRunnable(Constants.MOD_ID, CobblemonPokestops::reload);
     }
 
-    public static void onStartup() {
-        Constants.createInfoLog("Server starting, Setting up");
-    }
-
-    public static void onShutdown() {
-        Constants.createInfoLog("Server stopping, shutting down");
-        new ConfigManager().saveConfig();
+    public static void reload() {
+        CONFIG_MANAGER.loadConfig();
+        Constants.createInfoLog("Reloaded Config");
     }
 }

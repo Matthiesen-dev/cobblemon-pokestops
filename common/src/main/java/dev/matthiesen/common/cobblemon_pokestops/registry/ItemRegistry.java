@@ -1,20 +1,25 @@
 package dev.matthiesen.common.cobblemon_pokestops.registry;
 
-import dev.matthiesen.common.cobblemon_pokestops.CobblemonPokestops;
 import dev.matthiesen.common.cobblemon_pokestops.Constants;
-import dev.matthiesen.common.cobblemon_pokestops.item.*;
+import dev.matthiesen.common.cobblemon_pokestops.item.stops.*;
+import dev.matthiesen.common.cobblemon_pokestops.item.trophies.*;
 import dev.matthiesen.common.cobblemon_pokestops.templates.item.StopItemTemplate;
-import net.minecraft.network.chat.Component;
+import dev.matthiesen.common.matthiesen_lib.registry.AbstractItemRegistry;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Block;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
-public class ItemRegistry {
+public class ItemRegistry extends AbstractItemRegistry {
+    private static final ItemRegistry INSTANCE = new ItemRegistry();
+
+    private ItemRegistry() {
+        super(Constants.MOD_ID);
+    }
+
     public static void init() {}
 
     // Collections for Creative Menu
@@ -99,39 +104,7 @@ public class ItemRegistry {
         }
     }
 
-    private static void addAllItemsToCreativeTab(CreativeModeTab.Output entries, List<Map<String, Supplier<? extends StopItemTemplate>>> itemMaps) {
-        for (Map<String, Supplier<? extends StopItemTemplate>> itemMap : itemMaps) {
-            for (var entry : itemMap.entrySet()) {
-                entries.accept(entry.getValue().get());
-            }
-        }
-    }
-
     private static <T extends Item> Supplier<T> registerItem(String id, Supplier<T> item) {
-        return CobblemonPokestops.COMMON_PLATFORM.registerItem(id, item);
+        return INSTANCE.register(id, item);
     }
-
-    @SuppressWarnings("unused")
-    public static final Supplier<CreativeModeTab> POKESTOPS_TAB = CobblemonPokestops.COMMON_PLATFORM
-            .registerCreativeModeTab("cobblemon_pokestops_pokestops", () -> CobblemonPokestops.COMMON_PLATFORM
-                    .newCreativeTabBuilder()
-                    .title(Component.translatable("itemGroup." + Constants.MOD_ID + ".cobblemon_pokestops_pokestops"))
-                    .icon(() -> new ItemStack(ItemRegistry.ALL_POKESTOPS.get("pokestop").get()))
-                    .displayItems((enabledFeatures, entries) ->
-                            addAllItemsToCreativeTab(entries, List.of(ItemRegistry.ALL_POKESTOPS))
-                    )
-                    .build()
-            );
-
-    @SuppressWarnings("unused")
-    public static final Supplier<CreativeModeTab> POKESTOPS_TROPHIES_TAB = CobblemonPokestops.COMMON_PLATFORM
-            .registerCreativeModeTab("cobblemon_pokestops_trophies", () -> CobblemonPokestops.COMMON_PLATFORM
-                    .newCreativeTabBuilder()
-                    .title(Component.translatable("itemGroup." + Constants.MOD_ID + ".cobblemon_pokestops_trophies"))
-                    .icon(() -> new ItemStack(ItemRegistry.ALL_TROPHIES.get("wingedstop_trophy").get()))
-                    .displayItems((enabledFeatures, entries) ->
-                            addAllItemsToCreativeTab(entries, List.of(ItemRegistry.ALL_TROPHIES))
-                    )
-                    .build()
-            );
 }

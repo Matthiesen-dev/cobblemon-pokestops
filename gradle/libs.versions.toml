@@ -1,0 +1,69 @@
+[versions]
+kotlin = "2.2.20"
+shadow = "9.3.1"
+architectury-loom = "1.13-SNAPSHOT"
+architectury-plugin = "3.4-SNAPSHOT"
+minecraft = "1.21.1"
+fabric-loader = "0.17.2"
+fabric-api = "0.116.6+1.21.1"
+fabric-kotlin = "1.13.6+kotlin.2.2.20"
+neoforge = "21.1.182"
+kotlin-for-forge = "5.10.0"
+cobblemon = "1.7.3+1.21.1"
+junit = "5.1.0"
+publish = "0.35.0"
+matthiesen_lib = "1.5.6"
+sponge-mixin = "0.8.5"
+geckolib = "4.8.3"
+jade_fabric = "15.10.5+fabric"
+jade_neoforge = "15.10.5+neoforge"
+
+[plugins]
+shadow = { id = "com.gradleup.shadow", version.ref = "shadow" }
+architectury-loom = { id = "dev.architectury.loom", version.ref = "architectury-loom" }
+architectury-plugin = { id = "architectury-plugin", version.ref = "architectury-plugin" }
+
+[libraries]
+publish = { group = "com.vanniktech", name = "gradle-maven-publish-plugin", version.ref = "publish" }
+kotlin-gradle = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+architectury-loom = { group = "dev.architectury", name = "architectury-loom", version.ref = "architectury-loom" }
+architectury-plugin = { group = "architectury-plugin", name = "architectury-plugin.gradle.plugin", version.ref = "architectury-plugin" }
+shadow-gradle = { group = "com.gradleup.shadow", name = "shadow-gradle-plugin", version.ref = "shadow" }
+minecraft = { group = "com.mojang", name = "minecraft", version.ref = "minecraft" }
+minecraft-net = { group = "net.minecraft", name = "minecraft", version.ref = "minecraft" }
+fabric-loader = { group = "net.fabricmc", name = "fabric-loader", version.ref = "fabric-loader" }
+fabric-api = { group = "net.fabricmc.fabric-api", name = "fabric-api", version.ref = "fabric-api" }
+fabric-language-kotlin = { group = "net.fabricmc", name = "fabric-language-kotlin", version.ref = "fabric-kotlin" }
+neoforge = { group = "net.neoforged", name = "neoforge", version.ref = "neoforge" }
+kotlinforforge = { group = "thedarkcolour", name = "kotlinforforge-neoforge", version.ref = "kotlin-for-forge" }
+cobblemon-common = { group = "com.cobblemon", name = "mod", version.ref = "cobblemon" }
+cobblemon-fabric = { group = "com.cobblemon", name = "fabric", version.ref = "cobblemon" }
+cobblemon-neoforge = { group = "com.cobblemon", name = "neoforge", version.ref = "cobblemon" }
+junit-api = { group = "org.junit.jupiter", name = "junit-jupiter-api", version.ref = "junit" }
+junit-engine = { group = "org.junit.jupiter", name = "junit-jupiter-engine", version.ref = "junit" }
+matthiesen-lib-common = { group = "dev.matthiesen", name = "matthiesen-lib-common", version.ref = "matthiesen_lib" }
+matthiesen-lib-fabric = { group = "dev.matthiesen", name = "matthiesen-lib-fabric", version.ref = "matthiesen_lib" }
+matthiesen-lib-neoforge = { group = "dev.matthiesen", name = "matthiesen-lib-neoforge", version.ref = "matthiesen_lib" }
+matthiesen-lib-api-common = { group = "dev.matthiesen", name = "matthiesen-lib-api-common", version.ref = "matthiesen_lib" }
+matthiesen-lib-api-fabric = { group = "dev.matthiesen", name = "matthiesen-lib-api-fabric", version.ref = "matthiesen_lib" }
+matthiesen-lib-api-neoforge = { group = "dev.matthiesen", name = "matthiesen-lib-api-neoforge", version.ref = "matthiesen_lib" }
+sponge-mixin = { group = "org.spongepowered", name = "mixin", version.ref = "sponge-mixin" }
+geckolib-neoforge = { group = "software.bernie.geckolib", name = "geckolib-neoforge-1.21.1", version.ref = "geckolib" }
+geckolib-fabric = { group = "software.bernie.geckolib", name = "geckolib-fabric-1.21.1", version.ref = "geckolib" }
+geckolib-common = { group = "software.bernie.geckolib", name = "geckolib-common-1.21.1", version.ref = "geckolib" }
+jade-fabric = { group = "maven.modrinth", name = "jade", version.ref = "jade_fabric" }
+jade-neoforge = { group = "maven.modrinth", name = "jade", version.ref = "jade_neoforge" }
+
+[bundles]
+commonCompileOnly = ["sponge-mixin"]
+commonModCompileOnly = ["jade-fabric"]
+commonImplementation = ["geckolib-common"]
+commonModImplementation = ["cobblemon-common", "matthiesen-lib-api-common", "matthiesen-lib-common"]
+fabricCompileOnly = ["jade-fabric"]
+fabricRuntimeOnly = ["jade-fabric"]
+fabricModImplementation = ["fabric-loader", "fabric-api", "fabric-language-kotlin", "geckolib-fabric"]
+fabricModImplementationNoTransitive = ["cobblemon-fabric", "matthiesen-lib-api-fabric", "matthiesen-lib-fabric"]
+neoforgeCompileOnly = ["jade-neoforge"]
+neoforgeRuntimeOnly = ["jade-neoforge"]
+neoforgeModImplementation = ["geckolib-neoforge"]
+neoforgeModImplementationNoTransitive = ["cobblemon-neoforge", "matthiesen-lib-api-neoforge", "matthiesen-lib-neoforge"]

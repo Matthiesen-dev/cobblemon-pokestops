@@ -1,6 +1,7 @@
 plugins {
     id("dev.architectury.loom")
     id("architectury-plugin")
+    id("matthiesen.minecraft-module-conventions")
 }
 
 architectury {
@@ -15,39 +16,24 @@ sourceSets {
     }
 }
 
-loom {
-    silentMojangMappingsLicense()
-    accessWidenerPath.set(project(":common").file("src/main/resources/cobblemon-pokestops-common.accesswidener"))
-}
-
 dependencies {
-    minecraft("com.mojang:minecraft:${property("minecraft_version")}")
+    minecraft(libs.minecraft)
     mappings(loom.officialMojangMappings())
-    compileOnly("org.spongepowered:mixin:0.8.5")
-    modImplementation("com.cobblemon:mod:${property("cobblemon_version")}") { isTransitive = false }
+    modImplementation(libs.bundles.commonModImplementation) { isTransitive = false }
+    implementation(libs.bundles.commonImplementation)
+    compileOnly(libs.bundles.commonCompileOnly)
+    modCompileOnly(libs.bundles.commonModCompileOnly)
 
-    implementation("software.bernie.geckolib:geckolib-common-${property("minecraft_version")}:${property("geckolib_version")}")
-    modCompileOnly("maven.modrinth:jade:${property("jade_version")}+fabric")
-
-    testImplementation("org.junit.jupiter:junit-jupiter-api:${property("junit_version")}")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${property("junit_version")}")
+    testImplementation(libs.junit.api)
+    testRuntimeOnly(libs.junit.engine)
 }
 
 tasks {
-    test {
-        useJUnitPlatform()
-    }
     processResources {
         duplicatesStrategy = DuplicatesStrategy.INCLUDE
         inputs.property("mod_name", project.property("mod_name").toString())
         filesMatching("pack.mcmeta") {
             expand(project.properties)
         }
-    }
-
-    remapSourcesJar {
-        archiveBaseName.set("${rootProject.property("archives_base_name")}-${project.name}")
-        archiveVersion.set("${project.version}")
-        archiveClassifier.set("sources")
     }
 }

@@ -83,15 +83,6 @@ public abstract class TrophyTemplate extends HorizontalDirectionalBlock implemen
     }
 
     protected static VoxelShape calculateRotation(Direction direction, VoxelShape base) {
-        VoxelShape[] buffer = new VoxelShape[]{base, Shapes.empty()};
-        int times = (direction.get2DDataValue() - Direction.NORTH.get2DDataValue() + 4) % 4;
-        for (int i = 0; i < times; i++) {
-            buffer[0].forAllBoxes((minX, minY, minZ, maxX, maxY, maxZ) ->
-                    buffer[1] = Shapes.joinUnoptimized(buffer[1],
-                            Shapes.box(1 - maxZ, minY, minX, 1 - minZ, maxY, maxX), BooleanOp.OR));
-            buffer[0] = buffer[1].optimize();
-            buffer[1] = Shapes.empty();
-        }
-        return buffer[0];
+        return BaseStopTemplate.calculateRotation(direction, base);
     }
 }

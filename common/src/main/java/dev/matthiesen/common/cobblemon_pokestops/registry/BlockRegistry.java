@@ -1,15 +1,23 @@
 package dev.matthiesen.common.cobblemon_pokestops.registry;
 
-import dev.matthiesen.common.cobblemon_pokestops.CobblemonPokestops;
-import dev.matthiesen.common.cobblemon_pokestops.block.*;
-import dev.matthiesen.common.cobblemon_pokestops.templates.block.DummyBlockTemplate;
-import dev.matthiesen.common.cobblemon_pokestops.templates.block.TrophyTemplate;
+import dev.matthiesen.common.cobblemon_pokestops.Constants;
+import dev.matthiesen.common.cobblemon_pokestops.block.dummy.*;
+import dev.matthiesen.common.cobblemon_pokestops.block.stops.*;
+import dev.matthiesen.common.cobblemon_pokestops.block.trophies.*;
+import dev.matthiesen.common.cobblemon_pokestops.templates.block.*;
+import dev.matthiesen.common.matthiesen_lib.registry.AbstractBlockRegistry;
 import net.minecraft.world.level.block.Block;
 
 import java.util.*;
 import java.util.function.Supplier;
 
-public class BlockRegistry {
+public class BlockRegistry extends AbstractBlockRegistry {
+    private static final BlockRegistry INSTANCE = new BlockRegistry();
+
+    private BlockRegistry() {
+        super(Constants.MOD_ID);
+    }
+
     public static void init() {}
 
     public static final String[] POKESTOP_VARIANTS = {"gold", "black", "green"};
@@ -95,7 +103,7 @@ public class BlockRegistry {
 
     // Registration
     private static <T extends Block> Supplier<T> registerBlock(String id, Supplier<T> block) {
-        return CobblemonPokestops.COMMON_PLATFORM.registerBlock(id, block);
+        return INSTANCE.register(id, block);
     }
 
     // --- Datagen ---
