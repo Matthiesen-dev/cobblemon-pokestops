@@ -55,7 +55,8 @@ jade-fabric = { group = "maven.modrinth", name = "jade", version.ref = "jade_fab
 jade-neoforge = { group = "maven.modrinth", name = "jade", version.ref = "jade_neoforge" }
 
 [bundles]
-commonCompileOnly = ["sponge-mixin", "jade-fabric"]
+commonCompileOnly = ["sponge-mixin"]
+commonModCompileOnly = ["jade-fabric"]
 commonImplementation = ["geckolib-common"]
 commonModImplementation = ["cobblemon-common", "matthiesen-lib-api-common", "matthiesen-lib-common"]
 fabricCompileOnly = ["jade-fabric"]
