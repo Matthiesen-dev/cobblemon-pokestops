@@ -24,6 +24,8 @@ Finish the Advancement Chain in-game to obtain the Trophies, which include:
 ## Requirements
 
 - [Cobblemon 1.7.3+1.21.1](https://modrinth.com/mod/cobblemon)
+- [Matthiesen Lib API](https://modrinth.com/mod/matthiesen-lib-api)
+- [Matthiesen Lib](https://modrinth.com/mod/matthiesen-lib)
 - [Geckolib 4.8.3+](https://modrinth.com/mod/geckolib)
 
 ## Optional Dependencies
