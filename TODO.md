@@ -3,7 +3,7 @@
 ## Planned Pokestop Types
 
 - [x] Healing Pokestop 
-- [ ] Egg Pokestop (Planned after Cobblemon 1.8)
+- [ ] Egg Pokestop (Planned after Cobblemon adds official eggs)
   - Description: Provides players with items or eggs when interacted with.
   - Design: TBD. Thinking of possibly doing a design similar to a Cobblemon Egg once those release.
   - Functionality: When a player interacts with this Pokestop, it will have a chance to give them an egg that can be hatched or an Item. It can be used once every 15 minutes.
