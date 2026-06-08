@@ -143,13 +143,13 @@ public abstract class BaseStopTemplate extends HorizontalDirectionalBlock implem
     }
 
     private void handleSuccessfulSpin(ServerLevel level, BlockPos pos, BlockState state, ServerPlayer player, StopEntityTemplate stopEntity) {
+        level.playSound(null, pos, SoundRegistry.POKESTOP_SPIN.get(), SoundSource.MASTER, 1.0f, 1.0f);
         stopEntity.setPlayerCooldown(player, getCooldownSeconds());
         level.sendBlockUpdated(pos, state, state, 3);
         stopEntity.triggerAnim("cooldown-spinner", "spin_trigger");
         stopEntity.triggerSpin();
         player.displayClientMessage(Component.translatable(getSpinMessageKey()).withStyle(ChatFormatting.GREEN), true);
         level.sendParticles(PARTICLE, pos.getX() + 0.5, pos.getY() + 2.5, pos.getZ() + 0.5, 100, 0.75, 0.75, 0.75, 0.0);
-        level.playSound(null, pos, SoundRegistry.POKESTOP_SPIN.get(), SoundSource.MASTER, 1.0f, 1.0f);
         player.awardStat(getStats());
         criterionTrigger(player);
     }
