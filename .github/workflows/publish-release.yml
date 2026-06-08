@@ -20,7 +20,9 @@ env:
     [
       {"project_id":"MdwFAVRL","dependency_type":"required"},
       {"project_id":"j2JrSWnx","dependency_type":"required"},
-      {"project_id":"cPmFkPpB","dependency_type":"required"}
+      {"project_id":"cPmFkPpB","dependency_type":"required"},
+      {"project_id":"8BmcQJ2H","dependency_type":"required"},
+      {"project_id":"nvQzSEkH","dependency_type":"optional"}
     ]
   DISCORD_ICON_URL: "https://raw.githubusercontent.com/Matthiesen-dev/.github/refs/heads/main/mod-logos/cobblemon-pokestops.png"
 
@@ -28,6 +30,8 @@ env:
 # - Cobblemon (MdwFAVRL)
 # - Matthiesen Lib API (j2JrSWnx)
 # - Matthiesen Lib (cPmFkPpB)
+# - Geckolib (8BmcQJ2H)
+# - Jade (nvQzSEkH)
 
 jobs:
   prepare:
