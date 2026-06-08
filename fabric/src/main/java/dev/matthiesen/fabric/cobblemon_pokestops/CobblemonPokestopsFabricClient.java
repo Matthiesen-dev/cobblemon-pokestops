@@ -2,11 +2,9 @@ package dev.matthiesen.fabric.cobblemon_pokestops;
 
 import dev.matthiesen.common.cobblemon_pokestops.client.CobblemonPokestopsClient;
 import net.fabricmc.api.ClientModInitializer;
-import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.WorldRenderEvents;
 import net.minecraft.client.renderer.LevelRenderer;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
@@ -17,7 +15,7 @@ import java.util.Objects;
 public class CobblemonPokestopsFabricClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
-        CobblemonPokestopsClient.initialize(EntityRendererRegistry::register, BlockEntityRenderers::register);
+        CobblemonPokestopsClient.initializeRenderers();
 
         WorldRenderEvents.BEFORE_BLOCK_OUTLINE.register((context, hitResult) -> {
             if (hitResult instanceof BlockHitResult blockHit) {

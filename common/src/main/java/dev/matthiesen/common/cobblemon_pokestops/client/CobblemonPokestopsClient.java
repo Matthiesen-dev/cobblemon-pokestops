@@ -7,17 +7,12 @@ import dev.matthiesen.common.cobblemon_pokestops.registry.BlockEntityRegistry;
 import dev.matthiesen.common.cobblemon_pokestops.registry.BlockRegistry;
 import dev.matthiesen.common.cobblemon_pokestops.registry.ItemRegistry;
 import dev.matthiesen.common.cobblemon_pokestops.templates.item.StopItemTemplate;
+import dev.matthiesen.common.matthiesen_lib.MatthiesenLibClient;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
-import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
-import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.core.BlockPos;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.BlockEntityType;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.client.GeoRenderProvider;
@@ -25,23 +20,11 @@ import software.bernie.geckolib.renderer.GeoItemRenderer;
 
 import java.util.List;
 import java.util.Map;
-import java.util.function.BiConsumer;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 
 public class CobblemonPokestopsClient {
     private static final int DUMMY_BASE_SEARCH_DEPTH = 2;
-    private static final List<BlockEntityRendererMapping> BLOCK_ENTITY_RENDERER_MAPPINGS = List.of(
-            new BlockEntityRendererMapping(BlockEntityRegistry.POKESTOP_BE, context -> new PokestopRenderer()),
-            new BlockEntityRendererMapping(BlockEntityRegistry.WINGEDSTOP_BE, context -> new WingedstopRenderer()),
-            new BlockEntityRendererMapping(BlockEntityRegistry.POKEBALLSTOP_BE, context -> new PokeballstopRenderer()),
-            new BlockEntityRendererMapping(BlockEntityRegistry.HEALINGSTOP_BE, context -> new HealingstopRenderer()),
-
-            new BlockEntityRendererMapping(BlockEntityRegistry.POKESTOP_TROPHY_BE, context -> new PokestopTrophyRenderer()),
-            new BlockEntityRendererMapping(BlockEntityRegistry.WINGEDSTOP_TROPHY_BE, context -> new WingedstopTrophyRenderer()),
-            new BlockEntityRendererMapping(BlockEntityRegistry.POKEBALLSTOP_TROPHY_BE, context -> new PokeballstopTrophyRenderer()),
-            new BlockEntityRendererMapping(BlockEntityRegistry.HEALINGSTOP_TROPHY_BE, context -> new HealingstopTrophyRenderer())
-    );
     private static final List<StopMapping> BASE_POS_MAPPINGS = List.of(
             new StopMapping(
                     state -> state.is(BlockRegistry.POKESTOP_DUMMY.get()),
@@ -61,9 +44,7 @@ public class CobblemonPokestopsClient {
             )
     );
 
-    @SuppressWarnings({"rawtypes", "unused"})
-    public static void initialize(BiConsumer<EntityType<? extends Entity>, EntityRendererProvider> entityRenderers,
-                                  BiConsumer<BlockEntityType<? extends BlockEntity>, BlockEntityRendererProvider> blockEntityRenderers) {
+    public static void initializeRenderers() {
         Constants.createInfoLog("Registering Client Resources");
 
         // Register GeckoLib Renderers
@@ -84,15 +65,18 @@ public class CobblemonPokestopsClient {
         ItemRegistry.HEALINGSTOP_TROPHY_ITEMS.forEach((key, item) ->
                 item.get().renderProviderHolder.setValue(makeRendererProvider(new HealingstopTrophyItemRenderer())));
 
-        registerBlockEntityRenderers(entityRenderers, blockEntityRenderers);
-    }
+        // Register Block Entity Renderers
+        MatthiesenLibClient.registerEntityRenderers(registry -> {
+            registry.registerBlockEntityRenderer(BlockEntityRegistry.POKESTOP_BE.get(), context -> new PokestopRenderer());
+            registry.registerBlockEntityRenderer(BlockEntityRegistry.WINGEDSTOP_BE.get(), context -> new WingedstopRenderer());
+            registry.registerBlockEntityRenderer(BlockEntityRegistry.POKEBALLSTOP_BE.get(), context -> new PokeballstopRenderer());
+            registry.registerBlockEntityRenderer(BlockEntityRegistry.HEALINGSTOP_BE.get(), context -> new HealingstopRenderer());
 
-    @SuppressWarnings({"rawtypes", "unused"})
-    public static void registerBlockEntityRenderers(BiConsumer<EntityType<? extends Entity>, EntityRendererProvider> entityRenderers,
-                                                    BiConsumer<BlockEntityType<? extends BlockEntity>, BlockEntityRendererProvider> blockEntityRenderers) {
-        for (BlockEntityRendererMapping mapping : BLOCK_ENTITY_RENDERER_MAPPINGS) {
-            blockEntityRenderers.accept(mapping.blockEntityType().get(), mapping.rendererProvider());
-        }
+            registry.registerBlockEntityRenderer(BlockEntityRegistry.POKESTOP_TROPHY_BE.get(), context -> new PokestopTrophyRenderer());
+            registry.registerBlockEntityRenderer(BlockEntityRegistry.WINGEDSTOP_TROPHY_BE.get(), context -> new WingedstopTrophyRenderer());
+            registry.registerBlockEntityRenderer(BlockEntityRegistry.POKEBALLSTOP_TROPHY_BE.get(), context -> new PokeballstopTrophyRenderer());
+            registry.registerBlockEntityRenderer(BlockEntityRegistry.HEALINGSTOP_TROPHY_BE.get(), context -> new HealingstopTrophyRenderer());
+        });
     }
 
     public static @Nullable BlockPos getBasePos(Level level, BlockPos hitPos) {
@@ -123,13 +107,6 @@ public class CobblemonPokestopsClient {
     }
 
     private record StopMapping(Predicate<BlockState> dummyMatcher, Predicate<BlockState> baseMatcher) {
-    }
-
-    @SuppressWarnings("rawtypes")
-    private record BlockEntityRendererMapping(
-            Supplier<? extends BlockEntityType<? extends BlockEntity>> blockEntityType,
-            BlockEntityRendererProvider rendererProvider
-    ) {
     }
 
     private static <T extends StopItemTemplate> GeoRenderProvider makeRendererProvider(GeoItemRenderer<T> renderer) {

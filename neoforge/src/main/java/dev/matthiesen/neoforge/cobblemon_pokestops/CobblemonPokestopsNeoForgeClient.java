@@ -20,7 +20,7 @@ import net.neoforged.neoforge.client.event.RenderHighlightEvent;
 public class CobblemonPokestopsNeoForgeClient {
     @SubscribeEvent
     public static void registerRenderers(final EntityRenderersEvent.RegisterRenderers event) {
-        CobblemonPokestopsClient.initialize(event::registerEntityRenderer, event::registerBlockEntityRenderer);
+        CobblemonPokestopsClient.initializeRenderers();
     }
 
     @SubscribeEvent

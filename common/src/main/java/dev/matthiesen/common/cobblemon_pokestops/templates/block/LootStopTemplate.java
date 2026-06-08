@@ -41,7 +41,7 @@ public abstract class LootStopTemplate extends BaseStopTemplate {
             return true;
         }
         Item item = stack.getItem();
-        for (String entry : CobblemonPokestops.config.extraRarities) {
+        for (String entry : CobblemonPokestops.getConfig().extraRarities) {
             ResourceLocation entryId = ResourceLocation.tryParse(entry);
             if (entryId != null) {
                 Item itemToCompare = BuiltInRegistries.ITEM.get(entryId);
@@ -85,10 +85,10 @@ public abstract class LootStopTemplate extends BaseStopTemplate {
                 .append(stack.getDisplayName().copy().withStyle(stack.getRarity().color()))
                 .append(Component.literal("!"));
 
-        if (CobblemonPokestops.config.enableGlobalBroadcast) {
+        if (CobblemonPokestops.getConfig().enableGlobalBroadcast) {
             player.server.getPlayerList().broadcastSystemMessage(message, false);
         } else {
-            double radius = CobblemonPokestops.config.localBroadcastRadius;
+            double radius = CobblemonPokestops.getConfig().localBroadcastRadius;
             for (ServerPlayer nearbyPlayer : player.serverLevel().players()) {
                 if (nearbyPlayer.distanceToSqr(player) < radius * radius) {
                     nearbyPlayer.sendSystemMessage(message);

@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-public class ModConfig {
+public class PokestopsConfig {
     @SerializedName("enableGlobalBroadcast")
     public boolean enableGlobalBroadcast = false;
 
@@ -36,6 +36,7 @@ public class ModConfig {
             "cobblemon:master_rod"
     );
 
+    @SuppressWarnings("unused")
     public static final Gson GSON = new GsonBuilder()
             .disableHtmlEscaping()
             .setPrettyPrinting()

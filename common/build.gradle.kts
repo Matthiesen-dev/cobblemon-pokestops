@@ -16,10 +16,6 @@ sourceSets {
     }
 }
 
-loom {
-    accessWidenerPath.set(project(":common").file("src/main/resources/cobblemon-pokestops-common.accesswidener"))
-}
-
 dependencies {
     minecraft(libs.minecraft)
     mappings(loom.officialMojangMappings())

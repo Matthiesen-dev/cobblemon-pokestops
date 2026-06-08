@@ -24,7 +24,7 @@ public class Pokeballstop extends LootStopTemplate {
 
     @Override
     protected int getCooldownSeconds() {
-        return CobblemonPokestops.config.pokeballstopCooldownSeconds;
+        return CobblemonPokestops.getConfig().pokeballstopCooldownSeconds;
     }
 
     @Override
