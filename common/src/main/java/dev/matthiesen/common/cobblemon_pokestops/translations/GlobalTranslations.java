@@ -14,7 +14,10 @@ public class GlobalTranslations {
     public static void init() {
         if (initialized) return;
 
+        // Register Translations here
         EnUsTranslations.registerTranslations();
+
+        // Set initialized to true to prevent re-initialization
         initialized = true;
     }
 
