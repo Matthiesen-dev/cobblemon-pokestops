@@ -8,11 +8,15 @@ import dev.matthiesen.common.cobblemon_pokestops.registry.BlockRegistry;
 import dev.matthiesen.common.cobblemon_pokestops.registry.ItemRegistry;
 import dev.matthiesen.common.cobblemon_pokestops.templates.item.StopItemTemplate;
 import dev.matthiesen.common.matthiesen_lib.MatthiesenLibClient;
+import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
+import net.minecraft.client.renderer.LevelRenderer;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.animatable.client.GeoRenderProvider;
@@ -76,6 +80,32 @@ public class CobblemonPokestopsClient {
             registry.registerBlockEntityRenderer(BlockEntityRegistry.WINGEDSTOP_TROPHY_BE.get(), context -> new WingedstopTrophyRenderer());
             registry.registerBlockEntityRenderer(BlockEntityRegistry.POKEBALLSTOP_TROPHY_BE.get(), context -> new PokeballstopTrophyRenderer());
             registry.registerBlockEntityRenderer(BlockEntityRegistry.HEALINGSTOP_TROPHY_BE.get(), context -> new HealingstopTrophyRenderer());
+        });
+
+        // Register Block Outline Listener
+        MatthiesenLibClient.registerBlockOutlineListener(context -> {
+            ClientLevel level = context.level();
+            BlockPos pos = context.blockHitResult().getBlockPos();
+            BlockPos hitBlock = getBasePos(level, pos);
+
+            if (hitBlock == null) return true;
+
+            BlockState blockState = level.getBlockState(hitBlock);
+            VoxelShape shape = blockState.getShape(level, hitBlock);
+
+            double x = pos.getX() - context.camera().getPosition().x();
+            double y = pos.getY() - context.camera().getPosition().y();
+            double z = pos.getZ() - context.camera().getPosition().z();
+
+            LevelRenderer.renderVoxelShape(
+                    context.poseStack(),
+                    context.multiBufferSource().getBuffer(RenderType.lines()),
+                    shape,
+                    x, y, z,
+                    0.0F, 0.0F, 0.0F, 0.4F, false
+            );
+
+            return false;
         });
     }
 
