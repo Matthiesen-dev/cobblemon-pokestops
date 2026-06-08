@@ -1,5 +1,6 @@
 package dev.matthiesen.fabric.cobblemon_pokestops.datagen;
 
+import dev.matthiesen.common.cobblemon_pokestops.translations.GlobalTranslations;
 import dev.matthiesen.fabric.cobblemon_pokestops.worldgen.ModConfiguredFeatures;
 import dev.matthiesen.fabric.cobblemon_pokestops.worldgen.ModPlacedFeatures;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
@@ -15,9 +16,16 @@ public class DataGenerator implements DataGeneratorEntrypoint {
         pack.addProvider(LootTableProvider::new);
         pack.addProvider(ModelProvider::new);
         pack.addProvider(RegistryDataGenerator::new);
-        pack.addProvider(EnglishLanguageProvider::new);
         pack.addProvider(AdvancementProvider::new);
         pack.addProvider(BlockLootTableProvider::new);
+
+        GlobalTranslations.init();
+
+        for (var entry : GlobalTranslations.TRANSLATIONS.entrySet()) {
+            var locale = entry.getKey();
+            pack.addProvider((dataOutput, registryLookup) ->
+                    new UniversalLanguageProvider(dataOutput, registryLookup, locale));
+        }
     }
 
     @Override

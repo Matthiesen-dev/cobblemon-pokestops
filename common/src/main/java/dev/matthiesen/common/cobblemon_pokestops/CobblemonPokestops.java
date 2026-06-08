@@ -2,6 +2,7 @@ package dev.matthiesen.common.cobblemon_pokestops;
 
 import dev.matthiesen.common.cobblemon_pokestops.config.*;
 import dev.matthiesen.common.cobblemon_pokestops.registry.*;
+import dev.matthiesen.common.cobblemon_pokestops.translations.GlobalTranslations;
 import dev.matthiesen.common.cobblemon_pokestops.utils.MetricManager;
 import dev.matthiesen.common.matthiesen_lib.MatthiesenLib;
 
@@ -16,6 +17,7 @@ public class CobblemonPokestops {
     public static void initialize() {
         Constants.createInfoLog("Registering Server/Client Resources");
         reload();
+        GlobalTranslations.init();
         MetricManager.init();
         SoundRegistry.init();
         StatsRegistry.init();
