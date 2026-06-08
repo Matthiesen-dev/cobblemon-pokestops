@@ -2,16 +2,12 @@ plugins {
     id("com.gradleup.shadow")
     id("dev.architectury.loom")
     id("architectury-plugin")
+    id("matthiesen.shadow-platform-conventions")
 }
 
 architectury {
     platformSetupLoomIde()
     neoForge()
-}
-
-loom {
-    enableTransitiveAccessWideners.set(true)
-    silentMojangMappingsLicense()
 }
 
 repositories {
@@ -27,15 +23,16 @@ val shadowBundle: Configuration by configurations.creating {
 }
 
 dependencies {
-    minecraft("net.minecraft:minecraft:${property("minecraft_version")}")
+    minecraft(libs.minecraft.net)
     mappings(loom.officialMojangMappings())
-    neoForge("net.neoforged:neoforge:${property("neoforge_version")}")
-
-    modImplementation("com.cobblemon:neoforge:${property("cobblemon_version")}") { isTransitive = false }
-    //Needed for cobblemon
-    forgeRuntimeLibrary("thedarkcolour:kotlinforforge-neoforge:${property("kotlin_for_forge_version")}") {
+    neoForge(libs.neoforge)
+    modImplementation(libs.bundles.neoforgeModImplementation)
+    modImplementation(libs.bundles.neoforgeModImplementationNoTransitive) { isTransitive = false }
+    forgeRuntimeLibrary(libs.kotlinforforge) {
         exclude("net.neoforged.fancymodloader", "loader")
     }
+    modCompileOnly(libs.bundles.neoforgeCompileOnly)
+    modRuntimeOnly(libs.bundles.neoforgeRuntimeOnly)
 
     implementation(project(":common", configuration = "namedElements"))
     "developmentNeoForge"(project(":common", configuration = "namedElements")) {
@@ -43,58 +40,19 @@ dependencies {
     }
     shadowBundle(project(":common", configuration = "transformProductionNeoForge"))
 
-    modImplementation("software.bernie.geckolib:geckolib-neoforge-${property("minecraft_version")}:${property("geckolib_version")}")
-
-    modCompileOnly("maven.modrinth:jade:${property("jade_version")}+neoforge")
-    modRuntimeOnly("maven.modrinth:jade:${property("jade_version")}+neoforge")
-
-    testImplementation("org.junit.jupiter:junit-jupiter-api:${property("junit_version")}")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${property("junit_version")}")
+    testImplementation(libs.junit.api)
+    testRuntimeOnly(libs.junit.engine)
 }
 
 tasks {
-    test {
-        useJUnitPlatform()
-    }
-
     processResources {
-        inputs.property("mod_id", project.property("mod_id").toString())
-        inputs.property("version", project.version)
-
-        inputs.property("mod_name", project.property("mod_name").toString())
-        inputs.property("mod_description", project.property("mod_description").toString())
-        inputs.property("mod_license", project.property("mod_license").toString())
-        inputs.property("mod_author", project.property("mod_author").toString())
-
         filesMatching("META-INF/neoforge.mods.toml") {
             expand(project.properties)
         }
     }
 
-    jar {
-        archiveBaseName.set("${rootProject.property("archives_base_name")}-${project.name}")
-        archiveClassifier.set("dev-slim")
-    }
-
     shadowJar {
         exclude("fabric.mod.json")
-        archiveClassifier.set("dev-shadow")
-        archiveBaseName.set("${rootProject.property("archives_base_name")}-${project.name}")
         configurations = listOf(shadowBundle)
-    }
-
-    remapJar {
-        dependsOn(shadowJar)
-        inputFile.set(shadowJar.flatMap { it.archiveFile })
-        archiveBaseName.set("${rootProject.property("archives_base_name")}-${project.name}")
-        archiveVersion.set("${rootProject.version}")
-    }
-
-    remapSourcesJar {
-        dependsOn(shadowJar)
-        inputFile.set(shadowJar.flatMap { it.archiveFile })
-        archiveBaseName.set("${rootProject.property("archives_base_name")}-${project.name}")
-        archiveVersion.set("${project.version}")
-        archiveClassifier.set("sources")
     }
 }
