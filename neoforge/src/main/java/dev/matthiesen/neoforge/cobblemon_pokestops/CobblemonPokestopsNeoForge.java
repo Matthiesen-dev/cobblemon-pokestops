@@ -8,7 +8,6 @@ import net.neoforged.fml.common.Mod;
 
 @Mod(Constants.MOD_ID)
 public class CobblemonPokestopsNeoForge {
-
     public CobblemonPokestopsNeoForge(IEventBus modBus) {
         Constants.createInfoLog("Loading for NeoForge Mod Loader");
         CobblemonPokestops.initialize();
