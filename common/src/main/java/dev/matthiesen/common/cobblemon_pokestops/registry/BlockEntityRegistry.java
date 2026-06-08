@@ -1,7 +1,8 @@
 package dev.matthiesen.common.cobblemon_pokestops.registry;
 
-import dev.matthiesen.common.cobblemon_pokestops.CobblemonPokestops;
+import dev.matthiesen.common.cobblemon_pokestops.Constants;
 import dev.matthiesen.common.cobblemon_pokestops.block.entity.*;
+import dev.matthiesen.common.matthiesen_lib.registry.AbstractBlockEntityRegistry;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -10,35 +11,36 @@ import java.util.Map;
 import java.util.function.BiFunction;
 import java.util.function.Supplier;
 
-public class BlockEntityRegistry {
+public class BlockEntityRegistry extends AbstractBlockEntityRegistry {
+    private static final BlockEntityRegistry INSTANCE = new BlockEntityRegistry();
+
+    private BlockEntityRegistry() {
+        super(Constants.MOD_ID);
+    }
+
+    public static final Supplier<BlockEntityType<PokestopEntity>> POKESTOP_BE;
+    public static final Supplier<BlockEntityType<WingedstopEntity>> WINGEDSTOP_BE;
+    public static final Supplier<BlockEntityType<PokeballstopEntity>> POKEBALLSTOP_BE;
+    public static final Supplier<BlockEntityType<HealingstopEntity>> HEALINGSTOP_BE;
+    public static final Supplier<BlockEntityType<PokestopTrophyEntity>> POKESTOP_TROPHY_BE;
+    public static final Supplier<BlockEntityType<WingedstopTrophyEntity>> WINGEDSTOP_TROPHY_BE;
+    public static final Supplier<BlockEntityType<PokeballstopTrophyEntity>> POKEBALLSTOP_TROPHY_BE;
+    public static final Supplier<BlockEntityType<HealingstopTrophyEntity>> HEALINGSTOP_TROPHY_BE;
+    public static final Supplier<BlockEntityType<DummyBlockEntity>> DUMMY_BE;
+
+    static {
+        POKESTOP_BE = registerBlockEntity("pokestop", () -> buildType(PokestopEntity::new, BlockRegistry.POKESTOPS));
+        WINGEDSTOP_BE = registerBlockEntity("wingedstop", () -> buildType(WingedstopEntity::new, BlockRegistry.WINGEDSTOPS));
+        POKEBALLSTOP_BE = registerBlockEntity("pokeballstop", () -> buildType(PokeballstopEntity::new, BlockRegistry.POKEBALLSTOPS));
+        HEALINGSTOP_BE = registerBlockEntity("healingstop", () -> buildType(HealingstopEntity::new, BlockRegistry.HEALINGSTOPS));
+        POKESTOP_TROPHY_BE = registerBlockEntity("pokestop_trophy", () -> buildType(PokestopTrophyEntity::new, BlockRegistry.POKESTOP_TROPHIES));
+        WINGEDSTOP_TROPHY_BE = registerBlockEntity("wingedstop_trophy", () -> buildType(WingedstopTrophyEntity::new, BlockRegistry.WINGEDSTOP_TROPHIES));
+        POKEBALLSTOP_TROPHY_BE = registerBlockEntity("pokeballstop_trophy", () -> buildType(PokeballstopTrophyEntity::new, BlockRegistry.POKEBALLSTOP_TROPHIES));
+        HEALINGSTOP_TROPHY_BE = registerBlockEntity("healingstop_trophy", () -> buildType(HealingstopTrophyEntity::new, BlockRegistry.HEALINGSTOP_TROPHIES));
+        DUMMY_BE = registerBlockEntity("dummy_block_entity", () -> buildType(DummyBlockEntity::new, BlockRegistry.DUMMY_BLOCKS));
+    }
+
     public static void init() {}
-
-    public static final Supplier<BlockEntityType<PokestopEntity>> POKESTOP_BE =
-            registerBlockEntity("pokestop", () -> buildType(PokestopEntity::new, BlockRegistry.POKESTOPS));
-
-    public static final Supplier<BlockEntityType<WingedstopEntity>> WINGEDSTOP_BE =
-            registerBlockEntity("wingedstop", () -> buildType(WingedstopEntity::new, BlockRegistry.WINGEDSTOPS));
-
-    public static final Supplier<BlockEntityType<PokeballstopEntity>> POKEBALLSTOP_BE =
-            registerBlockEntity("pokeballstop", () -> buildType(PokeballstopEntity::new, BlockRegistry.POKEBALLSTOPS));
-
-    public static final Supplier<BlockEntityType<HealingstopEntity>> HEALINGSTOP_BE =
-            registerBlockEntity("healingstop", () -> buildType(HealingstopEntity::new, BlockRegistry.HEALINGSTOPS));
-
-    public static final Supplier<BlockEntityType<PokestopTrophyEntity>> POKESTOP_TROPHY_BE =
-            registerBlockEntity("pokestop_trophy", () -> buildType(PokestopTrophyEntity::new, BlockRegistry.POKESTOP_TROPHIES));
-
-    public static final Supplier<BlockEntityType<WingedstopTrophyEntity>> WINGEDSTOP_TROPHY_BE =
-            registerBlockEntity("wingedstop_trophy", () -> buildType(WingedstopTrophyEntity::new, BlockRegistry.WINGEDSTOP_TROPHIES));
-
-    public static final Supplier<BlockEntityType<PokeballstopTrophyEntity>> POKEBALLSTOP_TROPHY_BE =
-            registerBlockEntity("pokeballstop_trophy", () -> buildType(PokeballstopTrophyEntity::new, BlockRegistry.POKEBALLSTOP_TROPHIES));
-
-    public static final Supplier<BlockEntityType<HealingstopTrophyEntity>> HEALINGSTOP_TROPHY_BE =
-            registerBlockEntity("healingstop_trophy", () -> buildType(HealingstopTrophyEntity::new, BlockRegistry.HEALINGSTOP_TROPHIES));
-
-    public static final Supplier<BlockEntityType<DummyBlockEntity>> DUMMY_BE =
-            registerBlockEntity("dummy_bucks", () -> buildType(DummyBlockEntity::new, BlockRegistry.DUMMY_BLOCKS));
 
     private static Block[] resolveBlocks(Map<String, ? extends Supplier<? extends Block>> registeredBlocks) {
         return registeredBlocks.values()
@@ -56,6 +58,6 @@ public class BlockEntityRegistry {
 
     @SuppressWarnings("SameParameterValue")
     private static <T extends BlockEntity> Supplier<BlockEntityType<T>> registerBlockEntity(String id, Supplier<BlockEntityType<T>> blockEntity) {
-        return CobblemonPokestops.COMMON_PLATFORM.registerBlockEntity(id, blockEntity);
+        return INSTANCE.register(id, blockEntity);
     }
 }

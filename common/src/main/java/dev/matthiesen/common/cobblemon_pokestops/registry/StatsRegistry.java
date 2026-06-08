@@ -1,23 +1,36 @@
 package dev.matthiesen.common.cobblemon_pokestops.registry;
 
-import dev.matthiesen.common.cobblemon_pokestops.CobblemonPokestops;
 import dev.matthiesen.common.cobblemon_pokestops.Constants;
+import dev.matthiesen.common.matthiesen_lib.registry.AbstractStatsRegistry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.stats.Stat;
 import net.minecraft.stats.Stats;
 
 import java.util.function.Supplier;
 
-public class StatsRegistry {
-    public static final Supplier<ResourceLocation> POKESTOP_TIMES_SPUN = registerStats("pokestop_times_spun", () -> Constants.modResource("pokestop_times_spun"));
-    public static final Supplier<ResourceLocation> WINGEDSTOP_TIMES_SPUN = registerStats("wingedstop_times_spun", () -> Constants.modResource("wingedstop_times_spun"));
-    public static final Supplier<ResourceLocation> POKEBALLSTOP_TIMES_SPUN = registerStats("pokeballstop_times_spun", () -> Constants.modResource("pokeballstop_times_spun"));
-    public static final Supplier<ResourceLocation> HEALINGSTOP_TIMES_SPUN = registerStats("healingstop_times_spun", () -> Constants.modResource("healingstop_times_spun"));
+public class StatsRegistry extends AbstractStatsRegistry {
+    private static final StatsRegistry INSTANCE = new StatsRegistry();
+
+    public static final Supplier<ResourceLocation> POKESTOP_TIMES_SPUN;
+    public static final Supplier<ResourceLocation> WINGEDSTOP_TIMES_SPUN;
+    public static final Supplier<ResourceLocation> POKEBALLSTOP_TIMES_SPUN;
+    public static final Supplier<ResourceLocation> HEALINGSTOP_TIMES_SPUN;
+
+    static {
+        POKESTOP_TIMES_SPUN = INSTANCE.register("pokestop_times_spun", () -> Constants.modResource("pokestop_times_spun"));
+        WINGEDSTOP_TIMES_SPUN = INSTANCE.register("wingedstop_times_spun", () -> Constants.modResource("wingedstop_times_spun"));
+        POKEBALLSTOP_TIMES_SPUN = INSTANCE.register("pokeballstop_times_spun", () -> Constants.modResource("pokeballstop_times_spun"));
+        HEALINGSTOP_TIMES_SPUN = INSTANCE.register("healingstop_times_spun", () -> Constants.modResource("healingstop_times_spun"));
+    }
 
     public static Stat<ResourceLocation> POKESTOP_TIMES_SPUN_STAT;
     public static Stat<ResourceLocation> WINGEDSTOP_TIMES_SPUN_STAT;
     public static Stat<ResourceLocation> POKEBALLSTOP_TIMES_SPUN_STAT;
     public static Stat<ResourceLocation> HEALINGSTOP_TIMES_SPUN_STAT;
+
+    private StatsRegistry() {
+        super(Constants.MOD_ID);
+    }
 
     public static void init() {}
 
@@ -54,9 +67,5 @@ public class StatsRegistry {
             load();
         }
         return HEALINGSTOP_TIMES_SPUN_STAT;
-    }
-
-    private static <T extends ResourceLocation> Supplier<T> registerStats(String id, Supplier<T> stats) {
-        return CobblemonPokestops.COMMON_PLATFORM.registerStats(id, stats);
     }
 }

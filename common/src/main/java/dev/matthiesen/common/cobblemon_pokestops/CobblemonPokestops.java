@@ -1,14 +1,10 @@
 package dev.matthiesen.common.cobblemon_pokestops;
 
 import dev.matthiesen.common.cobblemon_pokestops.config.*;
-import dev.matthiesen.common.cobblemon_pokestops.platform.CobblemonPokestopsPlatform;
 import dev.matthiesen.common.cobblemon_pokestops.registry.*;
-
-import java.util.ServiceLoader;
 
 public class CobblemonPokestops {
     public static ModConfig config;
-    public static final CobblemonPokestopsPlatform COMMON_PLATFORM = ServiceLoader.load(CobblemonPokestopsPlatform.class).findFirst().orElseThrow();
 
     public static void initialize() {
         Constants.createInfoLog("Registering Server/Client Resources");
@@ -18,15 +14,7 @@ public class CobblemonPokestops {
         BlockRegistry.init();
         BlockEntityRegistry.init();
         ItemRegistry.init();
+        CreativeModeTabRegistry.init();
         CriterionTriggerRegistry.init();
-    }
-
-    public static void onStartup() {
-        Constants.createInfoLog("Server starting, Setting up");
-    }
-
-    public static void onShutdown() {
-        Constants.createInfoLog("Server stopping, shutting down");
-        new ConfigManager().saveConfig();
     }
 }
