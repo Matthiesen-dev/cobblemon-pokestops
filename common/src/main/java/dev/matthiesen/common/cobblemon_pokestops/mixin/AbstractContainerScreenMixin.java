@@ -47,20 +47,20 @@ public abstract class AbstractContainerScreenMixin {
             int y = slot.y;
 
             ResourceLocation sectionId = SectionHeaderItem.getSectionId(slot.getItem());
-            CreativeSectionRegistry.SectionData meta = CreativeSectionRegistry.METADATA.get(sectionId);
+            CreativeSectionRegistry.SectionData sectionData = CreativeSectionRegistry.METADATA.get(sectionId);
 
-            if (meta != null) {
+            if (sectionData != null) {
                 // Draw a simple 9-slot-wide header bar so section headers work even without external textures.
                 int barWidth = 160;
                 int barHeight = 16;
-                guiGraphics.fill(x, y, x + barWidth, y + barHeight, 0xCC1A1A1A);
-                guiGraphics.fill(x, y, x + barWidth, y + 2, 0xFF5050B8);
+                guiGraphics.fill(x, y, x + barWidth, y + barHeight, sectionData.meta().getSectionBackgroundColor());
+                guiGraphics.fill(x, y, x + barWidth, y + 2, sectionData.meta().getSectionTitleAccentColor());
                 guiGraphics.drawString(
                         Minecraft.getInstance().font,
-                        meta.title(),
+                        sectionData.title(),
                         x + 5,
                         y + 4,
-                        0xFFFFFF,
+                        sectionData.meta().getSectionTitleColor(),
                         true
                 );
             }

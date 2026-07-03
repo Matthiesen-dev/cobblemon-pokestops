@@ -47,7 +47,8 @@ public class CreativeModeTabRegistry extends AbstractCreativeModeTabRegistry {
         CreativeSectionRegistry.registerSection(
                 trophiesSectionId,
                 Component.translatable("itemGroup.cobblemon_pokestops.cobblemon_pokestops_trophies"),
-                50
+                50,
+                builder -> builder.setSectionTitleColor(0x55FFFF)
         );
 
         for (var entry : ItemRegistry.ALL_POKESTOPS.entrySet()) {

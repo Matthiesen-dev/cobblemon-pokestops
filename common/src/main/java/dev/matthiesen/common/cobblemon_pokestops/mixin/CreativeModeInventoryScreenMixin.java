@@ -53,7 +53,7 @@ public class CreativeModeInventoryScreenMixin {
 
                     // Realign to the next 9-wide row so the next section header always starts at column 0.
                     while (structuredItems.size() % 9 != 0) {
-                        structuredItems.add(SectionHeaderItem.createPlaceholderStack(ItemRegistry.SECTION_HEADER.get()));
+                        structuredItems.add(ItemStack.EMPTY);
                     }
                 });
 
