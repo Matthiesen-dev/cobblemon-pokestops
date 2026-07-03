@@ -1,18 +1,19 @@
 package dev.matthiesen.common.cobblemon_pokestops.registry;
 
 import dev.matthiesen.common.cobblemon_pokestops.Constants;
-import dev.matthiesen.common.cobblemon_pokestops.templates.item.StopItemTemplate;
 import dev.matthiesen.common.matthiesen_lib.registry.AbstractCreativeModeTabRegistry;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.ItemStack;
 
-import java.util.List;
-import java.util.Map;
 import java.util.function.Supplier;
 
 public class CreativeModeTabRegistry extends AbstractCreativeModeTabRegistry {
     private static final CreativeModeTabRegistry INSTANCE = new CreativeModeTabRegistry();
+
+    private static final ResourceLocation POKESTOPS_TAB_ID = Constants.modResource("cobblemon_pokestops_tab");
+    private static final ResourceLocation POKESTOPS_POKESTOPS_SECTION_ID = Constants.modResource("pokestops");
+    private static final ResourceLocation POKESTOPS_TROPHIES_SECTION_ID = Constants.modResource("trophies");
 
     private CreativeModeTabRegistry() {
         super(Constants.MOD_ID);
@@ -21,34 +22,20 @@ public class CreativeModeTabRegistry extends AbstractCreativeModeTabRegistry {
     public static void init() {}
 
     public static final Supplier<CreativeModeTab> POKESTOPS_TAB;
-    public static final Supplier<CreativeModeTab> POKESTOPS_TROPHIES_TAB;
 
     static {
-        POKESTOPS_TAB = INSTANCE.register("cobblemon_pokestops_pokestops", () -> INSTANCE.getRegistryBuilder()
-                .newCreativeTabBuilder()
-                .title(Component.translatable("itemGroup." + Constants.MOD_ID + ".cobblemon_pokestops_pokestops"))
-                .icon(() -> new ItemStack(ItemRegistry.ALL_POKESTOPS.get("pokestop").get()))
-                .displayItems((enabledFeatures, entries) ->
-                        addAllItemsToCreativeTab(entries, List.of(ItemRegistry.ALL_POKESTOPS))
-                )
-                .build()
+        POKESTOPS_TAB = INSTANCE.registerSectionedCreativeTab(
+                POKESTOPS_TAB_ID,
+                Component.translatable("itemGroup.cobblemon_pokestops.cobblemon_pokestops_tab_title"),
+                ItemRegistry.getPokestopsCreativeTabIcon(),
+                builder -> {
+                    builder.registerSection(POKESTOPS_POKESTOPS_SECTION_ID, Component.translatable("itemGroup.cobblemon_pokestops.cobblemon_pokestops_tab_pokestops_section"), 100);
+                    builder.registerSection(POKESTOPS_TROPHIES_SECTION_ID, Component.translatable("itemGroup.cobblemon_pokestops.cobblemon_pokestops_tab_trophies_section"), 50,
+                            sectionBuilder -> sectionBuilder.setSectionTitleColor(0x55FFFF)
+                    );
+                    ItemRegistry.addPokestopsToCreativeMenu(builder, POKESTOPS_POKESTOPS_SECTION_ID);
+                    ItemRegistry.addTrophiesToCreativeMenu(builder, POKESTOPS_TROPHIES_SECTION_ID);
+                }
         );
-        POKESTOPS_TROPHIES_TAB = INSTANCE.register("cobblemon_pokestops_trophies", () -> INSTANCE.getRegistryBuilder()
-                .newCreativeTabBuilder()
-                .title(Component.translatable("itemGroup." + Constants.MOD_ID + ".cobblemon_pokestops_trophies"))
-                .icon(() -> new ItemStack(ItemRegistry.ALL_TROPHIES.get("wingedstop_trophy").get()))
-                .displayItems((enabledFeatures, entries) ->
-                        addAllItemsToCreativeTab(entries, List.of(ItemRegistry.ALL_TROPHIES))
-                )
-                .build()
-        );
-    }
-
-    private static void addAllItemsToCreativeTab(CreativeModeTab.Output entries, List<Map<String, Supplier<? extends StopItemTemplate>>> itemMaps) {
-        for (Map<String, Supplier<? extends StopItemTemplate>> itemMap : itemMaps) {
-            for (var entry : itemMap.entrySet()) {
-                entries.accept(entry.getValue().get());
-            }
-        }
     }
 }

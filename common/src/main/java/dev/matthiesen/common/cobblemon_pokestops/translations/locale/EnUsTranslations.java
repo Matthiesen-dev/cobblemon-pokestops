@@ -55,8 +55,9 @@ public class EnUsTranslations {
 
     static {
         // Add translations here
-        TRANSLATIONS.addTranslation("itemGroup.cobblemon_pokestops.cobblemon_pokestops_pokestops", "Pokestops");
-        TRANSLATIONS.addTranslation("itemGroup.cobblemon_pokestops.cobblemon_pokestops_trophies", "Pokestop Trophies");
+        TRANSLATIONS.addTranslation("itemGroup.cobblemon_pokestops.cobblemon_pokestops_tab_title", "Cobblemon Pokestops");
+        TRANSLATIONS.addTranslation("itemGroup.cobblemon_pokestops.cobblemon_pokestops_tab_pokestops_section", "Pokestops");
+        TRANSLATIONS.addTranslation("itemGroup.cobblemon_pokestops.cobblemon_pokestops_tab_trophies_section", "Trophies");
         TRANSLATIONS.addTranslation("stat.cobblemon_pokestops.pokestop_times_spun", "Times Spun Pokestops");
         TRANSLATIONS.addTranslation("stat.cobblemon_pokestops.wingedstop_times_spun", "Times Spun Winged Pokestops");
         TRANSLATIONS.addTranslation("stat.cobblemon_pokestops.pokeballstop_times_spun", "Times Spun Pokeball Stops");

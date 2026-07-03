@@ -44,14 +44,14 @@ side = "BOTH"
 [[dependencies.${mod_id}]]
 modId = "matthiesen_lib_api"
 mandatory = true
-versionRange = "[1.5.5,)"
+versionRange = "[1.10.3,)"
 ordering = "AFTER"
 side = "BOTH"
 
 [[dependencies.${mod_id}]]
 modId = "matthiesen_lib"
 mandatory = true
-versionRange = "[1.5.5,)"
+versionRange = "[1.10.3,)"
 ordering = "AFTER"
 side = "BOTH"
 
