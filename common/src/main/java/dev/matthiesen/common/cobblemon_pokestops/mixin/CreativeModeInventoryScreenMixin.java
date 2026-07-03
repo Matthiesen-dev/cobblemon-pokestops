@@ -55,10 +55,6 @@ public class CreativeModeInventoryScreenMixin {
                     while (structuredItems.size() % 9 != 0) {
                         structuredItems.add(SectionHeaderItem.createPlaceholderStack(ItemRegistry.SECTION_HEADER.get()));
                     }
-
-                    for (int i = 0; i < 9; i++) {
-                        structuredItems.add(SectionHeaderItem.createPlaceholderStack(ItemRegistry.SECTION_HEADER.get()));
-                    }
                 });
 
         if (((CreativeModeInventoryScreen) (Object) this).getMenu() instanceof ItemPickerMenuAccessor menuAccessor) {
