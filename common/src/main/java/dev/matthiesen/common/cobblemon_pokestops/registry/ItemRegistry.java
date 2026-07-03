@@ -4,7 +4,9 @@ import dev.matthiesen.common.cobblemon_pokestops.Constants;
 import dev.matthiesen.common.cobblemon_pokestops.item.stops.*;
 import dev.matthiesen.common.cobblemon_pokestops.item.trophies.*;
 import dev.matthiesen.common.cobblemon_pokestops.templates.item.StopItemTemplate;
+import dev.matthiesen.common.matthiesen_lib.core.MatthiesenLibCreativeModeTabSectionsManager;
 import dev.matthiesen.common.matthiesen_lib.registry.AbstractItemRegistry;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Block;
 
@@ -36,6 +38,22 @@ public class ItemRegistry extends AbstractItemRegistry {
     public static Map<String, Supplier<? extends StopItemTemplate>> WINGEDSTOP_TROPHY_ITEMS = new HashMap<>();
     public static Map<String, Supplier<? extends StopItemTemplate>> POKEBALLSTOP_TROPHY_ITEMS = new HashMap<>();
     public static Map<String, Supplier<? extends StopItemTemplate>> HEALINGSTOP_TROPHY_ITEMS = new HashMap<>();
+
+    public static Supplier<ItemStack> getPokestopsCreativeTabIcon() {
+        return () -> new ItemStack(POKESTOP_ITEMS.get("pokestop").get());
+    }
+
+    public static void addPokestopsToCreativeMenu(MatthiesenLibCreativeModeTabSectionsManager.SectionBuilder builder, ResourceLocation resourceLocation) {
+        for (var entry : ALL_POKESTOPS.entrySet()) {
+            builder.addItemToSection(resourceLocation, new ItemStack(entry.getValue().get()));
+        }
+    }
+
+    public static void addTrophiesToCreativeMenu(MatthiesenLibCreativeModeTabSectionsManager.SectionBuilder builder, ResourceLocation resourceLocation) {
+        for (var entry : ALL_TROPHIES.entrySet()) {
+            builder.addItemToSection(resourceLocation, new ItemStack(entry.getValue().get()));
+        }
+    }
 
     static {
         registerStopItems(
