@@ -21,42 +21,27 @@ public class CreativeModeTabRegistry extends AbstractCreativeModeTabRegistry {
     public static final Supplier<CreativeModeTab> POKESTOPS_TAB;
 
     static {
-        POKESTOPS_TAB = INSTANCE.register("cobblemon_pokestops_pokestops", () -> INSTANCE.getRegistryBuilder()
-                .newCreativeTabBuilder()
-                .title(Component.translatable("itemGroup." + Constants.MOD_ID + ".cobblemon_pokestops_pokestops"))
-                .icon(() -> new ItemStack(ItemRegistry.ALL_POKESTOPS.get("pokestop").get()))
-                .displayItems((parameters, output) ->
-                        // Add items to make the tab visible; the full sectioned layout is injected by the mixin in selectTab
-                        CreativeSectionRegistry.SECTIONS.values()
-                                .forEach(items -> items.forEach(output::accept))
-                )
-                .build()
+        POKESTOPS_TAB = INSTANCE.registerSectionedCreativeTab(
+                "cobblemon_pokestops_pokestops",
+                Component.translatable("itemGroup." + Constants.MOD_ID + ".cobblemon_pokestops_pokestops"),
+                () -> new ItemStack(ItemRegistry.ALL_POKESTOPS.get("pokestop").get()),
+                builder -> {
+                    ResourceLocation pokestopsSectionId = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "pokestops");
+                    ResourceLocation trophiesSectionId = ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "trophies");
+
+                    builder.registerSection(pokestopsSectionId, Component.translatable("itemGroup.cobblemon_pokestops.cobblemon_pokestops_pokestops"), 100);
+                    builder.registerSection(trophiesSectionId, Component.translatable("itemGroup.cobblemon_pokestops.cobblemon_pokestops_trophies"), 50,
+                            sectionBuilder -> sectionBuilder.setSectionTitleColor(0x55FFFF)
+                    );
+
+                    for (var entry : ItemRegistry.ALL_POKESTOPS.entrySet()) {
+                        builder.addItemToSection(pokestopsSectionId, new ItemStack(entry.getValue().get()));
+                    }
+
+                    for (var entry : ItemRegistry.ALL_TROPHIES.entrySet()) {
+                        builder.addItemToSection(trophiesSectionId, new ItemStack(entry.getValue().get()));
+                    }
+                }
         );
-    }
-
-    public static void buildSections() {
-        ResourceLocation pokestopsSectionId = new ResourceLocation(Constants.MOD_ID, "pokestops");
-        ResourceLocation trophiesSectionId = new ResourceLocation(Constants.MOD_ID, "trophies");
-
-        CreativeSectionRegistry.registerSection(
-                pokestopsSectionId,
-                Component.translatable("itemGroup.cobblemon_pokestops.cobblemon_pokestops_pokestops"),
-                100
-        );
-
-        CreativeSectionRegistry.registerSection(
-                trophiesSectionId,
-                Component.translatable("itemGroup.cobblemon_pokestops.cobblemon_pokestops_trophies"),
-                50,
-                builder -> builder.setSectionTitleColor(0x55FFFF)
-        );
-
-        for (var entry : ItemRegistry.ALL_POKESTOPS.entrySet()) {
-            CreativeSectionRegistry.addItemToSection(pokestopsSectionId, new ItemStack(entry.getValue().get()));
-        }
-
-        for (var entry : ItemRegistry.ALL_TROPHIES.entrySet()) {
-            CreativeSectionRegistry.addItemToSection(trophiesSectionId, new ItemStack(entry.getValue().get()));
-        }
     }
 }

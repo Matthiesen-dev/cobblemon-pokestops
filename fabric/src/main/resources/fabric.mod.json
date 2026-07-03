@@ -31,9 +31,6 @@
       "dev.matthiesen.common.cobblemon_pokestops.compat.jade.CobblemonPokestopsJadePlugin"
     ]
   },
-  "mixins": [
-    "cobblemon_pokestops.mixins.json"
-  ],
   "depends": {
     "minecraft": "1.21.1",
     "cobblemon": ">=1.7.3 <1.8.0",

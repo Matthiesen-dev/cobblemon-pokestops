@@ -1,7 +1,6 @@
 package dev.matthiesen.common.cobblemon_pokestops.registry;
 
 import dev.matthiesen.common.cobblemon_pokestops.Constants;
-import dev.matthiesen.common.cobblemon_pokestops.item.SectionHeaderItem;
 import dev.matthiesen.common.cobblemon_pokestops.item.stops.*;
 import dev.matthiesen.common.cobblemon_pokestops.item.trophies.*;
 import dev.matthiesen.common.cobblemon_pokestops.templates.item.StopItemTemplate;
@@ -37,9 +36,6 @@ public class ItemRegistry extends AbstractItemRegistry {
     public static Map<String, Supplier<? extends StopItemTemplate>> WINGEDSTOP_TROPHY_ITEMS = new HashMap<>();
     public static Map<String, Supplier<? extends StopItemTemplate>> POKEBALLSTOP_TROPHY_ITEMS = new HashMap<>();
     public static Map<String, Supplier<? extends StopItemTemplate>> HEALINGSTOP_TROPHY_ITEMS = new HashMap<>();
-
-    public static Supplier<SectionHeaderItem> SECTION_HEADER =
-            INSTANCE.register("section_header", () -> new SectionHeaderItem(new Item.Properties().stacksTo(1)));
 
     static {
         registerStopItems(

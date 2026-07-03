@@ -13,9 +13,6 @@ ${mod_description}
 '''
 logoFile = "icon.png"
 
-[[mixins]]
-config = "cobblemon_pokestops.mixins.json"
-
 [[dependencies.${mod_id}]]
 modId = "minecraft"
 mandatory = true
