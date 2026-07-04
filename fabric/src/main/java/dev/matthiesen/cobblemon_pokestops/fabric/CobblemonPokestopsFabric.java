@@ -1,6 +1,7 @@
 package dev.matthiesen.cobblemon_pokestops.fabric;
 
 import dev.matthiesen.cobblemon_pokestops.common.CobblemonPokestopsCommon;
+import dev.matthiesen.cobblemon_pokestops.fabric.worldgen.CobblemonPokestopsFabricFeatures;
 import net.fabricmc.api.ModInitializer;
 
 public class CobblemonPokestopsFabric implements ModInitializer {
@@ -9,5 +10,6 @@ public class CobblemonPokestopsFabric implements ModInitializer {
         var instance = CobblemonPokestopsCommon.INSTANCE;
         instance.createInfoLog("Loading for Fabric Mod Loader");
         instance.initialize();
+        CobblemonPokestopsFabricFeatures.init();
     }
 }
