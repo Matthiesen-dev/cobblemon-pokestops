@@ -1,0 +1,24 @@
+package dev.matthiesen.cobblemon_pokestops.fabric.datagen;
+
+import dev.matthiesen.cobblemon_pokestops.common.registry.BlockRegistry;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
+import net.minecraft.data.models.BlockModelGenerators;
+import net.minecraft.data.models.ItemModelGenerators;
+
+public class ModelProvider extends FabricModelProvider {
+    public ModelProvider(FabricDataOutput output) {
+        super(output);
+    }
+
+    @Override
+    public void generateBlockStateModels(BlockModelGenerators blockStateModelGenerator) {
+        for (var entry : BlockRegistry.getAllTemplates()) {
+            blockStateModelGenerator.createNonTemplateModelBlock(entry.get());
+        }
+    }
+
+    @Override
+    public void generateItemModels(ItemModelGenerators itemModelGenerator) {
+    }
+}

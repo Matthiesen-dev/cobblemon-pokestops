@@ -19,24 +19,24 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "dev.matthiesen.fabric.cobblemon_pokestops.CobblemonPokestopsFabric"
+      "dev.matthiesen.cobblemon_pokestops.fabric.CobblemonPokestopsFabric"
     ],
     "client": [
-      "dev.matthiesen.fabric.cobblemon_pokestops.CobblemonPokestopsFabricClient"
+      "dev.matthiesen.cobblemon_pokestops.fabric.CobblemonPokestopsFabricClient"
     ],
     "fabric-datagen": [
-      "dev.matthiesen.fabric.cobblemon_pokestops.datagen.DataGenerator"
+      "dev.matthiesen.cobblemon_pokestops.fabric.datagen.DataGenerator"
     ],
     "jade": [
-      "dev.matthiesen.common.cobblemon_pokestops.compat.jade.CobblemonPokestopsJadePlugin"
+      "dev.matthiesen.cobblemon_pokestops.common.client.compat.jade.CobblemonPokestopsJadePlugin"
     ]
   },
   "depends": {
     "minecraft": "1.21.1",
     "cobblemon": ">=1.7.3 <1.8.0",
     "geckolib": ">=4.8.3 <5.0.0",
-    "matthiesen_lib_api": ">=1.10.3 <2.0.0",
-    "matthiesen_lib": ">=1.10.3 <2.0.0"
+    "matthiesen_lib_api": ">=1.10.4 <2.0.0",
+    "matthiesen_lib": ">=1.10.4 <2.0.0"
   },
   "suggests": {
     "jade": ">=15.10.5"
