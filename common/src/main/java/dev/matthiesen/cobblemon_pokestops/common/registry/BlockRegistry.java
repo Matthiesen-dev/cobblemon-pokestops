@@ -57,8 +57,8 @@ public class BlockRegistry extends AbstractBlockRegistry {
     }
 
     /**
-     * Registers a family of blocks that share a base ID and have multiple variants. The base block is registered with the base ID,
-     * and each variant is registered with an ID formed by appending the variant name to the base ID (e.g., "pokestop_gold").
+     * Registers a family of blocks that share a variants ID and have multiple variants. The variants block is registered with the variants ID,
+     * and each variant is registered with an ID formed by appending the variant name to the variants ID (e.g., "pokestop_gold").
      */
     private static <T extends Block> void registerFamilyWithVariants(
             Map<String, Supplier<T>> target,
@@ -73,8 +73,8 @@ public class BlockRegistry extends AbstractBlockRegistry {
     }
 
     /**
-     * Registers a block with multiple variants, but does not register a base block with the base ID.
-     * Each variant is registered with an ID formed by appending the variant name to the base ID (e.g., "pokestop_gold").
+     * Registers a block with multiple variants, but does not register a variants block with the variants ID.
+     * Each variant is registered with an ID formed by appending the variant name to the variants ID (e.g., "pokestop_gold").
      */
     @SuppressWarnings("SameParameterValue")
     private static <T extends Block> void registerVariantBlock(
