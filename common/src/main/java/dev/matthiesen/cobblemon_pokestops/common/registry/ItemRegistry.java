@@ -1,14 +1,8 @@
 package dev.matthiesen.cobblemon_pokestops.common.registry;
 
 import dev.matthiesen.cobblemon_pokestops.common.CobblemonPokestopsCommon;
-import dev.matthiesen.cobblemon_pokestops.common.item.stops.HealingstopItem;
-import dev.matthiesen.cobblemon_pokestops.common.item.stops.PokeballstopItem;
-import dev.matthiesen.cobblemon_pokestops.common.item.stops.PokestopItem;
-import dev.matthiesen.cobblemon_pokestops.common.item.stops.WingedstopItem;
-import dev.matthiesen.cobblemon_pokestops.common.item.trophies.HealingstopTrophyItem;
-import dev.matthiesen.cobblemon_pokestops.common.item.trophies.PokeballstopTrophyItem;
-import dev.matthiesen.cobblemon_pokestops.common.item.trophies.PokestopTrophyItem;
-import dev.matthiesen.cobblemon_pokestops.common.item.trophies.WingedstopTrophyItem;
+import dev.matthiesen.cobblemon_pokestops.common.item.stops.*;
+import dev.matthiesen.cobblemon_pokestops.common.item.trophies.*;
 import dev.matthiesen.cobblemon_pokestops.common.templates.item.StopItemTemplate;
 import dev.matthiesen.common.matthiesen_lib.core.MatthiesenLibCreativeModeTabSectionsManager;
 import dev.matthiesen.common.matthiesen_lib.registry.AbstractItemRegistry;

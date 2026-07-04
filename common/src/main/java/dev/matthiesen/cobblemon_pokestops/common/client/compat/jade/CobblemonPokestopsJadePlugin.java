@@ -2,8 +2,7 @@ package dev.matthiesen.cobblemon_pokestops.common.client.compat.jade;
 
 import dev.matthiesen.cobblemon_pokestops.common.CobblemonPokestopsCommon;
 import dev.matthiesen.cobblemon_pokestops.common.block.entity.DummyBlockEntity;
-import dev.matthiesen.cobblemon_pokestops.common.templates.block.BaseStopTemplate;
-import dev.matthiesen.cobblemon_pokestops.common.templates.block.DummyBlockTemplate;
+import dev.matthiesen.cobblemon_pokestops.common.templates.block.*;
 import dev.matthiesen.cobblemon_pokestops.common.templates.entity.StopEntityTemplate;
 import net.minecraft.resources.ResourceLocation;
 import snownee.jade.api.*;

@@ -1,14 +1,8 @@
 package dev.matthiesen.cobblemon_pokestops.common.registry;
 
 import dev.matthiesen.cobblemon_pokestops.common.CobblemonPokestopsCommon;
-import dev.matthiesen.cobblemon_pokestops.common.advancements.score.HealingstopScoreTracker;
-import dev.matthiesen.cobblemon_pokestops.common.advancements.score.PokeballstopScoreTracker;
-import dev.matthiesen.cobblemon_pokestops.common.advancements.score.PokestopScoreTracker;
-import dev.matthiesen.cobblemon_pokestops.common.advancements.score.WingedPokestopScoreTracker;
-import dev.matthiesen.cobblemon_pokestops.common.advancements.use.UsedHealingstopCriterion;
-import dev.matthiesen.cobblemon_pokestops.common.advancements.use.UsedPokeballstopCriterion;
-import dev.matthiesen.cobblemon_pokestops.common.advancements.use.UsedPokestopCriterion;
-import dev.matthiesen.cobblemon_pokestops.common.advancements.use.UsedWingedPokestopCriterion;
+import dev.matthiesen.cobblemon_pokestops.common.advancements.score.*;
+import dev.matthiesen.cobblemon_pokestops.common.advancements.use.*;
 import dev.matthiesen.common.matthiesen_lib.registry.AbstractCriteriaTriggerRegistry;
 
 import java.util.function.Supplier;

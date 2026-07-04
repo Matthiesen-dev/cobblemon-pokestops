@@ -1,20 +1,10 @@
 package dev.matthiesen.cobblemon_pokestops.common.registry;
 
 import dev.matthiesen.cobblemon_pokestops.common.CobblemonPokestopsCommon;
-import dev.matthiesen.cobblemon_pokestops.common.block.dummy.HealingstopDummyBlock;
-import dev.matthiesen.cobblemon_pokestops.common.block.dummy.PokeballstopDummyBlock;
-import dev.matthiesen.cobblemon_pokestops.common.block.dummy.PokestopDummyBlock;
-import dev.matthiesen.cobblemon_pokestops.common.block.dummy.WingedstopDummyBlock;
-import dev.matthiesen.cobblemon_pokestops.common.block.stops.Healingstop;
-import dev.matthiesen.cobblemon_pokestops.common.block.stops.Pokeballstop;
-import dev.matthiesen.cobblemon_pokestops.common.block.stops.Pokestop;
-import dev.matthiesen.cobblemon_pokestops.common.block.stops.Wingedstop;
-import dev.matthiesen.cobblemon_pokestops.common.block.trophies.HealingstopTrophy;
-import dev.matthiesen.cobblemon_pokestops.common.block.trophies.PokeballstopTrophy;
-import dev.matthiesen.cobblemon_pokestops.common.block.trophies.PokestopTrophy;
-import dev.matthiesen.cobblemon_pokestops.common.block.trophies.WingedstopTrophy;
-import dev.matthiesen.cobblemon_pokestops.common.templates.block.DummyBlockTemplate;
-import dev.matthiesen.cobblemon_pokestops.common.templates.block.TrophyTemplate;
+import dev.matthiesen.cobblemon_pokestops.common.block.dummy.*;
+import dev.matthiesen.cobblemon_pokestops.common.block.stops.*;
+import dev.matthiesen.cobblemon_pokestops.common.block.trophies.*;
+import dev.matthiesen.cobblemon_pokestops.common.templates.block.*;
 import dev.matthiesen.common.matthiesen_lib.registry.AbstractBlockRegistry;
 import net.minecraft.world.level.block.Block;
 

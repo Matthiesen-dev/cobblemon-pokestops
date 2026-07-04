@@ -2,14 +2,8 @@ package dev.matthiesen.cobblemon_pokestops.common.registry;
 
 import dev.matthiesen.cobblemon_pokestops.common.CobblemonPokestopsCommon;
 import dev.matthiesen.cobblemon_pokestops.common.block.entity.DummyBlockEntity;
-import dev.matthiesen.cobblemon_pokestops.common.block.entity.stops.HealingstopEntity;
-import dev.matthiesen.cobblemon_pokestops.common.block.entity.stops.PokeballstopEntity;
-import dev.matthiesen.cobblemon_pokestops.common.block.entity.stops.PokestopEntity;
-import dev.matthiesen.cobblemon_pokestops.common.block.entity.stops.WingedstopEntity;
-import dev.matthiesen.cobblemon_pokestops.common.block.entity.trophies.HealingstopTrophyEntity;
-import dev.matthiesen.cobblemon_pokestops.common.block.entity.trophies.PokeballstopTrophyEntity;
-import dev.matthiesen.cobblemon_pokestops.common.block.entity.trophies.PokestopTrophyEntity;
-import dev.matthiesen.cobblemon_pokestops.common.block.entity.trophies.WingedstopTrophyEntity;
+import dev.matthiesen.cobblemon_pokestops.common.block.entity.stops.*;
+import dev.matthiesen.cobblemon_pokestops.common.block.entity.trophies.*;
 import dev.matthiesen.common.matthiesen_lib.registry.AbstractBlockEntityRegistry;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;

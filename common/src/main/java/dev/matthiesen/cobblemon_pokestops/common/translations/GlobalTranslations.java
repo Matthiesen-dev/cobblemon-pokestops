@@ -1,6 +1,5 @@
 package dev.matthiesen.cobblemon_pokestops.common.translations;
 
-
 import dev.matthiesen.cobblemon_pokestops.common.translations.locale.EnUsTranslations;
 import dev.matthiesen.cobblemon_pokestops.common.translations.util.TranslationBuilder;
 
