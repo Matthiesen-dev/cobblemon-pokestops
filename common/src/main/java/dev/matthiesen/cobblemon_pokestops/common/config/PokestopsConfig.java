@@ -25,6 +25,18 @@ public final class PokestopsConfig {
     @SerializedName("healingstopCooldownSeconds")
     public int healingstopCooldownSeconds = 600;
 
+    @SerializedName("stopRemoverRequireOp")
+    public boolean stopRemoverRequireOp = true;
+
+    @SerializedName("stopRemoverPermissionLevel")
+    public int stopRemoverPermissionLevel = 2;
+
+    @SerializedName("stopRemoverDropsStopItem")
+    public boolean stopRemoverDropsStopItem = false;
+
+    @SerializedName("stopRemoverConfirmWindowSeconds")
+    public int stopRemoverConfirmWindowSeconds = 5;
+
     @SerializedName("extraRarities")
     public List<String> extraRarities = List.of(
             "cobblemon:master_ball",

@@ -58,6 +58,7 @@ public class EnUsTranslations {
         TRANSLATIONS.addTranslation("itemGroup.cobblemon_pokestops.cobblemon_pokestops_tab_title", "Cobblemon Pokestops");
         TRANSLATIONS.addTranslation("itemGroup.cobblemon_pokestops.cobblemon_pokestops_tab_pokestops_section", "Pokestops");
         TRANSLATIONS.addTranslation("itemGroup.cobblemon_pokestops.cobblemon_pokestops_tab_trophies_section", "Trophies");
+        TRANSLATIONS.addTranslation("item.cobblemon_pokestops.stop_remover", "Stop Remover");
         TRANSLATIONS.addTranslation("stat.cobblemon_pokestops.pokestop_times_spun", "Times Spun Pokestops");
         TRANSLATIONS.addTranslation("stat.cobblemon_pokestops.wingedstop_times_spun", "Times Spun Winged Pokestops");
         TRANSLATIONS.addTranslation("stat.cobblemon_pokestops.pokeballstop_times_spun", "Times Spun Pokeball Stops");
@@ -69,6 +70,15 @@ public class EnUsTranslations {
         TRANSLATIONS.addTranslation("advancements.cobblemon_pokestops.root.title", "PokeStops");
         TRANSLATIONS.addTranslation("advancements.cobblemon_pokestops.root.description",
                 "Discover the world of PokeStops and their unique features!");
+        TRANSLATIONS.addTranslation("message.cobblemon_pokestops.stop_remover_invalid_target", "Stop Remover only works on Pokestops.");
+        TRANSLATIONS.addTranslation("message.cobblemon_pokestops.stop_remover_adventure_denied", "You cannot use the Stop Remover in Adventure mode.");
+        TRANSLATIONS.addTranslation("message.cobblemon_pokestops.stop_remover_no_permission", "You do not have permission to use the Stop Remover.");
+        TRANSLATIONS.addTranslation("message.cobblemon_pokestops.stop_remover_armed", "Removal armed. Sneak and right-click the same stop again to confirm.");
+        TRANSLATIONS.addTranslation("message.cobblemon_pokestops.stop_remover_need_crouch", "Sneak and right-click the same stop to confirm removal.");
+        TRANSLATIONS.addTranslation("message.cobblemon_pokestops.stop_remover_mismatch", "That is not the same stop. Removal confirmation has been reset.");
+        TRANSLATIONS.addTranslation("message.cobblemon_pokestops.stop_remover_timeout", "Removal confirmation timed out.");
+        TRANSLATIONS.addTranslation("message.cobblemon_pokestops.stop_remover_inventory_full", "You need a free inventory slot to recover this stop.");
+        TRANSLATIONS.addTranslation("message.cobblemon_pokestops.stop_remover_confirmed", "Pokestop removed.");
 
         TRANSLATIONS.addTranslation("advancements.cobblemon_pokestops.used_pokestop.title", "First Spin");
         TRANSLATIONS.addTranslation("advancements.cobblemon_pokestops.used_pokestop.description",
