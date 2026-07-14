@@ -26,7 +26,7 @@ public final class PokestopsConfig {
     public int healingstopCooldownSeconds = 600;
 
     @SerializedName("stopRemoverRequireOp")
-    public boolean stopRemoverRequireOp = true;
+    public boolean stopRemoverRequireOp = false;
 
     @SerializedName("stopRemoverPermissionLevel")
     public int stopRemoverPermissionLevel = 2;

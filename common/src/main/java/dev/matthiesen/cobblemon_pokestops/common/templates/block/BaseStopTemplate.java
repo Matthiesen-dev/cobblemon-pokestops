@@ -4,6 +4,7 @@ import com.cobblemon.mod.common.CobblemonSounds;
 import com.google.common.collect.Maps;
 import com.mojang.serialization.MapCodec;
 import dev.matthiesen.cobblemon_pokestops.common.templates.entity.StopEntityTemplate;
+import dev.matthiesen.cobblemon_pokestops.common.registry.ModTags;
 import dev.matthiesen.cobblemon_pokestops.common.registry.SoundRegistry;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
@@ -118,6 +119,10 @@ public abstract class BaseStopTemplate extends HorizontalDirectionalBlock implem
 
     @Override
     public @NotNull InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hit) {
+        // If player is holding a stop interaction tool (e.g., StopRemover), don't trigger stop
+        if (player.getMainHandItem().is(ModTags.Items.STOP_INTERACTION_TOOLS)) {
+            return InteractionResult.PASS;
+        }
         if (level.isClientSide) {
             return InteractionResult.SUCCESS;
         }

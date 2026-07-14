@@ -1,6 +1,7 @@
 package dev.matthiesen.cobblemon_pokestops.common.templates.block;
 
 import dev.matthiesen.cobblemon_pokestops.common.registry.BlockEntityRegistry;
+import dev.matthiesen.cobblemon_pokestops.common.registry.ModTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.InteractionResult;
@@ -96,6 +97,11 @@ public class DummyBlockTemplate extends Block implements EntityBlock {
             Player player,
             BlockHitResult hit
     ) {
+        // If player is holding a stop interaction tool (e.g., StopRemover), let the item handle it instead of forwarding
+        if (player.getMainHandItem().is(ModTags.Items.STOP_INTERACTION_TOOLS)) {
+            return InteractionResult.PASS;
+        }
+
         for (int i = 1; i <= parentSearchDepth; i++) {
             BlockPos checkPos = pos.below(i);
             BlockState checkState = level.getBlockState(checkPos);

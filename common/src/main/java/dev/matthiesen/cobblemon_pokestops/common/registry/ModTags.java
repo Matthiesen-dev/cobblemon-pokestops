@@ -31,8 +31,10 @@ public class ModTags {
         }
     }
 
-    @SuppressWarnings("unused")
     public static class Items {
+        public static final TagKey<Item> STOP_INTERACTION_TOOLS = createTag("stop_interaction_tools");
+
+        @SuppressWarnings("SameParameterValue")
         private static TagKey<Item> createTag(String name) {
             return TagKey.create(Registries.ITEM, CobblemonPokestopsCommon.modResource(name));
         }
