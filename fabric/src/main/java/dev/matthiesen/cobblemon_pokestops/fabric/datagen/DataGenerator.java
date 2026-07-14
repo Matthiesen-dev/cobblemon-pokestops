@@ -1,12 +1,8 @@
 package dev.matthiesen.cobblemon_pokestops.fabric.datagen;
 
 import dev.matthiesen.cobblemon_pokestops.common.translations.GlobalTranslations;
-import dev.matthiesen.cobblemon_pokestops.fabric.worldgen.CobblemonPokestopsConfiguredFeatures;
-import dev.matthiesen.cobblemon_pokestops.fabric.worldgen.CobblemonPokestopsPlacedFeatures;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
-import net.minecraft.core.RegistrySetBuilder;
-import net.minecraft.core.registries.Registries;
 
 public class DataGenerator implements DataGeneratorEntrypoint {
     @Override
@@ -27,11 +23,5 @@ public class DataGenerator implements DataGeneratorEntrypoint {
             pack.addProvider((dataOutput, registryLookup) ->
                     new UniversalLanguageProvider(dataOutput, registryLookup, locale));
         }
-    }
-
-    @Override
-    public void buildRegistry(RegistrySetBuilder registryBuilder) {
-        registryBuilder.add(Registries.CONFIGURED_FEATURE, CobblemonPokestopsConfiguredFeatures::bootstrap);
-        registryBuilder.add(Registries.PLACED_FEATURE, CobblemonPokestopsPlacedFeatures::bootstrap);
     }
 }
