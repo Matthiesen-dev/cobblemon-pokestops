@@ -6,7 +6,7 @@
       "weight": 1,
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "cobblemon_pokestops:winged_stop_blue",
+        "location": "cobblemon_pokestops:wingedstop/blue",
         "processors": "minecraft:empty",
         "projection": "rigid"
       }
@@ -15,7 +15,7 @@
       "weight": 1,
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "cobblemon_pokestops:winged_stop_gold",
+        "location": "cobblemon_pokestops:wingedstop/gold",
         "processors": "minecraft:empty",
         "projection": "rigid"
       }
@@ -24,7 +24,7 @@
       "weight": 1,
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "cobblemon_pokestops:winged_stop_green",
+        "location": "cobblemon_pokestops:wingedstop/green",
         "processors": "minecraft:empty",
         "projection": "rigid"
       }

@@ -22,7 +22,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Optional;
 
-public class StopRemover extends Item {
+public final class StopRemover extends Item {
     private static final String CONFIRM_DATA = "StopRemoverConfirm";
     private static final String KEY_X = "x";
     private static final String KEY_Y = "y";

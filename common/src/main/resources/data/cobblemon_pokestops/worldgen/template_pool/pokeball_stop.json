@@ -6,7 +6,7 @@
       "weight": 1,
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "cobblemon_pokestops:pokeball_stop_master",
+        "location": "cobblemon_pokestops:pokeballstop/master",
         "processors": "minecraft:empty",
         "projection": "rigid"
       }
@@ -15,7 +15,7 @@
       "weight": 1,
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "cobblemon_pokestops:pokeball_stop_ultra",
+        "location": "cobblemon_pokestops:pokeballstop/ultra",
         "processors": "minecraft:empty",
         "projection": "rigid"
       }
@@ -24,7 +24,7 @@
       "weight": 1,
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "cobblemon_pokestops:pokeball_stop_premier",
+        "location": "cobblemon_pokestops:pokeballstop/premier",
         "processors": "minecraft:empty",
         "projection": "rigid"
       }
@@ -33,7 +33,7 @@
       "weight": 1,
       "element": {
         "element_type": "minecraft:single_pool_element",
-        "location": "cobblemon_pokestops:pokeball_stop_park",
+        "location": "cobblemon_pokestops:pokeballstop/park",
         "processors": "minecraft:empty",
         "projection": "rigid"
       }
