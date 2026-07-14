@@ -14,7 +14,7 @@
     },
     "icon": {
       "count": 1,
-      "id": "cobblemon_pokestops:pokeballstop_masterball"
+      "id": "cobblemon_pokestops:healingstop"
     },
     "title": {
       "translate": "advancements.cobblemon_pokestops.used_25_healingstops.title"
