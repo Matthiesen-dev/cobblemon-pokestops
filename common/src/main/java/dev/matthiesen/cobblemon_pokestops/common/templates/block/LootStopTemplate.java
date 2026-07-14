@@ -84,10 +84,10 @@ public abstract class LootStopTemplate extends BaseStopTemplate {
                 .append(stack.getDisplayName().copy().withStyle(stack.getRarity().color()))
                 .append(Component.literal("!"));
 
-        if (CobblemonPokestopsCommon.INSTANCE.getConfig().enableGlobalBroadcast) {
+        if (CobblemonPokestopsCommon.INSTANCE.getConfig().broadcastSettings.enableGlobalBroadcast) {
             player.server.getPlayerList().broadcastSystemMessage(message, false);
         } else {
-            double radius = CobblemonPokestopsCommon.INSTANCE.getConfig().localBroadcastRadius;
+            double radius = CobblemonPokestopsCommon.INSTANCE.getConfig().broadcastSettings.localBroadcastRadius;
             for (ServerPlayer nearbyPlayer : player.serverLevel().players()) {
                 if (nearbyPlayer.distanceToSqr(player) < radius * radius) {
                     nearbyPlayer.sendSystemMessage(message);
