@@ -19,6 +19,7 @@ public class AdvancementRegistry {
         ItemStack pokestopDisplay = new ItemStack(BlockRegistry.POKESTOPS.get("pokestop").get());
         ItemStack wingedPokestopDisplay = new ItemStack(BlockRegistry.WINGEDSTOPS.get("wingedstop").get());
         ItemStack pokeballstopDisplay = new ItemStack(BlockRegistry.POKEBALLSTOPS.get("pokeballstop_parkball").get());
+        ItemStack healingstopDisplay = new ItemStack(BlockRegistry.HEALINGSTOPS.get("healingstop").get());
 
         ItemStack oneHundredPlusPokestopDisplay = new ItemStack(BlockRegistry.POKESTOPS.get("pokestop_green").get());
         ItemStack oneHundredPlusWingedPokestopDisplay = new ItemStack(BlockRegistry.WINGEDSTOPS.get("wingedstop_green").get());
@@ -75,7 +76,7 @@ public class AdvancementRegistry {
         );
 
         AdvancementHolder usedOnceHealingStop = createChildAdvancement(
-                challengePokeballstopDisplay,
+                healingstopDisplay,
                 "advancements.cobblemon_pokestops.used_healingstop.title",
                 "advancements.cobblemon_pokestops.used_healingstop.description",
                 AdvancementType.GOAL,
@@ -121,7 +122,7 @@ public class AdvancementRegistry {
         );
 
         AdvancementHolder used25Healingstops = createChildAdvancement(
-                challengePokeballstopDisplay,
+                healingstopDisplay,
                 "advancements.cobblemon_pokestops.used_25_healingstops.title",
                 "advancements.cobblemon_pokestops.used_25_healingstops.description",
                 AdvancementType.TASK,
@@ -167,7 +168,7 @@ public class AdvancementRegistry {
         );
 
         AdvancementHolder used50Healingstops = createChildAdvancement(
-                challengePokeballstopDisplay,
+                healingstopDisplay,
                 "advancements.cobblemon_pokestops.used_50_healingstops.title",
                 "advancements.cobblemon_pokestops.used_50_healingstops.description",
                 AdvancementType.TASK,
@@ -213,7 +214,7 @@ public class AdvancementRegistry {
         );
 
         AdvancementHolder used100Healingstops = createChildAdvancement(
-                challengePokeballstopDisplay,
+                healingstopDisplay,
                 "advancements.cobblemon_pokestops.used_100_healingstops.title",
                 "advancements.cobblemon_pokestops.used_100_healingstops.description",
                 AdvancementType.GOAL,
@@ -259,7 +260,7 @@ public class AdvancementRegistry {
         );
 
         AdvancementHolder used200Healingstops = createChildAdvancement(
-                challengePokeballstopDisplay,
+                healingstopDisplay,
                 "advancements.cobblemon_pokestops.used_200_healingstops.title",
                 "advancements.cobblemon_pokestops.used_200_healingstops.description",
                 AdvancementType.TASK,
@@ -305,7 +306,7 @@ public class AdvancementRegistry {
         );
 
         AdvancementHolder used300Healingstops = createChildAdvancement(
-                challengePokeballstopDisplay,
+                healingstopDisplay,
                 "advancements.cobblemon_pokestops.used_300_healingstops.title",
                 "advancements.cobblemon_pokestops.used_300_healingstops.description",
                 AdvancementType.TASK,
@@ -351,7 +352,7 @@ public class AdvancementRegistry {
         );
 
         AdvancementHolder used400Healingstops = createChildAdvancement(
-                challengePokeballstopDisplay,
+                healingstopDisplay,
                 "advancements.cobblemon_pokestops.used_400_healingstops.title",
                 "advancements.cobblemon_pokestops.used_400_healingstops.description",
                 AdvancementType.TASK,
@@ -401,7 +402,7 @@ public class AdvancementRegistry {
         );
 
         AdvancementHolder used500Healingstops =  createChildAdvancementWithRewards(
-                challengePokeballstopDisplay,
+                healingstopDisplay,
                 "advancements.cobblemon_pokestops.used_500_healingstops.title",
                 "advancements.cobblemon_pokestops.used_500_healingstops.description",
                 AdvancementType.CHALLENGE,

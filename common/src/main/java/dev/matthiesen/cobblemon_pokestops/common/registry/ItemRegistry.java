@@ -1,19 +1,21 @@
 package dev.matthiesen.cobblemon_pokestops.common.registry;
 
 import dev.matthiesen.cobblemon_pokestops.common.CobblemonPokestopsCommon;
+import dev.matthiesen.cobblemon_pokestops.common.item.StopRemover;
 import dev.matthiesen.cobblemon_pokestops.common.item.stops.*;
 import dev.matthiesen.cobblemon_pokestops.common.item.trophies.*;
 import dev.matthiesen.cobblemon_pokestops.common.templates.item.StopItemTemplate;
 import dev.matthiesen.common.matthiesen_lib.core.MatthiesenLibCreativeModeTabSectionsManager;
 import dev.matthiesen.common.matthiesen_lib.registry.AbstractItemRegistry;
+import net.minecraft.data.models.model.ModelTemplate;
+import net.minecraft.data.models.model.ModelTemplates;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.block.Block;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
@@ -41,6 +43,8 @@ public class ItemRegistry extends AbstractItemRegistry {
     public static Map<String, Supplier<? extends StopItemTemplate>> POKEBALLSTOP_TROPHY_ITEMS = new HashMap<>();
     public static Map<String, Supplier<? extends StopItemTemplate>> HEALINGSTOP_TROPHY_ITEMS = new HashMap<>();
 
+    public static final Supplier<Item> STOP_REMOVER = registerItem("stop_remover", StopRemover::new);
+
     public static Supplier<ItemStack> getPokestopsCreativeTabIcon() {
         return () -> new ItemStack(POKESTOP_ITEMS.get("pokestop").get());
     }
@@ -49,6 +53,7 @@ public class ItemRegistry extends AbstractItemRegistry {
         for (var entry : ALL_POKESTOPS.entrySet()) {
             builder.addItemToSection(resourceLocation, new ItemStack(entry.getValue().get()));
         }
+        builder.addItemToSection(resourceLocation, new ItemStack(STOP_REMOVER.get()));
     }
 
     public static void addTrophiesToCreativeMenu(MatthiesenLibCreativeModeTabSectionsManager.SectionBuilder builder, ResourceLocation resourceLocation) {
@@ -127,4 +132,16 @@ public class ItemRegistry extends AbstractItemRegistry {
     private static <T extends Item> Supplier<T> registerItem(String id, Supplier<T> item) {
         return INSTANCE.register(id, item);
     }
+
+    // --- Datagen ---
+
+    public static Collection<DataTemplate> getAllTemplates() {
+        List<DataTemplate> templates = new ArrayList<>();
+
+        templates.add(new DataTemplate(STOP_REMOVER, ModelTemplates.FLAT_ITEM));
+
+        return templates;
+    }
+
+    public record DataTemplate(Supplier<? extends Item> itemSupplier, ModelTemplate modelTemplate) {}
 }

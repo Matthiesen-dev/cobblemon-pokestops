@@ -22,7 +22,7 @@ public class Healingstop extends CommandStopTemplate {
 
     @Override
     protected int getCooldownSeconds() {
-        return CobblemonPokestopsCommon.INSTANCE.getConfig().healingstopCooldownSeconds;
+        return CobblemonPokestopsCommon.INSTANCE.getConfig().cooldowns.healingstops;
     }
 
     @Override

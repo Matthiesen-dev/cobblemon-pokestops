@@ -1,0 +1,26 @@
+{
+  "structures": [
+    {
+      "structure": "cobblemon_pokestops:healing_stop",
+      "weight": 4
+    },
+    {
+      "structure": "cobblemon_pokestops:poke_stop",
+      "weight": 10
+    },
+    {
+      "structure": "cobblemon_pokestops:pokeball_stop",
+      "weight": 10
+    },
+    {
+      "structure": "cobblemon_pokestops:winged_stop",
+      "weight": 8
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 24,
+    "separation": 8,
+    "salt": 16545746
+  }
+}

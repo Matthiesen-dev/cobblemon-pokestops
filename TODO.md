@@ -72,9 +72,6 @@
 > Note: These features are planned for future updates and may require significant development time. They are not guaranteed to be implemented, but they represent potential directions for expanding the Pokestop system in the future.
 > If you have any suggestions or ideas for additional features, please feel free to share them!
 
-- [ ] World Generation of Pokestops
-  - Description: Implement a system for generating Pokestops in the world, similar to how they are found in the original Pokemon games. This would involve creating a new world generation feature that places Pokestops at specific locations, such as near water or in towns.
-  - Functionality: Players would be able to find and interact with these naturally generated Pokestops, adding an element of exploration and discovery to the game.
 - [ ] Additional Pokestop Types
   - Description: Introduce more unique Pokestop types with different functionalities and rewards, such as a Battle Pokestop that provides temporary buffs for battles or a Trade Pokestop that allows players to trade items or Pokemon with each other.
   - Functionality: Each new Pokestop type would have its own unique design, rewards, and cooldown times, providing players with a variety of options to choose from when interacting with Pokestops in the world.

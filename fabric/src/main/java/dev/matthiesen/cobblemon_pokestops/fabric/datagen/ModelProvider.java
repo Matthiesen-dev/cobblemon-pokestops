@@ -1,6 +1,7 @@
 package dev.matthiesen.cobblemon_pokestops.fabric.datagen;
 
 import dev.matthiesen.cobblemon_pokestops.common.registry.BlockRegistry;
+import dev.matthiesen.cobblemon_pokestops.common.registry.ItemRegistry;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.models.BlockModelGenerators;
@@ -20,5 +21,8 @@ public class ModelProvider extends FabricModelProvider {
 
     @Override
     public void generateItemModels(ItemModelGenerators itemModelGenerator) {
+        for (var entry : ItemRegistry.getAllTemplates()) {
+            itemModelGenerator.generateFlatItem(entry.itemSupplier().get(), entry.modelTemplate());
+        }
     }
 }
