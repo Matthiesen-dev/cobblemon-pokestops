@@ -2,19 +2,19 @@
   "structures": [
     {
       "structure": "cobblemon_pokestops:healing_stop",
-      "weight": 1
+      "weight": 4
     },
     {
       "structure": "cobblemon_pokestops:poke_stop",
-      "weight": 1
+      "weight": 10
     },
     {
       "structure": "cobblemon_pokestops:pokeball_stop",
-      "weight": 1
+      "weight": 10
     },
     {
       "structure": "cobblemon_pokestops:winged_stop",
-      "weight": 1
+      "weight": 8
     }
   ],
   "placement": {
