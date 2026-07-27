@@ -1,7 +1,5 @@
 package dev.matthiesen.cobblemon_pokestops.common.config;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
@@ -62,10 +60,4 @@ public final class PokestopsConfig {
         @SerializedName("confirmWindowSeconds")
         public int confirmWindowSeconds = 5;
     }
-
-    @SuppressWarnings("unused")
-    public static final Gson GSON = new GsonBuilder()
-            .disableHtmlEscaping()
-            .setPrettyPrinting()
-            .create();
 }

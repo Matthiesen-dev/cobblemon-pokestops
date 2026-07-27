@@ -3,15 +3,20 @@ package dev.matthiesen.cobblemon_pokestops.neoforge;
 import dev.matthiesen.cobblemon_pokestops.common.CobblemonPokestopsCommon;
 import dev.matthiesen.cobblemon_pokestops.common.CobblemonPokestopsCommonClient;
 import net.neoforged.api.distmarker.Dist;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 
-@EventBusSubscriber(modid = CobblemonPokestopsCommon.MOD_ID, value = Dist.CLIENT)
+@Mod(value = CobblemonPokestopsCommon.MOD_ID, dist = Dist.CLIENT)
 public class CobblemonPokestopsNeoForgeClient {
-    @SubscribeEvent
-    public static void registerRenderers(final EntityRenderersEvent.RegisterRenderers event) {
-        var instance = CobblemonPokestopsCommonClient.INSTANCE;
-        instance.initialize();
+    public static final CobblemonPokestopsCommonClient INSTANCE = CobblemonPokestopsCommonClient.INSTANCE;
+
+    public CobblemonPokestopsNeoForgeClient(IEventBus modBus) {
+        modBus.addListener(this::registerRenderers);
+        INSTANCE.initialize();
+    }
+
+    public void registerRenderers(final EntityRenderersEvent.RegisterRenderers event) {
+        INSTANCE.initializeRenderers();
     }
 }

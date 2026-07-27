@@ -8,5 +8,6 @@ public class CobblemonPokestopsFabricClient implements ClientModInitializer {
     public void onInitializeClient() {
         var instance = CobblemonPokestopsCommonClient.INSTANCE;
         instance.initialize();
+        instance.initializeRenderers();
     }
 }

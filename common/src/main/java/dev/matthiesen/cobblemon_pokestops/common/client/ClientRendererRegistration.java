@@ -11,6 +11,7 @@ import dev.matthiesen.cobblemon_pokestops.common.registry.BlockEntityRegistry;
 import dev.matthiesen.cobblemon_pokestops.common.registry.BlockRegistry;
 import dev.matthiesen.cobblemon_pokestops.common.registry.ItemRegistry;
 import dev.matthiesen.cobblemon_pokestops.common.templates.item.StopItemTemplate;
+import dev.matthiesen.matthiesen_core.common.api.events.PlatformClientEvents;
 import net.minecraft.client.Camera;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
@@ -18,6 +19,7 @@ import net.minecraft.client.renderer.LevelRenderer;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.BlockPos;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
@@ -75,7 +77,7 @@ public final class ClientRendererRegistration {
                 item.get().renderProviderHolder.setValue(makeRendererProvider(new HealingstopTrophyItemRenderer())));
 
         // Register Block Entity Renderers
-        CobblemonPokestopsCommonClient.INSTANCE.registerEntityRenderers(registry -> {
+        CobblemonPokestopsCommonClient.INSTANCE.getEntityRendererManager().registerEntityRenderers(registry -> {
             registry.registerBlockEntityRenderer(BlockEntityRegistry.POKESTOP_BE.get(), context -> new PokestopRenderer());
             registry.registerBlockEntityRenderer(BlockEntityRegistry.WINGEDSTOP_BE.get(), context -> new WingedstopRenderer());
             registry.registerBlockEntityRenderer(BlockEntityRegistry.POKEBALLSTOP_BE.get(), context -> new PokeballstopRenderer());
@@ -88,11 +90,12 @@ public final class ClientRendererRegistration {
         });
 
         // Register Block Outline Listener
-        CobblemonPokestopsCommonClient.INSTANCE.registerBlockOutlineListener(context -> {
+        PlatformClientEvents.BLOCK_HIGHLIGHT.subscribe(event -> {
+            var context = event.context();
             ClientLevel level = context.level();
             BlockPos basePos = getBasePos(level, context.blockHitResult().getBlockPos());
 
-            if (basePos == null) return true;
+            if (basePos == null) return InteractionResult.PASS;
 
             PoseStack poseStack = context.poseStack();
             MultiBufferSource bufferSource = context.multiBufferSource();
@@ -110,8 +113,7 @@ public final class ClientRendererRegistration {
                     x, y, z,
                     0.0F, 0.0F, 0.0F, 0.4F, false
             );
-
-            return false;
+            return InteractionResult.FAIL;
         });
     }
 

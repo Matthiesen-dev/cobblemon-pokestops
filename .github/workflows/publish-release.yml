@@ -19,8 +19,7 @@ env:
   MODRINTH_DEPENDENCIES: |-
     [
       {"project_id":"MdwFAVRL","dependency_type":"required"},
-      {"project_id":"j2JrSWnx","dependency_type":"required"},
-      {"project_id":"cPmFkPpB","dependency_type":"required"},
+      {"project_id":"sqEZOmQo","dependency_type":"required"},
       {"project_id":"8BmcQJ2H","dependency_type":"required"},
       {"project_id":"nvQzSEkH","dependency_type":"optional"}
     ]
@@ -28,8 +27,7 @@ env:
 
 # The dependencies above correspond to:
 # - Cobblemon (MdwFAVRL)
-# - Matthiesen Lib API (j2JrSWnx)
-# - Matthiesen Lib (cPmFkPpB)
+# - Matthiesen Core (sqEZOmQo)
 # - Geckolib (8BmcQJ2H)
 # - Jade (nvQzSEkH)
 

@@ -1,7 +1,7 @@
 package dev.matthiesen.cobblemon_pokestops.common.registry;
 
 import dev.matthiesen.cobblemon_pokestops.common.CobblemonPokestopsCommon;
-import dev.matthiesen.common.matthiesen_lib.registry.AbstractStatsRegistry;
+import dev.matthiesen.matthiesen_core.common.registry.AbstractStatsRegistry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.stats.Stat;
 import net.minecraft.stats.Stats;

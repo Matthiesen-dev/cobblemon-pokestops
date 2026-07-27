@@ -1,6 +1,6 @@
 package dev.matthiesen.cobblemon_pokestops.common.templates.block;
 
-import dev.matthiesen.common.matthiesen_lib.utility.RunSlashCommand;
+import dev.matthiesen.matthiesen_core.common.utility.commands.RunSlashCommand;
 import net.minecraft.server.level.ServerPlayer;
 import org.jetbrains.annotations.NotNull;
 

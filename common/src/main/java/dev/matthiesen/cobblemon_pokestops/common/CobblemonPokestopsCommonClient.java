@@ -1,7 +1,7 @@
 package dev.matthiesen.cobblemon_pokestops.common;
 
 import dev.matthiesen.cobblemon_pokestops.common.client.ClientRendererRegistration;
-import dev.matthiesen.common.matthiesen_lib.abstracts.AbstractCommonClientMod;
+import dev.matthiesen.matthiesen_core.common.AbstractCommonClientMod;
 
 public final class CobblemonPokestopsCommonClient extends AbstractCommonClientMod {
     public static final CobblemonPokestopsCommonClient INSTANCE = new CobblemonPokestopsCommonClient();
@@ -12,6 +12,9 @@ public final class CobblemonPokestopsCommonClient extends AbstractCommonClientMo
 
     @Override
     public void initialize() {
+    }
+
+    public void initializeRenderers() {
         ClientRendererRegistration.initializeRenderers();
     }
 }

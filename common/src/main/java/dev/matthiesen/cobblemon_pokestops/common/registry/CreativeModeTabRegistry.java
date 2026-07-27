@@ -1,7 +1,7 @@
 package dev.matthiesen.cobblemon_pokestops.common.registry;
 
 import dev.matthiesen.cobblemon_pokestops.common.CobblemonPokestopsCommon;
-import dev.matthiesen.common.matthiesen_lib.registry.AbstractCreativeModeTabRegistry;
+import dev.matthiesen.matthiesen_core.common.registry.AbstractCreativeModeTabRegistry;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;

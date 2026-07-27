@@ -5,7 +5,7 @@ import dev.matthiesen.cobblemon_pokestops.common.block.dummy.*;
 import dev.matthiesen.cobblemon_pokestops.common.block.stops.*;
 import dev.matthiesen.cobblemon_pokestops.common.block.trophies.*;
 import dev.matthiesen.cobblemon_pokestops.common.templates.block.*;
-import dev.matthiesen.common.matthiesen_lib.registry.AbstractBlockRegistry;
+import dev.matthiesen.matthiesen_core.common.registry.AbstractBlockRegistry;
 import net.minecraft.world.level.block.Block;
 
 import java.util.*;

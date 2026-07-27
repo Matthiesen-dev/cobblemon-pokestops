@@ -3,9 +3,10 @@ package dev.matthiesen.cobblemon_pokestops.common;
 import dev.matthiesen.cobblemon_pokestops.common.config.PokestopsConfig;
 import dev.matthiesen.cobblemon_pokestops.common.registry.*;
 import dev.matthiesen.cobblemon_pokestops.common.translations.GlobalTranslations;
-import dev.matthiesen.common.matthiesen_lib_api.abstracts.AbstractCommonMod;
-import dev.matthiesen.common.matthiesen_lib_api.config.ConfigManager;
 import dev.matthiesen.libs.faststats.Token;
+import dev.matthiesen.matthiesen_core.common.AbstractCommonMod;
+import dev.matthiesen.matthiesen_core.common.api.events.PlatformEvents;
+import dev.matthiesen.matthiesen_core.common.utility.config.ConfigManager;
 import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
 
@@ -38,7 +39,7 @@ public final class CobblemonPokestopsCommon extends AbstractCommonMod {
     @Override
     public void initialize() {
         super.initialize();
-        reload().run();
+        CONFIG_MANAGER.loadConfig();
 
         GlobalTranslations.init();
         SoundRegistry.init();
@@ -49,15 +50,12 @@ public final class CobblemonPokestopsCommon extends AbstractCommonMod {
         CreativeModeTabRegistry.init();
         CriterionTriggerRegistry.init();
 
-        createInfoLog("Initialized Cobblemon Pokestops Common");
-    }
-
-    @Override
-    public Runnable reload() {
-        return () -> {
+        PlatformEvents.SERVER_RELOAD.subscribe(event -> {
             CONFIG_MANAGER.loadConfig();
             createInfoLog("Reloaded config");
-        };
+        });
+
+        createInfoLog("Initialized Cobblemon Pokestops Common");
     }
 
     @Override
