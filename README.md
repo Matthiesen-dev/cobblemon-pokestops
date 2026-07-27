@@ -2,8 +2,8 @@
 
 <div>
   <img src="https://mods.matthiesen.dev/badges/matthiesenCore.svg" alt="Matthiesen Core">
-  <img src="https://mods.matthiesen.dev/badges/geckolib.svg" alt="GeckoLib">
   <img src="https://mods.matthiesen.dev/badges/cobblemon.svg" alt="Cobblemon">
+  <img src="https://mods.matthiesen.dev/badges/geckolib.svg" alt="GeckoLib">
 </div>
 
 This mod adds Pokemon GO inspired Pokestops to Cobblemon. Pokestops can be used to get items, and they have a cooldown period after being used.
