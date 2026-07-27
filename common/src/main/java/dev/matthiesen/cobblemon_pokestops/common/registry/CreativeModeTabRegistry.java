@@ -8,7 +8,7 @@ import net.minecraft.world.item.CreativeModeTab;
 
 import java.util.function.Supplier;
 
-public class CreativeModeTabRegistry extends AbstractCreativeModeTabRegistry {
+public final class CreativeModeTabRegistry extends AbstractCreativeModeTabRegistry {
     private static final CreativeModeTabRegistry INSTANCE = new CreativeModeTabRegistry();
 
     private static final ResourceLocation POKESTOPS_TAB_ID = CobblemonPokestopsCommon.modResource("cobblemon_pokestops_tab");

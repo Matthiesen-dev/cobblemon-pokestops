@@ -7,7 +7,7 @@ import net.minecraft.core.HolderLookup;
 
 import java.util.concurrent.CompletableFuture;
 
-public class BlockLootTableProvider extends FabricBlockLootTableProvider {
+public final class BlockLootTableProvider extends FabricBlockLootTableProvider {
     public BlockLootTableProvider(FabricDataOutput dataOutput, CompletableFuture<HolderLookup.Provider> registryLookup) {
         super(dataOutput, registryLookup);
     }

@@ -12,8 +12,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Supplier;
 
-public class ModTags {
-    public static class Blocks {
+public final class ModTags {
+    public static final class Blocks {
         public static final TagKey<Block> POKESTOPS = createTag("pokestops");
         public static final TagKey<Block> WINGEDSTOPS = createTag("wingedstops");
         public static final TagKey<Block> POKEBALLSTOPS = createTag("pokeballstops");
@@ -31,7 +31,7 @@ public class ModTags {
         }
     }
 
-    public static class Items {
+    public static final class Items {
         public static final TagKey<Item> STOP_INTERACTION_TOOLS = createTag("stop_interaction_tools");
 
         @SuppressWarnings("SameParameterValue")

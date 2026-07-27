@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class EnUsTranslations {
+public final class EnUsTranslations {
     private static final TranslationBuilder TRANSLATIONS = new TranslationBuilder("en_us");
 
     private static final Map<String, String> SPINNER_MESSAGE_VARIANTS = Map.of(

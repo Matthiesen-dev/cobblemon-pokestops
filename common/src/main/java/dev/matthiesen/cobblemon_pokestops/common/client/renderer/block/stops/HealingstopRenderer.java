@@ -5,7 +5,7 @@ import dev.matthiesen.cobblemon_pokestops.common.block.entity.stops.HealingstopE
 import software.bernie.geckolib.renderer.GeoBlockRenderer;
 import software.bernie.geckolib.renderer.layer.AutoGlowingGeoLayer;
 
-public class HealingstopRenderer extends GeoBlockRenderer<HealingstopEntity> {
+public final class HealingstopRenderer extends GeoBlockRenderer<HealingstopEntity> {
     public HealingstopRenderer() {
         super(new HealingstopModel());
         addRenderLayer(new AutoGlowingGeoLayer<>(this));

@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Supplier;
 
-public class WingedstopTrophy extends TrophyTemplate {
+public final class WingedstopTrophy extends TrophyTemplate {
     @Override
     protected Supplier<? extends net.minecraft.world.level.block.entity.BlockEntityType<?>> getEntityType() {
         return BlockEntityRegistry.WINGEDSTOP_TROPHY_BE;

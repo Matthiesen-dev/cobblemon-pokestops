@@ -5,7 +5,7 @@ import dev.matthiesen.cobblemon_pokestops.common.item.trophies.PokeballstopTroph
 import software.bernie.geckolib.renderer.GeoItemRenderer;
 import software.bernie.geckolib.renderer.layer.AutoGlowingGeoLayer;
 
-public class PokeballstopTrophyItemRenderer extends GeoItemRenderer<PokeballstopTrophyItem> {
+public final class PokeballstopTrophyItemRenderer extends GeoItemRenderer<PokeballstopTrophyItem> {
     public PokeballstopTrophyItemRenderer() {
         super(new PokeballstopTrophyItemModel());
         addRenderLayer(new AutoGlowingGeoLayer<>(this));

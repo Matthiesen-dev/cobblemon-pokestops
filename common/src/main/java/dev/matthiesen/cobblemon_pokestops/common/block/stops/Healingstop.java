@@ -14,7 +14,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Supplier;
 
-public class Healingstop extends CommandStopTemplate {
+public final class Healingstop extends CommandStopTemplate {
     @Override
     protected Supplier<? extends net.minecraft.world.level.block.entity.BlockEntityType<?>> getEntityType() {
         return BlockEntityRegistry.HEALINGSTOP_BE;

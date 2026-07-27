@@ -16,7 +16,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Supplier;
 
-public class Pokeballstop extends LootStopTemplate {
+public final class Pokeballstop extends LootStopTemplate {
     @Override
     protected Supplier<? extends net.minecraft.world.level.block.entity.BlockEntityType<?>> getEntityType() {
         return BlockEntityRegistry.POKEBALLSTOP_BE;

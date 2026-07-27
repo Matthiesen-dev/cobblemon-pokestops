@@ -6,7 +6,7 @@ import dev.matthiesen.cobblemon_pokestops.common.translations.util.TranslationBu
 import java.util.HashMap;
 import java.util.Map;
 
-public class GlobalTranslations {
+public final class GlobalTranslations {
     public static final Map<String, TranslationBuilder> TRANSLATIONS = new HashMap<>();
     public static boolean initialized;
 

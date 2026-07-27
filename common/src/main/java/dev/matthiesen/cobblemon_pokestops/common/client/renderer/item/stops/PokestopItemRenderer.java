@@ -4,7 +4,7 @@ import dev.matthiesen.cobblemon_pokestops.common.client.model.item.stops.Pokesto
 import dev.matthiesen.cobblemon_pokestops.common.item.stops.PokestopItem;
 import software.bernie.geckolib.renderer.GeoItemRenderer;
 
-public class PokestopItemRenderer extends GeoItemRenderer<PokestopItem> {
+public final class PokestopItemRenderer extends GeoItemRenderer<PokestopItem> {
     public PokestopItemRenderer() {
         super(new PokestopItemModel());
     }

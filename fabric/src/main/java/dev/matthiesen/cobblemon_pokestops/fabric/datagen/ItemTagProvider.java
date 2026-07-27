@@ -8,7 +8,7 @@ import net.minecraft.core.HolderLookup;
 
 import java.util.concurrent.CompletableFuture;
 
-public class ItemTagProvider extends FabricTagProvider.ItemTagProvider {
+public final class ItemTagProvider extends FabricTagProvider.ItemTagProvider {
     public ItemTagProvider(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
         super(output, registriesFuture);
     }

@@ -5,7 +5,7 @@ import dev.matthiesen.cobblemon_pokestops.common.block.entity.stops.Pokeballstop
 import software.bernie.geckolib.renderer.GeoBlockRenderer;
 import software.bernie.geckolib.renderer.layer.AutoGlowingGeoLayer;
 
-public class PokeballstopRenderer extends GeoBlockRenderer<PokeballstopEntity> {
+public final class PokeballstopRenderer extends GeoBlockRenderer<PokeballstopEntity> {
     public PokeballstopRenderer() {
         super(new PokeballstopModel());
         addRenderLayer(new AutoGlowingGeoLayer<>(this));

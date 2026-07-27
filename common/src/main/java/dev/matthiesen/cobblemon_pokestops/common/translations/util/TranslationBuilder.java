@@ -3,7 +3,7 @@ package dev.matthiesen.cobblemon_pokestops.common.translations.util;
 import java.util.HashMap;
 import java.util.Map;
 
-public class TranslationBuilder {
+public final class TranslationBuilder {
     private final String locale;
     private final Map<String, String> translations;
 

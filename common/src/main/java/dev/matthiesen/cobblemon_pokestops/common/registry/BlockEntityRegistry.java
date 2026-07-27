@@ -13,7 +13,7 @@ import java.util.Map;
 import java.util.function.BiFunction;
 import java.util.function.Supplier;
 
-public class BlockEntityRegistry extends AbstractBlockEntityRegistry {
+public final class BlockEntityRegistry extends AbstractBlockEntityRegistry {
     private static final BlockEntityRegistry INSTANCE = new BlockEntityRegistry();
 
     private BlockEntityRegistry() {

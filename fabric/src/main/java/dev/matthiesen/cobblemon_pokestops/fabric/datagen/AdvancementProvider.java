@@ -9,7 +9,7 @@ import net.minecraft.core.HolderLookup;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Consumer;
 
-public class AdvancementProvider extends FabricAdvancementProvider {
+public final class AdvancementProvider extends FabricAdvancementProvider {
     public AdvancementProvider(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registryLookup) {
         super(output, registryLookup);
     }

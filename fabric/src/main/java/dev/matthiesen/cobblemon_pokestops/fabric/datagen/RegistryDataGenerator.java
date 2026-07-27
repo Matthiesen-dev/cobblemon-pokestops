@@ -8,7 +8,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.concurrent.CompletableFuture;
 
-public class RegistryDataGenerator extends FabricDynamicRegistryProvider {
+public final class RegistryDataGenerator extends FabricDynamicRegistryProvider {
     public RegistryDataGenerator(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
         super(output, registriesFuture);
     }

@@ -10,7 +10,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Optional;
 
-public class UsedPokestopCriterion extends SimpleCriterionTrigger<UsedPokestopCriterion.Conditions> {
+public final class UsedPokestopCriterion extends SimpleCriterionTrigger<UsedPokestopCriterion.Conditions> {
 
     @Override
     public @NotNull Codec<Conditions> codec() {

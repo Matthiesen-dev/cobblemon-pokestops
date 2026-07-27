@@ -6,7 +6,7 @@ import net.minecraft.sounds.SoundEvent;
 
 import java.util.function.Supplier;
 
-public class SoundRegistry extends AbstractSoundRegistry {
+public final class SoundRegistry extends AbstractSoundRegistry {
     private static final SoundRegistry INSTANCE = new SoundRegistry();
 
     private SoundRegistry() {

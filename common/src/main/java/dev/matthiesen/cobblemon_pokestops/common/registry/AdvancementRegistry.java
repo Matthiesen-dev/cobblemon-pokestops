@@ -13,7 +13,7 @@ import net.minecraft.world.item.ItemStack;
 import java.util.Optional;
 import java.util.function.Consumer;
 
-public class AdvancementRegistry {
+public final class AdvancementRegistry {
     @SuppressWarnings("unused")
     public static void generateAdvancement(HolderLookup.Provider registryLookup, Consumer<AdvancementHolder> consumer) {
         ItemStack pokestopDisplay = new ItemStack(BlockRegistry.POKESTOPS.get("pokestop").get());

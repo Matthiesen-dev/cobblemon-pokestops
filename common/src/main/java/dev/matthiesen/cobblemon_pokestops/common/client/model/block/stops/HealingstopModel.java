@@ -7,7 +7,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Player;
 import org.jetbrains.annotations.NotNull;
 
-public class HealingstopModel extends StopModelTemplate<HealingstopEntity> {
+public final class HealingstopModel extends StopModelTemplate<HealingstopEntity> {
     @Override
     protected String getModelName() {
         return "healingstop";

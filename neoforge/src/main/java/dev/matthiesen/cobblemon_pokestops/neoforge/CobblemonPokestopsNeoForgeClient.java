@@ -8,7 +8,7 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 
 @Mod(value = CobblemonPokestopsCommon.MOD_ID, dist = Dist.CLIENT)
-public class CobblemonPokestopsNeoForgeClient {
+public final class CobblemonPokestopsNeoForgeClient {
     public static final CobblemonPokestopsCommonClient INSTANCE = CobblemonPokestopsCommonClient.INSTANCE;
 
     public CobblemonPokestopsNeoForgeClient(IEventBus modBus) {

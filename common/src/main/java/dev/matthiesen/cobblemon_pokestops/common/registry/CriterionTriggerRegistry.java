@@ -7,7 +7,7 @@ import dev.matthiesen.matthiesen_core.common.registry.AbstractCriteriaTriggerReg
 
 import java.util.function.Supplier;
 
-public class CriterionTriggerRegistry extends AbstractCriteriaTriggerRegistry {
+public final class CriterionTriggerRegistry extends AbstractCriteriaTriggerRegistry {
     private static final CriterionTriggerRegistry INSTANCE = new CriterionTriggerRegistry();
 
     private CriterionTriggerRegistry() {

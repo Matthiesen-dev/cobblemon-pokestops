@@ -7,7 +7,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Player;
 import org.jetbrains.annotations.NotNull;
 
-public class PokestopModel extends StopModelTemplate<PokestopEntity> {
+public final class PokestopModel extends StopModelTemplate<PokestopEntity> {
     @Override
     protected String getModelName() {
         return "pokestop";

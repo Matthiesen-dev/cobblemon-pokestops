@@ -11,7 +11,7 @@ import net.minecraft.world.level.block.Block;
 import java.util.*;
 import java.util.function.Supplier;
 
-public class BlockRegistry extends AbstractBlockRegistry {
+public final class BlockRegistry extends AbstractBlockRegistry {
     private static final BlockRegistry INSTANCE = new BlockRegistry();
 
     private BlockRegistry() {

@@ -6,7 +6,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.state.BlockState;
 import software.bernie.geckolib.animation.RawAnimation;
 
-public class HealingstopEntity extends StopEntityTemplate {
+public final class HealingstopEntity extends StopEntityTemplate {
     private static final RawAnimation IDLE_ANIM = RawAnimation.begin()
             .thenLoop("animation.healingstop.idle_closed");
     private static final RawAnimation IDLE_COOLDOWN_ANIM = RawAnimation.begin()

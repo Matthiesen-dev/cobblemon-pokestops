@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Supplier;
 
-public class PokeballstopTrophy extends TrophyTemplate {
+public final class PokeballstopTrophy extends TrophyTemplate {
     @Override
     protected Supplier<? extends net.minecraft.world.level.block.entity.BlockEntityType<?>> getEntityType() {
         return BlockEntityRegistry.POKEBALLSTOP_TROPHY_BE;

@@ -19,7 +19,7 @@ import java.util.*;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
-public class ItemRegistry extends AbstractItemRegistry {
+public final class ItemRegistry extends AbstractItemRegistry {
     private static final ItemRegistry INSTANCE = new ItemRegistry();
 
     private ItemRegistry() {
@@ -29,19 +29,19 @@ public class ItemRegistry extends AbstractItemRegistry {
     public static void init() {}
 
     // Collections for Creative Menu
-    public static Map<String, Supplier<? extends StopItemTemplate>> ALL_POKESTOPS = new HashMap<>();
-    public static Map<String, Supplier<? extends StopItemTemplate>> ALL_TROPHIES = new HashMap<>();
+    public static final Map<String, Supplier<? extends StopItemTemplate>> ALL_POKESTOPS = new HashMap<>();
+    public static final Map<String, Supplier<? extends StopItemTemplate>> ALL_TROPHIES = new HashMap<>();
 
     // Primary Item Collections
-    public static Map<String, Supplier<? extends StopItemTemplate>> POKESTOP_ITEMS = new HashMap<>();
-    public static Map<String, Supplier<? extends StopItemTemplate>> WINGEDSTOP_ITEMS = new HashMap<>();
-    public static Map<String, Supplier<? extends StopItemTemplate>> POKEBALLSTOP_ITEMS = new HashMap<>();
-    public static Map<String, Supplier<? extends StopItemTemplate>> HEALINGSTOP_ITEMS = new HashMap<>();
+    public static final Map<String, Supplier<? extends StopItemTemplate>> POKESTOP_ITEMS = new HashMap<>();
+    public static final Map<String, Supplier<? extends StopItemTemplate>> WINGEDSTOP_ITEMS = new HashMap<>();
+    public static final Map<String, Supplier<? extends StopItemTemplate>> POKEBALLSTOP_ITEMS = new HashMap<>();
+    public static final Map<String, Supplier<? extends StopItemTemplate>> HEALINGSTOP_ITEMS = new HashMap<>();
 
-    public static Map<String, Supplier<? extends StopItemTemplate>> POKESTOP_TROPHY_ITEMS = new HashMap<>();
-    public static Map<String, Supplier<? extends StopItemTemplate>> WINGEDSTOP_TROPHY_ITEMS = new HashMap<>();
-    public static Map<String, Supplier<? extends StopItemTemplate>> POKEBALLSTOP_TROPHY_ITEMS = new HashMap<>();
-    public static Map<String, Supplier<? extends StopItemTemplate>> HEALINGSTOP_TROPHY_ITEMS = new HashMap<>();
+    public static final Map<String, Supplier<? extends StopItemTemplate>> POKESTOP_TROPHY_ITEMS = new HashMap<>();
+    public static final Map<String, Supplier<? extends StopItemTemplate>> WINGEDSTOP_TROPHY_ITEMS = new HashMap<>();
+    public static final Map<String, Supplier<? extends StopItemTemplate>> POKEBALLSTOP_TROPHY_ITEMS = new HashMap<>();
+    public static final Map<String, Supplier<? extends StopItemTemplate>> HEALINGSTOP_TROPHY_ITEMS = new HashMap<>();
 
     public static final Supplier<Item> STOP_REMOVER = registerItem("stop_remover", StopRemover::new);
 

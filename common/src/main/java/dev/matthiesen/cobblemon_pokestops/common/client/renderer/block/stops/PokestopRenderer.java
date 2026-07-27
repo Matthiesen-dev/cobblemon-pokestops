@@ -4,7 +4,7 @@ import dev.matthiesen.cobblemon_pokestops.common.client.model.block.stops.Pokest
 import dev.matthiesen.cobblemon_pokestops.common.block.entity.stops.PokestopEntity;
 import software.bernie.geckolib.renderer.GeoBlockRenderer;
 
-public class PokestopRenderer extends GeoBlockRenderer<PokestopEntity> {
+public final class PokestopRenderer extends GeoBlockRenderer<PokestopEntity> {
     public PokestopRenderer() {
         super(new PokestopModel());
     }

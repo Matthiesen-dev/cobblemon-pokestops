@@ -6,7 +6,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.state.BlockState;
 import software.bernie.geckolib.animation.RawAnimation;
 
-public class WingedstopTrophyEntity extends TrophyEntityTemplate {
+public final class WingedstopTrophyEntity extends TrophyEntityTemplate {
     private static final RawAnimation IDLE_ANIM = RawAnimation.begin()
             .thenLoop("animation.wingedstop_trophy.idle_open");
 

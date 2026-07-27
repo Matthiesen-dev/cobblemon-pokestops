@@ -8,7 +8,7 @@ import net.minecraft.stats.Stats;
 
 import java.util.function.Supplier;
 
-public class StatsRegistry extends AbstractStatsRegistry {
+public final class StatsRegistry extends AbstractStatsRegistry {
     private static final StatsRegistry INSTANCE = new StatsRegistry();
 
     public static final Supplier<ResourceLocation> POKESTOP_TIMES_SPUN;
