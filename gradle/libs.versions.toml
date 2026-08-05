@@ -12,11 +12,12 @@ kotlin-for-forge = "5.10.0"
 cobblemon = "1.7.3+1.21.1"
 junit = "5.1.0"
 publish = "0.35.0"
-matthiesen_core = "1.0.0-beta.10"
+matthiesen_core = "1.0.0-beta.37"
 sponge-mixin = "0.8.5"
 geckolib = "4.8.3"
 jade_fabric = "15.10.5+fabric"
 jade_neoforge = "15.10.5+neoforge"
+forge-config-api-port = "21.1.6"
 
 [plugins]
 shadow = { id = "com.gradleup.shadow", version.ref = "shadow" }
@@ -50,14 +51,16 @@ geckolib-fabric = { group = "software.bernie.geckolib", name = "geckolib-fabric-
 geckolib-common = { group = "software.bernie.geckolib", name = "geckolib-common-1.21.1", version.ref = "geckolib" }
 jade-fabric = { group = "maven.modrinth", name = "jade", version.ref = "jade_fabric" }
 jade-neoforge = { group = "maven.modrinth", name = "jade", version.ref = "jade_neoforge" }
+forge-config-api-port-common = { group = "fuzs.forgeconfigapiport", name = "forgeconfigapiport-common-neoforgeapi", version.ref = "forge-config-api-port" }
+forge-config-api-port-fabric = { group = "fuzs.forgeconfigapiport", name = "forgeconfigapiport-fabric", version.ref = "forge-config-api-port" }
 
 [bundles]
-commonCompileOnly = ["sponge-mixin"]
+commonCompileOnly = ["sponge-mixin", "forge-config-api-port-common"]
 commonModCompileOnly = ["jade-fabric"]
 commonImplementation = ["geckolib-common"]
 commonModImplementation = ["cobblemon-common", "matthiesen-core-common"]
 fabricCompileOnly = ["jade-fabric"]
-fabricRuntimeOnly = ["jade-fabric"]
+fabricRuntimeOnly = ["jade-fabric", "forge-config-api-port-fabric"]
 fabricModImplementation = ["fabric-loader", "fabric-api", "fabric-language-kotlin", "geckolib-fabric"]
 fabricModImplementationNoTransitive = ["cobblemon-fabric", "matthiesen-core-fabric"]
 neoforgeCompileOnly = ["jade-neoforge"]

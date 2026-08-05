@@ -1,7 +1,7 @@
 package dev.matthiesen.cobblemon_pokestops.common.block.stops;
 
+import dev.matthiesen.cobblemon_pokestops.common.config.PokestopsConfig;
 import dev.matthiesen.cobblemon_pokestops.common.templates.block.LootStopTemplate;
-import dev.matthiesen.cobblemon_pokestops.common.CobblemonPokestopsCommon;
 import dev.matthiesen.cobblemon_pokestops.common.registry.*;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -24,7 +24,7 @@ public final class Wingedstop extends LootStopTemplate {
 
     @Override
     protected int getCooldownSeconds() {
-        return CobblemonPokestopsCommon.INSTANCE.getConfig().cooldowns.wingedstops;
+        return PokestopsConfig.SERVER_CONFIG.cooldown_wingedstops.getAsInt();
     }
 
     @Override

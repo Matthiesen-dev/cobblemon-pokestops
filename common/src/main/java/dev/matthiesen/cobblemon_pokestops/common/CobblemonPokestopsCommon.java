@@ -5,8 +5,7 @@ import dev.matthiesen.cobblemon_pokestops.common.registry.*;
 import dev.matthiesen.cobblemon_pokestops.common.translations.GlobalTranslations;
 import dev.matthiesen.libs.faststats.Token;
 import dev.matthiesen.matthiesen_core.common.AbstractCommonMod;
-import dev.matthiesen.matthiesen_core.common.api.events.PlatformEvents;
-import dev.matthiesen.matthiesen_core.common.utility.config.ConfigManager;
+import dev.matthiesen.matthiesen_core.common.api.platform.loader.ModConfigType;
 import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
 
@@ -16,13 +15,6 @@ public final class CobblemonPokestopsCommon extends AbstractCommonMod {
     private static @Token final String METRICS_TOKEN = "77e42e7ca5467f1d8eb079095534aa32";
 
     public static final CobblemonPokestopsCommon INSTANCE = new CobblemonPokestopsCommon();
-
-    private static final ConfigManager<PokestopsConfig> CONFIG_MANAGER =
-            INSTANCE.createConfigManager(PokestopsConfig.class, "config");
-
-    public PokestopsConfig getConfig() {
-        return CONFIG_MANAGER.getConfig();
-    }
 
     public static ResourceLocation modResource(String path) {
         return ResourceLocation.fromNamespaceAndPath(MOD_ID, path);
@@ -39,7 +31,7 @@ public final class CobblemonPokestopsCommon extends AbstractCommonMod {
     @Override
     public void initialize() {
         super.initialize();
-        CONFIG_MANAGER.loadConfig();
+        registerModConfig(MOD_ID, ModConfigType.SERVER, PokestopsConfig.SERVER_SPEC, "cobblemon_pokestops/server.toml");
 
         GlobalTranslations.init();
         SoundRegistry.init();
@@ -49,11 +41,6 @@ public final class CobblemonPokestopsCommon extends AbstractCommonMod {
         ItemRegistry.init();
         CreativeModeTabRegistry.init();
         CriterionTriggerRegistry.init();
-
-        PlatformEvents.SERVER_RELOAD.subscribe(event -> {
-            CONFIG_MANAGER.loadConfig();
-            createInfoLog("Reloaded config");
-        });
 
         createInfoLog("Initialized Cobblemon Pokestops Common");
     }

@@ -193,6 +193,54 @@ public final class EnUsTranslations {
             var translations = key.getTranslations();
             TRANSLATIONS.addTranslations(translations);
         }
+
+        // Mod Config
+        TRANSLATIONS.addTranslation(newConfigTranslation("title"), "Cobblemon Pokestops Configuration");
+        TRANSLATIONS.addTranslation(newConfigTranslation("section.cobblemon.pokestops.server.toml"), "Server Configuration");
+        TRANSLATIONS.addTranslation(newConfigTranslation("section.cobblemon.pokestops.server.toml.title"), "Server Configuration");
+
+        TRANSLATIONS.addTranslation(newConfigTranslation("pokestopsConfig"), "Pokestops Config");
+        TRANSLATIONS.addTranslation(newConfigTranslation("pokestopsConfig.button"), "Edit");
+        TRANSLATIONS.addTranslation(newConfigTranslation("pokestopsConfig.tooltip"), "Edit the Pokestops configuration.");
+        TRANSLATIONS.addTranslation(newConfigTranslation("extraRarities"), "Extra Rarities");
+        TRANSLATIONS.addTranslation(newConfigTranslation("extraRarities.tooltip"), "List of extra rarities to be used in the Pokestops mod.");
+        TRANSLATIONS.addTranslation(newConfigTranslation("extraRarities.button"), "Edit");
+
+        TRANSLATIONS.addTranslation(newConfigTranslation("broadcastSettings"), "Broadcast Settings");
+        TRANSLATIONS.addTranslation(newConfigTranslation("broadcastSettings.button"), "Edit");
+        TRANSLATIONS.addTranslation(newConfigTranslation("broadcastSettings.tooltip"), "Edit the broadcast settings for Pokestops.");
+        TRANSLATIONS.addTranslation(newConfigTranslation("enableGlobalBroadcast"), "Enable Global Broadcast");
+        TRANSLATIONS.addTranslation(newConfigTranslation("enableGlobalBroadcast.tooltip"), "Whether to enable global broadcast for Pokestops.");
+        TRANSLATIONS.addTranslation(newConfigTranslation("localBroadcastRadius"), "Local Broadcast Radius");
+        TRANSLATIONS.addTranslation(newConfigTranslation("localBroadcastRadius.tooltip"), "The radius for local broadcast in blocks.");
+
+        TRANSLATIONS.addTranslation(newConfigTranslation("cooldownSettings"), "Cooldown Settings");
+        TRANSLATIONS.addTranslation(newConfigTranslation("cooldownSettings.button"), "Edit");
+        TRANSLATIONS.addTranslation(newConfigTranslation("cooldownSettings.tooltip"), "Edit the cooldown settings for Pokestops, Winged Stops, Pokeball Stops, and Healing Stops.");
+        TRANSLATIONS.addTranslation(newConfigTranslation("pokestops"), "Pokestops");
+        TRANSLATIONS.addTranslation(newConfigTranslation("pokestops.tooltip"), "The cooldown in seconds for Pokestops.");
+        TRANSLATIONS.addTranslation(newConfigTranslation("wingedstops"), "Winged Stops");
+        TRANSLATIONS.addTranslation(newConfigTranslation("wingedstops.tooltip"), "The cooldown in seconds for Winged Stops.");
+        TRANSLATIONS.addTranslation(newConfigTranslation("pokeballstops"), "Pokeball Stops");
+        TRANSLATIONS.addTranslation(newConfigTranslation("pokeballstops.tooltip"), "The cooldown in seconds for Pokeball Stops.");
+        TRANSLATIONS.addTranslation(newConfigTranslation("healingstops"), "Healing Stops");
+        TRANSLATIONS.addTranslation(newConfigTranslation("healingstops.tooltip"), "The cooldown in seconds for Healing Stops.");
+
+        TRANSLATIONS.addTranslation(newConfigTranslation("stopRemoverConfig"), "Stop Remover Config");
+        TRANSLATIONS.addTranslation(newConfigTranslation("stopRemoverConfig.button"), "Edit");
+        TRANSLATIONS.addTranslation(newConfigTranslation("stopRemoverConfig.tooltip"), "Edit the Stop Remover configuration.");
+        TRANSLATIONS.addTranslation(newConfigTranslation("requireOp"), "Require OP");
+        TRANSLATIONS.addTranslation(newConfigTranslation("requireOp.tooltip"), "Whether the Stop Remover requires OP privileges to use.");
+        TRANSLATIONS.addTranslation(newConfigTranslation("permissionLevel"), "Permission Level");
+        TRANSLATIONS.addTranslation(newConfigTranslation("permissionLevel.tooltip"), "The permission level required to use the Stop Remover.");
+        TRANSLATIONS.addTranslation(newConfigTranslation("dropsStopItem"), "Drops Stop Item");
+        TRANSLATIONS.addTranslation(newConfigTranslation("dropsStopItem.tooltip"), "Whether the Stop Remover drops the stop item when used.");
+        TRANSLATIONS.addTranslation(newConfigTranslation("confirmWindowSeconds"), "Confirm Window Seconds");
+        TRANSLATIONS.addTranslation(newConfigTranslation("confirmWindowSeconds.tooltip"), "The number of seconds for the confirmation window when using the Stop Remover.");
+    }
+
+    public static String newConfigTranslation(String name) {
+        return "cobblemon_pokestops.configuration." + name;
     }
 
     private static class VariantBlocks {

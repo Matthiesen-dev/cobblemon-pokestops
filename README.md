@@ -28,6 +28,8 @@ Finish the Advancement Chain in-game to obtain the Trophies, which include:
 - [Matthiesen Core](https://modrinth.com/mod/matthiesen-core)
 - [Cobblemon](https://modrinth.com/mod/cobblemon)
 - [Geckolib](https://modrinth.com/mod/geckolib)
+- [Fabric API](https://modrinth.com/mod/fabric-api) (Fabric only)
+- [Forge Config API Port](https://modrinth.com/mod/forge-config-api-port) (Fabric only)
 
 ## Optional Dependencies
 - [Jade 15.10.5+](https://modrinth.com/mod/jade) (For in-game Pokestop information display)

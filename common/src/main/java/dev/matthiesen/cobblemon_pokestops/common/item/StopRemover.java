@@ -1,6 +1,6 @@
 package dev.matthiesen.cobblemon_pokestops.common.item;
 
-import dev.matthiesen.cobblemon_pokestops.common.CobblemonPokestopsCommon;
+import dev.matthiesen.cobblemon_pokestops.common.config.PokestopsConfig;
 import dev.matthiesen.cobblemon_pokestops.common.registry.ModTags;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
@@ -60,8 +60,8 @@ public final class StopRemover extends Item {
             return InteractionResult.FAIL;
         }
 
-        var config = CobblemonPokestopsCommon.INSTANCE.getConfig();
-        if (config.stopRemoverConfig.requireOp && !player.hasPermissions(config.stopRemoverConfig.permissionLevel)) {
+        var config = PokestopsConfig.SERVER_CONFIG;
+        if (config.stopRemover_requireOp.getAsBoolean() && !player.hasPermissions(config.stopRemover_permissionLevel.getAsInt())) {
             clearConfirmation(remover);
             sendMessage(player, "message.cobblemon_pokestops.stop_remover_no_permission", ChatFormatting.RED);
             return InteractionResult.FAIL;
@@ -75,13 +75,13 @@ public final class StopRemover extends Item {
             if (confirmation != null && confirmation.isExpired(now)) {
                 sendMessage(player, "message.cobblemon_pokestops.stop_remover_timeout", ChatFormatting.RED);
             }
-            armConfirmation(remover, level, target.pos(), now + (Math.max(1, config.stopRemoverConfig.confirmWindowSeconds) * 20L));
+            armConfirmation(remover, level, target.pos(), now + (Math.max(1, config.stopRemover_confirmWindowSeconds.getAsInt()) * 20L));
             sendMessage(player, "message.cobblemon_pokestops.stop_remover_armed", ChatFormatting.YELLOW);
             return InteractionResult.SUCCESS;
         }
 
         if (!confirmation.matchesPosition(target.pos())) {
-            armConfirmation(remover, level, target.pos(), now + (Math.max(1, config.stopRemoverConfig.confirmWindowSeconds) * 20L));
+            armConfirmation(remover, level, target.pos(), now + (Math.max(1, config.stopRemover_confirmWindowSeconds.getAsInt()) * 20L));
             sendMessage(player, "message.cobblemon_pokestops.stop_remover_mismatch", ChatFormatting.RED);
             return InteractionResult.SUCCESS;
         }
@@ -91,7 +91,7 @@ public final class StopRemover extends Item {
             return InteractionResult.SUCCESS;
         }
 
-        if (config.stopRemoverConfig.dropsStopItem && !player.isCreative() && !hasFreeInventorySlot(player)) {
+        if (config.stopRemover_dropsStopItem.getAsBoolean() && !player.isCreative() && !hasFreeInventorySlot(player)) {
             clearConfirmation(remover);
             sendMessage(player, "message.cobblemon_pokestops.stop_remover_inventory_full", ChatFormatting.RED);
             return InteractionResult.FAIL;
@@ -99,7 +99,7 @@ public final class StopRemover extends Item {
 
         level.destroyBlock(target.pos(), false, player);
 
-        if (config.stopRemoverConfig.dropsStopItem && !player.isCreative()) {
+        if (config.stopRemover_dropsStopItem.getAsBoolean() && !player.isCreative()) {
             ItemStack recoveredStack = new ItemStack(target.state().getBlock().asItem());
             if (!recoveredStack.isEmpty() && !player.getInventory().add(recoveredStack)) {
                 player.drop(recoveredStack, false);
