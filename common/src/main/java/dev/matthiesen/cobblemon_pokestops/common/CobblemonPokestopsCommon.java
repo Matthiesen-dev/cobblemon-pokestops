@@ -31,7 +31,7 @@ public final class CobblemonPokestopsCommon extends AbstractCommonMod {
     @Override
     public void initialize() {
         super.initialize();
-        registerModConfig(MOD_ID, ModConfigType.SERVER, PokestopsConfig.SERVER_SPEC, "cobblemon_pokestops/server.toml");
+        registerModConfig(MOD_ID, ModConfigType.SERVER, PokestopsConfig.SERVER_SPEC);
 
         GlobalTranslations.init();
         SoundRegistry.init();

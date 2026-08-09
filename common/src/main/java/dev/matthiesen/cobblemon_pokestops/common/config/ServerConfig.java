@@ -1,5 +1,6 @@
 package dev.matthiesen.cobblemon_pokestops.common.config;
 
+import dev.matthiesen.matthiesen_core.common.api.permissions.PermissionLevel;
 import net.neoforged.neoforge.common.ModConfigSpec;
 
 import java.util.List;
@@ -30,7 +31,7 @@ public final class ServerConfig {
 
     // Stop Remover Config
     public ModConfigSpec.BooleanValue stopRemover_requireOp;
-    public ModConfigSpec.IntValue stopRemover_permissionLevel;
+    public ModConfigSpec.EnumValue<PermissionLevel> stopRemover_permissionLevel;
     public ModConfigSpec.BooleanValue stopRemover_dropsStopItem;
     public ModConfigSpec.IntValue stopRemover_confirmWindowSeconds;
 
@@ -61,8 +62,8 @@ public final class ServerConfig {
         builder.comment("Stop Remover Configuration").push("stopRemoverConfig");
         stopRemover_requireOp = builder.comment("Whether the Stop Remover requires OP privileges to use. Default is false.")
                 .define("requireOp", false);
-        stopRemover_permissionLevel = builder.comment("The permission level required to use the Stop Remover. Default is 0.")
-                .defineInRange("permissionLevel", 0, 0, 4);
+        stopRemover_permissionLevel = builder.comment("The permission level required to use the Stop Remover. Default is NONE.")
+                .defineEnum("permissionLevel", PermissionLevel.NONE);
         stopRemover_dropsStopItem = builder.comment("Whether the Stop Remover drops the stop item when used. Default is false.")
                 .define("dropsStopItem", false);
         stopRemover_confirmWindowSeconds = builder.comment("The number of seconds for the confirmation window when using the Stop Remover. Default is 5 seconds.")

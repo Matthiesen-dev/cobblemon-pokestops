@@ -61,7 +61,7 @@ public final class StopRemover extends Item {
         }
 
         var config = PokestopsConfig.SERVER_CONFIG;
-        if (config.stopRemover_requireOp.getAsBoolean() && !player.hasPermissions(config.stopRemover_permissionLevel.getAsInt())) {
+        if (config.stopRemover_requireOp.getAsBoolean() && !player.hasPermissions(config.stopRemover_permissionLevel.get().getLevel())) {
             clearConfirmation(remover);
             sendMessage(player, "message.cobblemon_pokestops.stop_remover_no_permission", ChatFormatting.RED);
             return InteractionResult.FAIL;
