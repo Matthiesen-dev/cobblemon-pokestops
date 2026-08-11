@@ -12,11 +12,12 @@ kotlin-for-forge = "5.10.0"
 cobblemon = "1.7.3+1.21.1"
 junit = "5.1.0"
 publish = "0.35.0"
-matthiesen_lib = "1.10.4"
+matthiesen_core = "1.0.0-beta.37"
 sponge-mixin = "0.8.5"
 geckolib = "4.8.3"
 jade_fabric = "15.10.5+fabric"
 jade_neoforge = "15.10.5+neoforge"
+forge-config-api-port = "21.1.6"
 
 [plugins]
 shadow = { id = "com.gradleup.shadow", version.ref = "shadow" }
@@ -41,29 +42,28 @@ cobblemon-fabric = { group = "com.cobblemon", name = "fabric", version.ref = "co
 cobblemon-neoforge = { group = "com.cobblemon", name = "neoforge", version.ref = "cobblemon" }
 junit-api = { group = "org.junit.jupiter", name = "junit-jupiter-api", version.ref = "junit" }
 junit-engine = { group = "org.junit.jupiter", name = "junit-jupiter-engine", version.ref = "junit" }
-matthiesen-lib-common = { group = "dev.matthiesen", name = "matthiesen-lib-common", version.ref = "matthiesen_lib" }
-matthiesen-lib-fabric = { group = "dev.matthiesen", name = "matthiesen-lib-fabric", version.ref = "matthiesen_lib" }
-matthiesen-lib-neoforge = { group = "dev.matthiesen", name = "matthiesen-lib-neoforge", version.ref = "matthiesen_lib" }
-matthiesen-lib-api-common = { group = "dev.matthiesen", name = "matthiesen-lib-api-common", version.ref = "matthiesen_lib" }
-matthiesen-lib-api-fabric = { group = "dev.matthiesen", name = "matthiesen-lib-api-fabric", version.ref = "matthiesen_lib" }
-matthiesen-lib-api-neoforge = { group = "dev.matthiesen", name = "matthiesen-lib-api-neoforge", version.ref = "matthiesen_lib" }
+matthiesen-core-common = { group = "dev.matthiesen", name = "matthiesen-core-common", version.ref = "matthiesen_core" }
+matthiesen-core-fabric = { group = "dev.matthiesen", name = "matthiesen-core-fabric", version.ref = "matthiesen_core" }
+matthiesen-core-neoforge = { group = "dev.matthiesen", name = "matthiesen-core-neoforge", version.ref = "matthiesen_core" }
 sponge-mixin = { group = "org.spongepowered", name = "mixin", version.ref = "sponge-mixin" }
 geckolib-neoforge = { group = "software.bernie.geckolib", name = "geckolib-neoforge-1.21.1", version.ref = "geckolib" }
 geckolib-fabric = { group = "software.bernie.geckolib", name = "geckolib-fabric-1.21.1", version.ref = "geckolib" }
 geckolib-common = { group = "software.bernie.geckolib", name = "geckolib-common-1.21.1", version.ref = "geckolib" }
 jade-fabric = { group = "maven.modrinth", name = "jade", version.ref = "jade_fabric" }
 jade-neoforge = { group = "maven.modrinth", name = "jade", version.ref = "jade_neoforge" }
+forge-config-api-port-common = { group = "fuzs.forgeconfigapiport", name = "forgeconfigapiport-common-neoforgeapi", version.ref = "forge-config-api-port" }
+forge-config-api-port-fabric = { group = "fuzs.forgeconfigapiport", name = "forgeconfigapiport-fabric", version.ref = "forge-config-api-port" }
 
 [bundles]
-commonCompileOnly = ["sponge-mixin"]
+commonCompileOnly = ["sponge-mixin", "forge-config-api-port-common"]
 commonModCompileOnly = ["jade-fabric"]
 commonImplementation = ["geckolib-common"]
-commonModImplementation = ["cobblemon-common", "matthiesen-lib-api-common", "matthiesen-lib-common"]
+commonModImplementation = ["cobblemon-common", "matthiesen-core-common"]
 fabricCompileOnly = ["jade-fabric"]
-fabricRuntimeOnly = ["jade-fabric"]
+fabricRuntimeOnly = ["jade-fabric", "forge-config-api-port-fabric"]
 fabricModImplementation = ["fabric-loader", "fabric-api", "fabric-language-kotlin", "geckolib-fabric"]
-fabricModImplementationNoTransitive = ["cobblemon-fabric", "matthiesen-lib-api-fabric", "matthiesen-lib-fabric"]
+fabricModImplementationNoTransitive = ["cobblemon-fabric", "matthiesen-core-fabric"]
 neoforgeCompileOnly = ["jade-neoforge"]
 neoforgeRuntimeOnly = ["jade-neoforge"]
 neoforgeModImplementation = ["geckolib-neoforge"]
-neoforgeModImplementationNoTransitive = ["cobblemon-neoforge", "matthiesen-lib-api-neoforge", "matthiesen-lib-neoforge"]
+neoforgeModImplementationNoTransitive = ["cobblemon-neoforge", "matthiesen-core-neoforge"]

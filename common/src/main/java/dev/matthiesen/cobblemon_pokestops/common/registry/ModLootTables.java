@@ -16,7 +16,7 @@ import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ModLootTables {
+public final class ModLootTables {
     public static final ResourceKey<LootTable> POKESTOP_LOOT = ResourceKey.create(
             Registries.LOOT_TABLE,
             CobblemonPokestopsCommon.modResource("gameplay/pokestop_loot")
@@ -159,7 +159,7 @@ public class ModLootTables {
 
     // --- Datagen ---
 
-    public static Map<ResourceKey<LootTable>, LootTable.Builder> LOOT_TABLES = new HashMap<>();
+    public static final Map<ResourceKey<LootTable>, LootTable.Builder> LOOT_TABLES = new HashMap<>();
 
     static {
         LOOT_TABLES.put(POKESTOP_LOOT, POKESTOP_LOOT_POOL);

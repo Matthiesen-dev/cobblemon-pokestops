@@ -3,7 +3,7 @@ package dev.matthiesen.cobblemon_pokestops.common.client.model.item.trophies;
 import dev.matthiesen.cobblemon_pokestops.common.item.trophies.PokestopTrophyItem;
 import dev.matthiesen.cobblemon_pokestops.common.templates.block.StopItemModelTemplate;
 
-public class PokestopTrophyItemModel extends StopItemModelTemplate<PokestopTrophyItem> {
+public final class PokestopTrophyItemModel extends StopItemModelTemplate<PokestopTrophyItem> {
     @Override
     protected String getModelName() {
         return "pokestop_trophy";

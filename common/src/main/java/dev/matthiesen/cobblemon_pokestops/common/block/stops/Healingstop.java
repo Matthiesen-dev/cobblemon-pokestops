@@ -1,7 +1,7 @@
 package dev.matthiesen.cobblemon_pokestops.common.block.stops;
 
+import dev.matthiesen.cobblemon_pokestops.common.config.PokestopsConfig;
 import dev.matthiesen.cobblemon_pokestops.common.templates.block.CommandStopTemplate;
-import dev.matthiesen.cobblemon_pokestops.common.CobblemonPokestopsCommon;
 import dev.matthiesen.cobblemon_pokestops.common.registry.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
@@ -14,7 +14,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Supplier;
 
-public class Healingstop extends CommandStopTemplate {
+public final class Healingstop extends CommandStopTemplate {
     @Override
     protected Supplier<? extends net.minecraft.world.level.block.entity.BlockEntityType<?>> getEntityType() {
         return BlockEntityRegistry.HEALINGSTOP_BE;
@@ -22,7 +22,7 @@ public class Healingstop extends CommandStopTemplate {
 
     @Override
     protected int getCooldownSeconds() {
-        return CobblemonPokestopsCommon.INSTANCE.getConfig().cooldowns.healingstops;
+        return PokestopsConfig.SERVER_CONFIG.cooldown_healingstops.getAsInt();
     }
 
     @Override

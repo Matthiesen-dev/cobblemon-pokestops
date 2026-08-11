@@ -5,7 +5,7 @@ import dev.matthiesen.cobblemon_pokestops.common.templates.block.TrophyModelTemp
 import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
 
-public class WingedstopTrophyModel extends TrophyModelTemplate<WingedstopTrophyEntity> {
+public final class WingedstopTrophyModel extends TrophyModelTemplate<WingedstopTrophyEntity> {
     @Override
     protected String getModelName() {
         return "wingedstop_trophy";

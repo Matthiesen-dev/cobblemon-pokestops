@@ -1,14 +1,14 @@
 package dev.matthiesen.cobblemon_pokestops.common.registry;
 
 import dev.matthiesen.cobblemon_pokestops.common.CobblemonPokestopsCommon;
-import dev.matthiesen.common.matthiesen_lib.registry.AbstractCreativeModeTabRegistry;
+import dev.matthiesen.matthiesen_core.common.registry.AbstractCreativeModeTabRegistry;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 
 import java.util.function.Supplier;
 
-public class CreativeModeTabRegistry extends AbstractCreativeModeTabRegistry {
+public final class CreativeModeTabRegistry extends AbstractCreativeModeTabRegistry {
     private static final CreativeModeTabRegistry INSTANCE = new CreativeModeTabRegistry();
 
     private static final ResourceLocation POKESTOPS_TAB_ID = CobblemonPokestopsCommon.modResource("cobblemon_pokestops_tab");

@@ -1,10 +1,9 @@
 # Cobblemon Pokestops
 
 <div>
-  <img src="https://mods.matthiesen.dev/badges/matthiesenLibAPI.svg" alt="Matthiesen Lib API">
-  <img src="https://mods.matthiesen.dev/badges/matthiesenLib.svg" alt="Matthiesen Lib">
-  <img src="https://mods.matthiesen.dev/badges/geckolib.svg" alt="GeckoLib">
+  <img src="https://mods.matthiesen.dev/badges/matthiesenCore.svg" alt="Matthiesen Core">
   <img src="https://mods.matthiesen.dev/badges/cobblemon.svg" alt="Cobblemon">
+  <img src="https://mods.matthiesen.dev/badges/geckolib.svg" alt="GeckoLib">
 </div>
 
 This mod adds Pokemon GO inspired Pokestops to Cobblemon. Pokestops can be used to get items, and they have a cooldown period after being used.
@@ -26,10 +25,11 @@ Finish the Advancement Chain in-game to obtain the Trophies, which include:
 
 ## Dependencies
 
-- [Cobblemon 1.7.3+1.21.1](https://modrinth.com/mod/cobblemon)
-- [Matthiesen Lib API](https://modrinth.com/mod/matthiesen-lib-api)
-- [Matthiesen Lib](https://modrinth.com/mod/matthiesen-lib)
-- [Geckolib 4.8.3+](https://modrinth.com/mod/geckolib)
+- [Matthiesen Core](https://modrinth.com/mod/matthiesen-core)
+- [Cobblemon](https://modrinth.com/mod/cobblemon)
+- [Geckolib](https://modrinth.com/mod/geckolib)
+- [Fabric API](https://modrinth.com/mod/fabric-api) (Fabric only)
+- [Forge Config API Port](https://modrinth.com/mod/forge-config-api-port) (Fabric only)
 
 ## Optional Dependencies
 - [Jade 15.10.5+](https://modrinth.com/mod/jade) (For in-game Pokestop information display)
@@ -97,7 +97,7 @@ how this mod is being used and improve it over time. You can learn more about th
 
 You can also view the data collected by this mod on the [FastStats: Cobblemon Pokestops](https://faststats.dev/project/cobblemon-pokestops) page.
 
-To opt out of this data collection, set the `enabled` property to `false` in the `<game_directory>/config/matthiesen_lib_api/metrics.properties` file.
+To opt out of this data collection, set the `enabled` property to `false` in the `<game_directory>/config/matthiesen_core/metrics.properties` file.
 
 ## License
 

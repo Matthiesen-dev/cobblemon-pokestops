@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Supplier;
 
-public class HealingstopTrophy extends TrophyTemplate {
+public final class HealingstopTrophy extends TrophyTemplate {
     @Override
     protected Supplier<? extends net.minecraft.world.level.block.entity.BlockEntityType<?>> getEntityType() {
         return BlockEntityRegistry.HEALINGSTOP_TROPHY_BE;

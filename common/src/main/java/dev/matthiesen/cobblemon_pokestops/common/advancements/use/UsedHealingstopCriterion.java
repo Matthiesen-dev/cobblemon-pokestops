@@ -10,7 +10,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Optional;
 
-public class UsedHealingstopCriterion extends SimpleCriterionTrigger<UsedHealingstopCriterion.Conditions> {
+public final class UsedHealingstopCriterion extends SimpleCriterionTrigger<UsedHealingstopCriterion.Conditions> {
 
     @Override
     public @NotNull Codec<Conditions> codec() {

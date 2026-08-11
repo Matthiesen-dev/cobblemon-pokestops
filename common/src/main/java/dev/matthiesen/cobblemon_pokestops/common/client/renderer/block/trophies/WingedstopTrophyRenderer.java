@@ -5,7 +5,7 @@ import dev.matthiesen.cobblemon_pokestops.common.block.entity.trophies.Wingedsto
 import software.bernie.geckolib.renderer.GeoBlockRenderer;
 import software.bernie.geckolib.renderer.layer.AutoGlowingGeoLayer;
 
-public class WingedstopTrophyRenderer extends GeoBlockRenderer<WingedstopTrophyEntity> {
+public final class WingedstopTrophyRenderer extends GeoBlockRenderer<WingedstopTrophyEntity> {
     public WingedstopTrophyRenderer() {
         super(new WingedstopTrophyModel());
         addRenderLayer(new AutoGlowingGeoLayer<>(this));

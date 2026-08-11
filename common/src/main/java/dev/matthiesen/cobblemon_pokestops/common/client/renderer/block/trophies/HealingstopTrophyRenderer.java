@@ -5,7 +5,7 @@ import dev.matthiesen.cobblemon_pokestops.common.block.entity.trophies.Healingst
 import software.bernie.geckolib.renderer.GeoBlockRenderer;
 import software.bernie.geckolib.renderer.layer.AutoGlowingGeoLayer;
 
-public class HealingstopTrophyRenderer extends GeoBlockRenderer<HealingstopTrophyEntity> {
+public final class HealingstopTrophyRenderer extends GeoBlockRenderer<HealingstopTrophyEntity> {
     public HealingstopTrophyRenderer() {
         super(new HealingstopTrophyModel());
         addRenderLayer(new AutoGlowingGeoLayer<>(this));

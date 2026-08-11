@@ -5,7 +5,7 @@ import dev.matthiesen.cobblemon_pokestops.common.block.entity.stops.WingedstopEn
 import software.bernie.geckolib.renderer.GeoBlockRenderer;
 import software.bernie.geckolib.renderer.layer.AutoGlowingGeoLayer;
 
-public class WingedstopRenderer extends GeoBlockRenderer<WingedstopEntity> {
+public final class WingedstopRenderer extends GeoBlockRenderer<WingedstopEntity> {
     public WingedstopRenderer() {
         super(new WingedstopModel());
         addRenderLayer(new AutoGlowingGeoLayer<>(this));

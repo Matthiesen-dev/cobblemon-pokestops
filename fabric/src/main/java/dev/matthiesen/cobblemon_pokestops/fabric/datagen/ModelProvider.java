@@ -7,7 +7,7 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.models.BlockModelGenerators;
 import net.minecraft.data.models.ItemModelGenerators;
 
-public class ModelProvider extends FabricModelProvider {
+public final class ModelProvider extends FabricModelProvider {
     public ModelProvider(FabricDataOutput output) {
         super(output);
     }

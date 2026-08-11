@@ -5,7 +5,7 @@ import dev.matthiesen.cobblemon_pokestops.common.templates.block.TrophyModelTemp
 import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
 
-public class HealingstopTrophyModel extends TrophyModelTemplate<HealingstopTrophyEntity> {
+public final class HealingstopTrophyModel extends TrophyModelTemplate<HealingstopTrophyEntity> {
     @Override
     protected String getModelName() {
         return "healingstop_trophy";

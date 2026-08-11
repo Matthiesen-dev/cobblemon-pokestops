@@ -5,7 +5,7 @@ import dev.matthiesen.cobblemon_pokestops.common.templates.block.TrophyModelTemp
 import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
 
-public class PokeballstopTrophyModel extends TrophyModelTemplate<PokeballstopTrophyEntity> {
+public final class PokeballstopTrophyModel extends TrophyModelTemplate<PokeballstopTrophyEntity> {
     @Override
     protected String getModelName() {
         return "pokeballstop_trophy";

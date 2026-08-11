@@ -8,10 +8,10 @@ import net.minecraft.core.HolderLookup;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 
-public class UniversalLanguageProvider extends FabricLanguageProvider {
+public final class UniversalLanguageProvider extends FabricLanguageProvider {
     private final String languageCode;
 
-    protected UniversalLanguageProvider(FabricDataOutput dataOutput, CompletableFuture<HolderLookup.Provider> registryLookup, String languageCode) {
+    public UniversalLanguageProvider(FabricDataOutput dataOutput, CompletableFuture<HolderLookup.Provider> registryLookup, String languageCode) {
         super(dataOutput, languageCode, registryLookup);
         this.languageCode = languageCode;
     }

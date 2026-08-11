@@ -5,7 +5,7 @@ import dev.matthiesen.cobblemon_pokestops.common.item.stops.HealingstopItem;
 import software.bernie.geckolib.renderer.GeoItemRenderer;
 import software.bernie.geckolib.renderer.layer.AutoGlowingGeoLayer;
 
-public class HealingstopItemRenderer extends GeoItemRenderer<HealingstopItem> {
+public final class HealingstopItemRenderer extends GeoItemRenderer<HealingstopItem> {
     public HealingstopItemRenderer() {
         super(new HealingstopItemModel());
         addRenderLayer(new AutoGlowingGeoLayer<>(this));

@@ -4,10 +4,11 @@ import dev.matthiesen.cobblemon_pokestops.common.CobblemonPokestopsCommon;
 import net.neoforged.fml.common.Mod;
 
 @Mod(CobblemonPokestopsCommon.MOD_ID)
-public class CobblemonPokestopsNeoForge {
+public final class CobblemonPokestopsNeoForge {
+    public static final CobblemonPokestopsCommon INSTANCE = CobblemonPokestopsCommon.INSTANCE;
+
     public CobblemonPokestopsNeoForge() {
-        var instance = CobblemonPokestopsCommon.INSTANCE;
-        instance.createInfoLog("Loading for NeoForge Mod Loader");
-        instance.initialize();
+        INSTANCE.createInfoLog("Loading for NeoForge Mod Loader");
+        INSTANCE.initialize();
     }
 }

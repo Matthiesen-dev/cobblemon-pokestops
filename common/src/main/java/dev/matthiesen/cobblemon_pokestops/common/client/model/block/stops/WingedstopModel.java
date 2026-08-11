@@ -7,7 +7,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Player;
 import org.jetbrains.annotations.NotNull;
 
-public class WingedstopModel extends StopModelTemplate<WingedstopEntity> {
+public final class WingedstopModel extends StopModelTemplate<WingedstopEntity> {
     @Override
     protected String getModelName() {
         return "wingedstop";

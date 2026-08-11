@@ -1,7 +1,7 @@
 package dev.matthiesen.cobblemon_pokestops.common.block.stops;
 
+import dev.matthiesen.cobblemon_pokestops.common.config.PokestopsConfig;
 import dev.matthiesen.cobblemon_pokestops.common.templates.block.LootStopTemplate;
-import dev.matthiesen.cobblemon_pokestops.common.CobblemonPokestopsCommon;
 import dev.matthiesen.cobblemon_pokestops.common.registry.*;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -16,7 +16,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Supplier;
 
-public class Pokeballstop extends LootStopTemplate {
+public final class Pokeballstop extends LootStopTemplate {
     @Override
     protected Supplier<? extends net.minecraft.world.level.block.entity.BlockEntityType<?>> getEntityType() {
         return BlockEntityRegistry.POKEBALLSTOP_BE;
@@ -24,7 +24,7 @@ public class Pokeballstop extends LootStopTemplate {
 
     @Override
     protected int getCooldownSeconds() {
-        return CobblemonPokestopsCommon.INSTANCE.getConfig().cooldowns.pokeballstops;
+        return PokestopsConfig.SERVER_CONFIG.cooldown_pokeballstops.getAsInt();
     }
 
     @Override

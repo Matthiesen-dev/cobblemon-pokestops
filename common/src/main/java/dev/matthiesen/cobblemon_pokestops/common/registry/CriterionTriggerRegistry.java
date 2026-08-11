@@ -3,11 +3,11 @@ package dev.matthiesen.cobblemon_pokestops.common.registry;
 import dev.matthiesen.cobblemon_pokestops.common.CobblemonPokestopsCommon;
 import dev.matthiesen.cobblemon_pokestops.common.advancements.score.*;
 import dev.matthiesen.cobblemon_pokestops.common.advancements.use.*;
-import dev.matthiesen.common.matthiesen_lib.registry.AbstractCriteriaTriggerRegistry;
+import dev.matthiesen.matthiesen_core.common.registry.AbstractCriteriaTriggerRegistry;
 
 import java.util.function.Supplier;
 
-public class CriterionTriggerRegistry extends AbstractCriteriaTriggerRegistry {
+public final class CriterionTriggerRegistry extends AbstractCriteriaTriggerRegistry {
     private static final CriterionTriggerRegistry INSTANCE = new CriterionTriggerRegistry();
 
     private CriterionTriggerRegistry() {

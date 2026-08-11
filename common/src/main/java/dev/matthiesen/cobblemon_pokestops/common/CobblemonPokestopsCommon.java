@@ -3,9 +3,9 @@ package dev.matthiesen.cobblemon_pokestops.common;
 import dev.matthiesen.cobblemon_pokestops.common.config.PokestopsConfig;
 import dev.matthiesen.cobblemon_pokestops.common.registry.*;
 import dev.matthiesen.cobblemon_pokestops.common.translations.GlobalTranslations;
-import dev.matthiesen.common.matthiesen_lib_api.abstracts.AbstractCommonMod;
-import dev.matthiesen.common.matthiesen_lib_api.config.ConfigManager;
 import dev.matthiesen.libs.faststats.Token;
+import dev.matthiesen.matthiesen_core.common.AbstractCommonMod;
+import dev.matthiesen.matthiesen_core.common.api.platform.loader.ModConfigType;
 import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
 
@@ -15,13 +15,6 @@ public final class CobblemonPokestopsCommon extends AbstractCommonMod {
     private static @Token final String METRICS_TOKEN = "77e42e7ca5467f1d8eb079095534aa32";
 
     public static final CobblemonPokestopsCommon INSTANCE = new CobblemonPokestopsCommon();
-
-    private static final ConfigManager<PokestopsConfig> CONFIG_MANAGER =
-            INSTANCE.createConfigManager(PokestopsConfig.class, "config");
-
-    public PokestopsConfig getConfig() {
-        return CONFIG_MANAGER.getConfig();
-    }
 
     public static ResourceLocation modResource(String path) {
         return ResourceLocation.fromNamespaceAndPath(MOD_ID, path);
@@ -38,7 +31,7 @@ public final class CobblemonPokestopsCommon extends AbstractCommonMod {
     @Override
     public void initialize() {
         super.initialize();
-        reload().run();
+        registerModConfig(MOD_ID, ModConfigType.SERVER, PokestopsConfig.SERVER_SPEC);
 
         GlobalTranslations.init();
         SoundRegistry.init();
@@ -50,14 +43,6 @@ public final class CobblemonPokestopsCommon extends AbstractCommonMod {
         CriterionTriggerRegistry.init();
 
         createInfoLog("Initialized Cobblemon Pokestops Common");
-    }
-
-    @Override
-    public Runnable reload() {
-        return () -> {
-            CONFIG_MANAGER.loadConfig();
-            createInfoLog("Reloaded config");
-        };
     }
 
     @Override

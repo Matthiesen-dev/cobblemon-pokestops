@@ -4,7 +4,7 @@ import dev.matthiesen.cobblemon_pokestops.common.CobblemonPokestopsCommon;
 import dev.matthiesen.cobblemon_pokestops.common.block.entity.DummyBlockEntity;
 import dev.matthiesen.cobblemon_pokestops.common.block.entity.stops.*;
 import dev.matthiesen.cobblemon_pokestops.common.block.entity.trophies.*;
-import dev.matthiesen.common.matthiesen_lib.registry.AbstractBlockEntityRegistry;
+import dev.matthiesen.matthiesen_core.common.registry.AbstractBlockEntityRegistry;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -13,7 +13,7 @@ import java.util.Map;
 import java.util.function.BiFunction;
 import java.util.function.Supplier;
 
-public class BlockEntityRegistry extends AbstractBlockEntityRegistry {
+public final class BlockEntityRegistry extends AbstractBlockEntityRegistry {
     private static final BlockEntityRegistry INSTANCE = new BlockEntityRegistry();
 
     private BlockEntityRegistry() {

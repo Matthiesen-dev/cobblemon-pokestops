@@ -13,7 +13,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Optional;
 
-public class PokeballstopScoreTracker extends SimpleCriterionTrigger<PokeballstopScoreTracker.Conditions> {
+public final class PokeballstopScoreTracker extends SimpleCriterionTrigger<PokeballstopScoreTracker.Conditions> {
 
     @Override
     public @NotNull Codec<Conditions> codec() {

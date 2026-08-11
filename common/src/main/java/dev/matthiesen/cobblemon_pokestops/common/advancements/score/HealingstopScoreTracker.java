@@ -13,7 +13,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Optional;
 
-public class HealingstopScoreTracker extends SimpleCriterionTrigger<HealingstopScoreTracker.Conditions> {
+public final class HealingstopScoreTracker extends SimpleCriterionTrigger<HealingstopScoreTracker.Conditions> {
 
     @Override
     public @NotNull Codec<Conditions> codec() {

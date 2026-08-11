@@ -5,13 +5,13 @@ import dev.matthiesen.cobblemon_pokestops.common.block.dummy.*;
 import dev.matthiesen.cobblemon_pokestops.common.block.stops.*;
 import dev.matthiesen.cobblemon_pokestops.common.block.trophies.*;
 import dev.matthiesen.cobblemon_pokestops.common.templates.block.*;
-import dev.matthiesen.common.matthiesen_lib.registry.AbstractBlockRegistry;
+import dev.matthiesen.matthiesen_core.common.registry.AbstractBlockRegistry;
 import net.minecraft.world.level.block.Block;
 
 import java.util.*;
 import java.util.function.Supplier;
 
-public class BlockRegistry extends AbstractBlockRegistry {
+public final class BlockRegistry extends AbstractBlockRegistry {
     private static final BlockRegistry INSTANCE = new BlockRegistry();
 
     private BlockRegistry() {

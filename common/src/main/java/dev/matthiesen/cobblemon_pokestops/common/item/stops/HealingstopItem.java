@@ -4,7 +4,7 @@ import dev.matthiesen.cobblemon_pokestops.common.templates.item.StopItemTemplate
 import net.minecraft.world.level.block.Block;
 import software.bernie.geckolib.animation.RawAnimation;
 
-public class HealingstopItem extends StopItemTemplate {
+public final class HealingstopItem extends StopItemTemplate {
     private static final RawAnimation IDLE_ANIM = RawAnimation.begin()
             .thenLoop("animation.healingstop.idle_closed");
 
