@@ -33,7 +33,7 @@
   },
   "depends": {
     "minecraft": "1.21.1",
-    "cobblemon": ">=1.7.3 <1.8.0",
+    "cobblemon": ">=1.8.0 <1.9.0",
     "geckolib": ">=4.8.3 <5.0.0",
     "matthiesen_core": ">=1.2.7 <2.0.0",
     "forgeconfigapiport": ">=21.1.6 <22.0.0"

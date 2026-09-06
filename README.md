@@ -89,6 +89,7 @@ Documentation for this mod can be found at [mods.matthiesen.dev](https://mods.ma
 |-------------------|-------------------------|-------------------|-------------|
 | 1.21.1            | 1.x.x                   | 1.7.3             | 1.x.x       |
 | 1.21.1            | 1.2.7+                  | 1.7.3             | 1.7.0+      |
+| 1.21.1            | 1.2.7+                  | 1.8.0             | 1.8.0+      |
 
 ## FastStats Metrics
 
