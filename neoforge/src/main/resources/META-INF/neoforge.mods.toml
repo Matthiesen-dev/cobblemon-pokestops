@@ -30,7 +30,7 @@ side = "BOTH"
 [[dependencies.${mod_id}]]
 modId = "cobblemon"
 mandatory = true
-versionRange = "[1.7.3,)"
+versionRange = "[1.8.0,)"
 ordering = "AFTER"
 side = "BOTH"
 
