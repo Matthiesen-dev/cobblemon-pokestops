@@ -3,6 +3,7 @@ package dev.matthiesen.cobblemon_pokestops.common.templates.block;
 import com.cobblemon.mod.common.CobblemonSounds;
 import com.google.common.collect.Maps;
 import com.mojang.serialization.MapCodec;
+import dev.matthiesen.cobblemon_pokestops.common.config.PokestopsConfig;
 import dev.matthiesen.cobblemon_pokestops.common.templates.entity.StopEntityTemplate;
 import dev.matthiesen.cobblemon_pokestops.common.registry.ModTags;
 import dev.matthiesen.cobblemon_pokestops.common.registry.SoundRegistry;
@@ -226,6 +227,14 @@ public abstract class BaseStopTemplate extends HorizontalDirectionalBlock implem
     @Override
     public @NotNull VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
         return shapes.getOrDefault(state.getValue(FACING), baseShape);
+    }
+
+    @Override
+    protected @NotNull VoxelShape getCollisionShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, CollisionContext collisionContext) {
+        if (!PokestopsConfig.SERVER_CONFIG.pokestopsBlockCollision.getAsBoolean()) {
+            return Shapes.empty();
+        }
+        return super.getCollisionShape(blockState, blockGetter, blockPos, collisionContext);
     }
 
     protected static VoxelShape calculateRotation(Direction direction, VoxelShape base) {
