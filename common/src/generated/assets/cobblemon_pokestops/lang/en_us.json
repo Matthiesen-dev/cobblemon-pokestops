@@ -106,6 +106,8 @@
   "cobblemon_pokestops.configuration.pokeballstops.tooltip": "The cooldown in seconds for Pokeball Stops.",
   "cobblemon_pokestops.configuration.pokestops": "Pokestops",
   "cobblemon_pokestops.configuration.pokestops.tooltip": "The cooldown in seconds for Pokestops.",
+  "cobblemon_pokestops.configuration.pokestopsBlockCollision": "Pokestops Block Collision",
+  "cobblemon_pokestops.configuration.pokestopsBlockCollision.tooltip": "Whether Pokestops should have block collision.",
   "cobblemon_pokestops.configuration.pokestopsConfig": "Pokestops Config",
   "cobblemon_pokestops.configuration.pokestopsConfig.button": "Edit",
   "cobblemon_pokestops.configuration.pokestopsConfig.tooltip": "Edit the Pokestops configuration.",

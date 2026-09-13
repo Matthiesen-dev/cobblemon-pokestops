@@ -205,6 +205,8 @@ public final class EnUsTranslations {
         TRANSLATIONS.addTranslation(newConfigTranslation("extraRarities"), "Extra Rarities");
         TRANSLATIONS.addTranslation(newConfigTranslation("extraRarities.tooltip"), "List of extra rarities to be used in the Pokestops mod.");
         TRANSLATIONS.addTranslation(newConfigTranslation("extraRarities.button"), "Edit");
+        TRANSLATIONS.addTranslation(newConfigTranslation("pokestopsBlockCollision"), "Pokestops Block Collision");
+        TRANSLATIONS.addTranslation(newConfigTranslation("pokestopsBlockCollision.tooltip"), "Whether Pokestops should have block collision.");
 
         TRANSLATIONS.addTranslation(newConfigTranslation("broadcastSettings"), "Broadcast Settings");
         TRANSLATIONS.addTranslation(newConfigTranslation("broadcastSettings.button"), "Edit");
