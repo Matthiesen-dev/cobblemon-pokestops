@@ -18,6 +18,7 @@ public final class ServerConfig {
 
     // General Settings
     public ModConfigSpec.ConfigValue<List<? extends String>> extraRarities;
+    public ModConfigSpec.BooleanValue pokestopsBlockCollision;
 
     // Broadcast Settings
     public ModConfigSpec.BooleanValue broadcast_enableGlobal;
@@ -39,6 +40,8 @@ public final class ServerConfig {
         builder.comment("Pokestops Configuration").push("pokestopsConfig");
         extraRarities = builder.comment("List of extra rarities to be used in the Pokestops mod. Default is an empty list.")
                 .defineListAllowEmpty("extraRarities", DEFAULT_RARITIES, () -> "minecraft:dirt", o -> o instanceof String);
+        pokestopsBlockCollision = builder.comment("Whether Pokestops should have block collision. Default is true.")
+                .define("pokestopsBlockCollision", true);
         builder.pop();
 
         builder.comment("Broadcast Settings").push("broadcastSettings");
