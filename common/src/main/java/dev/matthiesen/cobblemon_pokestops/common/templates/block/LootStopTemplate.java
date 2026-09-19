@@ -41,7 +41,7 @@ public abstract class LootStopTemplate extends BaseStopTemplate {
             return true;
         }
         Item item = stack.getItem();
-        for (String entry : PokestopsConfig.SERVER_CONFIG.extraRarities.get()) {
+        for (String entry : PokestopsConfig.COMMON_CONFIG.extraRarities.get()) {
             ResourceLocation entryId = ResourceLocation.tryParse(entry);
             if (entryId != null) {
                 Item itemToCompare = BuiltInRegistries.ITEM.get(entryId);
@@ -85,10 +85,10 @@ public abstract class LootStopTemplate extends BaseStopTemplate {
                 .append(stack.getDisplayName().copy().withStyle(stack.getRarity().color()))
                 .append(Component.literal("!"));
 
-        if (PokestopsConfig.SERVER_CONFIG.broadcast_enableGlobal.getAsBoolean()) {
+        if (PokestopsConfig.COMMON_CONFIG.broadcast_enableGlobal.getAsBoolean()) {
             player.server.getPlayerList().broadcastSystemMessage(message, false);
         } else {
-            double radius = PokestopsConfig.SERVER_CONFIG.broadcast_localRadius.getAsDouble();
+            double radius = PokestopsConfig.COMMON_CONFIG.broadcast_localRadius.getAsDouble();
             for (ServerPlayer nearbyPlayer : player.serverLevel().players()) {
                 if (nearbyPlayer.distanceToSqr(player) < radius * radius) {
                     nearbyPlayer.sendSystemMessage(message);

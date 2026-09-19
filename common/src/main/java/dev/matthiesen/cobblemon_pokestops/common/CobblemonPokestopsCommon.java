@@ -24,6 +24,10 @@ public final class CobblemonPokestopsCommon extends AbstractCommonMod {
         return ResourceLocation.fromNamespaceAndPath(MOD_ID, path).toString();
     }
 
+    public static String modConfig(String path) {
+        return MOD_ID + "/" + path + ".toml";
+    }
+
     public CobblemonPokestopsCommon() {
         super(MOD_ID, MOD_NAME);
     }
@@ -31,7 +35,7 @@ public final class CobblemonPokestopsCommon extends AbstractCommonMod {
     @Override
     public void initialize() {
         super.initialize();
-        registerModConfig(MOD_ID, ModConfigType.SERVER, PokestopsConfig.SERVER_SPEC);
+        registerModConfig(MOD_ID, ModConfigType.COMMON, PokestopsConfig.COMMON_SPEC, modConfig("common"));
 
         GlobalTranslations.init();
         SoundRegistry.init();

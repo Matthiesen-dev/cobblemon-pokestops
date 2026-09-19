@@ -24,7 +24,7 @@ public final class Wingedstop extends LootStopTemplate {
 
     @Override
     protected int getCooldownSeconds() {
-        return PokestopsConfig.SERVER_CONFIG.cooldown_wingedstops.getAsInt();
+        return PokestopsConfig.COMMON_CONFIG.cooldown_wingedstops.getAsInt();
     }
 
     @Override
