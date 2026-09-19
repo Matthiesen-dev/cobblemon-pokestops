@@ -5,7 +5,7 @@ import net.neoforged.neoforge.common.ModConfigSpec;
 
 import java.util.List;
 
-public final class ServerConfig {
+public final class CommonConfig {
     public static final List<String> DEFAULT_RARITIES = List.of(
             "cobblemon:master_ball",
             "cobblemon:ancient_origin_ball",
@@ -36,7 +36,7 @@ public final class ServerConfig {
     public ModConfigSpec.BooleanValue stopRemover_dropsStopItem;
     public ModConfigSpec.IntValue stopRemover_confirmWindowSeconds;
 
-    public ServerConfig(ModConfigSpec.Builder builder) {
+    public CommonConfig(ModConfigSpec.Builder builder) {
         builder.comment("Pokestops Configuration").push("pokestopsConfig");
         extraRarities = builder.comment("List of extra rarities to be used in the Pokestops mod. Default is an empty list.")
                 .defineListAllowEmpty("extraRarities", DEFAULT_RARITIES, () -> "minecraft:dirt", o -> o instanceof String);

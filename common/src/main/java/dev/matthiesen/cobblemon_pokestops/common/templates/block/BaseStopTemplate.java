@@ -231,7 +231,7 @@ public abstract class BaseStopTemplate extends HorizontalDirectionalBlock implem
 
     @Override
     protected @NotNull VoxelShape getCollisionShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, CollisionContext collisionContext) {
-        if (!PokestopsConfig.SERVER_CONFIG.pokestopsBlockCollision.getAsBoolean()) {
+        if (!PokestopsConfig.COMMON_CONFIG.pokestopsBlockCollision.getAsBoolean()) {
             return Shapes.empty();
         }
         return super.getCollisionShape(blockState, blockGetter, blockPos, collisionContext);
