@@ -16,6 +16,6 @@ public final class PokestopRenderer extends GeoBlockRenderer<PokestopEntity> {
     @SuppressWarnings("UnstableApiUsage")
     public void render(PokestopEntity animatable, float partialTick, PoseStack poseStack, MultiBufferSource bufferSource, int packedLight, int packedOverlay) {
         super.render(animatable, partialTick, poseStack, bufferSource, packedLight, packedOverlay);
-        BeamRenderer.render(animatable, partialTick, poseStack, bufferSource, packedLight, packedOverlay);
+        BeamRenderer.render(animatable, partialTick, poseStack, bufferSource);
     }
 }
