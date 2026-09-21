@@ -35,6 +35,7 @@ public final class CobblemonPokestopsCommon extends AbstractCommonMod {
     @Override
     public void initialize() {
         super.initialize();
+        registerModConfig(MOD_ID, ModConfigType.STARTUP, PokestopsConfig.STARTUP_SPEC, modConfig("startup"));
         registerModConfig(MOD_ID, ModConfigType.COMMON, PokestopsConfig.COMMON_SPEC, modConfig("common"));
 
         GlobalTranslations.init();
