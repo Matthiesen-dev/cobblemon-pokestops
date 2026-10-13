@@ -8,9 +8,4 @@ public final class WingedstopTrophyItemModel extends StopItemModelTemplate<Winge
     protected String getModelName() {
         return "wingedstop_trophy";
     }
-
-    @Override
-    protected String getAnimationName() {
-        return "wingedstop_trophy";
-    }
 }

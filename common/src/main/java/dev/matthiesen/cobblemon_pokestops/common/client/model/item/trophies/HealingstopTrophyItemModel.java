@@ -8,9 +8,4 @@ public final class HealingstopTrophyItemModel extends StopItemModelTemplate<Heal
     protected String getModelName() {
         return "healingstop_trophy";
     }
-
-    @Override
-    protected String getAnimationName() {
-        return "healingstop_trophy";
-    }
 }

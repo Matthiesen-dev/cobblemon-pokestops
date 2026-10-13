@@ -13,10 +13,9 @@ public abstract class StopItemModelTemplate<T extends StopItemTemplate> extends 
      */
     protected abstract String getModelName();
 
-    /**
-     * Subclasses must provide the animation file path (e.g., "pokestop", "wingedstop").
-     */
-    protected abstract String getAnimationName();
+    protected final String getAnimationName() {
+        return getModelName();
+    }
 
     protected final ResourceLocation getModelResource() {
         return CobblemonPokestopsCommon.modResource("geo/block/" + getModelName() + ".geo.json");

@@ -2,8 +2,10 @@ package dev.matthiesen.cobblemon_pokestops.common.templates.block;
 
 import dev.matthiesen.cobblemon_pokestops.common.CobblemonPokestopsCommon;
 import dev.matthiesen.cobblemon_pokestops.common.templates.entity.StopEntityTemplate;
+import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.player.Player;
 import org.jetbrains.annotations.NotNull;
 import software.bernie.geckolib.model.GeoModel;
 
@@ -13,10 +15,9 @@ public abstract class StopModelTemplate<T extends StopEntityTemplate> extends Ge
      */
     protected abstract String getModelName();
 
-    /**
-     * Subclasses must provide the animation file path (e.g., "pokestop", "wingedstop").
-     */
-    protected abstract String getAnimationName();
+    protected final String getAnimationName() {
+        return getModelName();
+    }
 
     protected final ResourceLocation getModelResource() {
         return CobblemonPokestopsCommon.modResource("geo/block/" + getModelName() + ".geo.json");
@@ -34,6 +35,14 @@ public abstract class StopModelTemplate<T extends StopEntityTemplate> extends Ge
     protected final ResourceLocation getCooldownTexture(T entity) {
         String name = BuiltInRegistries.BLOCK.getKey(entity.getBlockState().getBlock()).getPath();
         return CobblemonPokestopsCommon.modResource("textures/block/" + name + "_cooldown.png");
+    }
+
+    public @NotNull ResourceLocation getTextureResource(T animatable) {
+        Player player = Minecraft.getInstance().player;
+        if (player != null && !animatable.canPlayerSpin(player)) {
+            return getCooldownTexture(animatable);
+        }
+        return getMainTexture(animatable);
     }
 
     @Override

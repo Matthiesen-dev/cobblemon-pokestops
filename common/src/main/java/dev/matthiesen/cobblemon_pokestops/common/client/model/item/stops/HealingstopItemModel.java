@@ -8,9 +8,4 @@ public final class HealingstopItemModel extends StopItemModelTemplate<Healingsto
     protected String getModelName() {
         return "healingstop";
     }
-
-    @Override
-    protected String getAnimationName() {
-        return "healingstop";
-    }
 }

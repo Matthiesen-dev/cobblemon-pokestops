@@ -8,9 +8,4 @@ public final class PokestopTrophyItemModel extends StopItemModelTemplate<Pokesto
     protected String getModelName() {
         return "pokestop_trophy";
     }
-
-    @Override
-    protected String getAnimationName() {
-        return "pokestop_trophy";
-    }
 }

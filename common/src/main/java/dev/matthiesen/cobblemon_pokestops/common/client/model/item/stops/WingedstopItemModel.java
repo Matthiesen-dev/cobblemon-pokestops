@@ -8,9 +8,4 @@ public final class WingedstopItemModel extends StopItemModelTemplate<WingedstopI
     protected String getModelName() {
         return "wingedstop";
     }
-
-    @Override
-    protected String getAnimationName() {
-        return "wingedstop";
-    }
 }

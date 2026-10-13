@@ -8,9 +8,4 @@ public final class PokeballstopItemModel extends StopItemModelTemplate<Pokeballs
     protected String getModelName() {
         return "pokeballstop";
     }
-
-    @Override
-    protected String getAnimationName() {
-        return "pokeballstop";
-    }
 }

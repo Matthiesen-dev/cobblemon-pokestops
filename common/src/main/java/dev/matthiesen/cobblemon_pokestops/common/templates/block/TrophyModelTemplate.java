@@ -13,10 +13,9 @@ public abstract class TrophyModelTemplate<T extends TrophyEntityTemplate> extend
      */
     protected abstract String getModelName();
 
-    /**
-     * Subclasses must provide the animation file path (e.g., "pokestop", "wingedstop").
-     */
-    protected abstract String getAnimationName();
+    protected final String getAnimationName() {
+        return getModelName();
+    }
 
     protected final ResourceLocation getModelResource() {
         return CobblemonPokestopsCommon.modResource("geo/block/" + getModelName() + ".geo.json");
@@ -29,6 +28,11 @@ public abstract class TrophyModelTemplate<T extends TrophyEntityTemplate> extend
     protected final ResourceLocation getMainTexture(T entity) {
         String name = BuiltInRegistries.BLOCK.getKey(entity.getBlockState().getBlock()).getPath();
         return CobblemonPokestopsCommon.modResource("textures/block/" + name + ".png");
+    }
+
+    @Override
+    public @NotNull ResourceLocation getTextureResource(T animatable) {
+        return getMainTexture(animatable);
     }
 
     @Override
