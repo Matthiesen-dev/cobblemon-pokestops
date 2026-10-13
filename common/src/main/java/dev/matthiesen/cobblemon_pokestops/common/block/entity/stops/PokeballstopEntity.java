@@ -55,7 +55,6 @@ public final class PokeballstopEntity extends StopEntityTemplate implements Beam
             case "masterball" -> -272035353;
             case "ultraball" -> -270015983;
             case "premierball" -> -268830215;
-            case "parkball" -> -283784704;
             default -> -283784704;
         };
     }
