@@ -1,8 +1,8 @@
 package dev.matthiesen.cobblemon_pokestops.common.registry;
 
 import dev.matthiesen.cobblemon_pokestops.common.CobblemonPokestopsCommon;
-import dev.matthiesen.cobblemon_pokestops.common.advancements.score.*;
-import dev.matthiesen.cobblemon_pokestops.common.advancements.use.*;
+import dev.matthiesen.cobblemon_pokestops.common.advancements.StopScoreTrackingCriterion;
+import dev.matthiesen.cobblemon_pokestops.common.advancements.UsedStopCriterion;
 import net.minecraft.advancements.*;
 import net.minecraft.advancements.critereon.PlayerTrigger;
 import net.minecraft.core.HolderLookup;
@@ -48,7 +48,7 @@ public final class AdvancementRegistry {
                 "advancements.cobblemon_pokestops.used_pokestop.description",
                 AdvancementType.GOAL,
                 root,
-                "used_1_pokestop", UsedPokestopCriterion.Conditions.usePokestop(),
+                "used_1_pokestop", UsedStopCriterion.Conditions.usePokestop(),
                 consumer,
                 "pokestops/used_1_pokestop"
         );
@@ -59,7 +59,7 @@ public final class AdvancementRegistry {
                 "advancements.cobblemon_pokestops.used_wingedstop.description",
                 AdvancementType.GOAL,
                 root,
-                "used_1_winged_pokestop", UsedWingedPokestopCriterion.Conditions.useWingedPokestop(),
+                "used_1_winged_pokestop", UsedStopCriterion.Conditions.useWingedPokestop(),
                 consumer,
                 "wingedstops/used_1_winged_pokestop"
         );
@@ -70,7 +70,7 @@ public final class AdvancementRegistry {
                 "advancements.cobblemon_pokestops.used_pokeballstop.description",
                 AdvancementType.GOAL,
                 root,
-                "used_1_pokeballstop", UsedPokeballstopCriterion.Conditions.usePokeballstop(),
+                "used_1_pokeballstop", UsedStopCriterion.Conditions.usePokeballstop(),
                 consumer,
                 "pokeballstops/used_1_pokeballstop"
         );
@@ -81,7 +81,7 @@ public final class AdvancementRegistry {
                 "advancements.cobblemon_pokestops.used_healingstop.description",
                 AdvancementType.GOAL,
                 root,
-                "used_1_healingstop", UsedHealingstopCriterion.Conditions.useHealingstop(),
+                "used_1_healingstop", UsedStopCriterion.Conditions.useHealingstop(),
                 consumer,
                 "healingstops/used_1_healingstop"
         );
@@ -94,7 +94,7 @@ public final class AdvancementRegistry {
                 "advancements.cobblemon_pokestops.used_25_pokestops.description",
                 AdvancementType.TASK,
                 usedOncePokestop,
-                "used_25_pokestops", PokestopScoreTracker.Conditions.used(25),
+                "used_25_pokestops", StopScoreTrackingCriterion.Conditions.usedPokestop(25),
                 consumer,
                 "pokestops/used_25_pokestops"
         );
@@ -105,7 +105,7 @@ public final class AdvancementRegistry {
                 "advancements.cobblemon_pokestops.used_25_winged_pokestops.description",
                 AdvancementType.TASK,
                 usedOnceWingedPokestop,
-                "used_25_winged_pokestops", WingedPokestopScoreTracker.Conditions.used(25),
+                "used_25_winged_pokestops", StopScoreTrackingCriterion.Conditions.usedWingedPokestop(25),
                 consumer,
                 "wingedstops/used_25_winged_pokestops"
         );
@@ -116,7 +116,7 @@ public final class AdvancementRegistry {
                 "advancements.cobblemon_pokestops.used_25_pokeballstops.description",
                 AdvancementType.TASK,
                 usedOncePokeballStop,
-                "used_25_pokeballstops", PokeballstopScoreTracker.Conditions.used(25),
+                "used_25_pokeballstops", StopScoreTrackingCriterion.Conditions.usedPokeballstop(25),
                 consumer,
                 "pokeballstops/used_25_pokeballstops"
         );
@@ -127,7 +127,7 @@ public final class AdvancementRegistry {
                 "advancements.cobblemon_pokestops.used_25_healingstops.description",
                 AdvancementType.TASK,
                 usedOnceHealingStop,
-                "used_25_healingstops", HealingstopScoreTracker.Conditions.used(25),
+                "used_25_healingstops", StopScoreTrackingCriterion.Conditions.usedHealingstop(25),
                 consumer,
                 "healingstops/used_25_healingstops"
         );
@@ -140,7 +140,7 @@ public final class AdvancementRegistry {
                 "advancements.cobblemon_pokestops.used_50_pokestops.description",
                 AdvancementType.TASK,
                 used25Pokestops,
-                "used_50_pokestops", PokestopScoreTracker.Conditions.used(50),
+                "used_50_pokestops", StopScoreTrackingCriterion.Conditions.usedPokestop(50),
                 consumer,
                 "pokestops/used_50_pokestops"
         );
@@ -151,7 +151,7 @@ public final class AdvancementRegistry {
                 "advancements.cobblemon_pokestops.used_50_winged_pokestops.description",
                 AdvancementType.TASK,
                 used25WingedPokestops,
-                "used_50_winged_pokestops", WingedPokestopScoreTracker.Conditions.used(50),
+                "used_50_winged_pokestops", StopScoreTrackingCriterion.Conditions.usedWingedPokestop(50),
                 consumer,
                 "wingedstops/used_50_winged_pokestops"
         );
@@ -162,7 +162,7 @@ public final class AdvancementRegistry {
                 "advancements.cobblemon_pokestops.used_50_pokeballstops.description",
                 AdvancementType.TASK,
                 used25Pokeballstops,
-                "used_50_pokeballstops", PokeballstopScoreTracker.Conditions.used(50),
+                "used_50_pokeballstops", StopScoreTrackingCriterion.Conditions.usedPokeballstop(50),
                 consumer,
                 "pokeballstops/used_50_pokeballstops"
         );
@@ -173,7 +173,7 @@ public final class AdvancementRegistry {
                 "advancements.cobblemon_pokestops.used_50_healingstops.description",
                 AdvancementType.TASK,
                 used25Healingstops,
-                "used_50_healingstops", HealingstopScoreTracker.Conditions.used(50),
+                "used_50_healingstops", StopScoreTrackingCriterion.Conditions.usedHealingstop(50),
                 consumer,
                 "healingstops/used_50_healingstops"
         );
@@ -186,7 +186,7 @@ public final class AdvancementRegistry {
                 "advancements.cobblemon_pokestops.used_100_pokestops.description",
                 AdvancementType.GOAL,
                 used50Pokestops,
-                "used_100_pokestops", PokestopScoreTracker.Conditions.used(100),
+                "used_100_pokestops", StopScoreTrackingCriterion.Conditions.usedPokestop(100),
                 consumer,
                 "pokestops/used_100_pokestops"
         );
@@ -197,7 +197,7 @@ public final class AdvancementRegistry {
                 "advancements.cobblemon_pokestops.used_100_winged_pokestops.description",
                 AdvancementType.GOAL,
                 used50WingedPokestops,
-                "used_100_winged_pokestops", WingedPokestopScoreTracker.Conditions.used(100),
+                "used_100_winged_pokestops", StopScoreTrackingCriterion.Conditions.usedWingedPokestop(100),
                 consumer,
                 "wingedstops/used_100_winged_pokestops"
         );
@@ -208,7 +208,7 @@ public final class AdvancementRegistry {
                 "advancements.cobblemon_pokestops.used_100_pokeballstops.description",
                 AdvancementType.GOAL,
                 used50Pokeballstops,
-                "used_100_pokeballstops", PokeballstopScoreTracker.Conditions.used(100),
+                "used_100_pokeballstops", StopScoreTrackingCriterion.Conditions.usedPokeballstop(100),
                 consumer,
                 "pokeballstops/used_100_pokeballstops"
         );
@@ -219,7 +219,7 @@ public final class AdvancementRegistry {
                 "advancements.cobblemon_pokestops.used_100_healingstops.description",
                 AdvancementType.GOAL,
                 used50Healingstops,
-                "used_100_healingstops", HealingstopScoreTracker.Conditions.used(100),
+                "used_100_healingstops", StopScoreTrackingCriterion.Conditions.usedHealingstop(100),
                 consumer,
                 "healingstops/used_100_healingstops"
         );
@@ -232,7 +232,7 @@ public final class AdvancementRegistry {
                 "advancements.cobblemon_pokestops.used_200_pokestops.description",
                 AdvancementType.TASK,
                 used100Pokestops,
-                "used_200_pokestops", PokestopScoreTracker.Conditions.used(200),
+                "used_200_pokestops", StopScoreTrackingCriterion.Conditions.usedPokestop(200),
                 consumer,
                 "pokestops/used_200_pokestops"
         );
@@ -243,7 +243,7 @@ public final class AdvancementRegistry {
                 "advancements.cobblemon_pokestops.used_200_winged_pokestops.description",
                 AdvancementType.TASK,
                 used100WingedPokestops,
-                "used_200_winged_pokestops", WingedPokestopScoreTracker.Conditions.used(200),
+                "used_200_winged_pokestops", StopScoreTrackingCriterion.Conditions.usedWingedPokestop(200),
                 consumer,
                 "wingedstops/used_200_winged_pokestops"
         );
@@ -254,7 +254,7 @@ public final class AdvancementRegistry {
                 "advancements.cobblemon_pokestops.used_200_pokeballstops.description",
                 AdvancementType.TASK,
                 used100Pokeballstops,
-                "used_200_pokeballstops", PokeballstopScoreTracker.Conditions.used(200),
+                "used_200_pokeballstops", StopScoreTrackingCriterion.Conditions.usedPokeballstop(200),
                 consumer,
                 "pokeballstops/used_200_pokeballstops"
         );
@@ -265,7 +265,7 @@ public final class AdvancementRegistry {
                 "advancements.cobblemon_pokestops.used_200_healingstops.description",
                 AdvancementType.TASK,
                 used100Healingstops,
-                "used_200_healingstops", HealingstopScoreTracker.Conditions.used(200),
+                "used_200_healingstops", StopScoreTrackingCriterion.Conditions.usedHealingstop(200),
                 consumer,
                 "healingstops/used_200_healingstops"
         );
@@ -278,7 +278,7 @@ public final class AdvancementRegistry {
                 "advancements.cobblemon_pokestops.used_300_pokestops.description",
                 AdvancementType.TASK,
                 used200Pokestops,
-                "used_300_pokestops", PokestopScoreTracker.Conditions.used(300),
+                "used_300_pokestops", StopScoreTrackingCriterion.Conditions.usedPokestop(300),
                 consumer,
                 "pokestops/used_300_pokestops"
         );
@@ -289,7 +289,7 @@ public final class AdvancementRegistry {
                 "advancements.cobblemon_pokestops.used_300_winged_pokestops.description",
                 AdvancementType.TASK,
                 used200WingedPokestops,
-                "used_300_winged_pokestops", WingedPokestopScoreTracker.Conditions.used(300),
+                "used_300_winged_pokestops", StopScoreTrackingCriterion.Conditions.usedWingedPokestop(300),
                 consumer,
                 "wingedstops/used_300_winged_pokestops"
         );
@@ -300,7 +300,7 @@ public final class AdvancementRegistry {
                 "advancements.cobblemon_pokestops.used_300_pokeballstops.description",
                 AdvancementType.TASK,
                 used200Pokeballstops,
-                "used_300_pokeballstops", PokeballstopScoreTracker.Conditions.used(300),
+                "used_300_pokeballstops", StopScoreTrackingCriterion.Conditions.usedPokeballstop(300),
                 consumer,
                 "pokeballstops/used_300_pokeballstops"
         );
@@ -311,7 +311,7 @@ public final class AdvancementRegistry {
                 "advancements.cobblemon_pokestops.used_300_healingstops.description",
                 AdvancementType.TASK,
                 used200Healingstops,
-                "used_300_healingstops", HealingstopScoreTracker.Conditions.used(300),
+                "used_300_healingstops", StopScoreTrackingCriterion.Conditions.usedHealingstop(300),
                 consumer,
                 "healingstops/used_300_healingstops"
         );
@@ -324,7 +324,7 @@ public final class AdvancementRegistry {
                 "advancements.cobblemon_pokestops.used_400_pokestops.description",
                 AdvancementType.TASK,
                 used300Pokestops,
-                "used_400_pokestops", PokestopScoreTracker.Conditions.used(400),
+                "used_400_pokestops", StopScoreTrackingCriterion.Conditions.usedPokestop(400),
                 consumer,
                 "pokestops/used_400_pokestops"
         );
@@ -335,7 +335,7 @@ public final class AdvancementRegistry {
                 "advancements.cobblemon_pokestops.used_400_winged_pokestops.description",
                 AdvancementType.TASK,
                 used300WingedPokestops,
-                "used_400_winged_pokestops", WingedPokestopScoreTracker.Conditions.used(400),
+                "used_400_winged_pokestops", StopScoreTrackingCriterion.Conditions.usedWingedPokestop(400),
                 consumer,
                 "wingedstops/used_400_winged_pokestops"
         );
@@ -346,7 +346,7 @@ public final class AdvancementRegistry {
                 "advancements.cobblemon_pokestops.used_400_pokeballstops.description",
                 AdvancementType.TASK,
                 used300Pokeballstops,
-                "used_400_pokeballstops", PokeballstopScoreTracker.Conditions.used(400),
+                "used_400_pokeballstops", StopScoreTrackingCriterion.Conditions.usedPokeballstop(400),
                 consumer,
                 "pokeballstops/used_400_pokeballstops"
         );
@@ -357,7 +357,7 @@ public final class AdvancementRegistry {
                 "advancements.cobblemon_pokestops.used_400_healingstops.description",
                 AdvancementType.TASK,
                 used300Healingstops,
-                "used_400_healingstops", HealingstopScoreTracker.Conditions.used(400),
+                "used_400_healingstops", StopScoreTrackingCriterion.Conditions.usedHealingstop(400),
                 consumer,
                 "healingstops/used_400_healingstops"
         );
@@ -370,7 +370,7 @@ public final class AdvancementRegistry {
                 "advancements.cobblemon_pokestops.used_500_pokestops.description",
                 AdvancementType.CHALLENGE,
                 used400Pokestops,
-                "used_500_pokestops", PokestopScoreTracker.Conditions.used(500),
+                "used_500_pokestops", StopScoreTrackingCriterion.Conditions.usedPokestop(500),
                 AdvancementRewards.Builder.loot(ModLootTables.POKESTOP_TROPHY_LOOT),
                 consumer,
                 "pokestops/used_500_pokestops"
@@ -382,7 +382,7 @@ public final class AdvancementRegistry {
                 "advancements.cobblemon_pokestops.used_500_winged_pokestops.description",
                 AdvancementType.CHALLENGE,
                 used400WingedPokestops,
-                "used_500_winged_pokestops", WingedPokestopScoreTracker.Conditions.used(500),
+                "used_500_winged_pokestops", StopScoreTrackingCriterion.Conditions.usedWingedPokestop(500),
                 AdvancementRewards.Builder.loot(ModLootTables.WINGED_TROPHY_LOOT),
                 consumer,
                 "wingedstops/used_500_winged_pokestops"
@@ -395,7 +395,7 @@ public final class AdvancementRegistry {
                 AdvancementType.CHALLENGE,
                 used400Pokeballstops,
                 "used_500_pokeballstops",
-                PokeballstopScoreTracker.Conditions.used(500),
+                StopScoreTrackingCriterion.Conditions.usedPokeballstop(500),
                 AdvancementRewards.Builder.loot(ModLootTables.POKEBALL_TROPHY_LOOT),
                 consumer,
                 "pokeballstops/used_500_pokeballstops"
@@ -408,7 +408,7 @@ public final class AdvancementRegistry {
                 AdvancementType.CHALLENGE,
                 used400Healingstops,
                 "used_500_healingstops",
-                HealingstopScoreTracker.Conditions.used(500),
+                StopScoreTrackingCriterion.Conditions.usedHealingstop(500),
                 AdvancementRewards.Builder.loot(ModLootTables.HEALINGSTOP_TROPHY_LOOT),
                 consumer,
                 "healingstops/used_500_healingstops"

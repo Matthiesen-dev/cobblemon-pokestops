@@ -1,8 +1,8 @@
 package dev.matthiesen.cobblemon_pokestops.common.registry;
 
 import dev.matthiesen.cobblemon_pokestops.common.CobblemonPokestopsCommon;
-import dev.matthiesen.cobblemon_pokestops.common.advancements.score.*;
-import dev.matthiesen.cobblemon_pokestops.common.advancements.use.*;
+import dev.matthiesen.cobblemon_pokestops.common.advancements.StopScoreTrackingCriterion;
+import dev.matthiesen.cobblemon_pokestops.common.advancements.UsedStopCriterion;
 import dev.matthiesen.matthiesen_core.common.registry.AbstractCriteriaTriggerRegistry;
 
 import java.util.function.Supplier;
@@ -16,25 +16,25 @@ public final class CriterionTriggerRegistry extends AbstractCriteriaTriggerRegis
 
     public static void init() {}
 
-    public static final Supplier<UsedPokestopCriterion> USE_POKESTOP;
-    public static final Supplier<UsedWingedPokestopCriterion> USE_WINGED_POKESTOP;
-    public static final Supplier<UsedPokeballstopCriterion> USE_POKEBALLSTOP;
-    public static final Supplier<UsedHealingstopCriterion> USE_HEALINGSTOP;
+    public static final Supplier<UsedStopCriterion> USE_POKESTOP;
+    public static final Supplier<UsedStopCriterion> USE_WINGED_POKESTOP;
+    public static final Supplier<UsedStopCriterion> USE_POKEBALLSTOP;
+    public static final Supplier<UsedStopCriterion> USE_HEALINGSTOP;
 
-    public static final Supplier<PokestopScoreTracker> POKESTOP_SCORE;
-    public static final Supplier<WingedPokestopScoreTracker> WINGED_POKESTOP_SCORE;
-    public static final Supplier<PokeballstopScoreTracker> POKEBALLSTOP_SCORE;
-    public static final Supplier<HealingstopScoreTracker> HEALINGSTOP_SCORE;
+    public static final Supplier<StopScoreTrackingCriterion> POKESTOP_SCORE;
+    public static final Supplier<StopScoreTrackingCriterion> WINGED_POKESTOP_SCORE;
+    public static final Supplier<StopScoreTrackingCriterion> POKEBALLSTOP_SCORE;
+    public static final Supplier<StopScoreTrackingCriterion> HEALINGSTOP_SCORE;
 
     static {
-        USE_POKESTOP = INSTANCE.register("used_pokestop", UsedPokestopCriterion::new);
-        USE_WINGED_POKESTOP = INSTANCE.register("used_winged_pokestop", UsedWingedPokestopCriterion::new);
-        USE_POKEBALLSTOP = INSTANCE.register("used_pokeballstop", UsedPokeballstopCriterion::new);
-        USE_HEALINGSTOP = INSTANCE.register("used_healingstop", UsedHealingstopCriterion::new);
+        USE_POKESTOP = INSTANCE.register("used_pokestop", UsedStopCriterion::new);
+        USE_WINGED_POKESTOP = INSTANCE.register("used_winged_pokestop", UsedStopCriterion::new);
+        USE_POKEBALLSTOP = INSTANCE.register("used_pokeballstop", UsedStopCriterion::new);
+        USE_HEALINGSTOP = INSTANCE.register("used_healingstop", UsedStopCriterion::new);
 
-        POKESTOP_SCORE = INSTANCE.register("pokestop_score", PokestopScoreTracker::new);
-        WINGED_POKESTOP_SCORE = INSTANCE.register("winged_pokestop_score", WingedPokestopScoreTracker::new);
-        POKEBALLSTOP_SCORE = INSTANCE.register("pokeballstop_score", PokeballstopScoreTracker::new);
-        HEALINGSTOP_SCORE = INSTANCE.register("healingstop_score", HealingstopScoreTracker::new);
+        POKESTOP_SCORE = INSTANCE.register("pokestop_score", StopScoreTrackingCriterion::new);
+        WINGED_POKESTOP_SCORE = INSTANCE.register("winged_pokestop_score", StopScoreTrackingCriterion::new);
+        POKEBALLSTOP_SCORE = INSTANCE.register("pokeballstop_score", StopScoreTrackingCriterion::new);
+        HEALINGSTOP_SCORE = INSTANCE.register("healingstop_score", StopScoreTrackingCriterion::new);
     }
 }
