@@ -7,11 +7,16 @@ import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
 import software.bernie.geckolib.model.GeoModel;
 
-public abstract class TrophyModelTemplate<T extends TrophyEntityTemplate> extends GeoModel<T> {
-    /**
-     * Subclasses must provide the model file path (e.g., "pokestop", "wingedstop").
-     */
-    protected abstract String getModelName();
+public class TrophyModelTemplate<T extends TrophyEntityTemplate> extends GeoModel<T> {
+    private final String modelName;
+
+    public TrophyModelTemplate(String modelName) {
+        this.modelName = modelName;
+    }
+
+    protected String getModelName() {
+        return modelName;
+    }
 
     protected final String getAnimationName() {
         return getModelName();

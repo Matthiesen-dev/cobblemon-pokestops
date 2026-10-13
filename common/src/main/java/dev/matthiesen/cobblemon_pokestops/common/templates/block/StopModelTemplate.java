@@ -9,11 +9,16 @@ import net.minecraft.world.entity.player.Player;
 import org.jetbrains.annotations.NotNull;
 import software.bernie.geckolib.model.GeoModel;
 
-public abstract class StopModelTemplate<T extends StopEntityTemplate> extends GeoModel<T> {
-    /**
-     * Subclasses must provide the model file path (e.g., "pokestop", "wingedstop").
-     */
-    protected abstract String getModelName();
+public class StopModelTemplate<T extends StopEntityTemplate> extends GeoModel<T> {
+    private final String modelName;
+
+    public StopModelTemplate(String modelName) {
+        this.modelName = modelName;
+    }
+
+    protected String getModelName() {
+        return modelName;
+    }
 
     protected final String getAnimationName() {
         return getModelName();

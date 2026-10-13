@@ -1,12 +1,12 @@
 package dev.matthiesen.cobblemon_pokestops.common.client.renderer.util;
 
 import com.mojang.blaze3d.vertex.PoseStack;
+import dev.matthiesen.cobblemon_pokestops.common.templates.entity.StopEntityTemplate;
 import net.minecraft.client.renderer.MultiBufferSource;
-import net.minecraft.world.level.block.entity.BlockEntity;
 import software.bernie.geckolib.animatable.GeoAnimatable;
 import software.bernie.geckolib.model.GeoModel;
 
-public class CustomBeamBlockRenderer<T extends BlockEntity & GeoAnimatable & BeamRenderer.BeamEntity> extends CustomBlockRenderer<T> {
+public class CustomBeamBlockRenderer<T extends StopEntityTemplate & GeoAnimatable & BeamRenderer.BeamEntity> extends CustomBlockRenderer<T> {
     public CustomBeamBlockRenderer(GeoModel<T> model) {
         super(model);
     }
