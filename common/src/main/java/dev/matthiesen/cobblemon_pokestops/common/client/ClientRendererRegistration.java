@@ -31,7 +31,7 @@ import java.util.function.Predicate;
 import java.util.function.Supplier;
 
 public final class ClientRendererRegistration {
-    private static final int DUMMY_BASE_SEARCH_DEPTH = 2;
+    private static final int DUMMY_BASE_SEARCH_DEPTH = 4;
     private static final List<StopMapping> BASE_POS_MAPPINGS = List.of(
             new StopMapping(
                     state -> state.is(BlockRegistry.POKESTOP_DUMMY.get()),
