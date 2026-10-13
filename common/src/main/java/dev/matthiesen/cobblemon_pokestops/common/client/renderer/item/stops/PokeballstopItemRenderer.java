@@ -1,13 +1,13 @@
 package dev.matthiesen.cobblemon_pokestops.common.client.renderer.item.stops;
 
-import dev.matthiesen.cobblemon_pokestops.common.client.model.item.stops.PokeballstopItemModel;
+import dev.matthiesen.cobblemon_pokestops.common.client.renderer.util.EmissiveLayer;
 import dev.matthiesen.cobblemon_pokestops.common.item.stops.PokeballstopItem;
+import dev.matthiesen.cobblemon_pokestops.common.templates.block.StopItemModelTemplate;
 import software.bernie.geckolib.renderer.GeoItemRenderer;
-import software.bernie.geckolib.renderer.layer.AutoGlowingGeoLayer;
 
 public final class PokeballstopItemRenderer extends GeoItemRenderer<PokeballstopItem> {
     public PokeballstopItemRenderer() {
-        super(new PokeballstopItemModel());
-        addRenderLayer(new AutoGlowingGeoLayer<>(this));
+        super(new StopItemModelTemplate<>("pokeballstop"));
+        addRenderLayer(new EmissiveLayer<>(this));
     }
 }

@@ -1,13 +1,13 @@
 package dev.matthiesen.cobblemon_pokestops.common.client.renderer.block.trophies;
 
-import dev.matthiesen.cobblemon_pokestops.common.client.model.block.trophies.WingedstopTrophyModel;
 import dev.matthiesen.cobblemon_pokestops.common.block.entity.trophies.WingedstopTrophyEntity;
-import software.bernie.geckolib.renderer.GeoBlockRenderer;
-import software.bernie.geckolib.renderer.layer.AutoGlowingGeoLayer;
+import dev.matthiesen.cobblemon_pokestops.common.client.renderer.util.CustomBlockRenderer;
+import dev.matthiesen.cobblemon_pokestops.common.client.renderer.util.EmissiveLayer;
+import dev.matthiesen.cobblemon_pokestops.common.templates.block.TrophyModelTemplate;
 
-public final class WingedstopTrophyRenderer extends GeoBlockRenderer<WingedstopTrophyEntity> {
+public final class WingedstopTrophyRenderer extends CustomBlockRenderer<WingedstopTrophyEntity> {
     public WingedstopTrophyRenderer() {
-        super(new WingedstopTrophyModel());
-        addRenderLayer(new AutoGlowingGeoLayer<>(this));
+        super(new TrophyModelTemplate<>("wingedstop_trophy"));
+        addRenderLayer(new EmissiveLayer<>(this));
     }
 }

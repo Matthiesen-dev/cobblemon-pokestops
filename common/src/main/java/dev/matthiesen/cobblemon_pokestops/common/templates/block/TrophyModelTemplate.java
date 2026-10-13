@@ -7,16 +7,20 @@ import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
 import software.bernie.geckolib.model.GeoModel;
 
-public abstract class TrophyModelTemplate<T extends TrophyEntityTemplate> extends GeoModel<T> {
-    /**
-     * Subclasses must provide the model file path (e.g., "pokestop", "wingedstop").
-     */
-    protected abstract String getModelName();
+public class TrophyModelTemplate<T extends TrophyEntityTemplate> extends GeoModel<T> {
+    private final String modelName;
 
-    /**
-     * Subclasses must provide the animation file path (e.g., "pokestop", "wingedstop").
-     */
-    protected abstract String getAnimationName();
+    public TrophyModelTemplate(String modelName) {
+        this.modelName = modelName;
+    }
+
+    protected String getModelName() {
+        return modelName;
+    }
+
+    protected final String getAnimationName() {
+        return getModelName();
+    }
 
     protected final ResourceLocation getModelResource() {
         return CobblemonPokestopsCommon.modResource("geo/block/" + getModelName() + ".geo.json");
@@ -29,6 +33,11 @@ public abstract class TrophyModelTemplate<T extends TrophyEntityTemplate> extend
     protected final ResourceLocation getMainTexture(T entity) {
         String name = BuiltInRegistries.BLOCK.getKey(entity.getBlockState().getBlock()).getPath();
         return CobblemonPokestopsCommon.modResource("textures/block/" + name + ".png");
+    }
+
+    @Override
+    public @NotNull ResourceLocation getTextureResource(T animatable) {
+        return getMainTexture(animatable);
     }
 
     @Override

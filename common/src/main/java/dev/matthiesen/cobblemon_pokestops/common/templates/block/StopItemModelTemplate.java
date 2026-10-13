@@ -7,16 +7,23 @@ import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
 import software.bernie.geckolib.model.GeoModel;
 
-public abstract class StopItemModelTemplate<T extends StopItemTemplate> extends GeoModel<T> {
+public class StopItemModelTemplate<T extends StopItemTemplate> extends GeoModel<T> {
+    private final String modelName;
+
+    public StopItemModelTemplate(String modelName) {
+        this.modelName = modelName;
+    }
+
     /**
      * Subclasses must provide the model file path (e.g., "pokestop", "wingedstop").
      */
-    protected abstract String getModelName();
+    protected String getModelName() {
+        return modelName;
+    }
 
-    /**
-     * Subclasses must provide the animation file path (e.g., "pokestop", "wingedstop").
-     */
-    protected abstract String getAnimationName();
+    protected final String getAnimationName() {
+        return getModelName();
+    }
 
     protected final ResourceLocation getModelResource() {
         return CobblemonPokestopsCommon.modResource("geo/block/" + getModelName() + ".geo.json");
