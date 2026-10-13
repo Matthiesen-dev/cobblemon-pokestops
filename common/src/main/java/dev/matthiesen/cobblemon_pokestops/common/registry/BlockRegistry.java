@@ -1,7 +1,6 @@
 package dev.matthiesen.cobblemon_pokestops.common.registry;
 
 import dev.matthiesen.cobblemon_pokestops.common.CobblemonPokestopsCommon;
-import dev.matthiesen.cobblemon_pokestops.common.block.dummy.*;
 import dev.matthiesen.cobblemon_pokestops.common.block.stops.*;
 import dev.matthiesen.cobblemon_pokestops.common.block.trophies.*;
 import dev.matthiesen.cobblemon_pokestops.common.templates.block.*;
@@ -36,6 +35,11 @@ public final class BlockRegistry extends AbstractBlockRegistry {
 
     public static final Map<String, Supplier<? extends TrophyTemplate>> ALL_TROPHIES = new HashMap<>();
 
+    public static final Supplier<DummyBlockTemplate> POKESTOP_DUMMY;
+    public static final Supplier<DummyBlockTemplate> WINGEDSTOP_DUMMY;
+    public static final Supplier<DummyBlockTemplate> POKEBALLSTOP_DUMMY;
+    public static final Supplier<DummyBlockTemplate> HEALINGSTOP_DUMMY;
+
     static {
         // Register Pokestops
         registerFamilyWithVariants(POKESTOPS, "pokestop", POKESTOP_VARIANTS, Pokestop::new);
@@ -54,6 +58,11 @@ public final class BlockRegistry extends AbstractBlockRegistry {
         ALL_TROPHIES.putAll(WINGEDSTOP_TROPHIES);
         ALL_TROPHIES.putAll(POKEBALLSTOP_TROPHIES);
         ALL_TROPHIES.putAll(HEALINGSTOP_TROPHIES);
+
+        POKESTOP_DUMMY = registerBlock("pokestop_dummy", DummyBlockTemplate.register(ModTags.Blocks.POKESTOPS));
+        WINGEDSTOP_DUMMY = registerBlock("wingedstop_dummy", DummyBlockTemplate.register(ModTags.Blocks.WINGEDSTOPS));
+        POKEBALLSTOP_DUMMY = registerBlock("pokeballstop_dummy", DummyBlockTemplate.register(ModTags.Blocks.POKEBALLSTOPS));
+        HEALINGSTOP_DUMMY = registerBlock("healingstop_dummy", DummyBlockTemplate.register(ModTags.Blocks.HEALINGSTOPS));
     }
 
     /**
@@ -87,12 +96,6 @@ public final class BlockRegistry extends AbstractBlockRegistry {
                 .map(variant -> baseId + "_" + variant)
                 .forEach(id -> target.put(id, registerBlock(id, factory)));
     }
-
-    // Utility block
-    public static final Supplier<PokestopDummyBlock> POKESTOP_DUMMY = registerBlock("pokestop_dummy", PokestopDummyBlock::new);
-    public static final Supplier<WingedstopDummyBlock> WINGEDSTOP_DUMMY = registerBlock("wingedstop_dummy", WingedstopDummyBlock::new);
-    public static final Supplier<PokeballstopDummyBlock> POKEBALLSTOP_DUMMY = registerBlock("pokeballstop_dummy", PokeballstopDummyBlock::new);
-    public static final Supplier<HealingstopDummyBlock> HEALINGSTOP_DUMMY = registerBlock("healingstop_dummy", HealingstopDummyBlock::new);
 
     public static final Map<String, Supplier<? extends DummyBlockTemplate>> DUMMY_BLOCKS = Map.of(
             "pokestops", POKESTOP_DUMMY,
