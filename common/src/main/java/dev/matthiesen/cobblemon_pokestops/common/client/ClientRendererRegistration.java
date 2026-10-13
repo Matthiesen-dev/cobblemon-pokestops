@@ -3,13 +3,9 @@ package dev.matthiesen.cobblemon_pokestops.common.client;
 import com.mojang.blaze3d.vertex.PoseStack;
 import dev.matthiesen.cobblemon_pokestops.common.CobblemonPokestopsCommon;
 import dev.matthiesen.cobblemon_pokestops.common.CobblemonPokestopsCommonClient;
-import dev.matthiesen.cobblemon_pokestops.common.client.renderer.block.stops.*;
-import dev.matthiesen.cobblemon_pokestops.common.client.renderer.block.trophies.*;
-import dev.matthiesen.cobblemon_pokestops.common.client.renderer.item.stops.*;
-import dev.matthiesen.cobblemon_pokestops.common.client.renderer.item.trophies.*;
-import dev.matthiesen.cobblemon_pokestops.common.registry.BlockEntityRegistry;
-import dev.matthiesen.cobblemon_pokestops.common.registry.BlockRegistry;
-import dev.matthiesen.cobblemon_pokestops.common.registry.ItemRegistry;
+import dev.matthiesen.cobblemon_pokestops.common.client.renderer.stops.*;
+import dev.matthiesen.cobblemon_pokestops.common.client.renderer.trophies.*;
+import dev.matthiesen.cobblemon_pokestops.common.registry.*;
 import dev.matthiesen.cobblemon_pokestops.common.templates.item.StopItemTemplate;
 import dev.matthiesen.matthiesen_core.common.api.events.PlatformClientEvents;
 import net.minecraft.client.Camera;
@@ -59,34 +55,45 @@ public final class ClientRendererRegistration {
         CobblemonPokestopsCommon.INSTANCE.createInfoLog("Registering Client Resources");
 
         // Register GeckoLib Renderers
+        var healingStop = HealingStopRenderer.INSTANCE;
+        var pokeballStop = PokeballStopRenderer.INSTANCE;
+        var pokestop = PokeStopRenderer.INSTANCE;
+        var wingedStop = WingedStopRenderer.INSTANCE;
+
+        var healingStopTrophy = HealingStopTrophyRenderer.INSTANCE;
+        var pokeballStopTrophy = PokeballStopTrophyRenderer.INSTANCE;
+        var pokestopTrophy = PokeStopTrophyRenderer.INSTANCE;
+        var wingedStopTrophy = WingedStopTrophyRenderer.INSTANCE;
+
+        // Register Item Renderers
         ItemRegistry.POKESTOP_ITEMS.forEach((key, item) ->
-                item.get().renderProviderHolder.setValue(makeRendererProvider(new PokestopItemRenderer())));
+                item.get().renderProviderHolder.setValue(makeRendererProvider(pokestop.createItemRenderer())));
         ItemRegistry.POKESTOP_TROPHY_ITEMS.forEach((key, item) ->
-                item.get().renderProviderHolder.setValue(makeRendererProvider(new PokestopTrophyItemRenderer())));
+                item.get().renderProviderHolder.setValue(makeRendererProvider(pokestopTrophy.createItemRenderer())));
         ItemRegistry.WINGEDSTOP_ITEMS.forEach((key, item) ->
-                item.get().renderProviderHolder.setValue(makeRendererProvider(new WingedstopItemRenderer())));
+                item.get().renderProviderHolder.setValue(makeRendererProvider(wingedStop.createItemRenderer())));
         ItemRegistry.WINGEDSTOP_TROPHY_ITEMS.forEach((key, item) ->
-                item.get().renderProviderHolder.setValue(makeRendererProvider(new WingedstopTrophyItemRenderer())));
+                item.get().renderProviderHolder.setValue(makeRendererProvider(wingedStopTrophy.createItemRenderer())));
         ItemRegistry.POKEBALLSTOP_ITEMS.forEach((key, item) ->
-                item.get().renderProviderHolder.setValue(makeRendererProvider(new PokeballstopItemRenderer())));
+                item.get().renderProviderHolder.setValue(makeRendererProvider(pokeballStop.createItemRenderer())));
         ItemRegistry.POKEBALLSTOP_TROPHY_ITEMS.forEach((key, item) ->
-                item.get().renderProviderHolder.setValue(makeRendererProvider(new PokeballstopTrophyItemRenderer())));
+                item.get().renderProviderHolder.setValue(makeRendererProvider(pokeballStopTrophy.createItemRenderer())));
         ItemRegistry.HEALINGSTOP_ITEMS.forEach((key, item) ->
-                item.get().renderProviderHolder.setValue(makeRendererProvider(new HealingstopItemRenderer())));
+                item.get().renderProviderHolder.setValue(makeRendererProvider(healingStop.createItemRenderer())));
         ItemRegistry.HEALINGSTOP_TROPHY_ITEMS.forEach((key, item) ->
-                item.get().renderProviderHolder.setValue(makeRendererProvider(new HealingstopTrophyItemRenderer())));
+                item.get().renderProviderHolder.setValue(makeRendererProvider(healingStopTrophy.createItemRenderer())));
 
         // Register Block Entity Renderers
         CobblemonPokestopsCommonClient.INSTANCE.getEntityRendererManager().registerEntityRenderers(registry -> {
-            registry.registerBlockEntityRenderer(BlockEntityRegistry.POKESTOP_BE.get(), context -> new PokestopRenderer());
-            registry.registerBlockEntityRenderer(BlockEntityRegistry.WINGEDSTOP_BE.get(), context -> new WingedstopRenderer());
-            registry.registerBlockEntityRenderer(BlockEntityRegistry.POKEBALLSTOP_BE.get(), context -> new PokeballstopRenderer());
-            registry.registerBlockEntityRenderer(BlockEntityRegistry.HEALINGSTOP_BE.get(), context -> new HealingstopRenderer());
+            registry.registerBlockEntityRenderer(BlockEntityRegistry.POKESTOP_BE.get(), pokestop.createBlockRendererContext());
+            registry.registerBlockEntityRenderer(BlockEntityRegistry.WINGEDSTOP_BE.get(), wingedStop.createBlockRendererContext());
+            registry.registerBlockEntityRenderer(BlockEntityRegistry.POKEBALLSTOP_BE.get(), pokeballStop.createBlockRendererContext());
+            registry.registerBlockEntityRenderer(BlockEntityRegistry.HEALINGSTOP_BE.get(), healingStop.createBlockRendererContext());
 
-            registry.registerBlockEntityRenderer(BlockEntityRegistry.POKESTOP_TROPHY_BE.get(), context -> new PokestopTrophyRenderer());
-            registry.registerBlockEntityRenderer(BlockEntityRegistry.WINGEDSTOP_TROPHY_BE.get(), context -> new WingedstopTrophyRenderer());
-            registry.registerBlockEntityRenderer(BlockEntityRegistry.POKEBALLSTOP_TROPHY_BE.get(), context -> new PokeballstopTrophyRenderer());
-            registry.registerBlockEntityRenderer(BlockEntityRegistry.HEALINGSTOP_TROPHY_BE.get(), context -> new HealingstopTrophyRenderer());
+            registry.registerBlockEntityRenderer(BlockEntityRegistry.POKESTOP_TROPHY_BE.get(), pokestopTrophy.createBlockRendererContext());
+            registry.registerBlockEntityRenderer(BlockEntityRegistry.WINGEDSTOP_TROPHY_BE.get(), wingedStopTrophy.createBlockRendererContext());
+            registry.registerBlockEntityRenderer(BlockEntityRegistry.POKEBALLSTOP_TROPHY_BE.get(), pokeballStopTrophy.createBlockRendererContext());
+            registry.registerBlockEntityRenderer(BlockEntityRegistry.HEALINGSTOP_TROPHY_BE.get(), healingStopTrophy.createBlockRendererContext());
         });
 
         // Register Block Outline Listener
