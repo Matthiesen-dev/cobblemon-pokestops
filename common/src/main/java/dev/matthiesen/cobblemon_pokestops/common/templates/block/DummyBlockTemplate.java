@@ -22,6 +22,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.function.Predicate;
+import java.util.function.Supplier;
 
 public class DummyBlockTemplate extends Block implements EntityBlock {
     private static final VoxelShape DEFAULT_MIDDLE_SHAPE = Block.box(4.0D, 0.0D, 4.0D, 12.0D, 16.0D, 12.0D);
@@ -56,6 +57,10 @@ public class DummyBlockTemplate extends Block implements EntityBlock {
         this.topParentOffset = topParentOffset;
         this.middleShape = middleShape;
         this.topShape = topShape;
+    }
+
+    public static Supplier<DummyBlockTemplate> register(TagKey<Block> tag) {
+        return () -> new DummyBlockTemplate(matchesRegistered(tag));
     }
 
     @Override
