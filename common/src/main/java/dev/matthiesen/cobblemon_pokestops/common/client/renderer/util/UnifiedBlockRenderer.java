@@ -6,6 +6,7 @@ import dev.matthiesen.cobblemon_pokestops.common.templates.entity.TrophyEntityTe
 import dev.matthiesen.cobblemon_pokestops.common.templates.item.StopItemTemplate;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import software.bernie.geckolib.renderer.GeoItemRenderer;
+import software.bernie.geckolib.renderer.layer.AutoGlowingGeoLayer;
 
 public class UnifiedBlockRenderer<T extends TrophyEntityTemplate, I extends StopItemTemplate> {
     private final String modelName;
@@ -32,7 +33,7 @@ public class UnifiedBlockRenderer<T extends TrophyEntityTemplate, I extends Stop
         public BlockRenderer() {
             super(new TrophyModelTemplate<>(modelName));
             if (isEmissive) {
-                addRenderLayer(new EmissiveLayer<>(this));
+                addRenderLayer(new AutoGlowingGeoLayer<>(this));
             }
         }
     }
@@ -41,7 +42,7 @@ public class UnifiedBlockRenderer<T extends TrophyEntityTemplate, I extends Stop
         public ItemRenderer() {
             super(new StopItemModelTemplate<>(modelName));
             if (isEmissive) {
-                addRenderLayer(new EmissiveLayer<>(this));
+                addRenderLayer(new AutoGlowingGeoLayer<>(this));
             }
         }
     }
