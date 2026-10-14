@@ -11,6 +11,8 @@ import software.bernie.geckolib.renderer.GeoRenderer;
 import software.bernie.geckolib.renderer.layer.AutoGlowingGeoLayer;
 import software.bernie.geckolib.util.ClientUtil;
 
+// this is supposed to allow Emissive textures with shaders but currently it does not work...
+// must investigate solutions... for now this is just a placeholder till i can revisit this and figure out a solution
 public final class EmissiveLayer<T extends GeoAnimatable> extends AutoGlowingGeoLayer<T> {
     public EmissiveLayer(GeoRenderer<T> renderer) {
         super(renderer);

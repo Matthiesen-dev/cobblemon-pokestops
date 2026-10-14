@@ -7,6 +7,7 @@ import dev.matthiesen.cobblemon_pokestops.common.templates.item.StopItemTemplate
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import software.bernie.geckolib.animatable.GeoAnimatable;
 import software.bernie.geckolib.renderer.GeoItemRenderer;
+import software.bernie.geckolib.renderer.layer.AutoGlowingGeoLayer;
 
 public class UnifiedBeamBlockRenderer<T extends StopEntityTemplate & GeoAnimatable & BeamRenderer.BeamEntity, I extends StopItemTemplate> {
     private final String modelName;
@@ -33,7 +34,7 @@ public class UnifiedBeamBlockRenderer<T extends StopEntityTemplate & GeoAnimatab
         public BlockRenderer() {
             super(new StopModelTemplate<>(modelName));
             if (isEmissive) {
-                addRenderLayer(new EmissiveLayer<>(this));
+                addRenderLayer(new AutoGlowingGeoLayer<>(this));
             }
         }
     }
@@ -42,7 +43,7 @@ public class UnifiedBeamBlockRenderer<T extends StopEntityTemplate & GeoAnimatab
         public ItemRenderer() {
             super(new StopItemModelTemplate<>(modelName));
             if (isEmissive) {
-                addRenderLayer(new EmissiveLayer<>(this));
+                addRenderLayer(new AutoGlowingGeoLayer<>(this));
             }
         }
     }
