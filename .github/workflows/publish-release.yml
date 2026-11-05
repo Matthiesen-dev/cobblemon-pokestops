@@ -13,8 +13,8 @@ env:
   MOD_NAME: Cobblemon Pokestops
   ARTIFACT_BASENAME: cobblemon-pokestops
   RELEASE_JARS_ARTIFACT_PREFIX: release-jars
-  FABRIC_LOADER_VERSION: '0.17.2+'
-  NEOFORGE_LOADER_VERSION: '21.1.182+'
+  FABRIC_LOADER_VERSION: '0.18.4+'
+  NEOFORGE_LOADER_VERSION: '21.1.234+'
   MODRINTH_GAME_VERSION: 1.21.1
   MODRINTH_DEPENDENCIES: |-
     [
@@ -44,8 +44,8 @@ jobs:
       artifact_basename: "cobblemon-pokestops"
       mod_name: "Cobblemon Pokestops"
       changelog: ${{ github.event.release.body }}
-      fabric_loader_version: "0.17.2+"
-      neoforge_loader_version: "21.1.182+"
+      fabric_loader_version: "0.18.4+"
+      neoforge_loader_version: "21.1.234+"
       modrinth_game_version: "1.21.1"
       modrinth_id: "3clcaaoH"
       modrinth_dependencies: |-

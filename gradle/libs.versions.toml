@@ -4,20 +4,22 @@ shadow = "9.3.1"
 architectury-loom = "1.13-SNAPSHOT"
 architectury-plugin = "3.4-SNAPSHOT"
 minecraft = "1.21.1"
-fabric-loader = "0.17.2"
+fabric-loader = "0.18.4"
 fabric-api = "0.116.6+1.21.1"
 fabric-kotlin = "1.13.6+kotlin.2.2.20"
-neoforge = "21.1.182"
+neoforge = "21.1.234"
 kotlin-for-forge = "5.10.0"
-cobblemon = "1.8.2+1.21.1"
+cobblemon = "1.8.4+1.21.1"
 junit = "5.1.0"
 publish = "0.35.0"
-matthiesen_core = "1.3.0"
+matthiesen_core = "2.0.0"
 sponge-mixin = "0.8.5"
 geckolib = "4.8.3"
 jade_fabric = "15.10.5+fabric"
 jade_neoforge = "15.10.5+neoforge"
 forge-config-api-port = "21.1.6"
+faststats = "0.31.0-pre4"
+faststats-mc = "0.31.0-pre4+mc1.21.1"
 
 [plugins]
 shadow = { id = "com.gradleup.shadow", version.ref = "shadow" }
@@ -53,17 +55,20 @@ jade-fabric = { group = "maven.modrinth", name = "jade", version.ref = "jade_fab
 jade-neoforge = { group = "maven.modrinth", name = "jade", version.ref = "jade_neoforge" }
 forge-config-api-port-common = { group = "fuzs.forgeconfigapiport", name = "forgeconfigapiport-common-neoforgeapi", version.ref = "forge-config-api-port" }
 forge-config-api-port-fabric = { group = "fuzs.forgeconfigapiport", name = "forgeconfigapiport-fabric", version.ref = "forge-config-api-port" }
+faststats-core = { group = "dev.faststats.metrics", name = "core", version.ref = "faststats" }
+faststats-fabric = { group = "dev.faststats.metrics", name = "fabric", version.ref = "faststats-mc" }
+faststats-neoforge = { group = "dev.faststats.metrics", name = "neoforge", version.ref = "faststats-mc" }
 
 [bundles]
 commonCompileOnly = ["sponge-mixin", "forge-config-api-port-common"]
 commonModCompileOnly = ["jade-fabric"]
-commonImplementation = ["geckolib-common"]
+commonImplementation = ["geckolib-common", "faststats-core"]
 commonModImplementation = ["cobblemon-common", "matthiesen-core-common"]
 fabricCompileOnly = ["jade-fabric"]
-fabricRuntimeOnly = ["jade-fabric", "forge-config-api-port-fabric"]
+fabricRuntimeOnly = ["jade-fabric", "forge-config-api-port-fabric", "faststats-fabric"]
 fabricModImplementation = ["fabric-loader", "fabric-api", "fabric-language-kotlin", "geckolib-fabric"]
 fabricModImplementationNoTransitive = ["cobblemon-fabric", "matthiesen-core-fabric"]
 neoforgeCompileOnly = ["jade-neoforge"]
-neoforgeRuntimeOnly = ["jade-neoforge"]
+neoforgeRuntimeOnly = ["jade-neoforge", "faststats-neoforge"]
 neoforgeModImplementation = ["geckolib-neoforge"]
 neoforgeModImplementationNoTransitive = ["cobblemon-neoforge", "matthiesen-core-neoforge"]
