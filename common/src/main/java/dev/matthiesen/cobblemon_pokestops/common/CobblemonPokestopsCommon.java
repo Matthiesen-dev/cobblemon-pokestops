@@ -3,7 +3,7 @@ package dev.matthiesen.cobblemon_pokestops.common;
 import dev.matthiesen.cobblemon_pokestops.common.config.PokestopsConfig;
 import dev.matthiesen.cobblemon_pokestops.common.registry.*;
 import dev.matthiesen.cobblemon_pokestops.common.translations.GlobalTranslations;
-import dev.matthiesen.libs.faststats.Token;
+import dev.faststats.Token;
 import dev.matthiesen.matthiesen_core.common.AbstractCommonMod;
 import dev.matthiesen.matthiesen_core.common.api.platform.loader.ModConfigType;
 import net.minecraft.resources.ResourceLocation;
@@ -24,10 +24,6 @@ public final class CobblemonPokestopsCommon extends AbstractCommonMod {
         return ResourceLocation.fromNamespaceAndPath(MOD_ID, path).toString();
     }
 
-    public static String modConfig(String path) {
-        return MOD_ID + "/" + path + ".toml";
-    }
-
     public CobblemonPokestopsCommon() {
         super(MOD_ID, MOD_NAME);
     }
@@ -35,8 +31,8 @@ public final class CobblemonPokestopsCommon extends AbstractCommonMod {
     @Override
     public void initialize() {
         super.initialize();
-        registerModConfig(MOD_ID, ModConfigType.STARTUP, PokestopsConfig.STARTUP_SPEC, modConfig("startup"));
-        registerModConfig(MOD_ID, ModConfigType.COMMON, PokestopsConfig.COMMON_SPEC, modConfig("common"));
+        registerModConfig(MOD_ID, ModConfigType.STARTUP, PokestopsConfig.STARTUP_SPEC, modConfigPath("startup"));
+        registerModConfig(MOD_ID, ModConfigType.COMMON, PokestopsConfig.COMMON_SPEC, modConfigPath("common"));
 
         GlobalTranslations.init();
         SoundRegistry.init();

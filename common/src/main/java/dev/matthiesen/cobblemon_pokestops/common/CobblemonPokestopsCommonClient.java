@@ -14,7 +14,7 @@ public final class CobblemonPokestopsCommonClient extends AbstractCommonClientMo
 
     @Override
     public void initialize() {
-        registerModConfig(CobblemonPokestopsCommon.MOD_ID, ModConfigType.CLIENT, PokestopsConfig.CLIENT_SPEC, CobblemonPokestopsCommon.modConfig("client"));
+        registerModConfig(CobblemonPokestopsCommon.MOD_ID, ModConfigType.CLIENT, PokestopsConfig.CLIENT_SPEC, CobblemonPokestopsCommon.INSTANCE.modConfigPath("client"));
     }
 
     public void initializeRenderers() {
